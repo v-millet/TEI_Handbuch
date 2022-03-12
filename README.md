@@ -1,4 +1,4 @@
-# Hartmann von Aue - digital: TEI_Handbuch
+# Hartmann von Aue - digital: TEI-Handbuch
 
 Dieses TEI-Handbuch zu den Editionen von Hartmann von Aue – digital ist abhängig von den <ulink url="https://heieditions.github.io/guidelines/toc.html">Richtlinien</ulink>, die HeiEditions über das Validierungsschema und die dazugehörige Dokumentation festlegt.
 
