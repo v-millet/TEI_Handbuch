@@ -25,7 +25,7 @@
 	<div>
 <h1>Hartmann von Aue &ndash; digital: TEI-Handbuch</h1>
 <p><br/></p>
-<p>Dieses TEI-Handbuch wurde f&uuml;r die Projekte der digitalen Editionen von <i>Hartmann von Aue &ndash; digital</i> erstellt und ist abhängig von den
+<p>Dieses TEI-Handbuch wurde f&uuml;r die Projekte der digitalen Editionen von <i>Hartmann von Aue &ndash; digital</i> erstellt und ist abh&auml;ngig von den
 <a href="https://heieditions.github.io/guidelines/toc.html">Richtlinien</a>, die HeiEditions &uuml;ber das Validierungsschema und die dazugeh&ouml;rige Dokumentation festlegt.</p>
 <p>F&uuml;r die Installation von Oxygen-XML-editor, dem Framework, dem Junicode-Schriftsatz und des GitHub-Repositoriums s. <a href="./Installation_Oxygen.html">hier</a></p>
 <p>Die Beispiele wurden sie meist im nicht relevanten Teil vereinfacht, um auf das jeweils Wichtige zu fokussieren.</p>
@@ -230,7 +230,7 @@ stehen. Aus praktischen Gr&uuml;nden setzen wir &uuml;berall dort, wo der Versbe
 </ol>
 <p>1) Jedes Verspaar steht innerhalb des Elements <font color="#0070c0">&lt;lg&gt;</font>. Es f&uuml;hrt das Attribut <font color="#ffc000">@ana </font>mit den Werten <font color="#c45911">&quot;hc:Couplet&quot;</font> (=Reimpaar, das h&auml;ufigste), <font color="#c45911">&quot;hc:Tercet&quot;</font> oder <font color="#c45911">&quot;hc:Quatrain&quot;</font>.</p>
 <p>2) Jeder Vers steht innerhalb des Elements <font color="#0070c0">&lt;l&gt;</font>. Dieses Element f&uuml;hrt erstens das Attribut <font color="#ffc000">@n</font>; der Wert des Attributs ist die Versnummer nach Lachmann. Zweitens eine <font color="#ffc000">@xml:id</font> (&rarr; <a href="#xml:id_target">Kap. 17</a>).</p>
-<p>	Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <font color="#0070c0">&lt;lb&gt;</font>-Elemente stets konsekutiv bleiben; die Nummern der <font color="#0070c0">&lt;l&gt;</font>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 35</a>). Zum Beispiel:</p>
+<p>	Bei Versumstellungen durch den Schreiber folgt die Transkription zun&auml;chst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <font color="#0070c0">&lt;lb&gt;</font>-Elemente stets konsekutiv bleiben; die Nummern der <font color="#0070c0">&lt;l&gt;</font>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 35</a>). Zum Beispiel:</p>
 <p>	<font color="#0070c0">&lt;l</font> <font color="#ffc000">n=</font><font color="#c45911">&quot;113&quot;</font><font color="#ffc000"> xml:id=</font><font color="#c00000">&quot;l_113&quot;</font><font color="#0070c0">&gt;&lt;lb</font> <font color="#ffc000">n=</font><font color="#c45911">&quot;24&quot;</font><font color="#0070c0">/&gt;</font><br/>
 <font color="#0070c0">&lt;l </font><font color="#ffc000">n=</font><font color="#c45911">&quot;112&quot; </font><font color="#ffc000">xml:id=</font><font color="#c00000">&quot;l_112&quot;</font><font color="#0070c0">&gt;&lt;lb</font><font color="#ffc000"> n=</font><font color="#c45911">&quot;25&quot;</font><font color="#0070c0">/&gt;</font></p>
 <p>Fehlt ein Vers oder eine Gruppe von Versen, stehen sie schlicht nicht in der Transkription:</p>
@@ -396,7 +396,7 @@ Hervorgehobene Buchstaben am Versanfang werden als Majuskeln transkribiert.</p>
 <font color="#0070c0">&lt;c&gt;
 &lt;/c&gt;</font><br/>
 <font color="#0070c0">&lt;w/&gt;</font></p>
-<p>Am Ende eines Verses, wenn der folgende Vers mit einer neuen <font color="#0070c0">&lt;lb&gt;</font> beginnt, ist kein Spatium hinter dem <font color="#0070c0">&lt;pc&gt;</font> nötig.</p>
+<p>Am Ende eines Verses, wenn der folgende Vers mit einer neuen <font color="#0070c0">&lt;lb&gt;</font> beginnt, ist kein Spatium hinter dem <font color="#0070c0">&lt;pc&gt;</font> n&ouml;tig.</p>
 <p>2) Satzzeichen werden individuell erfasst, so dass zwei evtl. aufeinander folgende Zeichen in zwei unterschiedlichen Tags <font color="#0070c0">&lt;pc&gt;</font> stehen. <font color="#0070c0">&lt;pc&gt;</font>.<font color="#0070c0">&lt;/pc&gt;&lt;pc&gt;</font>&lsaquo;<font color="#0070c0">&lt;/pc&gt;</font><br/>
 Zur editorischen Behandlung von Satzzeichen &rarr; <a href="#Zeichensetzung_editorisch">Kap. 34</a>.</p>
 <p>
@@ -684,7 +684,7 @@ und <font color="#ffc000">@extent</font> bzw. <font color="#ffc000">@quantity</f
 sind, steht die im Attribut <font color="#ffc000">@quantity</font> (z.B. <font color="#ffc000">@unit</font>=<font color="#c45911">&quot;line&quot;</font> <font color="#ffc000">@quantity</font>=<font color="#c45911">&quot;4&quot;</font>). Kann man nicht wissen, wieviel verloren ist, den steht nicht <font color="#ffc000">@quantity</font>, sondern lediglich <font color="#ffc000">@extent</font>=<font color="#c45911">&quot;unknown&quot;</font>.</p>
 <p>4) Wenn der Text nicht ganz verloren, wohl aber deutlich besch&auml;digt ist, taggen wir ihn mit dem Element &lt;<font color="#0070c0">damage&gt;</font>. Auch dieses f&uuml;hrt das Attribut <font color="#ffc000">@rendition</font>, mit denselben m&ouml;glichen Werten, wie bei <font color="#0070c0">&lt;gap/&gt;</font>.</p>
 <p>5) Ist im Fall von <font color="#0070c0">&lt;damage&gt;</font> ein Lesung m&ouml;glich, aber unsicher, wird der Text zus&auml;tzlich mit dem Kindelement <font color="#0070c0">&lt;unclear&gt;</font> getaggt.</p>
-		<p>6) Steht vor oder hinter einem <font color="#0070c0">&lt;gap/&gt;</font> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <font color="#0070c0">&lt;c&gt; &lt;/c&gt;</font> ein; betrifft die Lücke das Wort, dann fügen wir stattdessen ein 'editorisches Spatium' ein: <font color="#0070c0">&lt;w&gt;</font>beschä<font color="#0070c0">&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;gap/&gt;</font></p>
+		<p>6) Steht vor oder hinter einem <font color="#0070c0">&lt;gap/&gt;</font> ein vollst&auml;ndiges Wort, f&uuml;gen wir zwischen beiden Elementen ein Spatium <font color="#0070c0">&lt;c&gt; &lt;/c&gt;</font> ein; betrifft die L&uuml;cke das Wort, dann f&uuml;gen wir stattdessen ein 'editorisches Spatium' ein: <font color="#0070c0">&lt;w&gt;</font>besch&auml;<font color="#0070c0">&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;gap/&gt;</font></p>
 <p>
 <br/>
 </p>
@@ -692,7 +692,7 @@ sind, steht die im Attribut <font color="#ffc000">@quantity</font> (z.B. <font c
 	<li><h2><a name="Abkuerzungen"></a>Abk&uuml;rzungen</h2>
 </ol>
 <p>1) Abk&uuml;rzungen m&uuml;ssen in der Edition sowohl als Abk&uuml;rzung wie auch aufgel&ouml;st gezeigt werden k&ouml;nnen. Solche Optionen werden stets in ein <font color="#0070c0">&lt;choice&gt;</font>-Element eingebaut. Die <font color="#0070c0">&lt;choice&gt;</font>-Konstruktion steht innerhalb des <font color="#0070c0">&lt;w&gt;</font>-Elements und schlie&szlig;t nur das Abk&uuml;rzungszeichen sowie seine Expansion ein. Alle anderen Buchstaben bleiben au&szlig;erhalb.</p>
-<p>2) Das Abk&uuml;rzungszeichen wird getaggt mit dem Element <font color="#0070c0">&lt;am&gt;</font>, das nur innerhalb eines <font color="#0070c0">&lt;choice&gt;</font>-Gebildes stehen kann. Die Abk&uuml;rzungszeichen werden eingegeben als Entities. Entities sind Platzhalter, die bei der Transformation in Zeichen verwandelt werden. Die Liste der Entities für Abkürzungen findet sich <a href="#">hier</a></p>
+<p>2) Das Abk&uuml;rzungszeichen wird getaggt mit dem Element <font color="#0070c0">&lt;am&gt;</font>, das nur innerhalb eines <font color="#0070c0">&lt;choice&gt;</font>-Gebildes stehen kann. Die Abk&uuml;rzungszeichen werden eingegeben als Entities. Entities sind Platzhalter, die bei der Transformation in Zeichen verwandelt werden. Die Liste der Entities f&uuml;r Abk&uuml;rzungen findet sich <a href="#">hier</a></p>
 <p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht &uuml;ber die Sidebar &lsquo;Entities&rsquo; eingeben: Men&uuml; &rarr;
 Window &rarr; Schow View &rarr; Entities.</p>
 <p>3) Die Aufl&ouml;sung einer Abk&uuml;rzung steht im Element <font color="#0070c0">&lt;ex&gt;</font>. Dieses Element steht direkt im Anschluss an das <font color="#0070c0">&lt;am&gt;</font>
