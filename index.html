@@ -13,10 +13,10 @@
 		h2 { direction: ltr; text-align: justify; orphans: 2; widows: 2; background: transparent; font-family: "Junicode", serif; font-size: 18pt; }
 		h3 { direction: ltr; text-align: justify; orphans: 2; widows: 2; background: transparent; font-family: "Junicode", serif; font-size: 16pt; }
 		p.sdfootnote-western { margin-bottom: 0in; direction: ltr; font-family: "Times New Roman", serif; font-size: 10pt; line-height: 100%; text-align: justify; orphans: 2; widows: 2; background: transparent }
-		p.sdfootnote-cjk { margin-bottom: 0in; direction: ltr; font-family: "Calibri"; font-size: 10pt; so-language: en-US; line-height: 100%; text-align: justify; orphans: 2; widows: 2; background: transparent }
+		p.sdfootnote-cjk { margin-bottom: 0in; direction: ltr; font-family: "Calibri"; font-size: 10pt; line-height: 100%; text-align: justify; orphans: 2; widows: 2; background: transparent }
 		p.sdfootnote-ctl { margin-bottom: 0in; direction: ltr; line-height: 100%; text-align: justify; orphans: 2; widows: 2; background: transparent }
-		td p { direction: ltr; text-align: left; orphans: 0; widows: 0; }
-		td p.western { font-family: "Liberation Serif", serif; so-language: en-US }
+		td p { direction: ltr; text-align: left; }
+		td p.western { font-family: "Liberation Serif", serif; }
 		a:link { color: #0563c1; text-decoration: underline }
 		a.sdfootnoteanc { font-size: 57% }
 		.yellow { color: #ffc000 }
@@ -124,9 +124,9 @@ Die Codierungs-Beschreibungen m&uuml;ssen folgende sein:</p>
 	&lt;listPrefixDef&gt;<br/>
 	&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;hc&quot;</span><br/>
 	<span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span><br/>
-	<span class="yellow">replacementPattern=</span><span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span><span class="blue">/&gt;<br/>
-		&lt;/prefixDef&gt;<br/>
-		<span class="blue">&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;char&quot;</span><br/>
+	<span class="yellow">replacementPattern=</span><span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span><span class="blue">/&gt;</span><br/>
+	<span class="blue">&lt;/prefixDef&gt;</span><br/>
+	<span class="blue">&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;char&quot;</span><br/>
 			<span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span><br/>
 			<span class="yellow">replacementPattern=</span><span class="brown">&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1&quot;</span><span class="blue">/&gt;<br/>
 				&lt;/prefixDef&gt;<br/>
