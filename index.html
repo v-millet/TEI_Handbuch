@@ -89,7 +89,7 @@
 	<li><h2><a name="xml_Deklaration"></a>XML-Deklaration und TEI-Root-Element</h2>
 </ol>
 		<p>1) Die Deklarationen f&uuml;r XML und Schema sind f&uuml;r alle Dateien folgende:</p>
-<p> align="left" style="margin-left: 0.49in; text-indent: -0.49in; margin-bottom: 0in; line-height: 100%"><span class="violett">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br/>
+<p><span class="violett">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br/>
 <span class="violett">&lt;?xml-model href=&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;?&gt;</span><br/>
 <span class="violett">&lt;?xml-model href=&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://purl.oclc.org/dsdl/schematron&quot;?&gt;</span></p>
 <p>2) F&uuml;r die Erkennung der Entities braucht es folgende Deklaration (Abs&auml;tze beachten):</p>
@@ -255,7 +255,7 @@ hinzugef&uuml;gt. Die Nummerierung der <span class="blue">&lt;l&gt;</span>-Eleme
 <ol start="9">
 	<li><h2><a name="Wort_Spatium"></a>Wort, Spatium, Zusammen- und Getrenntschreibung</h2>
 </ol>
-<p>1) Jedes Wort wird getaggt mit dem Element <span class="blue">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort f&uuml;hrt eine <span class="yellow">@xml:id</span>
+<p>1) Jedes linguistische Wort wird getaggt mit dem Element <span class="blue">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort f&uuml;hrt eine <span class="yellow">@xml:id</span>
 (&rarr; <a href="#xml:id_target">Kap. 17</a>) mit der Struktur &quot;Element_Versnummer_laufende Nummer&quot;, z.B.:
 	<span class="yellow">@xml:id=</span><span class="brown">&quot;w_765_1&quot;</span>
 	(=erstes Element <span class="blue">&lt;w&gt;</span> im Vers 765).</p>
@@ -276,7 +276,7 @@ erfasst und die Trennung mit einem Spatium markiert, das jedoch f&uuml;r die Edi
 </p>
 <p>Umgekehrt gilt: Bei eindeutiger Zusammenschreibung zweier Worte werden beide als getrennte Tokens erfasst. Ihre Zusammenschreibung in der Handschrift wird dadurch gekennzeichnet, dass kein Spatium <span class="blue">&lt;c&gt;
 &lt;/c&gt;</span>
-zwischen den beiden Tokens steht. Will man in der Edition die beiden Worte getrennt erscheinen lassen, kann das Spatium editorisch hinzuf&uuml;gen:</p>
+zwischen den beiden Tokens steht. Will man in der Edition die beiden Worte getrennt erscheinen lassen, kann man das Spatium editorisch hinzuf&uuml;gen:</p>
 <p><span class="blue">&lt;w&gt;</span>ze<span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt;
 &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;</span>lesen<span class="blue">&lt;/w&gt;</span></p>
 <p>6)
