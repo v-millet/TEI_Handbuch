@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<title>Manuel d'encodage </title>
+		<style type="text/css">
+			p {
+			    font-family: "Helvetica", serif;
+			    font-size: 14pt;
+			    margin-bottom: 0.1in;
+			    direction: ltr;
+			    line-height: 115%;
+			    text-align: justify;
+			    background: transparent
+			}
+			div {
+			    margin-left: 50px;
+			    margin-right: 50px;
+			    margin-top: 50px;
+			    margin-bottom: 40px;
+			}
+			ol {
+			    font-family: "Helvetica", serif;
+			    font-size: 18pt;
+			    font-weight: bold;
+			}
+			h1 {
+			    direction: ltr;
+			    text-align: justify;
+			    background: transparent;
+			    font-family: "Helvetica", serif;
+			    font-size: 20pt;
+			}
+			h2 {
+			    direction: ltr;
+			    text-align: justify;
+			    orphans: 2;
+			    widows: 2;
+			    background: transparent;
+			    font-family: "Helvetica", serif;
+			    font-size: 18pt;
+			}
+			h3 {
+			    direction: ltr;
+			    text-align: justify;
+			    orphans: 2;
+			    widows: 2;
+			    background: transparent;
+			    font-family: "Helvetica", serif;
+			    font-size: 16pt;
+			}
+			.yellow {
+			    color: #ffc000
+			}
+			.blue {
+			    color: #0070c0
+			}
+			.brown {
+			    color: #c45911
+			}
+			.green {
+			    color: #92d050
+			}
+			.link {
+			    color: #0563c1
+			}
+			.violett {
+			    color: #8b26c9
+			}</style>
+	</head>
+	<body>
+		<div>
+			<h1>Hartmann von Aue &ndash; numérique: Manuel d'encodage TEI </h1>
+			<p>
+				<br />
+			</p>
+			<p class="back"><a href="index.html">Deutsche Fassung</a></p>
+			<p>Ce manuel TEI a été rédigé pour les projets des éditions numériques de <i>Hartmann von Aue &ndash; numérique</i>. Il a été élaboré en fonction des <a href="https://heieditions.github.io/guidelines/toc.html" target="_blank">Directives</a>que HeiEditions a fixées sur le schéma de validation et la documentation correspondante.</p>
+			<p>Pour l'installation du Oxygen-XML-editor, du framework, du répertoire de caractères Junicode et du dépôt GitHub, voir le site <a href="./Installation_Oxygen_DE.html" target="_blank">Setups for Hartmann von Aue-digital</a>.</p>
+			<p>Vous trouverez également ici la <a href="./Zeichenliste_HvA_digital.pdf" target="_blank">liste des caractères</a> et la <a href="./Metamarks_list.pdf" target="_blank">liste des métamarques</a>.</p>
+			<p>Les exemples ont été souvent un peu simplifiés dans la partie non pertinente afin de se concentrer sur ce qui est important.</p>
+			<p>
+				<br />
+			</p>
+			<h2>
+				<a id="Inhalt">Inhalt</a>
+			</h2>
+			<div id="Table_of_Contents1">
+				<p>
+					<a href="#Struktur">Teil I: Struktur der TEI-Dateien</a>
+				</p>
+				<p>
+					<a href="#xml_Deklaration">1. XML-Deklaration und TEI-Root-Element</a>
+				</p>
+				<p>
+					<a href="#TEI_Header">2. Der TEI-Header</a>
+				</p>
+				<p>
+					<a href="#Faksimile">3. Das Element &lt;facsimile&gt;</a>
+				</p>
+				<p>
+					<a href="#Element_Text">4. Das Element &lt;text&gt;</a>
+				</p>
+				<p>
+					<a href="#Titel_Kolophon">5. Titel und Kolophon</a>
+				</p>
+				<p>
+					<a href="#Der_Text">6. Der Text</a>
+				</p>
+				<p>
+					<br />
+				</p>
+				<p>
+					<a href="#Transkription">Teil II: Transkription der Handschriften</a>
+				</p>
+				<p>
+					<a href="#Seite_Spalte">7. Seite / Spalte / physische Zeile</a>
+				</p>
+				<p>
+					<a href="#Verspaar_Vers">8. Verspaar und Vers</a>
+				</p>
+				<p>
+					<a href="#Wort_Spatium">9. Wort, Spatium, Zusammen- und Getrenntschreibung</a>
+				</p>
+				<p>
+					<a href="#Grapheme_Majuskeln">10. Grapheme und Majuskeln</a>
+				</p>
+				<p>
+					<a href="#Diakritika">11. Sonderzeichen, Diakritika und Superskripte</a>
+				</p>
+				<p>
+					<a href="#Initialen">12. Initialen</a>
+				</p>
+				<p>
+					<a href="#hei:cue">13. Anweisungszeichen f&uuml;r Initialen</a>
+				</p>
+				<p>
+					<a href="#Hervorhebungen">14. Hervorhebungen</a>
+				</p>
+				<p>
+					<a href="#Zeichensetzung_Hs">15. Zeichensetzung der Handschrift</a>
+				</p>
+				<p>
+					<a href="#Metamarks">16. Metazeichen</a>
+				</p>
+				<p>
+					<a href="#xml:id_target">17. @xml:id und @target</a>
+				</p>
+				<p>
+					<a href="#del_add">18. Hinzuf&uuml;gungen, Streichungen, Substitutionen</a>
+				</p>
+				<p>
+					<a href="#del_add_Tokenisierung">19. Hinzuf&uuml;gungen / Streichungen und Tokenisierung</a>
+				</p>
+				<p>
+					<a href="#Zeilenspruenge">20. Zeilenspr&uuml;nge im Versinneren und im Wortinneren</a>
+				</p>
+				<p>
+					<a href="#Zeilenueberlauf">21. Zeilen&uuml;berlauf</a>
+				</p>
+				<p>
+					<a href="#nicht_ausgefuehrt">22. Nicht ausgef&uuml;hrte W&ouml;rter / Zeilen</a>
+				</p>
+				<p>
+					<a href="#Verswiederholungen">23. Verswiederholungen oder sehr &auml;hnliche Verse</a>
+				</p>
+				<p>
+					<a href="#gap_damage">24. L&uuml;cken und besch&auml;digter Text</a>
+				</p>
+				<p>
+					<a href="#Abkuerzungen">25. Abk&uuml;rzungen</a>
+				</p>
+				<p>
+					<a href="#label">26. Abschnittszusammenfassungen</a>
+				</p>
+				<p>
+					<a href="#transpose">27. Umstellungen</a>
+				</p>
+				<p>
+					<a href="#Lagensignaturen">28. Lagensignaturen und Reklamanten</a>
+				</p>
+				<p>
+					<a href="#Anmerkungen">29. Anmerkungen</a>
+				</p>
+				<p>
+					<a href="#Kommentar">30. Kommentar</a>
+				</p>
+				<p>
+					<br />
+				</p>
+				<p>
+					<a href="#editorische_Bearbeitung">Teil III: Editorische Bearbeitung</a>
+				</p>
+				<p>
+					<a href="#Normalisierung">31. Normalisierungen</a>
+				</p>
+				<p>
+					<a href="#Korrekturen">32. Editorische Eingriffe und Korrekturen</a>
+				</p>
+				<p>
+					<a href="#Spatien_editorisch">33. Editorische Behandlung der Spatien</a>
+				</p>
+				<p>
+					<a href="#Zeichensetzung_editorisch">34. Editorische Behandlung der Zeichensetzung</a>
+				</p>
+				<p>
+					<a href="#Versumstellung_editorisch">35. Editorische Behandlung von Versumstellungen</a>
+				</p>
+			</div>
+			<p>
+				<br />
+			</p>
+			<ol type="A">
+				<li>
+					<h2><a id="Struktur"></a>Teil I: Struktur der TEI-Dateien</h2>
+				</li>
+			</ol>
+			<ol start="1">
+				<li>
+					<h2><a id="xml_Deklaration"></a>XML-Deklaration und TEI-Root-Element</h2>
+			</ol>
+			<p>1) Die Deklarationen f&uuml;r XML und Schema sind f&uuml;r alle Dateien folgende:</p>
+			<p>
+				<span class="violett">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+				<br />
+				<span class="violett">&lt;?xml-model href=&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;?&gt;</span>
+				<br />
+				<span class="violett">&lt;?xml-model href=&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://purl.oclc.org/dsdl/schematron&quot;?&gt;</span>
+			</p>
+			<p>2) F&uuml;r die Erkennung der Entities braucht es folgende Deklaration (Abs&auml;tze beachten):</p>
+			<p>
+				<span class="violett">&lt;!DOCTYPE TEI</span>
+				<br />
+				<span class="violett">[</span>
+				<br />
+				<span class="violett">&lt;!ENTITY % heiEDITIONS_entities SYSTEM &quot;https://digi.ub.uni-heidelberg.de/schema/tei/ heiEDITIONS/declarations/heieditions-entities.txt&quot;&gt;</span>
+				<br />
+				<span class="violett">%heiEDITIONS_entities; ]&gt;</span>
+			</p>
+			<p>3) Das Root-Element <span class="blue">&lt;TEI&gt;</span> enth&auml;lt folgende Attribute und Werte:</p>
+			<p>
+				<span class="blue">&lt;TEI</span>
+				<span class="yellow">xmlns=</span>
+				<span class="brown">&quot;http://www.tei-c.org/ns/1.0&quot;</span>
+				<span class="violett">xmlns:hei</span>
+				<span class="yellow">=</span>
+				<span class="brown">&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS&quot;</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:IWDDocument&quot;</span>
+				<span class="blue">&gt;</span>
+			</p>
+			<p>4) Die Struktur der Datei sieht dann wie folgt aus:</p>
+			<p>
+				<img
+					src="data:image/png;base64,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"
+					id="Imagen 1" align="bottom" width="604" height="341" border="0" />
+			</p>
+			<p>
+				<br />
+			</p>
+			<ol start="2">
+				<li>
+					<h2><a id="TEI_Header"></a>Der TEI-Header</h2>
+			</ol>
+			<p>Das Element <span class="blue">&lt;teiHeader&gt;</span> wird zun&auml;chst nur mit zwei Kindelementen gef&uuml;llt: <span class="blue">&lt;fileDesc&gt;</span> und <span class="blue">&lt;encodingDesc&gt;</span>.</p>
+			<p>1) Die Datei-Beschreibung <span class="blue">&lt;fileDesc&gt;</span> enth&auml;lt ein <span class="blue">&lt;titleStmt&gt;</span>, ein <span class="blue">&lt;publicationStmt&gt;</span> und eine <span class="blue">&lt;sourceDesc&gt;</span>.</p>
+			<ul>
+				<li>
+					<p style="margin-bottom: 0in; line-height: 100%">Das <span class="blue">&lt;titleStmt&gt;</span> enth&auml;lt das Element <span class="blue">&lt;title&gt;</span> mit dem Inhalt: &quot;Iwein-Hs. X&quot;; das Element <span class="blue">&lt;author&gt;</span> mit dem Inhalt &quot;Hartmann von Aue&quot;; und das Element <span class="blue">&lt;respStmt&gt;</span> mit den Kindelementen <span class="blue">&lt;resp&gt;</span> (Inhalt: &quot;transcription&quot; &quot;revision&quot; &quot;edition&quot;) und <span class="blue">&lt;persName&gt;</span> (Inhalt: &quot;Name der verantwortlichen Person&quot;).</p>
+				<li>
+					<p style="margin-bottom: 0in; line-height: 100%">Das <span class="blue">&lt;publicationStmt&gt;</span> enth&auml;lt lediglich das Kindelement <span class="blue">&lt;publisher&gt;</span> mit dem Inhalt &quot;UB Heidelberg&quot;.</p>
+				<li>
+					<p style="margin-bottom: 0in; line-height: 100%">Die <span class="blue">&lt;sourceDesc&gt;</span> enth&auml;lt das Element <span class="blue">&lt;listWit&gt;</span> mit dem Kindelement <span class="blue">&lt;witness&gt;</span>; dieses Element erh&auml;lt als Attribut eine <span class="yellow">@xml:id</span> mit dem Wert der Sigle der Handschrift. <span class="blue">&lt;witness&gt;</span> hat als Kindelement <span class="blue">&lt;msDesc&gt;</span> und dieses wiederum als Kindelement <span class="blue">&lt;msIdentifier&gt;</span>. Kindelemente des letzteren sind <span class="blue">&lt;settlement&gt;</span> (Inhalt: Bibliotheksort), <span class="blue">&lt;repository&gt;</span> (Inhalt: Bibliotheksname) und <span class="blue">&lt;idno&gt;</span> (Inhalt: Signatur der Handschrift).</p>
+			</ul>
+			<p>2) Die Codierungs-Beschreibungen m&uuml;ssen folgende sein:</p>
+			<p>
+				<span class="blue">&lt;encodingDesc&gt;<br /> &lt;listPrefixDef&gt;<br /> &lt;prefixDef</span>
+				<span class="yellow">ident=</span>
+				<span class="brown">&quot;hc&quot;</span>
+				<br />
+				<span class="yellow">matchPattern=</span>
+				<span class="brown">&quot;(.+)&quot;</span>
+				<br />
+				<span class="yellow">replacementPattern=</span>
+				<span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;/prefixDef&gt;</span>
+				<br />
+				<span class="blue">&lt;prefixDef</span>
+				<span class="yellow">ident=</span>
+				<span class="brown">&quot;char&quot;</span>
+				<br />
+				<span class="yellow">matchPattern=</span>
+				<span class="brown">&quot;(.+)&quot;</span>
+				<br />
+				<span class="yellow">replacementPattern=</span>
+				<span class="brown">&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1&quot;</span>
+				<span class="blue">/&gt;<br /> &lt;/prefixDef&gt;<br /> &lt;/listPrefixDef&gt;<br /> &lt;/encodingDesc&gt;</span>
+			</p>
+			<p>
+				<br />
+			</p>
+			<ol start="3">
+				<li>
+					<h2><a id="Faksimile"></a>Das Element &lt;facsimile&gt;</h2>
+			</ol>
+			<p>Zwischen dem TEI-Header und dem Text steht das Element <span class="blue">&lt;facsimile&gt;</span>. Es wird mit der Information zu Seiten (<span class="blue">&lt;surface&gt;</span>), Abbildungen (<span class="blue">&lt;graphic/&gt;</span>) und Bildbereichen (<span class="blue">&lt;zone/&gt;</span>) gef&uuml;llt. </p>
+			<p>1) Jede Seite der Handschrift wird als <span class="blue">&lt;surface&gt;</span> erfasst. Das Element hat die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:Page&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert die Sigle der Handschrift und die Seitenzahl ist, z.B. <span class="brown">&quot;b_12v&quot;</span>) und <span class="yellow">@n</span> (mit dem Wert der Seitenzahl, z.B. <span class="brown">&quot;12v&quot;</span>).</p>
+			<p>2) Als erstes Kindelement der <span class="blue">&lt;surface</span>&gt; steht das Element <span class="blue">&lt;graphic/&gt;</span> mit dem Attribut <span class="yellow">@url</span> und als Attributwert die url der digitalen Abbildung dieser Seite. Das Element ist leer.</p>
+			<p>3) Als weitere Kindelemente von <span class="blue">&lt;surface</span>&gt; folgen nun so viele Elemente <span class="blue">&lt;zone/&gt;</span> wie die Seite Bildbereiche hat. Bildbereiche der Seite sind Spalten und evtl. existierende Randbereiche. Eine einspaltig beschriebene Seite hat also ein einziges Element <span class="blue">&lt;zone&gt;</span>, eine zweispaltig beschriebene Seite mit einer Lagenz&auml;hlung im unteren Rand hat drei <span class="blue">&lt;zone&gt;</span>-Elemente.</p>
+			<p>a) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Spalten</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:Column&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;Spalte&quot;, z.B. <span class="brown">&quot;b_12v-a&quot;</span>) und <span class="yellow">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. &quot;a&quot;).</p>
+			<p>b) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Randbereiche</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:MarginalZone&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;ein Buchstabe mehr als die letzte Spalte&quot;, z.B. <span class="brown">&quot;b_12v-b&quot;</span>) und <span class="yellow">@hei:placeRef</span> (in der Regel mit dem Wert <span class="brown">&quot;hc:PageBottom&quot;</span>, ggf. erg&auml;nzt durch <span class="brown">&quot;hc:PageMarginRight&quot;)</span>. Das Element <span class="blue">&lt;zone/&gt;</span>ist leer.</p>
+			<p>
+				<i>Beispiel:</i>
+				<br />
+				<span class="blue">&lt;surface</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:Page&quot;</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;b_12v&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;12v&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;graphic</span>
+				<span class="yellow">url=</span>
+				<span class="brown">&quot;https://digi.ub.uni-heidelberg.de/diglit/cpg391/0028/image&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:Column&quot;</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;b_12v-a&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;a&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue"></span>
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:MarginalZone&quot;</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;b_12v-b&quot;</span>
+				<span class="yellow">hei:placeRef=</span>
+				<span class="brown">&quot;hc:PageBottom hc:PageMarginRight&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;/surface&gt;</span>
+			</p>
+			<p>Zu Randbereichen wie Lagensignaturen und Reklamanten &rarr; <a href="#Lagensignaturen">Kap. 28</a>; zu xml:id &rarr; <a href="#xml:id_target">Kap. 17</a>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="4">
+				<li>
+					<h2><a id="Element_Text"></a>Das Element &lt;text&gt;</h2>
+			</ol>
+			<p>Auf das Element <span class="blue">&lt;facsimile&gt;</span> folgt nun der Text. Das Element <span class="blue">&lt;text&gt;</span> enth&auml;lt das Attribut <span class="yellow">@ana</span>, dessen Wert aus zwei Bestandteilen besteht: zum einen <span class="brown">&quot;hc:CourtlyRomance&quot;</span> und zum anderen, je nach Fall, <span class="brown">&quot;hc:CompleteExpression&quot;</span> oder <span class="brown">&quot;hc:ExpressionFragmentThroughLoss&quot;</span>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="5">
+				<li>
+					<h2><a id="Titel_Kolophon"></a>Titel und Kolophon</h2>
+			</ol>
+			<p>Das Element <span class="blue">&lt;text&gt;</span> enth&auml;lt immer das Element <span class="blue">&lt;body&gt;</span>. Es kann auch die Elemente <span class="blue">&lt;front&gt;</span> und/oder <span class="blue">&lt;back&gt;</span> enthalten. In <span class="blue">&lt;front&gt; </span>werden die Titel notiert, die manche Schreiber dem Werk voranstellen und die nicht zu Hartmanns Text geh&ouml;ren. Falls so ein Titel in der Handschrift existiert, wird ein <span class="blue">&lt;front&gt;</span>&ndash;Element angelegt. Als erste Kindelemente stehen <span class="blue">&lt;pb&gt;</span> und <span class="blue">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>). An dritter Stelle wird ein Element <span class="blue">&lt;docTitle&gt;</span> angelegt mit einem Kindelement <span class="blue">&lt;titlePart&gt;</span>. In diesem wird nun der Titel eingetragen, tokenisiert (&rarr; <a href="#Wort_Spatium">Kap. 9.1</a>) und mit Angabe der <span class="blue">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7.3</a>).</p>
+			<p>
+				<i>Beispiel:</i>
+			</p>
+			<p>
+				<span class="blue">&lt;front&gt;<br /> &lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;5v&quot;</span><span class="blue">/&gt;&lt;cb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;c&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;docTitle&gt;&lt;titlePart&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellor">n=</span><span class="brown">&quot;49&quot;</span><span class="blue">/&gt;&lt;hi</span>
+				<span class="yellow">hei:color=</span><span class="brown">&quot;Red&quot;</span><span class="blue">&gt;&lt;w&gt;</span>Von<span class="blue">&lt;/w&gt;&lt;w&gt;</span>k&uuml;nig><span class="blue">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="blue">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue"> &lt;/titlePart&gt;&lt;/docTitle&gt;<br /> &lt;/front&gt;</span></p>
+			<p>In <span class="blue">&lt;back&gt;</span> hingegen werden typischerweise Schreiberkolophone eingetragen. Das Element <span class="blue">&lt;back&gt;</span> enth&auml;lt ein Kindelement <span class="blue">&lt;trailer&gt;</span> mit dem Attribut <span class="yellow">@ana</span> und dem Wert <span class="brown">&quot;hc:Colophon&quot;</span>.</p>
+			<p>
+				<i>Beispiel:</i>
+			</p>
+			<p><span class="blue">&lt;back&gt;<br /> &lt;trailer</span><span class="yellow">ana=</span><span class="brown">&quot;hc:Colophon&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>Amen<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/trailer&gt;<br /> &lt;/back&gt;</span></p>
+			<p>Manchmal enthalten Kolophone Verzierungen, die wir als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) mit dem Attribut <span class="yellow">@ana</span>und dem Wert <span class="brown">&quot;hc:DecorativeMarker&quot;</span>taggen.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="6">
+				<li>
+					<h2><a id="Der_Text"></a>Der Text</h2>
+			</ol>
+			<p>Das Element <span class="blue">&lt;body&gt;</span> enth&auml;lt nur das Kindelement <span class="blue">&lt;div&gt;</span>, in welchem der Text des Werks steht. Der Text wird strukturiert in Verspaare und Verse erfasst.</p>
+			<p>Wir verwenden vorgefertigte Templates, die die Eingabe des Textes erleichtern, weil wir in ihnen die durchnummerierte Versstruktur bereits aufgestellt und mit den Elementen f&uuml;r W&ouml;rter und Wortzwischenr&auml;ume gef&uuml;llt haben.</p>
+			<p>Es gibt prinzipiell drei Arten von Elementen im Text: strukturelle, semantische und Alternativkonstruktionen.</p>
+			<p> a) Strukturelle Elemente (<span class="blue">&lt;pb/&gt;</span>, <span class="blue">&lt;cb/&gt;</span>, <span class="blue">&lt;lb/&gt;</span>,<span class="blue">&lt;gap/&gt;</span>) sind deskriptiv und objektiv, sie beschreiben Eigenschaften der Handschrift und funktionieren wie Punkte, daher sind sie immer leer (&rarr; <a href="#Seite_Spalte">Kap. 7</a>, &rarr; <a href="#gap_damage">Kap. 24</a>)</p>
+			<p> b) Semantische Elemente (<span class="blue">&lt;l&gt;</span>, <span class="blue">&lt;w&gt;</span>, <span class="blue">&lt;hi&gt;</span>,<span class="blue"> &lt;pc&gt;</span>) gr&uuml;nden auf unseren Definitionen gr&uuml;nden: wir entscheiden, ob etwas ein Wort, ein Vers oder ein Satzzeichen ist. Sie enthalten immer Text.</p>
+			<p> c) Alternativkonstruktionen (<span class="blue">&lt;choice&gt;</span>, <span class="blue">&lt;subst&gt;</span>) enthalten immer zwei m&ouml;gliche Darstellungsoptionen, m&uuml;ssen also jeweils zwei Kindelemente enthalten (&rarr; <a href="#Normalisierung">Kap. 31</a>, &rarr; <a href="#del_add">Kap. 18</a>). Z.B.: <span class="blue">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> erlaubt es, entweder das zu visualisieren, was in <span class="blue">&lt;orig&gt;</span> steht, oder das, was in <span class="blue">&lt;reg&gt;</span> steht.</p>
+			<p>
+				<br />
+			</p>
+			<ol type="A" start="2">
+				<li>
+					<h2><a id="Transkription"></a>Teil II: Transkription der Handschriften</h2>
+			</ol>
+			<p>
+				<br />
+			</p>
+			<ol start="7">
+				<li>
+					<h2><a id="Seite_Spalte"></a>Seite / Spalte / physische Zeile</h2>
+			</ol>
+			<p>1) Der Beginn einer neuen Seite wird getaggt mit <span class="blue">&lt;pb/&gt;</span>, auch der Beginn der ersten Seite (evtl. bereits in <span class="blue">&lt;front&gt;</span>, &rarr; <a href="#Titel_Kolophon">Kap. 5</a>). Dieses Element ist immer leer. Es steht &ndash; wie alle Elemente &ndash; immer m&ouml;glichst weit 'oben' in der xml-Struktur: Bei Handschriften mit abgesetzten Versen also hinter dem Schluss der letzten <span class="blue">&lt;lg&gt;</span> der vorangehenden Seite, oder, wenn von einem Verspaar ein Vers auf jeder Seite steht, hinter dem Schluss der letzten <span class="blue">&lt;l&gt;</span>. Bei Handschriften ohne abgesetzte Verse allerdings steht das Element an der ensprechenden Stelle. Diesem Element folgt immer das Element <span class="blue">&lt;cb/&gt;</span>. Es enth&auml;lt immer das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Blatt- und Seitenzahl, z.B.: <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;1v&quot;</span><span class="blue">/&gt;</span>, oder <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;2r&quot;</span><span class="blue">/&gt;</span></p>
+			<p>2) Der Beginn einer neuen Spalte wird getaggt mit <span class="blue">&lt;cb/&gt;</span>. Dieses Element ist immer leer. In einspaltigen Handschriften steht es immer hinter dem Element <span class="blue">&lt;pb/&gt;</span>. Bei mehrspaltigen Handschriften steht es au&szlig;erdem hinter dem letzten Vers oder Verspaar der vorangehenden Spalte und vor der ersten Zeile der neuen Spalte. Es enth&auml;lt immer das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist der Buchstabe f&uuml;r die jeweilige Spalte (a, b, c), z.B.: <span class="blue">&lt;cb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;a&quot;</span><span class="blue">/&gt;</span>, oder <span class="blue">&lt;cb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;b&quot;</span><span class="blue">/&gt;</span></p>
+			<p>3) Der Beginn einer neuen physischen Zeile wird getaggt mit <span class="blue">&lt;lb/&gt;</span>. Dieses Element ist immer leer. Es enth&auml;lt <i>immer</i> das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Nummer der physischen Zeile in der aktuellen Spalte, z.B. <span class="blue">&lt;l&gt;&lt;lb </span><span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br /> Die Position von <span class="blue">&lt;lb&gt;</span> in Bezug zu <span class="blue">&lt;l&gt;</span> ist im Grunde irrelevant, es kann auch mitten im <span class="blue">&lt;w&gt;</span> stehen. Aus praktischen Gr&uuml;nden setzen wir &uuml;berall dort, wo der Versbeginn mit dem Zeilenbeginn zusammenf&auml;llt, <span class="blue">&lt;lb&gt;</span> als erstes Kindelement von <span class="blue">&lt;l&gt;</span> (s. das Beispiel oben).</p>
+			<p> Zu Worttrennung &rarr; <a href="#Wort_Spatium">Kap. 9.3</a>; zu Zeilen&uuml;berh&auml;ngen &rarr; <a href="#Zeilenueberlauf">Kap. 21</a>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="8">
+				<li>
+					<h2><a id="Verspaar_Vers"></a>Verspaar und Vers</h2>
+			</ol>
+			<p>1) Jedes Verspaar steht innerhalb des Elements <span class="blue">&lt;lg&gt;</span>. Es f&uuml;hrt das Attribut <span class="yellow">@ana </span>mit den Werten <span class="brown">&quot;hc:Couplet&quot;</span> (=Reimpaar, das h&auml;ufigste), <span class="brown">&quot;hc:Tercet&quot;</span> oder <span class="brown">&quot;hc:Quatrain&quot;</span>.</p>
+			<p>2) Jeder Vers steht innerhalb des Elements <span class="blue">&lt;l&gt;</span>. Dieses Element f&uuml;hrt erstens das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Versnummer nach Lachmann. Zweitens eine <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>).</p>
+			<p>Bei Versumstellungen durch den Schreiber folgt die Transkription zun&auml;chst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="blue">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="blue">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 35</a>). Zum Beispiel:</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;113&quot;</span>
+				<span class="yellow"> xml:id=</span>
+				<span class="brown">&quot;l_113&quot;</span>
+				<span class="blue">&gt;&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;24&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;l </span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;112&quot; </span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;l_112&quot;</span>
+				<span class="blue">&gt;&lt;lb</span>
+				<span class="yellow"> n=</span>
+				<span class="brown">&quot;25&quot;</span>
+				<span class="blue">/&gt;</span>
+			</p>
+			<p>Fehlt ein Vers oder eine Gruppe von Versen, stehen sie schlicht nicht in der Transkription:</p>
+			<p>
+				<span class="blue">&lt;l </span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;101&quot;</span>
+				<span class="yellow"> xml:id=</span>
+				<span class="brown">&quot;l_101</span>
+				<span class="blue">&gt;&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;24&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;112&quot;</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;l_112</span>
+				<span class="blue">&gt;&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;25&quot;</span>
+				<span class="blue">/&gt;</span>
+			</p>
+			<p>Bei hinzugef&uuml;gten Versen werden die notwendigen <span class="blue">&lt;l&gt;</span> und <span class="blue">&lt;lg&gt;</span>-Elemente hinzugef&uuml;gt. Die Nummerierung der <span class="blue">&lt;l&gt;</span>-Elemente im <span class="yellow">@n</span>-Attribut ist die des letzten mit Lachmann &uuml;bereinstimmenden Verses, gefolgt von einem Komma und einer zweiten konsekutiven Zahl (bzw., je nach Projekt, ein Buchstabe), z.B.:</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;117&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;117,1&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;117,2&quot;</span>
+				<span class="blue">&gt;</span>
+			</p>
+			<p>F&uuml;r versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 27</a>.</p>
+			<p>3) Wir verwenden die Standard-Versnummerierung der Forschung. Sp&auml;ter wird automatisch eine alternative, Handschrifteneigene konsekutive Nummerierung eingef&uuml;gt, die evtl. auch in der Edition dargestellt werden kann.</p>
+			<p>4) In der Excel-Datei &quot;Konkordanz"&quot; werden fehlende Verse gel&ouml;scht, zus&auml;tzliche Verse erg&auml;nzt, umgestellte Vers an die entsprechende Position gestellt und farbig markiert, damit eine &quot;Karte&quot; der Verse entstehen kann, die es sp&auml;ter erlaubt, parallele Verse auch parallel zu visualisieren.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="9">
+				<li>
+					<h2><a id="Wort_Spatium"></a>Wort, Spatium, Zusammen- und Getrenntschreibung</h2>
+			</ol>
+			<p>1) Jedes linguistische Wort wird getaggt mit dem Element <span class="blue">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort f&uuml;hrt eine <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>) mit der Struktur &quot;Element_Versnummer_laufende Nummer&quot;, z.B.: <span class="yellow">@xml:id=</span><span class="brown">&quot;w_765_1&quot;</span> (=erstes Element <span class="blue">&lt;w&gt;</span> im Vers 765).</p>
+			<p>2) Zwischen zwei Worten steht in der Regel ein Spatium. Spatien werde getaggt mit dem Element <span class="blue">&lt;c&gt;&nbsp;&lt;/c&gt;</span>, dessen Inhalt ein Spatium ist. Werden zwei Worte in der Hs. zusammen geschrieben, bleibt das Spatium in der Transkription weg, kann in der Edition aber erg&auml;nzt werden (&rarr; <a href="#Spatien_editorisch">Kap. 35</a>). Bei der Tilgung und Erg&auml;nzung ganzer Worte in der Handschrift muss im Code jeweils ein Spatium getilgt bzw. erg&auml;nzt werden, damit bei der Darstellung die Worte nicht zusammen geschrieben erscheinen. Z.B.:</p>
+			<p><span class="blue">&lt;w&gt;</span>Swer<span class="blue">&lt;/w&gt;&lt;w&gt;</span>an<span class="blue">&lt;/w&gt;&lt;add&gt;&lt;w&gt;</span>rehte<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;&lt;w&gt;</span>g&uuml;ete<span class="blue">&lt;/w&gt;</span></p>
+			<p>3) Bei Worttrennung am Zeilenende wird an der entsprechenden Stelle innerhalb des Wortes das <span class="blue">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingef&uuml;gt, sowie mit dem Attribut <span class="yellow">@break=</span><span class="brown">&quot;no&quot;</span>. Gibt es ein Trennungszeichen, wird dieses als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) erfasst, mit dem Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span>, darin das Trennungszeichen. Z.B.:</p>
+			<p><span class="blue">&lt;lb</span><span class="yellow"> n=</span><span class="brown">&quot;26&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;</span>vr&uuml;me<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span><span class="blue">&gt;</span>&#11799;<span class="blue">&lt;/metamark&gt;&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;27&quot;</span>
+				<span class="yellow">break=</span><span class="brown">&quot;no&quot;</span><span class="blue">/&gt;</span>keit<span class="blue">&lt;/w&gt;</span></p>
+			<p>4) Zusammen- und Getrenntschreibung ist in Handschriften bei weitem nicht immer eindeutig. Im Zweifelsfall werden die Worte so erfasst, wie es die W&ouml;rterb&uuml;cher vorsehen: stehen zwei verschiedene Worte nahe beieinander, sind aber nicht eindeutig zusammengeschrieben, transkribieren wir sie als getrennt; sind innerhalb eines Wortes zwei Buchstaben ein klein wenig voneinander entfernt, ohne dass es sich aber um eine eindeutige Getrenntschreibung handelt, wird das Wort zusammengeschrieben. Dies zu entscheiden, liegt im Ermessen des Transkribenden.</p>
+			<p>5) Bei deutlicher Getrenntschreibung innerhalb eines grammatischen Wortes (z.B. bei Verbpr&auml;fixen) wird das Wort als solches in einem einzigen <span class="blue">&lt;w&gt;</span>-Element erfasst und die Trennung mit einem Spatium markiert, das jedoch f&uuml;r die Editionsansicht gel&ouml;scht wird:</p>
+			<p><span class="blue">&lt;w&gt;</span>ge<span class="blue">&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;</span>lesen<span class="blue">&lt;/w&gt;</span>
+			</p>
+			<p>Umgekehrt gilt: Bei eindeutiger Zusammenschreibung zweier Worte werden beide als getrennte Tokens erfasst. Ihre Zusammenschreibung in der Handschrift wird dadurch gekennzeichnet, dass kein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> zwischen den beiden Tokens steht. Will man in der Edition die beiden Worte getrennt erscheinen lassen, kann man das Spatium editorisch hinzuf&uuml;gen:</p>
+			<p><span class="blue">&lt;w&gt;</span>ze<span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;</span>lesen<span class="blue">&lt;/w&gt;</span></p>
+			<p>6) Besondere Regeln f&uuml;r die Tokenisierung:</p>
+			<ul>
+				<li>
+					<p>Wir definieren nach linguistischen Kriterien, was ein Wort ist. Im Zweifelsfall richten wir uns nach den W&ouml;rterb&uuml;chern.</p>
+				<li>
+					<p>Pronominaladverbien und trennbare Verbpr&auml;fixe werden immer getrennt. Beispiele:</p>
+			</ul>
+			<p style="margin-left: 0.98in">daran &rarr; <span class="blue">&lt;w&gt;</span>dar<span class="blue">&lt;/w&gt;&lt;w&gt;</span>an<span class="blue">&lt;/w&gt;</span><br /> warumbe &rarr; <span class="blue">&lt;w&gt;</span>war<span class="blue">&lt;/w&gt;&lt;w&gt;</span>umbe<span class="blue">&lt;/w&gt;</span><br /> abebrechen &rarr; <span class="blue">&lt;w&gt;</span>abe<span class="blue">&lt;/w&gt;&lt;w&gt;</span>brechen<span class="blue">&lt;/w&gt;</span></p>
+			<ul>
+				<li>
+					<p>Bei Kontraktionen (Proklise, Enklise und Krasis) werden die Worte ebenfalls getrennt:</p>
+					<ul>
+						<li>
+							<p>Geh&ouml;rt der Vokal im Bereich der Krasis eindeutig (auch) zu dem zweiten Wort, so wird vor ihm getrennt; geh&ouml;rt er nur zu dem ersten Wort, wird nach ihm getrennt. Beispiele:</p>
+					</ul>
+					<p style="margin-left: 0.58in">sageter &rarr; <span class="blue">&lt;w&gt;</span>saget<span class="blue">&lt;/w&gt;&lt;w&gt;</span>er<span class="blue">&lt;/w&gt;</span> (&lt; <i>sagete er</i>)<br /> zen &rarr; <span class="blue">&lt;w&gt;</span>z<span class="blue">&lt;/w&gt;&lt;w&gt;</span>en<span class="blue">&lt;/w&gt;</span> (&lt; <i>ze den</i>)<br /> zun&nbsp;&rarr;&nbsp;<span class="blue">&lt;w&gt;</span>zu<span class="blue">&lt;/w&gt;&lt;w&gt;</span>n<span class="blue">&lt;/w&gt;</span>&nbsp;(&lt;&nbsp;<i>zuo den</i>)</p>
+					<ul>
+						<li>
+							<p style="margin-bottom: 0in; line-height: 100%">Geh&ouml;rt ein Konsonant im Bereich der Krasis eindeutig (auch) zu dem ersten Wort, so wird nach ihm getrennt; geh&ouml;rt er nur zur zweiten Form, so wird vor ihm getrennt. Beispiele:</p>
+					</ul>
+					<p style="margin-left: 0.58in">mirz &rarr; <span class="blue">&lt;w&gt;</span>mir<span class="blue">&lt;/w&gt;&lt;w&gt;</span>z<span class="blue">&lt;/w&gt;</span>(&lt; <i>mir ez</i>)<br /> alsi&nbsp;&rarr;&nbsp;<span class="blue">&lt;w&gt;</span>als<span class="blue">&lt;/w&gt;&lt;w&gt;</span>i<span class="blue">&lt;/w&gt;</span>&nbsp;(&lt;&nbsp;<i>alse si</i>).</p>
+					<ul>
+						<li>
+							<p>Dreifache Kontraktion:</p>
+					</ul>
+					<p style="margin-left: 0.58in">destwar &rarr; <span class="blue">&lt;w&gt;</span>de<span class="blue">&lt;/w&gt;&lt;w&gt;</span>st<span class="blue">&lt;/w&gt;&lt;w&gt;</span>war<span class="blue">&lt;/w&gt;</span> (ebenso auch f&uuml;r <i>deiswar</i> oder <i>deswar</i>)</p>
+					<ul>
+						<li>
+							<p>Bei Kontraktion mit dem Pronomen der 2. Pers. Sing <i>du</i> stellen wir das <i>t</i> oder <i>d</i> an der Grenze immer zum Personalpronomen.</p>
+					</ul>
+					<p style="margin-left: 0.58in"> mahtu&nbsp;&rarr;&nbsp;<span class="blue">&lt;w&gt;</span>mah<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> mustu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>muos<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> soltu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>sol<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> bistu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>bis<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> magstu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>mags<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> sagestu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>sages<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span><br /> wellestu &rarr;&nbsp;<span class="blue">&lt;w&gt;</span>welles<span class="blue">&lt;/w&gt;&lt;w&gt;</span>tu<span class="blue">&lt;/w&gt;</span></p>
+				</li>
+			</ul>
+			<p>
+				<br />
+			</p>
+			<ol start="10">
+				<li>
+					<h2><a id="Grapheme_Majuskeln"></a>Grapheme und Majuskeln</h2>
+			</ol>
+			<p>1) Obwohl alle Zeichen so exakt wir m&ouml;glich transkribiert werden sollen, ist eine Transkription nicht die exakte Reproduktion der Handschrift. Wir &uuml;bertragen mit der Hand geschriebene Texte in eine mechanische Schrift. Das bedeutet, dass ein variables und polymorphes zu einem einf&ouml;rmigen Zeichensystem vereinfacht und vereinheitlicht wird. Wir reproduzieren also nicht die verschiedenen Allographen der Handschriften (unterschiedliche Formen von <i>z, d, r, s</i> usw.), sondern schreiben immer nur die entsprechenden Grapheme neuzeitlicher Druckschrift. Einzige Ausnahme ist das Schaft-s &quot;&#383;&quot;, weil dies oft schon von mittelalterlichen Schreiben mit &quot;f&quot; verwechselt wurde. Es kann bei der Textprozessierung leicht zu &quot;s&quot; normalisiert werden.</p>
+			<p>2) Majuskeln von Minuskeln zu unterscheiden, ist vor allem in sp&auml;teren Handschriften nicht leicht. Eine Majuskel sollte einen anderen Schriftzug haben als die entsprechende Minuskel (wie heute in aA bB dD eE fF gG). Aber auch so ist es manchmal schwierig, weil Grapheme, die wir als Majuskeln transkribieren w&uuml;rden, pl&ouml;tzlich im Wortinneren erscheinen. Da wir die mittelalterlichen Grapheme nicht reproduzieren, transkribieren wir sinnweise: nur klare Majuskeln am Wortanfang werden als solche erfasst; alles andere sind Minuskeln. Ausgenommen sind alle <i>litterae notabiliores</i>, also Initialen, rubrizierte Versanf&auml;nge und sonstige hervorgehobene Anfangsbuchstaben, die wir immer als Majuskeln transkribieren.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="11">
+				<li>
+					<h2><a id="Diakritika"></a>Sonderzeichen, Diakritika und Superskripte</h2>
+			</ol>
+			<p>Diakritika und Superskripte werden mit Entities erfasst. Entities sind Platzhalter f&uuml;r bestimmte Zeichen, die es erlauben, diese schnell wiederzufinden oder zu normalisieren. Auch k&ouml;nnen sie variabel dargestellt werden. Hier kann die <a href="./Zeichenliste_HvA_digital.pdf" target="_blank">Liste der Sonderzeichen</a> eingesehen werden. Entities kommen auch als Abk&uuml;rzungszeichen zum Einsatz (&rarr; <a href="#Abkuerzungen">Kap. 25</a>). Bei Sonderzeichen, die als Metamarks (&rarr; <a href="#Metamarks">Kap. 16</a>) gelten, gibt es ebenfalls eine <a href="./Metamarks_list.pdf" target="_blank">Liste</a>.</p>
+			<p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht &uuml;ber die Sidebar &quot;Entities&quot; eingeben: Men&uuml; &rarr; Window &rarr; Schow View &rarr; Entities.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="12">
+				<li>
+					<h2><a id="Initialen"></a>Initialen</h2>
+			</ol>
+			<p>1) Initialen werden getaggt mit dem Element <span class="blue">&lt;hei:initial&gt;</span>. Sie f&uuml;hren drei Attribute:<br /> a) <span class="yellow">@rendition</span>, das den Initialentypus bezeichnet; dessen h&auml;ufigster Wert ist <span class="brown">&quot;hc:Lombard&quot;</span>, doch das Schema sieht unter anderem auch vor: <span class="brown">&quot;hc:FlourishInitial&quot;</span> (Fleuronn&eacute;-Initiale), <span class="brown">&quot;hc:SilhouetteInitial&quot;</span> (Silhouetten-Initiale), <span class="brown">&quot;hc:ScrollworkInitial&quot;</span> (Rankeninitiale), <span class="brown">&quot;hc:SpaltleistenInitial&quot;</span> (Spaltleisteninitiale), <span class="brown">&quot;hc:FigureInitial&quot;</span> (Figureninitiale), <span class="brown">&quot;hc:AnthropomorphicInitial&quot;</span> (anthropomorphe Initiale), <span class="brown">&quot;hc:ZoomorphicInitial&quot;</span> (Tierinitiale), <span class="brown">&quot;hc:HistoriatedInitial&quot;</span> (historisierte Initiale);<br /> b) <span class="yellow">@hei:color</span>, das die Farbe bestimmt, z.B. <span class="brown">&quot;Red&quot;</span>, <span class="brown">&quot;Blue&quot;</span>, <span class="brown">&quot;Gold&quot;</span>; und <br /> c) <span class="yellow">@hei:heightLines</span>, das die H&ouml;he der Initiale in Zeilen angibt, dessen Wert also eine volle Zahl ist. </p>
+			<p>2) Vorgezeichnete, aber nicht ausgef&uuml;hrte Initialen, die in Form, Format und Platzierung aber bereits die Initiale zeigen, werden wie normale Initialen erfasst, erhalten aber zus&auml;tzlich in <span class="yellow">@rendition</span> den Wert: <span class="brown">&quot;hc:Sketch&quot;</span>. Dieser ist kompatibel mit den anderen Attributwerten, z.B. <span class="brown">&quot;hc: Sketch hc:Lombard&quot;</span>.</p>
+			<p>3) Nicht ausgef&uuml;hrte Initialen, f&uuml;r die Raum freigelassen wurde oder die am Spaltenrand zu stehen hatten, werden mit einer besonderen <span class="blue">&lt;choice&gt;</span>-Konstruktion erfasst: in deren Kindelement <span class="blue">&lt;orig&gt;</span> steht ein leeres Element <span class="blue">&lt;space/&gt;</span> f&uuml;r den Freiraum (optional kann dieses <span class="blue">&lt;space&gt;</span> auch ein Element <span class="blue">&lt;desc&gt;</span> f&uuml;r die freie Beschreibung eines Ph&auml;nomens enthalten); anstatt eines <span class="blue">&lt;reg&gt;</span> steht hier das Element <span class="blue">&lt;supplied&gt;</span>, mit dem Kindelement <span class="blue">&lt;hei:initial&gt;</span> (&rarr; <a href="#Initialen">Kap. 12</a>), ohne Attribute. </p>
+			<p>
+				<i>Beispiel:</i>
+				<br />
+			<p><span class="blue">&lt;hei:cue</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:CueInitial&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:Inspace&quot;</span><span class="blue">&gt;</span>s<span class="blue">&lt;/hei:cue&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;orig&gt;</span><br />
+				<span class="blue">&lt;space</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:BlankAreaLeftForInitial&quot;</span>
+				<span class="yellow">unit=</span><span class="brown">&quot;character&quot;</span>
+				<span class="yellow">quantity=</span><span class="brown">&quot;1&quot;</span>
+				<span class="yellow">hei:indents=</span><span class="brown">&quot;4&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue"> &lt;desc</span>
+				<span class="yellow">xml:lang=</span><span class="brown">&quot;de&quot;</span><span class="blue">&gt;</span>Aussparung f&uuml;r Initiale<span class="blue">&lt;/desc&gt;</span><br />
+				<span class="blue">&lt;/space&gt;</span><br />
+				<span class="blue">&lt;/orig&gt;</span><br />
+				<span class="blue">&lt;supplied&gt;&lt;hei:initial&gt;</span>S<span class="blue">&lt;/hei:initial&gt;&lt;/supplied&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span>wer<br />
+				<span class="blue">&lt;/w&gt;</span></p>
+			<p>4) Manche Hs. setzen anstatt Initialen oder in Abwechslung mit ihnen ein Paragraphenzeichen oder Pilcrow. Sie werden getaggt als <span class="blue">&lt;label&gt;</span> mit dem Attribut <span class="yellow">ana=</span><span class="brown">&quot;hc:SectionMarker&quot;</span> und dem Attribut <span class="yellow">hei:PlaceRef</span>. Das Paragraphenzeichen muss im Element <span class="blue">&lt;c&gt;</span> stehen:</p>
+			<p><span class="blue">&lt;label</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:SectionMarker&quot;</span>
+				<span class="yellow">hei:PlaceRef=</span><span class="brown">&quot;hc:PageMarginLeft&quot;</span><span class="blue">&gt;&lt;c&gt;</span>&para;<span class="blue">&lt;/c&gt;&lt;/label&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="13">
+				<li>
+					<h2><a id="hei:cue"></a>Anweisungszeichen f&uuml;r Initialen</h2>
+			</ol>
+			<p>Die Anweisungen f&uuml;r Initialen sind keine Metamarks, weil sie ja Buchstaben sind. F&uuml;r sie wurde das Elemene <span class="blue">&lt;hei:cue&gt;</span> geschaffen. Wir setzen das Element immer unmittelbar vor das Wort, das die Initiale enth&auml;lt, auf die das Zeichen verweist. Wir versehen es mit einem Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:CueInitial&quot;</span> und einem Attribut <span class="yellow">@hei:PlaceRef</span>, dessen Wert meist <span class="brown">&quot;hc:InSpace&quot;</span> oder <span class="brown">&quot;hc:PageMarginLeft&quot;</span> bzw. <span class="brown">&quot;hc:PageMarginRight&quot;</span> sein wird, der aber auch ein anderer sein kann (&rarr; <a href="#del_add">Kap. 18</a>).<br /> Der Buchstabe steht in einem Kindelement <span class="blue">&lt;c&gt;.</span></p>
+			<p><span class="blue">&lt;hei:cue</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:CueInitial&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:InSpace&quot;</span><span class="blue">&gt;&lt;c&gt;</span>d<span class="blue">&lt;/c&gt;&lt;/hei:cue&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="14">
+				<li>
+					<h2><a id="Hervorhebungen"></a>Hervorhebungen</h2>
+			</ol>
+			<p>1) Hervorhebung durch farbige Schrift wird getaggt mit dem Element <span class="blue">&lt;hi&gt;</span> mit dem Attribut <span class="yellow">@hei:color</span> und den Werten <span class="brown">&quot;Red&quot;</span>, <span class="brown">&quot;Green&quot;</span>, <span class="brown">&quot;Blue&quot;</span> etc. Ist ein ganzes Wort farbig geschrieben, steht das Element <span class="blue">&lt;hi&gt;</span> au&szlig;erhalb des <span class="blue">&lt;w&gt;</span>-Elements, ebenso bei mehreren W&ouml;rtern.</p>
+			<p>2) Hervorhebung der Versanf&auml;nge durch rote Striche (typisch f&uuml;r Papierhandschriften) wird ebenfalls getaggt mit <span class="blue">&lt;hi&gt;</span>; diesmal kommt das Attribut <span class="yellow">@rendition</span> ins Spiel, mit dem Wert <span class="brown">&quot;hc:RedStroke&quot;</span>, in manchen F&auml;llen auch <span class="brown">&quot;hc:RedRetrace&quot;</span>. Hervorgehobene Buchstaben am Versanfang werden als Majuskeln transkribiert.</p>
+			<p>3) Hervorhebung der Versanf&auml;nge durch Herausr&uuml;cken der Anfangsbuchstaben in die Versalienspalte wird ebenfalls getaggt mit <span class="blue">&lt;hi&gt;</span> und dem Attribut <span class="yellow">@rendition</span>, doch in diesen F&auml;llen lautet der Attributwert <span class="brown">&quot;hc:Versal&quot;</span>.</p>
+			<p>4)Auf sp&auml;tere Unterstreichungen oder sonstige Hervorhebungen von moderneren H&auml;nden verweisen wir in <span class="blue">&lt;note&gt;</span> (&rarr; <a href="#Anmerkungen">Kap. 30</a>).</p>
+			<p>5) Kadellen (oder Cadellen) sind in normaler Tinte ausgeschm&uuml;ckte Buchstaben, die aber keine Initialen sind; sie leiten keine Abschnitte ein, sie stehen auch nicht an herausragender Stelle. Sie erscheinen meist in der obersten Zeile einer Spalte und m&uuml;ssen daher auch nicht immer der erste Buchstabe im Vers sein. Wir taggen sie mit dem Element <span class="blue">&lt;hi&gt;</span>, dem Attribut <span class="yellow">@rendition</span> und dem Wert <span class="brown">&quot;hc:Cadel&quot;</span>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="15">
+				<li>
+					<h2><a id="Zeichensetzung_Hs"></a>Zeichensetzung der Handschrift</h2>
+			</ol>
+			<p>1) Als Satzzeichen taggen wir (mit <span class="blue">&lt;pc&gt;</span>) Zeichen, die in irgendeiner Form eine sprachliche oder syntaktische Bedeutung haben. Das sind in der Regeln Virgeln &quot;/&quot; oder vor allem Reimpunkte &quot;&middot;&quot; (Punkt auf Mitte). Wir setzen das Satzzeichen <i>vor</i> das Spatium zwischen zwei Worten:</p>
+			<p><span class="blue">&lt;w/&gt;</span><br />
+				<span class="blue">&lt;pc&gt;</span>&middot;<span class="blue">&lt;/pc&gt;</span><br />
+				<span class="blue">&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="blue">&lt;w/&gt;</span></p>
+			<p>Am Ende eines Verses, wenn der folgende Vers mit einer neuen <span class="blue">&lt;lb&gt;</span> beginnt, ist kein Spatium hinter dem <span class="blue">&lt;pc&gt;</span> n&ouml;tig.</p>
+			<p>2) Satzzeichen werden individuell erfasst, so dass zwei evtl. aufeinander folgende Zeichen in zwei unterschiedlichen Tags <span class="blue">&lt;pc&gt;</span> stehen. <span class="blue">&lt;pc&gt;</span>.<span class="blue">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="blue">&lt;/pc&gt;</span><br /> Zur editorischen Behandlung von Satzzeichen &rarr; <a href="#Zeichensetzung_editorisch">Kap. 34</a>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="16">
+				<li>
+					<h2><a id="Metamarks"></a>Metazeichen</h2>
+			</ol>
+			<p>1) Metazeichen sind weder Buchstaben noch Satzzeichen. Das k&ouml;nnen Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="blue">&lt;metamark&gt;</span> und f&uuml;hren das Attribut <span class="yellow">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="brown">&quot;hc:Hyphen&quot;</span>(Trennstrich, &rarr; <a href="Wort_Spatium">Kap. 9.3</a>), <span class="brown">&quot;hc:RunOverMark&quot;</span> (Zeilenanschlusszeichen), <span class="brown">&quot;hc:WordDivider&quot; </span>(Worttrenner), <span class="brown">&quot;hc:CorrectionMark&quot;</span> (Korrekturzeichen), <span class="brown">&quot;hc:InsertionMark&quot;</span> (Einweisungszeichen), <span class="brown">&quot;hc:TranspositionMark&quot;</span> (Umstellungszeichen), <span class="brown">&quot;hc:ReferenceMark&quot;</span> (Verweiszeichen), <span class="brown">&quot;hc:TokenMark&quot;</span> (Token-Marker), <span class="brown">&quot;hc:DecorativeMark&quot;</span> (Ziermarker), <span class="brown">&quot;hc:LineDelimiter&quot;</span> (Zeilenabgrenzungszeichen), <span class="brown">&quot;hc:CueNumeral&quot;</span> (Anweisung f&uuml;r Nummer).<br /> Ein Token-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>.</p>
+			<p>2) Metamarks k&ouml;nnen au&szlig;erdem das Attribut <span class="yellow">@hei:PlaceRef</span> f&uuml;hren.</p>
+			<p>3) Die Liste und die Anwendungen der Metazeichen findet sich <a href="">hier</a>.</p>
+			<p>4) Im Unterschied zu Trennungszeichen oder anderen Marken, die im Schreibprozess entstanden, stehen Einweisungszeichen zus&auml;tzlich im Element <span class="blue">&lt;add&gt;</span> (&rarr; <a href="#del_add">Kap. 18</a>), wobei in diesen F&auml;llen das Attribut <span class="yellow">@hei:PlaceRef</span> am <span class="blue">&lt;add&gt;</span> steht:</p>
+			<p><span class="blue">&lt;w&gt;</span>Hu<span class="blue">&lt;add </span><span class="yellow">hei:PlaceRef=</span><span class="brown">&quot;hc:Below&quot;</span><span class="blue">&gt;&lt;metamark </span><span class="yellow">ana=</span><span class="brown">&quot;hc:InsertionMark&quot;</span><span class="blue">&gt;</span>,<span class="blue">&lt;/metamark&gt;</span><span class="blue">&lt;/add&gt;</span><span class="blue">&lt;add </span><span class="yellow">hei:PlaceRef=</span><span class="brown">&quot;hc:Above&quot;</span><span class="blue">&gt;&lt;metamark </span><span class="yellow">ana=</span><span class="brown">&quot;hc:InsertionMark&quot;</span><span class="blue">&gt;</span>,<span class="blue">&lt;/metamark&gt;</span>n<span class="blue">&lt;/add&gt;</span>d<span class="blue">&lt;/w&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="17">
+				<li>
+					<h2><a id="xml:id_target"></a>@xml:id und @target</h2>
+			</ol>
+			<p>Elemente, die markiert werden sollen, um an anderer Stelle auf sie zu verweisen, werden mit einer <span class="yellow">@xml:id</span> versehen. Der Wert des Attributs muss eine in der Datei einzigartige Zeichenkette sein, <span class="yellow">xml:id</span>s d&uuml;rfen sich also nicht wiederholen. Zur Einheitlichkeit w&auml;hlen wir folgenden Aufbau von <span class="yellow">@xml:id</span>s: &quot;Element_Versnummer_laufendeNummer&quot;. So w&auml;re z.B. eine <span class="yellow">@xml:id=</span><span class="brown">&quot;w_765_1&quot;</span> sofort erkennbar als Element 'Wort', Vers 765, erstes Wort des Verses. Prinzipiell tragen alle W&ouml;rter (<span class="blue">&lt;w&gt;</span>) und Verse (<span class="blue">&lt;l&gt;</span>) <span class="yellow">xml:id</span>s.<br /> IDs, die sich nicht auf Bereiche des Textes beziehen, haben allerdings eine andere Struktur, &rarr; <a href="#Faksimile">Kap. 3</a>.</p>
+			<p> Auf <span class="yellow">@xml:id</span>s wird verwiesen mit dem Attribut <span class="yellow">@target</span>, dessen Wert die <span class="yellow">xml:id</span> des Elements ist, auf das verwiesen wird, mit einer Raute davor, z.B.: <span class="yellow">@target=</span><span class="brown">&quot;#w_765_1&quot;</span>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="18">
+				<li>
+					<h2><a id="del_add"></a>Hinzuf&uuml;gungen, Streichungen, Substitutionen</h2>
+			</ol>
+			<p>1) Das Element <span class="blue">&lt;del&gt;</span> taggt eine Streichung. Die Art der Streichung wird durch das Attribut <span class="yellow">@rendition</span> angegeben, dessen Wert je nach Fall sein kann: <span class="brown">&quot;hc:Erased&quot;</span> (radiert), <span class="brown">&quot;hc:Strikethrough&quot;</span> (durchgestrichen), <span class="brown">&quot;hc:RedStrikethrough&quot;</span> (rot durchgestrichen), <span class="brown">&quot;hc:Overwritten&quot;</span> (&uuml;berschrieben), <span class="brown">&quot;hc:Overpainted&quot;</span> (&uuml;bermalt), <span class="brown">&quot;hc:Underlined&quot;</span> (unterstrichen), <span class="brown">&quot;hc:Underdotted&quot;</span> (unterpungiert), <span class="brown">&quot;hc:Overdotted&quot;</span> (&uuml;berpungiert), <span class="brown">&quot;hc:Adapted&quot;</span> (angepasst). Die Attributwerte sind kombinierbar.</p>
+			<p>2) Hinzuf&uuml;gungen werden getaggt als <span class="blue">&lt;add&gt;</span>. Das Attribut <span class="yellow">@hei:placeRef</span> gibt an, wo diese Hinzuf&uuml;gung steht: <span class="brown">&quot;hc:AboveLine&quot;</span>, <span class="brown">&quot;hc:BelowLine&quot;</span>, <span class="brown">&quot;hc:Inline&quot;</span>, <span class="brown">&quot;hc:PageMarginLeft&quot;</span>, <span class="brown">&quot;hc:PageMarginRight&quot;</span>, <span class="brown">&quot;hc:ColumnMarginLeft&quot;</span>, <span class="brown">&quot;hc:ColumnMarginRight&quot;</span>. Es gibt weitere Werte (&rarr; <a href="./heiEDITIONS_Kurzdoku.pdf" target="_blank">KurzDoku 5.14</a>).</p>
+			<p>3) Eine Substitution liegt dann vor, wenn ein Schreiber etwas Geschriebenes streicht und durch etwas Anderes ersetzt. Ein Element <span class="blue">&lt;subst&gt;</span> enth&auml;lt <i>zwangsm&auml;&szlig;ig und ausschlie&szlig;lich</i> die Elemente <span class="blue">&lt;del&gt;</span> und <span class="blue">&lt;add&gt;</span>. Die Attribute f&uuml;r <span class="blue">&lt;del&gt;</span> und <span class="blue">&lt;add&gt;</span> sind die oben angegebenen. Es gibt einen besonderen Fall: wenn ein Buchstabe nicht gestrichen sondern durch &Uuml;berschreibung angepasst wurde, f&uuml;hren beide Elemente das Attribut <span class="yellow">@rendition</span> mit dem Wert <span class="brown">&quot;hc:Adapted&quot;</span>.</p>
+			<p>
+				<i>Beispiele:</i>
+			</p>
+			<ul>
+				<li>
+					<p>Buchstabe im Wort hinzugef&uuml;gt: <span class="blue">&lt;w&gt;</span>so<span class="blue">&lt;add</span>
+						<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span><span class="blue">&gt;</span>l<span class="blue">&lt;/add&gt;&lt;/w&gt; </span>(&rarr; <a href="#del_add">Kap. 19.1</a>)</p>
+				</li>
+				<li>
+					<p>Buchstabe im Wort gestrichen: <span class="blue">&lt;w&gt;</span>leit<span class="blue">&lt;del</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Underlined&quot;</span><span class="blue">&gt;</span>e<span class="blue">&lt;/del&gt;&lt;/w&gt;</span></p>
+				</li>
+				<li>
+					<p>Buchstabe im Wort ersetzt: <span class="blue">&lt;w&gt;</span>w<span class="blue">&lt;subst&gt;&lt;del</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Underdotted</span>
+						<span class="brown">hc:Overdotted&quot;</span><span class="blue">&gt;</span>o<span class="blue">&lt;/del&gt; &lt;add</span>
+						<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span><span class="blue">&gt;</span>a<span class="blue">&lt;/add&gt;&lt;/subst&gt;</span>rt<span class="blue">&lt;/w&gt;</span></p>
+				</li>
+				<li>
+					<p>Buchstabe im Wort ersetzt: <span class="blue">&lt;w&gt;</span>w<span class="blue">&lt;subst&gt;&lt;del</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Adapted&quot;</span><span class="blue">&gt;</span>o<span class="blue">&lt;/del&gt;&lt;add</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Adapted&quot;</span><span class="blue">&gt;</span>a<span class="blue">&lt;/add&gt;&lt;/subst&gt;</span>rt<span class="blue">&lt;/w&gt;</span></p>
+				</li>
+				<li>
+					<p>Wort gestrichen: <span class="blue">&lt;del</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Strikethrough&quot;</span><span class="blue">&gt;&lt;w&gt;</span>&uuml;berfl&uuml;ssig<span class="blue">&lt;/w&gt;&lt;/del&gt;</span></p>
+				</li>
+				<li>
+					<p>Wort hinzugef&uuml;gt: <span class="blue">&lt;add</span>
+						<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:ColumnMarginRight&quot;</span><span class="blue">&gt;&lt;w&gt;</span>neu<span class="blue">&lt;/w&gt;&lt;/add&gt;</span></p>
+				</li>
+				<li>
+					<p>Wort(e) ersetzt: <span class="blue">&lt;subst&gt;&lt;del</span>
+						<span class="yellow">rendition=</span><span class="brown">&quot;hc:Erased&quot;</span><span class="blue">&gt;&lt;w&gt;</span>falsche<span class="blue">&lt;/w&gt;&lt;w&gt;</span>W&ouml;rter<span class="blue">&lt;/w&gt;&lt;/del&gt;&lt;add</span>
+						<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:Superimposed&quot;</span><span class="blue">&gt;&lt;w&gt;</span>richtige<span class="blue">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="blue">&lt;/w&gt;&lt;/add&gt;&lt;/subst&gt;</span></p>
+				</li>
+			</ul>
+			<p>4) Tags, die ganze W&ouml;rter betreffen, sollten nach M&ouml;glichkeit au&szlig;erhalb des <span class="blue">&lt;w&gt;</span>-Tags stehen, wie die Beispiele zeigen.</p>
+			<p>5) Bei ganzen W&ouml;rtern geh&ouml;rt auch ein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> in <span class="blue">&lt;del&gt;</span> oder <span class="blue">&lt;add</span>&gt;, damit die Darstellung korrekt bleibt:</p>
+			<p><span class="blue">&lt;subst&gt;</span><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Erased&quot;</span><span class="blue">&gt;&lt;w&gt;</span>falsche<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>W&ouml;rter<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/del&gt;</span><br />
+				<span class="blue"> &lt;add</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span><span class="blue">&gt;&lt;w&gt;</span>richtige<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Worte<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;</span><br />
+				<span class="blue">&lt;/subst&gt;</span></p>
+			<p>6) Hinzuf&uuml;gungen und Streichungen ganzer Verse werden nicht mit <span class="blue">&lt;del&gt;</span> oder <span class="blue">&lt;add&gt;</span> getaggt, sondern mit <span class="blue">&lt;delSpan&gt;</span> und <span class="blue">&lt;addSpan&gt;</span>; wie alle &sbquo;span&lsquo;-Elemente sind sie leer, ein <span class="blue">&lt;anchor&gt;</span>-Element markiert das Ende des Gestrichenen:</p>
+			<p><span class="blue">&lt;addSpan</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:ColumnMarginLeft&quot;</span>
+				<span class="yellow">spanTo=</span><span class="brown">&quot;#f_addSpan_7657_1&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;7657&quot;</span><span class="blue">&gt;</span><br /> &lt;<span class="blue">w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				<span class="blue"> &lt;/l&gt;</span><br />
+				<span class="blue">&lt;anchor</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;f_addSpan_7657_1&quot;</span><span class="blue">/&gt;</span></p>
+			<p>7) Gibt es <i>keine</i> Anzeichen daf&uuml;r, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein St&uuml;ck Text wiederholt (und damit &uuml;berfl&uuml;ssig) ist, eine editorische. In diesen F&auml;llen taggen wir die zweite Sequenz der Wiederholung als <span class="blue">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 32</a>); <span class="blue">&lt;subst&gt;</span> und <span class="blue">&lt;add&gt;</span> fallen weg:</p>
+			<p><span class="blue">&lt;w&gt;</span>wiederholte<span class="blue">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="blue">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>Worte<span class="blue">&lt;/w&gt;&lt;/surplus&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="19">
+				<li>
+					<h2><a id="del_add_Tokenisierung"></a>Hinzuf&uuml;gungen / Streichungen und Tokenisierung</h2>
+			</ol>
+			<p>1) Manchmal f&uuml;hrt die Korrektur des Autors zu einem neuen Wort. Z.B. <i>so</i><sup><i>l</i></sup>:</p>
+			<p><span class="blue">&lt;w&gt;</span>so<span class="blue">&lt;add</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span><span class="blue">&gt;</span>l<span class="blue">&lt;/add&gt;&lt;/w&gt;</span></p>
+			<p>Meist wollen wir in solchen F&auml;llen nur das Ergebnis tokenisieren. In besonderen F&auml;llen aber, z.B. weil die Verschreibung interessant und vielsagend ist oder weil die Korrektur offensichtlich erst bei einer &Uuml;berarbeitung stattgefunden hat, lie&szlig;en sich auch zwei Tokens innerhalb einer <span class="blue">&lt;choice&gt;</span>-Konstruktion setzen; das zweite bleibt leer und verweist auf das erste:</p>
+			<p>Beispiel 1: <i>so</i> &rarr; <i>sol</i><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;w </span><span class="yellow">xml:id=</span><span class="brown">&quot;w_123_1&quot;</span><span class="blue">&gt;</span>so<br />
+				<span class="blue">&lt;add </span><span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_123_2&quot;</span><span class="blue">&gt;</span>l<span class="blue">&lt;/add&gt;</span><br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_123_2&quot;</span>
+				<span class="yellow">copyOf=</span><span class="brown">&quot;# w_123_1&quot;</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>Beispiel 2: <i>hundes &rarr; bundes</i><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_1234_1&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Strikethrough&quot;</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_1234_1&quot;</span><span class="blue">&gt;</span>h<span class="blue">&lt;/del&gt;</span><br />
+				<span class="blue">&lt;add</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_1234_2&quot;</span><span class="blue">&gt;</span>b<span class="blue">&lt;/add&gt;</span><br />
+				<span class="blue"> &lt;/choice&gt;</span>undes<br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_1234_2&quot;</span><span class="yellow">copyOf=</span><span class="brown">&quot;# w_1234_1&quot;</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>2) Wo man kein <span class="blue">&lt;subst&gt;</span> einsetzen kann, weil das <span class="blue">&lt;del&gt;</span> und <span class="blue">&lt;add&gt;</span> nicht direkt adjazent sind, kommt <span class="blue">&lt;substJoin&gt;</span> zum Einsatz; <span class="blue">&lt;del&gt;</span> und <span class="blue">&lt;add&gt;</span> werden mit <span class="yellow">xml:id</span> ausgestattet und das <span class="blue">&lt;substJoin&gt;</span> setzt sie miteinander in Beziehung:</p>
+			<p>Beispiel 1: <strike><i>i</i></strike><i>hie</i> (das <i>h</i> stellt sich zwischen das <span class="blue">&lt;del&gt;</span> und das <span class="blue">&lt;add&gt;</span>)<br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_5276_5&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;del_5276_5_1&quot;</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Erased&quot;</span>
+				<span class="yellow">corresp</span><span class="brown">=&quot;#w_5276_5&quot;</span><span class="blue">&gt;</span>i<span class="blue">&lt;/del&gt;</span>h<br />
+				<span class="blue">&lt;add</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;add_5276_5_1&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:Inline&quot;</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_5276_6&quot;</span><span class="blue">&gt;</span>ie<span class="blue">&lt;/add&gt;</span><br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue"> &lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_5276_6&quot;</span>
+				<span class="yellow">copyOf=</span><span class="brown">&quot;#w_5276_5&quot;</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;substJoin</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#del_5276_5_1 #add_5276_5_1&quot;</span><span class="blue">&gt;&lt;/substJoin&gt;</span></p>
+			<p>Beispiel 2: <strike><i>ich d</i></strike><i>ir &rarr; yrs</i><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Strikethrough&quot;</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;del_162_3&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_162_3&quot;</span><span class="blue">&gt;</span>ich<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="blue">&lt;/del&gt;</span><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_162_4&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;del_162_4_1&quot;</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Strikethrough&quot; </span><span class="yellow">corresp=</span><span class="brown">&quot;#w_162_4&quot;</span><span class="blue">&gt;</span>d<span class="blue">&lt;/del&gt;</span><br />
+				<span class="blue">&lt;del</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;del_162_4_2&quot;</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Adapted&quot;</span>
+				<span class="yellow">corresp</span><span class="brown">=&quot;#w_162_4&quot;</span><span class="blue">&gt;</span>i<span class="blue">&lt;/del&gt;</span><br />
+				<span class="blue">&lt;add</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;add_162_4_1&quot;</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Adapted&quot;</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_162_5&quot;</span><span class="blue">&gt;</span>y<span class="blue">&lt;/add&gt;</span>r<br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_162_5&quot;</span>
+				<span class="yellow">copyOf=</span><span class="brown">&quot;#w_162_4&quot;</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;add</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;add_162_6&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:Inline&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_162_6&quot;</span><span class="blue">&gt;</span>s<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/add&gt;</span><br />
+				<span class="blue">&lt;substJoin</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#del_162_3 #del_162_4_1 #del_162_4_2 #add_162_4_1 #add_162_6&quot;</span><span class="blue">&gt;&lt;/substJoin&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="20">
+				<li>
+					<h2><a id="Zeilenspruenge"></a>Zeilenspr&uuml;nge im Versinneren und im Wortinneren</h2>
+			</ol>
+			<p>Bei Handschriften, die die Verse nicht absetzen, werden Zeilenspr&uuml;nge im Versinnern normal mit einem <span class="blue">&lt;lb&gt;</span>-Element mit seinem Attribut <span class="yellow">@n</span> an der entsprechenden Position markiert.</p>
+			<p>Dasselbe geschieht, wenn der Zeilensprung im Wortinneren stattfindet. In diesen F&auml;llen sollte am <span class="blue">&lt;lb&gt;</span> noch das Attribut <span class="yellow">@break</span> stehen, mit dem Wert <span class="brown">&quot;no&quot;</span>.</p>
+			<p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="blue">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span>), das vor dem <span class="blue">&lt;lb/&gt;</span> steht (&rarr; <a href="#Wort_Spatium">Kap. 9</a>.3, &rarr; <a href="#Zeichensetzung_Hs">Kap. 15</a>)</p>
+			<p>
+				<i>Beispiele:</i>
+			</p>
+			<p><span class="blue">&lt;w&gt;</span>min<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;4&quot; </span><span class="yellow">break=</span><span class="brown">&quot;no&quot;</span><span class="blue">/&gt;</span>ne<span class="blue">&lt;/w&gt;</span></p>
+			<p><span class="blue">&lt;w</span>
+				<span class="blue">&gt;</span>vol<span class="blue">&lt;/w&gt;&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span><span class="blue">&gt;</span>&#11799;<span class="blue">&lt;/metamark&gt;&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;4&quot; </span><span class="yellow">break=</span><span class="brown">&quot;no&quot;</span><span class="blue">/&gt;</span>get<span class="blue">&lt;/w&gt;</span></p>
+			<p>Dies ist kompatibel mit Spalten- oder Seitenumbr&uuml;chen. Dann stehen <i>vor</i> dem <span class="blue">&lt;lb/&gt;</span>-Element die entsprechenden Elemente <span class="blue">&lt;pb/&gt;</span> und <span class="blue">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7.1/2</a>).</p>
+			<p>
+				<br />
+			</p>
+			<ol start="21">
+				<li>
+					<h2><a id="Zeilenueberlauf"></a>Zeilen&uuml;berlauf</h2>
+			</ol>
+			<p>Wenn Teile des Versendes aus Platzgr&uuml;nden am Ende der vorangehenden oder folgenden Zeile vervollst&auml;ndigt wurden, sprechen wir von Zeilen&uuml;berlauf. Zeilen&uuml;berl&auml;ufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
+			<p>Gelangt dieser &Uuml;berlauf in eine Zeile, in der anderer, regul&auml;rer Text steht, bilden sich dadurch Zeilensegmente. Der &Uuml;berlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen &Uuml;berlauf innerhalb des Verses (<span class="blue">&lt;l&gt;</span>), zu dem er geh&ouml;rt, zeigen aber die Zugeh&ouml;rigkeit zu einer anderen Zeile <span class="blue">&lt;lb/&gt;</span> an.</p>
+			<p> Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regul&auml;ren Text handelt, der keine weitere Information ben&ouml;tigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem &Uuml;berlauf) markieren wir als Punkt (wie <span class="blue">&lt;lb&gt;</span> oder <span class="blue">&lt;pb&gt;</span>) mit <span class="blue">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="blue">&lt;l&gt;</span>) zu dem der Text geh&ouml;rt. Hierzu geh&ouml;rt ein Attribut <span class="yellow">@ana</span> mit 2 Werten: <span class="brown">&quot;hc:LineSegmentBeginning&quot;</span> und <span class="brown">&quot;hc:RunOverAbove&quot;</span> bzw. <span class="brown"> &quot;hc:RunOverBelow&quot;</span>. Au&szlig;erdem ein Attribut <span class="yellow">n=</span><span class="brown">&quot;2&quot;</span> mit der Nummer des Segments. Zus&auml;tzlich ist hier ein Attribut <span class="yellow">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="blue">&lt;lb&gt;</span>, nicht <span class="blue">&lt;l&gt;</span>!) der &Uuml;berlauf steht. Dadurch k&ouml;nnen auch &Uuml;berl&auml;ufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
+			<p>Oft wird die &Uuml;berhangzeile durch Striche vom Rest der Zeile getrennt oder mit der 'Mutterzeile' verbunden. Diese Zeichen werden als <span class="blue">&lt;metamark&gt;</span> getaggt; sie f&uuml;hren ein Attribut <span class="yellow">@ana</span> mit dem Wert <span class="brown">&quot;hc:RunOverMark&quot;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>)</p>
+			<p>Das ist alles kompatibel mit Worttrennung (&rarr; <a href="#Wort_Spatium">Kap. 9</a> und &rarr; <a href="#del_add_Tokenisierung">Kap. 19</a>)</p>
+			<p>
+				<i>Beispiele</i>
+			</p>
+			<p>1. Normaler Zeilen&uuml;berhang nach unten:</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;419&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;26&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue"> &lt;milestone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:LineSegmentBeginning hc:RunOverBelow&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;2&quot;</span>
+				<span class="yellow">hei:belongsToLine=</span>
+				<span class="brown">&quot;27&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;</span>
+				<span class="blue">&lt;/l&gt;</span>
+			</p>
+			<p>2. Doppelter Zeilen&uuml;berhang nach oben:</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;419&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;26&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue"> &lt;milestone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:LineSegmentBeginning hc:RunOverAbove&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;2&quot;</span>
+				<span class="yellow">hei:belongsToLine=</span>
+				<span class="brown">&quot;25&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue"> &lt;milestone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:LineSegmentBeginning hc:RunOverAbove&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;2&quot;</span>
+				<span class="yellow">hei:belongsToLine=</span>
+				<span class="brown">&quot;24&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue"> </span>
+				<span class="blue">&lt;w&gt;</span>
+				<br />
+				<span class="blue">&lt;/l&gt;</span>
+			</p>
+			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort_Spatium">Kap. 9.3</a>) und &Uuml;berlaufzeichen:</p>
+			<p><span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;419&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;26&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+				<span class="blue"> &lt;w&gt;</span>vr&uuml;me<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span><span class="blue">&gt;</span>&#11799;<span class="blue">&lt;/metamark&gt;</span><br />
+				<span class="blue"> &lt;milestone&gt;</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:LineSegmentBeginning hc:RunOverAbove&quot;</span>
+				<span class="yellow">n=</span><span class="brown">&quot;2&quot;</span>
+				<span class="yellow">hei:belongsToLine=</span><span class="brown">&quot;25&quot; </span><span class="yellow">break=</span><span class="brown">&quot;no&quot;</span><span class="blue">/&gt;&lt;metamark </span><span class="yellow">ana=</span><span class="brown">&quot;hc:RunOverMark&quot;</span><span class="blue">&gt;</span>|<span class="blue">&lt;/metamark&gt;</span>keit<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/l&gt;</span></p>
+			<p>4. Steht der Zeilen&uuml;berlauf in der nachfolgenden Zeile, regul&auml;r ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilen&uuml;berlauf gesprochen werden; wir taggen einfach mit <span class="blue">&lt;lb&gt;</span> innerhalb von <span class="blue">&lt;l&gt;</span>. Wird der &uuml;bersch&uuml;ssige Text aber in dieser nachfolgenden Zeile nach rechts ger&uuml;ckt oder sonst als &Uuml;berlauf markiert, dann wird die Zeile mit <span class="blue">&lt;lb&gt;</span> getaggt, zus&auml;tzlich aber erh&auml;lt das <span class="blue">&lt;lb&gt;</span> das Attribut <span class="yellow">ana=</span><span class="brown">&quot;hc:RunOverBelow&quot;</span>, sowie das Attribut <span class="yellow">rendition=</span><span class="brown">&quot;hc:FlushRight&quot;</span> (andere Ausrichtungsfunktionen sind m&ouml;glich <span class="brown">&quot;hc:Centered&quot;</span>, <span class="brown">&quot;hc:RightIndent&quot; </span>u.a.):</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;419&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;26&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;27&quot; </span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:RunOverBelow&quot;</span>
+				<span class="yellow">rendition=</span>
+				<span class="brown">&quot;hc:FlushRight&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue">&lt;/l&gt;</span>
+			</p>
+			<p>5. Zwischen den Zeilen erg&auml;nzte &Uuml;berl&auml;ufe werden ebenfalls mit <span class="blue">&lt;lb&gt;</span> getaggt, allerdings erh&auml;lt hier die Nummer am <span class="yellow">@n</span> den Wert <span class="brown">&quot;x.1&quot;</span>. Au&szlig;erdem steht in diesen F&auml;llen das Attribut <span class="yellow">@ana</span> mit den Werten <span class="brown">&quot;hc:InterlinearLine hc:RunOverAbove&quot;</span> (meist stehen die Interlinearzeilen &uuml;ber der regul&auml;ren Zeile, aber nicht zwingend), sowie optional das Attribut <span class="yellow">@rendition</span> z.B. mit dem Wert <span class="brown">&quot;hc:FlushRight&quot;</span>:</p>
+			<p>
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;419&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;26&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;26.1&quot; </span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:InterlinearLine hc:RunOverAbove&quot; </span>
+				<span class="yellow">rendition=</span>
+				<span class="brown">&quot;hc:FlushRight&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;w&gt;&lt;w&gt;</span>
+				<br />
+				<span class="blue">&lt;/l&gt;</span>
+			</p>
+			<p>6. &Uuml;berlaufzeilen, die <i>&uuml;ber</i> der ersten regul&auml;ren Textzeile stehen, erhalten die Nummer <span class="yellow">@n=</span><span class="brown">&quot;0&quot;</span>; evtl. weitere &Uuml;berlaufzeilen &sbquo;nach oben&lsquo; w&uuml;rden negative Nummern erhalten. &Uuml;berlaufzeilen <i>unter</i> der letzten regul&auml;ren Textzeile werden als normale Zeilen (<span class="blue">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer. </p>
+			<p>
+				<br />
+			</p>
+			<ol start="22">
+				<li>
+					<h2><a id="nicht_ausgefuehrt"></a>Nicht ausgef&uuml;hrte W&ouml;rter / Zeilen</h2>
+			</ol>
+			<p>1) Manchmal l&auml;sst der Schreiber eine Zeile frei, tr&auml;gt aber nicht den Vers ein. Meist geschieht das, wenn der Reimpartner verloren ist. Zuweilen geschieht es aber auch, wenn durch &Auml;nderung im Vers der Reim verlorengegangen ist und der Schreiber meint, es fehle ein Reimpartner. In diesen F&auml;llen taggen wir <i>kein</i>
+				<span class="blue">&lt;l&gt;</span>, tragen lediglich das <span class="blue">&lt;lb/&gt;</span> ein und daraufhin ein <span class="blue">&lt;space&gt;</span>:</p>
+			<p>
+				<i>Beispiel</i>
+			</p>
+			<p><span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;space</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;space_1234&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;desc</span>
+				<span class="yellow">xml:lang=</span><span class="brown">&quot;de&quot;</span><span class="blue">&gt;</span>Freiraum wahrscheinlich f&uuml;r Vers 1234 ausgespart.<span class="blue">&lt;/desc&gt;</span><br />
+				<span class="blue">&lt;/space&gt;</span></p>
+			<p>Diese Kodierung kann bzw. soll innerhalb von <span class="blue">&lt;lg&gt;</span> stehen.</p>
+			<p>2) Besonders bei einzelnen ausgelassenen Worten, f&uuml;r die der Schreiber einen Freiraum gelassen hat, kann aus einer anderen Handschrift das Wort (oder der Vers) mit <span class="blue">&lt;supplied&gt;</span> erg&auml;nzt werden (vgl. den Gebrauch dieses Elements in &rarr; <a href="#Initialen">Kap. 12.3</a>). Dies ist aber bereits eine editorische Bearbeitung, zu der es noch &Auml;nderungen geben k&ouml;nnte.</p>
+			<p>
+				<i>Beispiel:</i>
+			</p>
+			<p><span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;5638&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;</span>daz<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="blue"> </span><span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;orig&gt;</span><br />
+				<span class="blue">&lt;space</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;space_23&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;desc</span>
+				<span class="yellow">xml:lang=</span><span class="brown">&quot;de&quot;</span><span class="blue">&gt;</span>Freiraum f&uuml;r fehlendes Wort. Die &uuml;brigen Handschriften haben an dieser Stelle das Wort <span class="blue">&lt;q&gt;</span>dienen<span class="blue">&lt;q&gt;</span>.<span class="blue">&lt;/desc&gt;</span><br />
+				<span class="blue"> </span><span class="blue">&lt;/space&gt;</span><br />
+				<span class="blue">&lt;/orig&gt;</span><br />
+				<span class="blue">&lt;supplied&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>dienen<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="blue">&lt;/supplied&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>solt<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>in<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>beiden<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/l&gt;</span></p>
+			<p>3) Werden Worte oder Zeilen ohne Freiraum in der Handschrift weggelassen, werden sie in der Transkription zun&auml;chst schlicht nicht erfasst. Dazu wird noch ein Tagging entwickelt, das es erlaubt, Text aus einem anderen Zeugnis an der pr&auml;zisen Stelle zu importieren.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="23">
+				<li>
+					<h2><a id="Verswiederholungen"></a>Verswiederholungen oder sehr &auml;hnliche Verse</h2>
+			</ol>
+			<p>Verswiederholungen werden mit einem Attribut im <span class="blue">&lt;l&gt;</span>-Element der beiden korrespondieren Verse gekennzeichnet: <span class="yellow">@hei:Replicates</span>; wenn klar ist, welcher Vers der 'wiederholte' und welcher das 'Original' ist, dann kann das Attribut auch nur im 'wiederholten' Vers stehen. Der Attributwert verweist mit einer Raute auf die <span class="yellow">@xml:id</span> am <span class="blue">&lt;l&gt;</span> des 'urspr&uuml;nglichen' Verses.</p>
+			<p>
+				<i>Beispiel:</i>
+			</p>
+			<p><span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="yellow"> xml:id=</span><span class="brown">&quot;l_23&quot;</span><span class="blue">&gt;</span>...<span class="blue">&lt;l/&gt;</span><br /> [...]<br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;46&quot;</span>
+				<span class="yellow">@hei:Replicates</span><span class="yellow">=</span><span class="brown">&quot;#l_23&quot;</span><span class="blue">&gt;</span>...<span class="blue">&lt;/l&gt;</span></p>
+			<p>Es gibt F&auml;lle, in denen ein Teil einer Zeile den entsprechenden Teil einer anderen Zeile wiederholt (meist weil der Schreiber mitten im Vers in die falsche Zeile gesprungen ist). In diesen F&auml;llen werden die jeweils korrespondieren Versteile mit dem Element <span class="blue">&lt;seg&gt;</span> (<i>segment</i>) getaggt und attributiv mit <span class="yellow">@xml:id</span> und <span class="yellow">@target</span> aufeinander bezogen.</p>
+			<p><span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;6936&quot;</span><span class="blue">&gt;&lt;w&gt;</span>Das<span class="blue">&lt;/w&gt;&lt;w&gt;</span>er<span class="blue">&lt;/w&gt;&lt;w&gt;</span>den<span class="blue">&lt;/w&gt;&lt;seg</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;seg_6936_1&quot;</span><span class="blue">&gt;&lt;w&gt;</span>tot<span class="blue">&lt;/w&gt;</span>
+				<span class="blue">&lt;w&gt;</span>&#383;ehen<span class="blue">&lt;/w&gt;&lt;w&gt;</span>&#383;ol<span class="blue">&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;</span><br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;6936,1&quot;</span><span class="blue">&gt;&lt;w&gt;</span>Das<span class="blue">&lt;/w&gt;&lt;w&gt;</span>doch<span class="blue">&lt;/w&gt;&lt;w&gt;</span>dem<span class="blue">&lt;/w&gt;&lt;w&gt;</span>andern<span class="blue">&lt;/w&gt;&lt;seg</span>
+				<span class="yellow">hei:replicates=</span>
+				<span class="brown">&quot;#seg_6936_1&quot;</span><span class="blue">&gt;&lt;w&gt;</span>dot<span class="blue">&lt;/w&gt;&lt;w&gt;</span>&#383;ehin<span class="blue">&lt;/w&gt;&lt;w&gt;</span>&#383;ol<span class="blue">&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="24">
+				<li>
+					<h2><a id="gap_damage"></a>L&uuml;cken und besch&auml;digter Text</h2>
+			</ol>
+			<p>1) Textverlust durch Besch&auml;digung des Texttr&auml;gers wird getaggt mit <span class="blue">&lt;gap/&gt;</span>. Dieses Element ist immer leer! Vorsicht: in l&uuml;ckenhaften Fragmenten, wo ein Teil eines Wortes ebenso wie die folgenden Worte verloren sind, muss ein <span class="blue">&lt;gap/&gt;</span> sowohl innerhalb des <span class="blue">&lt;w&gt;</span> stehen, wie au&szlig;erhalb.</p>
+			<p>2) Ein <span class="blue">&lt;gap/&gt;</span> f&uuml;hrt das Attribut <span class="yellow">@rendition</span>, je nach Fall mit einem der folgenden Werte: <span class="brown">hc:Overpainted</span> &ndash; <span class="brown">hc:Lost</span> &ndash; <span class="brown">hc:CutOff</span> &ndash; <span class="brown">hc:TornOff</span> &ndash; <span class="brown">hc:Stained</span> &ndash; <span class="brown">hc:Polluted</span> &ndash; <span class="brown">hc:Perforated</span> &ndash; <span class="brown">hc:Mould</span> &ndash; <span class="brown">hc:Faded</span> &ndash; <span class="brown">hc:ChemicalReagent</span> &ndash; <span class="brown">hc:Burnt</span> &ndash; <span class="brown">hc:PastedOver</span> &ndash; <span class="brown">hc:PeeledOff</span> &ndash; <span class="brown">hc:RubbedOff</span> &ndash; <span class="brown">hc:Illegible</span>.</p>
+			<p>3) Au&szlig;erdem sollte ein <span class="blue">&lt;gap/&gt;</span> nach M&ouml;glichkeit die Attribute <span class="yellow">@unit</span> und <span class="yellow">@extent</span> bzw. <span class="yellow">@quantity</span> f&uuml;hren. <span class="yellow">@unit</span> gibt an, was verloren ist (<span class="brown">char</span>=Buchstaben; <span class="brown">line</span>=Zeilen; <span class="brown">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviel von diesen Einheiten verloren sind, steht die im Attribut <span class="yellow">@quantity</span> (z.B. <span class="yellow">@unit</span>=<span class="brown">&quot;line&quot;</span>
+				<span class="yellow">@quantity</span>=<span class="brown">&quot;4&quot;</span>). Kann man nicht wissen, wieviel verloren ist, den steht nicht <span class="yellow">@quantity</span>, sondern lediglich <span class="yellow">@extent</span>=<span class="brown">&quot;unknown&quot;</span>.</p>
+			<p>4) Wenn der Text nicht ganz verloren, wohl aber deutlich besch&auml;digt ist, taggen wir ihn mit dem Element &lt;<span class="blue">damage&gt;</span>. Auch dieses f&uuml;hrt das Attribut <span class="yellow">@rendition</span>, mit denselben m&ouml;glichen Werten, wie bei <span class="blue">&lt;gap/&gt;</span>.</p>
+			<p>5) Ist im Fall von <span class="blue">&lt;damage&gt;</span> ein Lesung m&ouml;glich, aber unsicher, wird der Text zus&auml;tzlich mit dem Kindelement <span class="blue">&lt;unclear&gt;</span> getaggt.</p>
+			<p>6) Steht vor oder hinter einem <span class="blue">&lt;gap/&gt;</span> ein vollst&auml;ndiges Wort, f&uuml;gen wir zwischen beiden Elementen ein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die L&uuml;cke das Wort, dann f&uuml;gen wir stattdessen ein 'editorisches Spatium' ein: <span class="blue">&lt;w&gt;</span>besch&auml;<span class="blue">&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;gap/&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="25">
+				<li>
+					<h2><a id="Abkuerzungen"></a>Abk&uuml;rzungen</h2>
+			</ol>
+			<p>1) Abk&uuml;rzungen m&uuml;ssen in der Edition sowohl als Abk&uuml;rzung wie auch aufgel&ouml;st gezeigt werden k&ouml;nnen. Solche Optionen werden stets in ein <span class="blue">&lt;choice&gt;</span>-Element eingebaut. Die <span class="blue">&lt;choice&gt;</span>-Konstruktion steht innerhalb des <span class="blue">&lt;w&gt;</span>-Elements und schlie&szlig;t nur das Abk&uuml;rzungszeichen sowie seine Expansion ein. Alle anderen Buchstaben bleiben au&szlig;erhalb.</p>
+			<p>2) Das Abk&uuml;rzungszeichen wird getaggt mit dem Element <span class="blue">&lt;am&gt;</span>, das nur innerhalb eines <span class="blue">&lt;choice&gt;</span>-Gebildes stehen kann. Die Abk&uuml;rzungszeichen werden eingegeben als Entities. Entities sind Platzhalter, die bei der Transformation in Zeichen verwandelt werden. Die Liste der Entities f&uuml;r Abk&uuml;rzungen findet sich <a href="#">hier</a></p>
+			<p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht &uuml;ber die Sidebar &lsquo;Entities&rsquo; eingeben: Men&uuml; &rarr; Window &rarr; Schow View &rarr; Entities.</p>
+			<p>3) Die Aufl&ouml;sung einer Abk&uuml;rzung steht im Element <span class="blue">&lt;ex&gt;</span>. Dieses Element steht direkt im Anschluss an das <span class="blue">&lt;am&gt;</span> innerhalb der <span class="blue">&lt;choice&gt;</span>. Die Aufl&ouml;sung ist nicht immer mechanisch und folgt grammatischen Regeln, so kann <i>eine&#773;</i> aufgel&ouml;st werden als <i>einem</i> oder <i>einen</i>; <i>er-</i>Abk&uuml;rzungen m&uuml;ssen in manchen F&auml;llen als <i>re</i> aufgel&ouml;st werden, usw. Die Markierung und Aufl&ouml;sung von Abk&uuml;rzungen ist also schon Teil einer editorischen Arbeit und erfordert entsprechendes Ermessen.</p>
+			<p>
+				<i>Beispiele</i>
+			</p>
+			<p>un&#773; &rarr; und <br />
+				<span class="blue">&lt;w&gt;</span>un<span class="blue">&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>d<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>v&#859;&#383;ehe&#773; &rarr; ver&#383;ehen<br />
+				<span class="blue">&lt;w&gt;</span>v<span class="blue">&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;er;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>er<span class="blue">&lt;/ex&gt;&lt;/choice&gt;</span>&#383;ehe<span class="blue">&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>n<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p> 4) Besondere F&auml;lle:</p>
+			<ul>
+				<li>
+					<p> Die <i>Iwein</i>-Hs. A (Heidelberg) verwendet als Abk&uuml;rzung f&uuml;r <i>und</i> oft die Form <i>u</i><sup><i>n</i></sup>. Wir kodieren das, indem wir anstatt eines Abk&uuml;rzungszeichens einfach mit <span class="blue">&lt;seg&gt;</span> ein hochgestelltes <i>n</i> einsetzten:</p>
+			</ul>
+			<p style="margin-left: 0.5in"><span class="blue">&lt;w&gt;</span>u<span class="blue">&lt;choice&gt;&lt;am&gt;&lt;seg</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Superscript&quot;</span><span class="blue">&gt;</span>n<span class="blue">&lt;/seg&gt;&lt;/am&gt;&lt;ex&gt;</span>nd<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<ul>
+				<li>
+					<p>Eine Abk&uuml;rzung hat keine Entity: <i>dc</i> &rarr; <i>daz</i>. Hier dient das <i>c</i> als Abk&uuml;rzungszeichen im <span class="blue">&lt;am&gt;</span>. Parallel dazu auch <i>wc</i> &rarr; <i>waz</i>: <span class="blue">&lt;w&gt;</span>w<span class="blue">&lt;choice&gt;&lt;am&gt;</span>c<span class="blue">&lt;/am&gt;&lt;ex&gt;</span>az<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span>. Es gibt Handschriften, die schreiben dasselbe mit <i>z</i>: <i>dz</i> &rarr; <i>daz</i>; hier verfahren wir ein wenig anders, denn wir lassen das <i>z</i> aus der Konstruktion heraus: d<span class="blue">&lt;choice&gt;&lt;am/&gt;&lt;ex&gt;</span>a<span class="blue">&lt;/ex&gt;&lt;/choice&gt;</span>z<span class="blue">&lt;/w&gt;</span></p>
+			</ul>
+			<p>5) Abk&uuml;rzung in Versalien oder Rubrizierungen:</p>
+			<p><span class="blue">&lt;w&gt;&lt;hi</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Versal&quot;</span><span class="blue">&gt;</span>H<span class="blue">&lt;/hi&gt;&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;er;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>er<span class="blue">&lt;/ex&gt;&lt;/choice&gt;</span>re<span class="blue">&lt;/w&gt;</span></p>
+			<p><span class="blue">&lt;w&gt;&lt;hi</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:RedStroke&quot;</span><span class="blue">&gt;</span>D<span class="blue">&lt;/hi&gt;&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;er;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>er<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>6) Aufl&ouml;sung der Abk&uuml;rzung und Umkehr der Buchstaben: Manche Abk&uuml;rzungen werden 'nach hinten' aufgel&ouml;st, das hei&szlig;t, dass die Buchstaben, die durch die Aufl&ouml;sung hinzukommen, <i>vor</i> dem Buchstaben stehen, an dem das Abk&uuml;rzungszeichen steht: welln&#772; &gt; wellen (dagegen: well&#275; &gt; wellen); gegn&#772; &gt; gegen; &#383;atl&#772; &gt; satl; tiefl&#772; &gt; tiefel; hr&#859; &gt; her; hc&#859;z &gt; hercz. Den -er-Haken assoziieren wir dem vorangehenden Buchstaben. Aber bei den anderen Abk&uuml;rzungszeichen geht das nicht: da wir das Abk&uuml;rzungszeichen immer <i>hinter</i> den Buchstaben stellen, muss die Reihenfolge der Zeichen bei der Aufl&ouml;sung des K&uuml;rzungszeichens ge&auml;ndert werden. Wir tun dies mit einer zus&auml;tzlichen Sondermarkierung mit <span class="blue">&lt;seg&gt;</span>:</p>
+			<p>well<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:AbbreviatedTokenSegment&quot;</span><span class="blue">&gt;</span>n<span class="blue">&lt;am&gt;</span><span class="green">&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:ExpandedTokenSegment&quot;</span><span class="blue">&gt;&lt;ex&gt;</span>e<span class="blue">&lt;/ex&gt;</span>n<span class="blue">&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>tief&lt;<span class="blue">choice&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:AbbreviatedTokenSegment&quot;</span><span class="blue">&gt;</span>l<span class="blue">&lt;am</span><span class="green">&gt;&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:ExpandedTokenSegment&quot;</span><span class="blue">&gt;&lt;ex&gt;</span>e<span class="blue">&lt;/ex&gt;</span>l<span class="blue">&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>h<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:AbbreviatedTokenSegment&quot;</span><span class="blue">&gt;</span>r<span class="blue">&lt;am</span><span class="green">&gt;&amp;er;</span><span class="blue">&lt;/am&gt;&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;seg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:ExpandedTokenSegment&quot;</span><span class="blue">&gt;&lt;ex&gt;</span>er<span class="blue">&lt;/ex&gt;</span>r<span class="blue">&lt;/seg&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>7) Tokenisierung und Abk&uuml;rzung: In besonderen F&auml;llen enthalten Abk&uuml;rzungen klitisch angeh&auml;ngte Pronomina oder Negationspartikeln, sodass eine korrekte Tokenisierung erst nach der Aufl&ouml;sung der Abk&uuml;rzung erfolgen kann. Solche F&auml;lle l&ouml;sen wir, indem wir die <span class="blue">&lt;choice&gt;</span>-Konstruktion mit der Abk&uuml;rzung in ein separates <span class="blue">&lt;w&gt;</span>-Element setzen: 
+			<p><span class="blue">&lt;w&gt;</span>moht<span class="blue">&lt;/w&gt;&lt;w&gt;&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;er;</span><span class="blue">&lt;/am&gt;ex&gt;</span>er<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="26">
+				<li>
+					<h2><a id="label"></a>Abschnittszusammenfassungen</h2>
+			</ol>
+			<p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art &quot;Hier kommt Herr Iwein an den Brunnen&quot;. Diese St&uuml;cke taggen wir mit dem Element <span class="blue">&lt;label&gt;</span> und dem Attribut <span class="yellow">ana=</span><span class="brown">&quot;hc:SummaryLabel&quot;</span>. Sie werden tokenisiert.</p>
+			<p>Wo Abschnittszusammenfassungen in Randbereiche der Textzeilen geraten, kommt die Zeilensegmentierung zum Wirken, die bei Zeilen&uuml;berl&auml;ufen beschrieben wurde (&rarr; <a href="#Zeilenueberlauf">Kap. 21</a>).</p>
+			<p>
+				<br />
+			</p>
+			<ol start="27">
+				<li>
+					<h2><a id="transpose"></a>Umstellungen</h2>
+			</ol>
+			<p>1) F&uuml;r die Kodierung der Umstellungen von W&ouml;rtern und Wortgruppen ist es notwendig, dass die betroffenen W&ouml;rter jeweils mit einer <span class="yellow">@xml:id</span> versehen sind. Die Textpassage wird zun&auml;chst so transkribiert, wie sie vor der Umstellung aussah. Direkt nach dem umgestellten Textsegment oder am Ende der Transkription der betroffenen Zeile (jedenfalls <i>vor</i> dem n&auml;chsten <span class="blue">&lt;lb/&gt;</span>) wird anschlie&szlig;end mit <span class="blue">&lt;listTranspose&gt;</span> die Umstellung dokumentiert. Das Kindelement <span class="blue">&lt;transpose&gt; </span>enth&auml;lt eine Sequenz von <span class="blue">&lt;ptr&gt;</span>-Elementen, welche die umgestellten W&ouml;rter in der richtigen Reihenfolge (d.h. in der Reihenfolge nach der durchgef&uuml;hrten Umstellung) als Verweise auflisten.</p>
+			<p> Umstellungszeichen k&ouml;nnen in der Transkription mit <span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:TranspositionMark&quot;</span><span class="blue">&gt;</span> dokumentiert werden. Ihr Attribut <span class="yellow">@target</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>) verweist jeweils auf das Wort oder die W&ouml;rter, auf das bzw. auf die sich das Umstellungszeichen als Anweisung bezieht.</p>
+			<p><i>Beispiel:</i><br />
+				<i>Hs.:</i>Der &quot;auch &quot;&#383;ey &#383;elb &#383;o bewart &rarr;<br />
+				<span class="blue">&lt;w&gt;</span>Der<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:TranspositionMark&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#w_13_2&quot;</span><span class="blue">&gt;</span>&quot; <span class="blue">&lt;/metamark&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_13_2&quot;</span><span class="blue">&gt;</span>auch<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:TranspositionMark&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:AboveLine&quot;</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#w_13_3&quot;</span><span class="blue">&gt;</span>&quot; <span class="blue">&lt;/metamark&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;w_13_3&quot;</span><span class="blue">&gt;</span>se&#375;<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>&#383;elb<span class="blue">&lt;/w&gt;&lt;w&gt;</span>&#383;o<span class="blue">&lt;/w&gt;&lt;w&gt;</span>bewart<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;listTranspose&gt;</span><br />
+				<span class="blue">&lt;transpose</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_13_2</span>
+				<span class="brown">#w_13_3&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;ptr</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#w_13_3&quot;</span><span class="blue">&gt;&lt;/ptr&gt;</span><br />
+				<span class="blue">&lt;ptr</span>
+				<span class="yellow">target</span><span class="brown">=&quot;#w_13_2&quot;</span><span class="blue">&gt;&lt;/ptr&gt;</span><br />
+				<span class="blue">&lt;/transpose&gt;</span><br />
+				<span class="blue">&lt;/listTranspose&gt;</span></p>
+			<p>2) Bei ganzen Versen, die in 'verkehrter' Reihenfolge abgeschrieben und vom Schreiber durch Zeichen als in anderer Reihenfolge zu lesen markiert sind, transkribieren wir die Verse in der 'richtigen' Reihenfolge, also in der vom Schreiber intendierten. Die Nummerierung am <span class="blue">&lt;lb&gt;</span>-Element allerdings gibt die physische Abfolge des Originals wieder. Ein &lt;<span class="blue">listTranspose&gt;</span>-Element informiert &uuml;ber den Schreibprozess.</p>
+			<p><i>Beispiel:</i><br />
+				<span class="blue">&lt;l</span>
+				<span class="yellow">n=</span><span class="brown">&quot;3399&quot;</span>
+				<span class="yellow">xml:id</span><span class="yellow">=</span><span class="brown">&quot;l_3399&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;17&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:TranspositionMark&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:ColumnMarginLeft&quot;</span><span class="blue">&gt;</span>&quot;<span class="blue">&lt;/metamark&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>Daz<span class="blue">&lt;/w&gt;&lt;w&gt;</span>er<span class="blue">&lt;/w&gt;&lt;w&gt;</span>den<span class="blue">&lt;/w&gt;&lt;w&gt;</span>&#383;&#305;n<span class="blue">&lt;/w&gt;&lt;w&gt;</span>hat<span class="blue">&lt;/w&gt;&lt;w&gt;</span>verlorn<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/l&gt;</span><br />
+				<span class="blue">&lt;l </span><span class="yellow">n=</span><span class="brown">&quot;3400&quot;</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;l_3400</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;16&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;metamark</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:TranspositionMark&quot;</span>
+				<span class="yellow">hei:placeRef=</span><span class="brown">&quot;hc:ColumnMarginLeft&quot;</span><span class="blue">&gt;</span>b<span class="blue">&lt;/metamark&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span>Von<span class="blue">&lt;/w&gt;&lt;w&gt;</span>bezzern<span class="blue">&lt;/w&gt;&lt;w&gt;</span>zvhten<span class="blue">&lt;/w&gt;&lt;w&gt;</span>wart<span class="blue">&lt;/w&gt;&lt;w&gt;</span>geborn<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/l&gt;</span><br />
+				<span class="blue">&lt;listTranspose&gt;</span><br />
+				<span class="blue">&lt;transpose&gt;</span><br />
+				<span class="blue">&lt;ptr</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#l_3400&quot;</span><span class="blue">&gt;&lt;/ptr&gt;</span><br />
+				<span class="blue">&lt;ptr</span>
+				<span class="yellow">target=</span><span class="brown">&quot;#l_3399&quot;</span><span class="blue">&gt;&lt;/ptr&gt;</span><br />
+				<span class="blue">&lt;/transpose&gt;</span><br />
+				<span class="blue">&lt;/listTranspose&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="28">
+				<li>
+					<h2><a id="Lagensignaturen"></a>Lagensignaturen und Reklamanten</h2>
+			</ol>
+			<p>Lagensignaturen und Reklamanten (sowie evtl. andere Ph&auml;nomene au&szlig;erhalb des Textes) kodieren wir mit dem Element <span class="blue">&lt;fw&gt;</span>, das ein Attribut&nbsp;<span class="yellow">@ana</span> f&uuml;hrt, welches folgende Wert haben kann: <span class="brown">&quot;hc:Catchword&quot;</span> (Reklamante), <span class="brown">&quot;hc:QuireSignature&quot;</span> (Lagensignatur), <span class="brown">&quot;hc:PageHeader&quot;</span> (Seitentitel), <span class="brown">&quot;hc:ColumnHeader&quot;</span> (Spaltentitel), <span class="brown">&quot;hc:PageFooter&quot;</span> (Seitentitel im Seitenfu&szlig;), <span class="brown">&quot;hc:ColumnFooter&quot;</span> (Spaltentitel im Spaltenfu&szlig;), <span class="brown">&quot;hc:PageNumeral&quot;</span> (Seitennummer), <span class="brown">&quot;hc:ColumnNumeral&quot;</span> (Spaltennummer).</p>
+			<p> Wir stellen die Elemente <span class="blue">&lt;fw&gt;</span> an das Ende der Seite, zu der sie geh&ouml;ren, also vor dem <span class="blue">&lt;pb&gt;</span> der folgenden Seite. Wir deklarieren sie als getrennte Textzone; deswegen muss die Kodierung mit dem Zonenwechsel beginnen, z.B. <span class="blue">&lt;milestone</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:ZoneBeginning&quot;</span>
+				<span class="yellow">facs=</span><span class="brown">&quot;#Bb_263v-c&quot;</span><span class="blue">/&gt;</span></p>
+			<p> Lagensignaturen und Reklamanten stehen in den Handschriften in eigenen Zeilen, sie m&uuml;ssen also jeweils mit einem <span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;1&quot;</span><span class="blue">/&gt;</span> begonnen werden. Das folgende Beispiel ist angepasst an das Beispiel oben (&rarr; <a href="#Faksimile">Kap. 3</a>).</p>
+			<p><i>Beispiel:</i><br />
+				<span class="blue">&lt;milestone</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:ZoneBeginning&quot;</span>
+				<span class="yellow">facs=</span><span class="brown">&quot;#b_12v-b&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;lb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;1&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;fw</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:QuireSignature&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;num</span>
+				<span class="yellow">value=</span><span class="brown">&quot;2&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;w&gt;</span><br />
+				<span class="blue">&lt;choice&gt;&lt;orig&gt;</span>&#305;&#305;<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>secund<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>
+				<span class="blue">&lt;choice&gt;&lt;am&gt;</span>&#42864;<span class="blue">&lt;/am&gt;&lt;ex&gt;us&lt;/ex&gt;&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/num&gt;</span><br />
+				<span class="blue">&lt;/fw&gt;</span></p>
+			<p>Die Deklaration von Randbereichen im Element <span class="blue">&lt;facsimile&gt;</span> folgt folgendem Muster:</p>
+			<p>
+				<span class="blue">&lt;surface</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;Bb_263v&quot;</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:Page&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;263v&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;graphic</span>
+				<span class="yellow">url=</span>
+				<span class="brown">&quot;https://digi.ub.uni-heidelberg.de/diglit/fmb_cb72_fol256-265/0016&quot;</span>
+				<span class="yellow">mimeType=</span>
+				<span class="brown">&quot;image/*</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:VerticalLayout&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:HorizontalLayout&quot;</span>
+				<span class="blue">&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;Bb_263v-a&quot;</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:MainColumn hc:TextZone&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;a&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;Bb_263v-b&quot;</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:MainColumn hc:TextZone&quot;</span>
+				<span class="yellow">n=</span>
+				<span class="brown">&quot;b&quot;</span>
+				<span class="blue">/&gt;</span>
+				<br />
+				<span class="blue">&lt;/zone&gt;</span>
+				<br />
+				<span class="blue">&lt;zone</span>
+				<span class="yellow">xml:id=</span>
+				<span class="brown">&quot;Bb_263v-c&quot;</span>
+				<span class="yellow">ana=</span>
+				<span class="brown">&quot;hc:MarginalZone hc:TextZone&quot;</span>
+				<span class="yellow">rendition=</span>
+				<span class="brown">&quot;hc:SelfAlignmentCentered&quot;</span>
+				<span class="yellow">hei:placeRef=</span>
+				<span class="brown">&quot;hc:PageBottom&quot;</span>
+				<span class="blue">&gt;&lt;/zone&gt;</span>
+				<br />
+				<span class="blue">&lt;/zone&gt;</span>
+				<br />
+				<span class="blue">&lt;/surface&gt;</span>
+			</p>
+			<p>
+				<br />
+			</p>
+			<ol start="29">
+				<li>
+					<h2><a id="Anmerkungen"></a>Anmerkungen</h2>
+			</ol>
+			<p>1) Anmerkungen werden mit dem Element <span class="blue">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen, oder Nota-Zeichen (zu Texterg&auml;nzungen &rarr; <a href="#del_add">Kap. 18</a>). Anmerkungen zur Transkription sind Ph&auml;nomene der Handschrift, die f&uuml;r den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen au&szlig;erhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erkl&auml;rungen f&uuml;r Eingriffe oder &auml;hnliches.</p>
+			<p>2) Wir stellen die <span class="blue">&lt;note&gt;</span>-Elemente in der Regel hinter den Abschluss des Verses, also hinter <span class="blue">&lt;/l&gt;</span>.</p>
+			<p>3) Das Element <span class="blue">&lt;note&gt;</span> enth&auml;lt das Attribut <span class="yellow">@ana</span>. F&uuml;r Anmerkungen, die im Textzeuge stehen, sind je nach Fall folgende Werte vorgesehen: <span class="brown">&quot;hc:Gloss&quot;</span> (Glosse), <span class="brown">&quot;hc:NotaBene&quot;</span> (Notazeichen), <span class="brown">&quot;hc:Manicula&quot;</span> (Zeigehand), <span class="brown">&quot;hc:Footnote&quot;</span> (Fu&szlig;note), <span class="brown">&quot;hc:Endnote&quot;</span> (Endnote). F&uuml;r Anmerkungen zur Transkription kommt in der Regel nur <span class="brown">&quot;hc:TranscriptionNote&quot;</span> in Frage. F&uuml;r editorische Anmerkungen sind je nach Fall folgende Werte vorgesehen: <span class="brown">&quot;hc:Comment&quot;</span> (Kommentar), <span class="brown">&quot;hc:TextCriticalNote&quot;</span> (textkritische Anmerkung), <span class="brown">&quot;hc:WitnessesNote&quot;</span> (Anmerkung zu herangezogenen Textzeugen), <span class="brown">&quot;hc:LociNote&quot;</span> (Anmerkung zu Quellen, Parallelen und Nachwirkung), <span class="brown">&quot;hc:FontesNote&quot;</span> (Anmerkung &uuml;ber Quellen), <span class="brown">&quot;hc:SimiliaNote&quot;</span> (Anmerkung &uuml;ber Parallelen), <span class="brown">&quot;hc:TestimoniaNote&quot;</span> (Anmerkung &uuml;ber Nachwirkung), <span class="brown">&quot;hc:BiblicalNote&quot;</span> (Anmerkung &uuml;ber biblische Quellen). 
+			<p>4) Das Element <span class="blue">&lt;note&gt;</span> enth&auml;lt zus&auml;tzlich das Attribut <span class="yellow">@target</span>, mit dem auf das Wort oder auf den Vers verwiesen wird, auf die sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 17</a>).</p>
+			<p>5) Innerhalb der Anmerkungen werden Zitate aus der Handschrift oder aus anderen Handschriften mit <span class="blue">&lt;q&gt;</span> (=quote) getaggt. Zitate aus Forschungsliteratur oder besondere Bedeutung von Worten wird hingegen &ndash;statt mit Anf&uuml;hrungszeichen&ndash; getaggt mit <span class="blue">&lt;mentioned&gt;</span>.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="30">
+				<li>
+					<h2><a id="Kommentar"></a>Kommentar</h2>
+			</ol>
+			<p>In der xml-Datei k&ouml;nnen private Kommentare hinterlassen werden, die keinen Effekt auf die Formatierung haben. In der Regel dient dies zu Notizen f&uuml;r sp&auml;tere &Uuml;berarbeitung, z.B. Anmerkungen der Transkribenden f&uuml;r die Editoren. Solchen Kommentare werden Geschrieben innerhalb der Zeichen <span class="green">&lt;!-- --&gt;</span>. Kommentare k&ouml;nnen &uuml;berall stehen, aber gew&ouml;hnlich stellen wir sie hinter den Abschluss des <span class="blue">&lt;/l&gt;</span>-Elements stehen.</p>
+			<p>
+				<br />
+			</p>
+			<ol type="A" start="3">
+				<li>
+					<h2><a id="editorische_Bearbeitung"></a>Teil III: Editorische Bearbeitung</h2>
+			</ol>
+			<ol start="31">
+				<li>
+					<h2><a id="Normalisierung"></a>Normalisierungen</h2>
+			</ol>
+			<p>Wir f&uuml;hren bei der Transkription bereits standardm&auml;&szlig;ige sprachliche Normalisierungen durch. Wir normalisieren konsonantisches <i>u/i</i> zu <i>v/j</i>, vokalisches <i>v/j</i> zu <i>u/i</i>, sowie konsonantisch-vokalisches <i>w</i> zu <i>wu</i>. &Auml;hnlich wie bei Abk&uuml;rzungen werden Normalisierungen mit einem <span class="blue">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="blue">&lt;orig&gt;</span>. Die Normalisierung wird erfasst im Element <span class="blue">&lt;reg&gt;</span>.</p>
+			<p>
+				<i>Beispiele</i>
+			</p>
+			<p>vnd &rarr; und<br />
+				<span class="blue">&lt;w&gt;&lt;choice&gt;&lt;orig&gt;</span>v<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>nd<span class="blue">&lt;/w&gt;</span></p>
+			<p>vn&#772; &rarr; und<br />
+				<span class="blue">&lt;w&gt;&lt;choice&gt;&lt;orig&gt;</span>v<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>n<span class="blue">&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>d<span class="blue">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>ivncfrowe &rarr; juncfrowe<br />
+				<span class="blue">&lt;w&gt;&lt;choice&gt;&lt;orig&gt;</span>i<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>j<span class="blue">&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;orig&gt;</span>v<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>ncfrowe<span class="blue">&lt;/w&gt;</span></p>
+			<p>wrden &rarr; wurden<br />
+				<span class="blue">&lt;w&gt;&lt;choice&gt;&lt;orig&gt;</span>w<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>wu<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>rden<span class="blue">&lt;/w&gt;</span></p>
+			<p>Normalisierung einer Initiale<br />
+				<span class="blue">&lt;w&gt;&lt;hei:initial&gt;&lt;choice&gt;&lt;orig&gt;</span>U<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>V<span class="blue">&lt;/reg&gt;&lt;/choice&gt;&lt;/hei:initial&gt;</span>il<span class="blue">&lt;/w&gt;</span></p>
+			<p>Normalisierung eines Supraskripts<br />
+				<span class="blue">&lt;w&gt;</span>bo<span class="blue">&lt;choice&gt;&lt;orig&gt;</span><span class="green">&amp;vsup;</span><span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>ste<span class="blue">&lt;/w&gt;</span></p>
+			<p> Supraskripte, die bei der Aufl&ouml;sung mit dem Vokal, auf dem sie stehen, ein neues Graphem ergeben (z.B. a&#868; &rarr; &aelig;), und Supraskripte, die bei der Normalisierung <i>vor</i> dem Vokal stehen m&uuml;ssen, werden mit dem entsprechenden Vokal im <span class="blue">&lt;orig&gt;</span> und im <span class="blue">&lt;reg&gt;</span> erfasst:</p>
+			<p>wa&#868;re &rarr; w&aelig;re: <span class="blue">&lt;w&gt;</span>w<span class="blue">&lt;choice&gt;&lt;orig&gt;</span>a<span class="green">&amp;esup</span><span class="green">;</span><span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>&aelig;<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>re<span class="blue">&lt;/w&gt;</span></p>
+			<p>mo&#878;ste &rarr; muoste <span class="blue">&lt;w&gt;</span>m<span class="blue">&lt;choice&gt;&lt;orig&gt;</span>o<span class="green">&amp;vsup</span><span class="green">;</span><span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>uo<span class="blue">&lt;/reg&gt;&lt;/choice&gt;</span>ste<span class="blue">&lt;/w&gt;</span></p>
+			<p>Abk&uuml;rzung mit Normalisierung: Durch die Trennung von Buchstaben und Abk&uuml;rzungszeichen verlaufen die Normalisierung des ersten und die Aufl&ouml;sung des zweiten in parallelen <span class="blue">&lt;choice&gt;</span>-Konstruktionen. Z.B. v&#773; &rarr; und:<br />
+				<span class="blue">&lt;choice&gt;&lt;orig&gt;</span>v<span class="blue">&lt;/orig&gt;&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;am&gt;</span><span class="green">&amp;bar;</span><span class="blue">&lt;/am&gt;&lt;ex&gt;</span>nd<span class="blue">&lt;/ex&gt;&lt;/choice&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="32">
+				<li>
+					<h2><a id="Korrekturen"></a>Editorische Eingriffe und Korrekturen</h2>
+			</ol>
+			<p>&Auml;hnlich wie bei Abk&uuml;rzungen werden editorische Eingriffe mit einem <span class="blue">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="blue">&lt;sic&gt;</span>. Die editorische Korrektur wird erfasst im Element <span class="blue">&lt;corr&gt;</span>.</p>
+			<p><i>Beispiele</i>:</p>
+			<p>1. Korrektur von Buchstaben:<br />
+				<span class="blue">&lt;w&gt;</span>mi<span class="blue">&lt;choice&gt;&lt;sic&gt;</span>m<span class="blue">&lt;/sic&gt;&lt;corr&gt;</span>nn<span class="blue">&lt;/corr&gt;&lt;/choice&gt;</span>e<span class="blue">&lt;/w&gt;</span></p>
+			<p>2. Fehlende Buchstaben:<br />
+				<span class="blue">&lt;w&gt;</span>wa<span class="blue">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="blue">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="blue">&lt;/w&gt;</span></p>
+			<p>3. Fehlende W&ouml;rter: das <span class="blue">&lt;w&gt;</span> steht innerhalb des <span class="blue">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingef&uuml;gt wird.<br />
+				<span class="blue">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="blue">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
+			<p>4. Bei der Korrektur &auml;ndert sich das Wort:<br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;w</span>
+				<span class="yellow">xml:id=</span><span class="brown">&quot;#w_145_1&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;sic</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_145_1&quot;</span><span class="blue">/&gt;</span><br />
+				<span class="blue">&lt;corr</span>
+				<span class="yellow">corresp=</span><span class="brown">&quot;#w_145_2&quot;</span><span class="blue">&gt;</span>O<span class="blue">&lt;/corr&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;&lt;hi</span>
+				<span class="yellow">rendition=</span><span class="brown">&quot;hc:Versal&quot;</span><span class="blue">&gt;</span><br />
+				<span class="blue">&lt;choice&gt;</span><br />
+				<span class="blue">&lt;orig&gt;</span>V<span class="blue">&lt;/orig&gt;</span><br />
+				<span class="blue">&lt;reg&gt;</span>u<span class="blue">&lt;/reg&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;/hi&gt;</span>ch<br />
+				<span class="blue">&lt;/w&gt;</span><br />
+				<span class="blue">&lt;w</span><span class="yellow">xml:id=</span><span class="brown">&quot;w_145_2&quot;</span><span class="yellow">copyOf=</span><span class="brown">&quot;#w_145_1&quot;</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="blue">&lt;/choice&gt;</span></p>
+			<p>5. Wiederholte Worte oder Satzteile, die nicht gestrichen sind, unterdr&uuml;cken wir durch <span class="blue">&lt;surplus&gt;</span>:</p>
+			<p>
+				<span class="blue">&lt;w/&gt;&lt;surplus&gt;&lt;w/&gt;&lt;w/&gt;&lt;/surplus&gt;&lt;w/&gt;</span>
+			</p>
+			<p>6. Fehlende Verse: gelegentlich kommt es vor, dass ein Vers in der Handschrift, ohne den der Satz aber keinen Sinn ergibt. In solchen F&auml;llen kann editorisch ein Vers aus einer anderen Handschrift &uuml;bernommen werden. Das kann aber nicht &uuml;ber eine <span class="blue">&lt;choice&gt;</span>-Konstruktion gemacht werden, sondern nur unter Verwendung von <span class="blue">&lt;app&gt;</span>,&nbsp;<span class="blue">&lt;lem&gt;</span> und <span class="blue">&lt;rdg&gt;</span>. Dazu aber fehlt noch Dokumentation aus Heidelberg.</p>
+			<p>
+				<br />
+			</p>
+			<ol start="33">
+				<li>
+					<h2><a id="Spatien_editorisch"></a>Editorische Behandlung der Spatien</h2>
+			</ol>
+			<p>Getrennt tokenisierte Worte, die in der Handschrift zusammen geschrieben werden, m&uuml;ssen nicht unbedingt in der Edition getrennt erscheinen. <i>irs</i>, <i>hastu</i> oder <i>ensprach</i> k&ouml;nnen durchaus zusammen erscheinen, wenn sie in der Handschrift zusammen stehen. Dazu ist editorisch nichts zu tun: da ein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> fehlt, werden die beiden Worte auch im Editionstext zusammenstehen.</p>
+			<p> Auch bei Worten, die in der Handschrift auseinander geschrieben werden, die aber ein Wort sind und als solches Tokenisiert wurden (<i>ver lazen</i>, <i>uber wunden</i>, <i>ougen weide</i>), muss editorisch nichts geschehen. Dort steht bereits ein Spatium im <span class="blue">&lt;orig&gt;</span> in einer <span class="blue">&lt;choice&gt;</span>-Konstruktion, das im <span class="blue">&lt;reg&gt;</span> verschwindet, (&rarr; <a href="#Wort_Spatium">Kap. 9.4</a>).</p>
+			<p>Editorisch bearbeitet werden m&uuml;ssen jene F&auml;lle, in denen Worte in der Handschrift zusammen geschrieben werden (wo also in der Transkription kein Spatium steht), die wir aber in der Edition auseinander halten wollen. Das geschieht mit einer <span class="blue">&lt;choice&gt;</span>-Konstruktion, in der <span class="blue">&lt;orig&gt;</span> leer ist und das <span class="blue">&lt;reg&gt;</span> ein Spatium enth&auml;lt:</p>
+			<p>
+				<span class="blue">&lt;w/&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w/&gt;</span>
+			</p>
+			<p>
+				<br />
+			</p>
+			<ol start="34">
+				<li>
+					<h2><a id="Zeichensetzung_editorisch"></a>Editorische Behandlung der Zeichensetzung</h2>
+			</ol>
+			<p>Editorische Zeichensetzung wird eingef&uuml;gt mit <span class="blue">&lt;choice&gt;</span>-Konstruktionen. Dabei f&uuml;hrt das <span class="blue">&lt;reg&gt;</span>-Element immer das Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span>.</p>
+			<p>1. Wenn die Handschrift keine Zeichensetzung hat, bleibt das <span class="blue">&lt;orig&gt;</span> leer:</p>
+			<p><span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>,<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
+			<p>2. Hat die Handschrift an der entsprechenden Stelle ein Satzzeichen oder einen Reimpunkt (&rarr; <a href="#Zeichensetzung_Hs">Kap. 15</a>), steht dieses im <span class="blue">&lt;orig&gt;</span> und wird im <span class="blue">&lt;reg&gt;</span> ersetzt bzw. unterdr&uuml;ckt:</p>
+			<p><span class="blue">&lt;choice&gt;&lt;orig&gt;&lt;pc&gt;</span>&middot;<span class="blue">&lt;/pc&gt;&lt;/orig&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>,<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
+			<p>3. Bei direkter Rede steht evtl. ein Doppelpunkt (oder ein Komma) am vorangehenden Wort, das Anf&uuml;hrungszeichen aber am ersten Redewort. Dazwischen muss das Spatium stehen:</p>
+			<p><span class="blue">&lt;w/&gt;</span><br />
+				<span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>:<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>&rsaquo;<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span><br />
+				<span class="blue">&lt;w/&gt;</span></p>
+			<p>4. Am Ende von direkter Rede werden die beiden Satzzeichen (Punkt oder Komma und Anf&uuml;hrungszeichen in getrennten <span class="blue">&lt;pc&gt;</span>-Elementen erfasst.</p>
+			<p><span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>.<span class="blue">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
+			<p><span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
+				<span class="yellow">ana=</span><span class="brown">&quot;hc:PunctuationRegularization&quot;</span><span class="blue">&gt;&lt;pc&gt;</span>&lsaquo;<span class="blue">&lt;/pc&gt;&lt;pc&gt;</span>,<span class="blue">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
+			<p>
+				<br />
+			</p>
+			<ol start="35">
+				<li>
+					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Versumstellungen</h2>
+			</ol>
+			<p>Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 27</a>) behandelt.</p>
+			<p>Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, gibt es typischerweise in zwei Arten: Umstellung der Verse innerhalb des Verspaares und Umstellungen von Versgruppen (Verspaare oder Gruppen von Verspaaren) an eine andere Position. In diesem zweiten Fall muss immer von einer Intentionalit&auml;t ausgegangen werden. Das bedeutet, dass wir daran in der Edition nichts &auml;ndern.</p>
+			<p>Im ersteren Fall, dem der Umstellungen innerhalb des Verspaares, sind die Umst&auml;nde variabel: in vielen F&auml;llen hat die Umstellung kaum Auswirkung auf den Satz. Bleibt der Text verst&auml;ndlich und grammatisch, &auml;ndern wir editorisch nichts an der Umstellung. In anderen F&auml;llen allerdings entstehen durch die Umstellung Sinnbr&uuml;che. Ist dies der Fall und entscheiden wir als Herausgeber, dass die Position der Verse falsch ist, ordnen wir die Verse in der Datei so an, wie wir es f&uuml;r richtig halten (meist in der Reihenfolge der Lachmann-Verszahlen). Die <span class="blue">&lt;lb&gt;</span>-Nummerierung erlaubt es, bei der Dokumentansicht die Versfolge der Handschrift herzustellen.</p>
+			<p>
+				<br />
+			</p>
+			<p>
+				<br />
+			</p>
+		</div>
+	</body>
+</html>
