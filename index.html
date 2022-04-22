@@ -163,15 +163,15 @@
 			und eine <span class="blue">&lt;sourceDesc&gt;</span>.</p>
 		<ul>
 				<li>
-					<p style="margin-bottom: 0in; line-height: 100%">Das <span class="blue">&lt;titleStmt&gt;</span> enth&auml;lt das Element <span class="blue">&lt;title&gt;</span> mit dem Inhalt: &quot;Iwein-Hs. X&quot;; das Element <span class="blue">&lt;author&gt;</span> mit dem Inhalt &quot;Hartmann von Aue&quot;; und das Element <span class="blue">&lt;respStmt&gt;</span> mit den Kindelementen <span class="blue">&lt;resp&gt;</span> (Inhalt: &quot;transcription&quot; &quot;revision&quot; &quot;edition&quot;) und <span class="blue">&lt;persName&gt;</span> (Inhalt: &quot;Name der verantwortlichen Person&quot;).</p>
+					<p>Das <span class="blue">&lt;titleStmt&gt;</span> enth&auml;lt das Element <span class="blue">&lt;title&gt;</span> mit dem Inhalt: &quot;Iwein-Hs. X&quot;; das Element <span class="blue">&lt;author&gt;</span> mit dem Inhalt &quot;Hartmann von Aue&quot;; und das Element <span class="blue">&lt;respStmt&gt;</span> mit den Kindelementen <span class="blue">&lt;resp&gt;</span> (Inhalt: &quot;transcription&quot; &quot;revision&quot; &quot;edition&quot;) und <span class="blue">&lt;persName&gt;</span> (Inhalt: &quot;Name der verantwortlichen Person&quot;).</p>
 				<li>
-					<p style="margin-bottom: 0in; line-height: 100%">Das <span class="blue">&lt;publicationStmt&gt;</span> enth&auml;lt lediglich das Kindelement <span class="blue">&lt;publisher&gt;</span> mit dem Inhalt &quot;UB Heidelberg&quot;.</p>
+					<p>Das <span class="blue">&lt;publicationStmt&gt;</span> enth&auml;lt lediglich das Kindelement <span class="blue">&lt;publisher&gt;</span> mit dem Inhalt &quot;UB Heidelberg&quot;.</p>
 				<li>
-					<p style="margin-bottom: 0in; line-height: 100%">Die <span class="blue">&lt;sourceDesc&gt;</span> enth&auml;lt das Element <span class="blue">&lt;listWit&gt;</span> mit dem Kindelement <span class="blue">&lt;witness&gt;</span>; dieses Element erh&auml;lt als Attribut eine <span class="yellow">@xml:id</span> mit dem Wert der Sigle der Handschrift. <span class="blue">&lt;witness&gt;</span> hat als Kindelement <span class="blue">&lt;msDesc&gt;</span> und dieses wiederum als Kindelement <span class="blue">&lt;msIdentifier&gt;</span>. Kindelemente des letzteren sind <span class="blue">&lt;settlement&gt;</span> (Inhalt: Bibliotheksort), <span class="blue">&lt;repository&gt;</span> (Inhalt: Bibliotheksname) und <span class="blue">&lt;idno&gt;</span> (Inhalt: Signatur der Handschrift).</p>
+					<p>Die <span class="blue">&lt;sourceDesc&gt;</span> enth&auml;lt das Element <span class="blue">&lt;listWit&gt;</span> mit dem Kindelement <span class="blue">&lt;witness&gt;</span>; dieses Element erh&auml;lt als Attribut eine <span class="yellow">@xml:id</span> mit dem Wert der Sigle der Handschrift. <span class="blue">&lt;witness&gt;</span> hat als Kindelement <span class="blue">&lt;msDesc&gt;</span> und dieses wiederum als Kindelement <span class="blue">&lt;msIdentifier&gt;</span>. Kindelemente des letzteren sind <span class="blue">&lt;settlement&gt;</span> (Inhalt: Bibliotheksort), <span class="blue">&lt;repository&gt;</span> (Inhalt: Bibliotheksname) und <span class="blue">&lt;idno&gt;</span> (Inhalt: Signatur der Handschrift).</p>
 			</ul>
 			<p>2) Die Codierungs-Beschreibungen m&uuml;ssen folgende sein:</p>
 			<p>
-				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt; &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;hc&quot;</span> <span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span> <span class="yellow">replacementPattern=</span><span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span><span class="blue">/&gt;&lt;/prefixDef&gt;&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
+				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;hc&quot;</span> <span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span> <span class="yellow">replacementPattern=</span><span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;char&quot;</span> <span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span> <span class="yellow">replacementPattern=</span><span class="brown">&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1&quot;</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
 			</p>
 			<p>
 				<br />
@@ -180,12 +180,12 @@
 				<li>
 					<h2><a id="Faksimile"></a>Das Element &lt;facsimile&gt;</h2>
 			</ol>
-			<p>Zwischen dem TEI-Header und dem Text steht das Element <span class="blue">&lt;facsimile&gt;</span>. Es wird mit der Information zu Seiten (<span class="blue">&lt;surface&gt;</span>), Abbildungen (<span class="blue">&lt;graphic/&gt;</span>) und Bildbereichen (<span class="blue">&lt;zone/&gt;</span>) gef&uuml;llt. </p>
+			<p>Zwischen dem TEI-Header und dem Text steht das Element <span class="blue">&lt;facsimile&gt;</span>. Es wird mit der Information zu Seiten (<span class="blue">&lt;surface&gt;</span>), Abbildungen (<span class="blue">&lt;graphic&gt;</span>) und Bildbereichen (<span class="blue">&lt;zone&gt;</span>) gef&uuml;llt. </p>
 			<p>1) Jede Seite der Handschrift wird als <span class="blue">&lt;surface&gt;</span> erfasst. Das Element hat die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:Page&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert die Sigle der Handschrift und die Seitenzahl ist, z.B. <span class="brown">&quot;b_12v&quot;</span>) und <span class="yellow">@n</span> (mit dem Wert der Seitenzahl, z.B. <span class="brown">&quot;12v&quot;</span>).</p>
 			<p>2) Als erstes Kindelement der <span class="blue">&lt;surface</span>&gt; steht das Element <span class="blue">&lt;graphic/&gt;</span> mit dem Attribut <span class="yellow">@url</span> und als Attributwert die url der digitalen Abbildung dieser Seite. Das Element ist leer.</p>
-			<p>3) Als weitere Kindelemente von <span class="blue">&lt;surface</span>&gt; folgen nun so viele Elemente <span class="blue">&lt;zone/&gt;</span> wie die Seite Bildbereiche hat. Bildbereiche der Seite sind Spalten und evtl. existierende Randbereiche. Eine einspaltig beschriebene Seite hat also ein einziges Element <span class="blue">&lt;zone&gt;</span>, eine zweispaltig beschriebene Seite mit einer Lagenz&auml;hlung im unteren Rand hat drei <span class="blue">&lt;zone&gt;</span>-Elemente.</p>
-			<p>a) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Spalten</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:Column&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;Spalte&quot;, z.B. <span class="brown">&quot;b_12v-a&quot;</span>) und <span class="yellow">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. &quot;a&quot;).</p>
-			<p>b) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Randbereiche</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:MarginalZone&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;ein Buchstabe mehr als die letzte Spalte&quot;, z.B. <span class="brown">&quot;b_12v-b&quot;</span>) und <span class="yellow">@hei:placeRef</span> (in der Regel mit dem Wert <span class="brown">&quot;hc:PageBottom&quot;</span>, ggf. erg&auml;nzt durch <span class="brown">&quot;hc:PageMarginRight&quot;)</span>. Das Element <span class="blue">&lt;zone/&gt;</span>ist leer.</p>
+			<p>3) Als weitere Kindelemente von <span class="blue">&lt;surface&gt;</span> folgen nun so viele Elemente <span class="blue">&lt;zone&gt;</span> wie die Seite Bildbereiche hat. Bildbereiche der Seite sind Spalten und evtl. existierende Randbereiche. Eine einspaltig beschriebene Seite hat also ein einziges Element <span class="blue">&lt;zone&gt;</span>, eine zweispaltig beschriebene Seite mit einer Lagenz&auml;hlung im unteren Rand hat drei <span class="blue">&lt;zone&gt;</span>-Elemente.</p>
+			<p>a) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Spalten</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:Column&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;Spalte&quot;, z.B. <span class="brown">&quot;b_12v-a&quot;</span>) und <span class="yellow">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. <span class="brown">&quot;a&quot;</span>).</p>
+			<p>b) <span class="blue">&lt;zone&gt;</span>-Elemente f&uuml;r <i>Randbereiche</i> haben die Attribute <span class="yellow">@ana</span> (mit dem Wert <span class="brown">&quot;hc:MarginalZone&quot;</span>), <span class="yellow">@xml:id</span> (dessen Wert ist &quot;Sigle der Handschrift&quot;_&quot;Seitenzahl&quot;-&quot;ein Buchstabe mehr als die letzte Spalte&quot;, z.B. <span class="brown">&quot;b_12v-b&quot;</span>) und <span class="yellow">@hei:placeRef</span> (in der Regel mit dem Wert <span class="brown">&quot;hc:PageBottom&quot;</span>, ggf. erg&auml;nzt durch <span class="brown">&quot;hc:PageMarginRight&quot;</span>). Das Element <span class="blue">&lt;zone/&gt;</span> ist leer.</p>
 			<p>
 				<i>Beispiel:</i>
 				<br />
@@ -245,21 +245,21 @@
 				<i>Beispiel:</i>
 			</p>
 			<p>
-				<span class="blue">&lt;front&gt;<br /> &lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;5v&quot;</span><span class="blue">/&gt;&lt;cb</span>
+				<span class="blue">&lt;front&gt;<br /> &lt;pb</span> <span class="yellow">n=</span><span class="brown">&quot;5v&quot;</span><span class="blue">/&gt;&lt;cb</span>
 				<span class="yellow">n=</span><span class="brown">&quot;c&quot;</span><span class="blue">/&gt;</span><br />
 				<span class="blue">&lt;docTitle&gt;&lt;titlePart&gt;</span><br />
 				<span class="blue">&lt;lb</span>
-				<span class="yellor">n=</span><span class="brown">&quot;49&quot;</span><span class="blue">/&gt;&lt;hi</span>
+				<span class="yellow">n=</span><span class="brown">&quot;49&quot;</span><span class="blue">/&gt;&lt;hi</span>
 				<span class="yellow">hei:color=</span><span class="brown">&quot;Red&quot;</span><span class="blue">&gt;&lt;w&gt;</span>Von<span class="blue">&lt;/w&gt;&lt;w&gt;</span>k&uuml;nig><span class="blue">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="blue">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="blue">&lt;/w&gt;</span><br />
 				<span class="blue"> &lt;/titlePart&gt;&lt;/docTitle&gt;<br /> &lt;/front&gt;</span></p>
 			<p>In <span class="blue">&lt;back&gt;</span> hingegen werden typischerweise Schreiberkolophone eingetragen. Das Element <span class="blue">&lt;back&gt;</span> enth&auml;lt ein Kindelement <span class="blue">&lt;trailer&gt;</span> mit dem Attribut <span class="yellow">@ana</span> und dem Wert <span class="brown">&quot;hc:Colophon&quot;</span>.</p>
 			<p>
 				<i>Beispiel:</i>
 			</p>
-			<p><span class="blue">&lt;back&gt;<br /> &lt;trailer</span><span class="yellow">ana=</span><span class="brown">&quot;hc:Colophon&quot;</span><span class="blue">&gt;</span><br />
+			<p><span class="blue">&lt;back&gt;<br /> &lt;trailer</span> <span class="yellow">ana=</span><span class="brown">&quot;hc:Colophon&quot;</span><span class="blue">&gt;</span><br />
 				<span class="blue">&lt;w&gt;</span>Amen<span class="blue">&lt;/w&gt;</span><br />
 				<span class="blue">&lt;/trailer&gt;<br /> &lt;/back&gt;</span></p>
-			<p>Manchmal enthalten Kolophone Verzierungen, die wir als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) mit dem Attribut <span class="yellow">@ana</span>und dem Wert <span class="brown">&quot;hc:DecorativeMarker&quot;</span>taggen.</p>
+			<p>Manchmal enthalten Kolophone Verzierungen, die wir als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) mit dem Attribut <span class="yellow">@ana</span> und dem Wert <span class="brown">&quot;hc:DecorativeMarker&quot;</span> taggen.</p>
 			<p>
 				<br />
 			</p>
@@ -406,7 +406,7 @@
 					<p style="margin-left: 0.58in">sageter &rarr; <span class="blue">&lt;w&gt;</span>saget<span class="blue">&lt;/w&gt;&lt;w&gt;</span>er<span class="blue">&lt;/w&gt;</span> (&lt; <i>sagete er</i>)<br /> zen &rarr; <span class="blue">&lt;w&gt;</span>z<span class="blue">&lt;/w&gt;&lt;w&gt;</span>en<span class="blue">&lt;/w&gt;</span> (&lt; <i>ze den</i>)<br /> zun&nbsp;&rarr;&nbsp;<span class="blue">&lt;w&gt;</span>zu<span class="blue">&lt;/w&gt;&lt;w&gt;</span>n<span class="blue">&lt;/w&gt;</span>&nbsp;(&lt;&nbsp;<i>zuo den</i>)</p>
 					<ul>
 						<li>
-							<p style="margin-bottom: 0in; line-height: 100%">Geh&ouml;rt ein Konsonant im Bereich der Krasis eindeutig (auch) zu dem ersten Wort, so wird nach ihm getrennt; geh&ouml;rt er nur zur zweiten Form, so wird vor ihm getrennt. Beispiele:</p>
+							<p>Geh&ouml;rt ein Konsonant im Bereich der Krasis eindeutig (auch) zu dem ersten Wort, so wird nach ihm getrennt; geh&ouml;rt er nur zur zweiten Form, so wird vor ihm getrennt. Beispiele:</p>
 					</ul>
 					<p style="margin-left: 0.58in">mirz &rarr; <span class="blue">&lt;w&gt;</span>mir<span class="blue">&lt;/w&gt;&lt;w&gt;</span>z<span class="blue">&lt;/w&gt;</span>(&lt; <i>mir ez</i>)<br /> alsi&nbsp;&rarr;&nbsp;<span class="blue">&lt;w&gt;</span>als<span class="blue">&lt;/w&gt;&lt;w&gt;</span>i<span class="blue">&lt;/w&gt;</span>&nbsp;(&lt;&nbsp;<i>alse si</i>).</p>
 					<ul>
