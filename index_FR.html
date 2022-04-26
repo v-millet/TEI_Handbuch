@@ -272,7 +272,7 @@
 				<li>
 					<p>Le <span class="blue">&lt;titleStmt&gt;</span> contient l&rsquo;&eacute;l&eacute;ment <span class="blue">&lt;title&gt;</span> avec le contenu: &quot;Ms.-Iwein X&quot; ou &quot;Ms.-Gregorius Y&quot;; l&rsquo;&eacute;l&eacute;ment <span class="blue">&lt;author&gt;</span> avec le contenu &quot;Hartmann von Aue&quot;; et l&rsquo;&eacute;l&eacute;ment <span class="blue">&lt;respStmt&gt;</span> avec les &eacute;l&eacute;ments descendant <span class="blue">&lt;resp&gt;</span> (contenu: &quot;transcription&quot;, &quot;revision&quot;, &quot;edition&quot;) et <span class="blue">&lt;persName&gt;</span> (contenu: &quot;nom du responsable&quot;).</p>
 				<li>
-					<p>Le <span class="blue">&lt;publicationStmt&gt;</span> contient juste l'élément descendant <span class="blue">&lt;publisher&gt;</span> avec le contenu &quot;UB Heidelberg&quot;.</p>
+					<p>Le <span class="blue">&lt;publicationStmt&gt;</span> contient juste l'&eacute;l&eacute;ment descendant <span class="blue">&lt;publisher&gt;</span> avec le contenu &quot;UB Heidelberg&quot;.</p>
 				<li>
 					<p>La <span class="blue">&lt;sourceDesc&gt;</span> comprend l&rsquo;&eacute;l&eacute;ment <span class="blue">&lt;listWit&gt;</span> avec l&rsquo;el&eacute;ment descendant <span class="blue">&lt;witness&gt;</span>; cet &eacute;l&eacute;ment re&ccedil;oit comme attribut une <span class="yellow">@xml:id</span> avec la valeur du sigle du manuscrit. <span class="blue">&lt;witness&gt;</span> a <span class="blue">&lt;msDesc&gt;</span> comme &eacute;l&eacute;ment descendant, et celui-ci a imbriqu&eacute; &agrave; son tour  <span class="blue">&lt;msIdentifier&gt;</span>. Les &eacute;l&eacute;ments descendant de ce dernier sont <span class="blue">&lt;settlement&gt;</span> (contenu: lieu de la biblioth&egrave;que), <span class="blue">&lt;repository&gt;</span> (contenu: nom de la biblioth&egrave;que) et <span class="blue">&lt;idno&gt;</span> (contenu: cote du manuscrit).</p>
 			</ul>
@@ -394,22 +394,22 @@
 				<li>
 					<h2><a id="Seite_Spalte"></a>Page / Colonne / ligne physique</h2>
 			</ol>
-			<p>1) Der Beginn einer neuen Seite wird getaggt mit <span class="blue">&lt;pb/&gt;</span>, auch der Beginn der ersten Seite (evtl. bereits in <span class="blue">&lt;front&gt;</span>, &rarr; <a href="#Titel_Kolophon">chap. 5</a>). Dieses Element ist immer leer. Es steht &ndash; wie alle Elemente &ndash; immer m&ouml;glichst weit 'oben' in der xml-Struktur: Bei Handschriften mit abgesetzten Versen also hinter dem Schluss der letzten <span class="blue">&lt;lg&gt;</span> der vorangehenden Seite, oder, wenn von einem Verspaar ein Vers auf jeder Seite steht, hinter dem Schluss der letzten <span class="blue">&lt;l&gt;</span>. Bei Handschriften ohne abgesetzte Verse allerdings steht das Element an der ensprechenden Stelle. Diesem Element folgt immer das Element <span class="blue">&lt;cb/&gt;</span>. Es enth&auml;lt immer das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Blatt- und Seitenzahl, z.B.: <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;1v&quot;</span><span class="blue">/&gt;</span>, oder <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;2r&quot;</span><span class="blue">/&gt;</span></p>
-			<p>2) Der Beginn einer neuen Spalte wird getaggt mit <span class="blue">&lt;cb/&gt;</span>. Dieses Element ist immer leer. In einspaltigen Handschriften steht es immer hinter dem Element <span class="blue">&lt;pb/&gt;</span>. Bei mehrspaltigen Handschriften steht es au&szlig;erdem hinter dem letzten Vers oder Verspaar der vorangehenden Spalte und vor der ersten Zeile der neuen Spalte. Es enth&auml;lt immer das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist der Buchstabe f&uuml;r die jeweilige Spalte (a, b, c), z.B.: <span class="blue">&lt;cb</span>
-				<span class="yellow">n=</span><span class="brown">&quot;a&quot;</span><span class="blue">/&gt;</span>, oder <span class="blue">&lt;cb</span>
+			<p>1) Le d&eacute;but d'une nouvelle page est marqu&eacute; avec <span class="blue">&lt;pb/&gt;</span>, y compris le d&eacute;but de la premi&egrave;re page (&eacute;ventuellement d&eacute;j&agrave; dans <span class="blue">&lt;front&gt;</span>, &rarr; <a href="#Titel_Kolophon">chap. 5</a>). Cet &eacute;l&eacute;ment est toujours vide. Il se trouve, comme tous les &eacute;l&eacute;ments, toujours le plus 'haut' possible dans la structure xml : dans des manuscrits avec des vers d&eacute;tach&eacute;s (un seul vers par ligne), il se trouve donc apr&egrave;s la fin du dernier <span class="blue">&lt;lg&gt;</span> de la page pr&eacute;c&eacute;dente; dans le cas d'une couplet qui a un vers sur chaque page, il se trouve apr&egrave;s la fin du pr&eacute;mier <span class="blue">&lt;l&gt;</span>. Dans les manuscrits sans des vers d&eacute;tach&eacute;s, l'&eacute;l&eacute;ment se trouve pourtant &agrave; sa place correspondante.<br/>Cet &eacute;l&eacute;ment est toujours suivi de l'&eacute;l&eacute;ment <span class="blue">&lt;cb/&gt;</span>. Il porte toujours l'attribut <span class="yellow">@n</span>, dont la valeur est le número de feuille et de page (recto-verso), par ex. <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;1v&quot;</span><span class="blue">/&gt;</span>, ou <span class="blue">&lt;pb</span><span class="yellow">n=</span><span class="brown">&quot;2r&quot;</span><span class="blue">/&gt;</span></p>
+			<p>2) Le d&eacute;but d'une nouvelle page est indiqu&eacute; au moyen de l'&eacute;l&eacute;ment <span class="blue">&lt;cb/&gt;</span>. Cet &eacute;l&eacute;ment est toujours vide. Dans des manuscrits avec une seule colonne, il se trouve apr&egrave;s l'&eacute;l&eacute;ment <span class="blue">&lt;pb/&gt;</span>. Dans des manuscrits &agrave; plusieurs colonnes, il se trouve en outre apr&egrave;s le dernier vers ou couplet de la colonne pr&eacute;c&eacute;dente et avant la premi&egrave;re ligne de la nouvelle colonne. Il contient toujours l'attribut <span class="yellow">@n</span>, dont la valeur est la lettre correspondante &agrave; la colonne concern&eacute;e (a, b, c), par ex.: <span class="blue">&lt;cb</span>
+				<span class="yellow">n=</span><span class="brown">&quot;a&quot;</span><span class="blue">/&gt;</span>, ou <span class="blue">&lt;cb</span>
 				<span class="yellow">n=</span><span class="brown">&quot;b&quot;</span><span class="blue">/&gt;</span></p>
-			<p>3) Der Beginn einer neuen physischen Zeile wird getaggt mit <span class="blue">&lt;lb/&gt;</span>. Dieses Element ist immer leer. Es enth&auml;lt <i>immer</i> das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Nummer der physischen Zeile in der aktuellen Spalte, z.B. <span class="blue">&lt;l&gt;&lt;lb </span><span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br /> Die Position von <span class="blue">&lt;lb&gt;</span> in Bezug zu <span class="blue">&lt;l&gt;</span> ist im Grunde irrelevant, es kann auch mitten im <span class="blue">&lt;w&gt;</span> stehen. Aus praktischen Gr&uuml;nden setzen wir &uuml;berall dort, wo der Versbeginn mit dem Zeilenbeginn zusammenf&auml;llt, <span class="blue">&lt;lb&gt;</span> als erstes Kindelement von <span class="blue">&lt;l&gt;</span> (s. das Beispiel oben).</p>
-			<p> Zu Worttrennung &rarr; <a href="#Wort_Spatium">chap. 9.3</a>; zu Zeilen&uuml;berh&auml;ngen &rarr; <a href="#Zeilenueberlauf">chap. 21</a>.</p>
+			<p>3) Le d&eacute;but d'une nouvelle ligne physique est encod&eacute; gr&acirc;ce &agrave; l'&eacute;l&eacute;ment <span class="blue">&lt;lb/&gt;</span>. Cet &eacute;l&eacute;ment est toujours vide. Il contient toujours l'attribut <span class="yellow">@n</span>, qui porte comme valeur le num&eacute;ro de la ligne physique dans la colonne actuelle, par ex. <span class="blue">&lt;l&gt;&lt;lb </span><span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br/> La place de <span class="blue">&lt;lb&gt;</span> par rapport &agrave; <span class="blue">&lt;l&gt;</span> n'est en principe pas pertinente, car il peut se trouver &eacute;galement au milieu de <span class="blue">&lt;w&gt;</span>. Pour des raisons pratiques, on place <span class="blue">&lt;lb&gt;</span> partout où le d&eacute;but du vers coïncide avec le d&eacute;but de la ligne <span class="blue">&lt;l&gt;</span> (voir l'exemple ci-dessus).</p>
+			<p> Pour la s&eacute;paration de mots &rarr; <a href="#Wort_Spatium">chap. 9.3</a>; pour les d&eacute;bordements de ligne &rarr; <a href="#Zeilenueberlauf">chap. 21</a>.</p>
 			<p>
-				<br />
+				<br/>
 			</p>
 			<ol start="8">
 				<li>
-					<h2><a id="Verspaar_Vers"></a>Verspaar und Vers</h2>
+					<h2><a id="Verspaar_Vers"></a>Couplet et vers</h2>
 			</ol>
-			<p>1) Jedes Verspaar steht innerhalb des Elements <span class="blue">&lt;lg&gt;</span>. Es f&uuml;hrt das Attribut <span class="yellow">@ana </span>mit den Werten <span class="brown">&quot;hc:Couplet&quot;</span> (=Reimpaar, das h&auml;ufigste), <span class="brown">&quot;hc:Tercet&quot;</span> oder <span class="brown">&quot;hc:Quatrain&quot;</span>.</p>
-			<p>2) Jeder Vers steht innerhalb des Elements <span class="blue">&lt;l&gt;</span>. Dieses Element f&uuml;hrt erstens das Attribut <span class="yellow">@n</span>; der Wert des Attributs ist die Versnummer nach Lachmann. Zweitens eine <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>).</p>
-			<p>Bei Versumstellungen durch den Schreiber folgt die Transkription zun&auml;chst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="blue">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="blue">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">chap. 35</a>). Zum Beispiel:</p>
+			<p>1) On trouve chaque couplet ou paire de vers &agrave; l'int&eacute;rieur de l'&eacute;l&eacute;ment <span class="blue">&lt;lg&gt;</span>. Il insere l'attribut <span class="yellow">@ana </span> avec la valeur <span class="brown">&quot;hc:Couplet&quot;</span> (=le distique, la valeur la plus fr&eacute;quente), <span class="brown">&quot;hc:Tercet&quot;</span> ou <span class="brown">&quot;hc:Quatrain&quot;</span>.</p>
+			<p>2) On trouve chaque vers &agrave; l'int&eacute;rieur de l'&eacute;l&eacute;ment <span class="blue">&lt;l&gt;</span>. Cet &eacute;l&eacute;ment introduit premi&egrave;rement l'attribut <span class="yellow">@n</span>; dont la valeur est le num&eacute;ro du vers selon Lachmann ou les &eacute;ditions traditionelles. Deuxi&egrave;mement, l'attribut <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>). Et troisi&egrave;mement, une num&eacute;rotation alternative <span class="yellow">@altN</span> suivant rigoreusement le manuscrit.</p>
+			<p>Au cas où le copiste effectue une transposition de vers, la transcription suit l'ordre physique des vers du manuscrit. Cela signifie que les num&eacute;ros des &eacute;l&eacute;ments <span class="blue">&lt;lb&gt;</span> restent toujours cons&eacute;cutifs; les num&eacute;ros des &eacute;l&eacute;ments <span class="blue">&lt;l&gt;</span> sont pourtant adapt&eacute;s (pour le traitement &eacute;ditorial &rarr; <a href="#Versumstellung_editorisch">chap. 35</a>). Par exemple:</p>
 			<p>
 				<span class="blue">&lt;l</span>
 				<span class="yellow">n=</span>
@@ -431,7 +431,7 @@
 				<span class="brown">&quot;25&quot;</span>
 				<span class="blue">/&gt;</span>
 			</p>
-			<p>Fehlt ein Vers oder eine Gruppe von Versen, stehen sie schlicht nicht in der Transkription:</p>
+			<p>S'il manque un vers ou un groupe de vers, ceux-ci ne figurent simplement pas dans la transcription:</p>
 			<p>
 				<span class="blue">&lt;l </span>
 				<span class="yellow">n=</span>
@@ -442,7 +442,7 @@
 				<span class="yellow">n=</span>
 				<span class="brown">&quot;24&quot;</span>
 				<span class="blue">/&gt;</span>
-				<br />
+				<br/>
 				<span class="blue">&lt;l</span>
 				<span class="yellow">n=</span>
 				<span class="brown">&quot;112&quot;</span>
@@ -453,7 +453,7 @@
 				<span class="brown">&quot;25&quot;</span>
 				<span class="blue">/&gt;</span>
 			</p>
-			<p>Bei hinzugef&uuml;gten Versen werden die notwendigen <span class="blue">&lt;l&gt;</span> und <span class="blue">&lt;lg&gt;</span>-Elemente hinzugef&uuml;gt. Die Nummerierung der <span class="blue">&lt;l&gt;</span>-Elemente im <span class="yellow">@n</span>-Attribut ist die des letzten mit Lachmann &uuml;bereinstimmenden Verses, gefolgt von einem Komma und einer zweiten konsekutiven Zahl (bzw., je nach Projekt, ein Buchstabe), z.B.:</p>
+			<p>Dans le cas des vers ajout&eacute;s, il est n&eacute;cessaire d'ajouter les &eacute;l&eacute;ments <span class="blue">&lt;l&gt;</span> et <span class="blue">&lt;lg&gt;</span>. La num&eacute;rotation des &eacute;l&eacute;ments <span class="blue">&lt;l&gt;</span> dans l'attribut <span class="yellow">@n</span> est celle du dernier vers correspondant &agrave; la version de Lachmann, suivie d'une virgule et d'un second num&eacute;ro cons&eacute;cutif (ou bien, selon le projet, d'une lettre), par ex.:</p>
 			<p>
 				<span class="blue">&lt;l</span>
 				<span class="yellow">n=</span>
@@ -470,9 +470,9 @@
 				<span class="brown">&quot;117,2&quot;</span>
 				<span class="blue">&gt;</span>
 			</p>
-			<p>F&uuml;r versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">chap. 27</a>.</p>
-			<p>3) Wir verwenden die Standard-Versnummerierung der Forschung. Sp&auml;ter wird automatisch eine alternative, Handschrifteneigene konsekutive Nummerierung eingef&uuml;gt, die evtl. auch in der Edition dargestellt werden kann.</p>
-			<p>4) In der Excel-Datei &quot;Konkordanz&quot; werden fehlende Verse gel&ouml;scht, zus&auml;tzliche Verse erg&auml;nzt, umgestellte Vers an die entsprechende Position gestellt und farbig markiert, damit eine &quot;Karte&quot; der Verse entstehen kann, die es sp&auml;ter erlaubt, parallele Verse auch parallel zu visualisieren.</p>
+			<p>Pour les vers mal ordonn&eacute;s de mani&egrave;re accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 27</a>.</p>
+			<p>3) On emploie la num&eacute;rotation standard de vers appartenant &agrave; la recherche. Plus tard, une num&eacute;rotation alternative, consecutive et propre au manuscrit est rajout&eacute;e automatiquement et peut aussi &eacute;ventuellement &ecirc;tre affich&eacute;e dans l'&eacute;dition.</p>
+			<p>4) Dans le fichier Excel "Concordance", les vers manquants sont supprim&eacute;s, les vers suppl&eacute;mentaires sont ajout&eacute;s, les vers transpos&eacute;s sont install&eacute;s &agrave; leur place correspondante et marqu&eacute;s en couleur, afin de cr&eacute;er une "carte" de vers qui permettra plus tard de visualiser les vers parall&egrave;les &eacute;galement en parall&egrave;le</p>
 			<p>
 				<br />
 			</p>
