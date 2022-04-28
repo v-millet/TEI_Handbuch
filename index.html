@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<meta charset="UTF-8"/>
 		<title>TEI-Handbuch</title>
 		<style type="text/css">
 			p {
@@ -374,21 +374,22 @@
 					<h2><a id="Wort_Spatium"></a>Wort, Spatium, Zusammen- und Getrenntschreibung</h2>
 			</ol>
 			<p>1) Jedes linguistische Wort wird getaggt mit dem Element <span class="blue">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort f&uuml;hrt eine <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>) mit der Struktur &quot;Element_Versnummer_laufende Nummer&quot;, z.B.: <span class="yellow">@xml:id=</span><span class="brown">&quot;w_765_1&quot;</span> (=erstes Element <span class="blue">&lt;w&gt;</span> im Vers 765).</p>
-			<p>2) Zwischen zwei Worten steht in der Regel ein Spatium. Spatien werde getaggt mit dem Element <span class="blue">&lt;c&gt;&nbsp;&lt;/c&gt;</span>, dessen Inhalt ein Spatium ist. Werden zwei Worte in der Hs. zusammen geschrieben, bleibt das Spatium in der Transkription weg, kann in der Edition aber erg&auml;nzt werden (&rarr; <a href="#Spatien_editorisch">Kap. 35</a>). Bei der Tilgung und Erg&auml;nzung ganzer Worte in der Handschrift muss im Code jeweils ein Spatium getilgt bzw. erg&auml;nzt werden, damit bei der Darstellung die Worte nicht zusammen geschrieben erscheinen. Z.B.:</p>
+			<p>2) Da wir Worte im Element <span class="blue">&lt;w&gt;</span> nach linguistischen Kriterien erfassen, kann die Zusammen- oder Getrenntschreibung der Handschrift wiedergegeben werden. Spatien haben nicht mehr unbedingt die Funktion der Worttrennung.</p>
+			<p>3) Zwischen zwei Worten steht in der Regel ein Spatium. Spatien werde getaggt mit dem Element <span class="blue">&lt;c&gt;&nbsp;&lt;/c&gt;</span>, dessen Inhalt ein Spatium ist. Werden zwei Worte in der Hs. zusammen geschrieben, bleibt das Spatium in der Transkription weg, kann in der Edition aber erg&auml;nzt werden (&rarr; <a href="#Spatien_editorisch">Kap. 35</a>). Bei der Tilgung und Erg&auml;nzung ganzer Worte in der Handschrift muss im Code jeweils ein Spatium getilgt bzw. erg&auml;nzt werden, damit bei der Darstellung die Worte nicht zusammen geschrieben erscheinen. Z.B.:</p>
 			<p><span class="blue">&lt;w&gt;</span>Swer<span class="blue">&lt;/w&gt;&lt;w&gt;</span>an<span class="blue">&lt;/w&gt;&lt;add&gt;&lt;w&gt;</span>rehte<span class="blue">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;&lt;w&gt;</span>g&uuml;ete<span class="blue">&lt;/w&gt;</span></p>
-			<p>3) Bei Worttrennung am Zeilenende wird an der entsprechenden Stelle innerhalb des Wortes das <span class="blue">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingef&uuml;gt, sowie mit dem Attribut <span class="yellow">@break=</span><span class="brown">&quot;no&quot;</span>. Gibt es ein Trennungszeichen, wird dieses als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) erfasst, mit dem Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span>, darin das Trennungszeichen. Z.B.:</p>
+			<p>4) Bei Worttrennung am Zeilenende wird an der entsprechenden Stelle innerhalb des Wortes das <span class="blue">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingef&uuml;gt, sowie mit dem Attribut <span class="yellow">@break=</span><span class="brown">&quot;no&quot;</span>. Gibt es ein Trennungszeichen, wird dieses als <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) erfasst, mit dem Attribut <span class="yellow">@ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span>, darin das Trennungszeichen. Z.B.:</p>
 			<p><span class="blue">&lt;lb</span><span class="yellow"> n=</span><span class="brown">&quot;26&quot;</span><span class="blue">/&gt;</span><br />
 				<span class="blue">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;</span>vr&uuml;me<span class="blue">&lt;metamark</span>
 				<span class="yellow">ana=</span><span class="brown">&quot;hc:Hyphen&quot;</span><span class="blue">&gt;</span>&#11799;<span class="blue">&lt;/metamark&gt;&lt;lb</span>
 				<span class="yellow">n=</span><span class="brown">&quot;27&quot;</span>
 				<span class="yellow">break=</span><span class="brown">&quot;no&quot;</span><span class="blue">/&gt;</span>keit<span class="blue">&lt;/w&gt;</span></p>
-			<p>4) Zusammen- und Getrenntschreibung ist in Handschriften bei weitem nicht immer eindeutig. Im Zweifelsfall werden die Worte so erfasst, wie es die W&ouml;rterb&uuml;cher vorsehen: stehen zwei verschiedene Worte nahe beieinander, sind aber nicht eindeutig zusammengeschrieben, transkribieren wir sie als getrennt; sind innerhalb eines Wortes zwei Buchstaben ein klein wenig voneinander entfernt, ohne dass es sich aber um eine eindeutige Getrenntschreibung handelt, wird das Wort zusammengeschrieben. Dies zu entscheiden, liegt im Ermessen des Transkribenden.</p>
-			<p>5) Bei deutlicher Getrenntschreibung innerhalb eines grammatischen Wortes (z.B. bei Verbpr&auml;fixen) wird das Wort als solches in einem einzigen <span class="blue">&lt;w&gt;</span>-Element erfasst und die Trennung mit einem Spatium markiert, das jedoch f&uuml;r die Editionsansicht gel&ouml;scht wird:</p>
+			<p>5) Zusammen- und Getrenntschreibung ist in Handschriften bei weitem nicht immer eindeutig. Im Zweifelsfall werden die Worte so erfasst, wie es die W&ouml;rterb&uuml;cher vorsehen: stehen zwei verschiedene Worte nahe beieinander, sind aber nicht eindeutig zusammengeschrieben, transkribieren wir sie als getrennt; sind innerhalb eines Wortes zwei Buchstaben ein klein wenig voneinander entfernt, ohne dass es sich aber um eine eindeutige Getrenntschreibung handelt, wird das Wort zusammengeschrieben. Dies zu entscheiden, liegt im Ermessen des Transkribenden.</p>
+			<p>6) Bei deutlicher Getrenntschreibung innerhalb eines grammatischen Wortes (z.B. bei Verbpr&auml;fixen) wird das Wort als solches in einem einzigen <span class="blue">&lt;w&gt;</span>-Element erfasst und die Trennung mit einem Spatium markiert, das jedoch f&uuml;r die Editionsansicht gel&ouml;scht wird:</p>
 			<p><span class="blue">&lt;w&gt;</span>ge<span class="blue">&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;</span>lesen<span class="blue">&lt;/w&gt;</span>
 			</p>
 			<p>Umgekehrt gilt: Bei eindeutiger Zusammenschreibung zweier Worte werden beide als getrennte Tokens erfasst. Ihre Zusammenschreibung in der Handschrift wird dadurch gekennzeichnet, dass kein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> zwischen den beiden Tokens steht. Will man in der Edition die beiden Worte getrennt erscheinen lassen, kann man das Spatium editorisch hinzuf&uuml;gen:</p>
 			<p><span class="blue">&lt;w&gt;</span>ze<span class="blue">&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;</span>lesen<span class="blue">&lt;/w&gt;</span></p>
-			<p>6) Besondere Regeln f&uuml;r die Tokenisierung:</p>
+			<p>7) Besondere Regeln f&uuml;r die Tokenisierung:</p>
 			<ul>
 				<li>
 					<p>Wir definieren nach linguistischen Kriterien, was ein Wort ist. Im Zweifelsfall richten wir uns nach den W&ouml;rterb&uuml;chern.</p>
