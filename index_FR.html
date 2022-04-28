@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Manuel d&rsquo;encodage </title>
+		<title>Manuel d'encodage </title>
 		<style type="text/css">
 			p {
 			    font-family: "Helvetica", serif;
@@ -74,14 +74,14 @@
 	</head>
 	<body>
 		<div>
-			<h1>Hartmann von Aue &ndash; numérique: Manuel d&rsquo;encodage TEI </h1>
+			<h1>Hartmann von Aue &ndash; numérique: Manuel d'encodage TEI </h1>
 			<p>
 				<br />
 			</p>
 			<p class="back"><a href="index.html">Deutsche Fassung</a></p>
 			<p>Ce manuel TEI a été rédigé pour les projets des éditions numériques de <i>Hartmann von Aue &ndash; numérique</i>. Il a été élaboré en fonction des <a href="https://heieditions.github.io/guidelines/toc.html" target="_blank">Directives</a> que HeiEditions a fixées sur le schéma de validation et la documentation correspondante.</p>
-			<p>Pour l&rsquo;installation du Oxygen-XML-editor, du framework, du répertoire de caract&egrave;res Junicode et du dép&ocirc;t GitHub, voir le site <a href="./Installation_Oxygen_DE.html" target="_blank">Setups for Hartmann von Aue-digital</a>.</p>
-			<p>Vous trouverez également ici la <a href="./Zeichenliste_HvA_digital.pdf" target="_blank">liste des caract&egrave;res</a> et la <a href="./Metamarks_list.pdf" target="_blank">liste des métamarques</a>.</p>
+			<p>Pour l'installation du Oxygen-XML-editor, du framework, du répertoire de caractères Junicode et du dépôt GitHub, voir le site <a href="./Installation_Oxygen_DE.html" target="_blank">Setups for Hartmann von Aue-digital</a>.</p>
+			<p>Vous trouverez également ici la <a href="./Zeichenliste_HvA_digital.pdf" target="_blank">liste des caractères</a> et la <a href="./Metamarks_list.pdf" target="_blank">liste des métamarques</a>.</p>
 			<p>Les exemples ont été souvent un peu simplifiés dans la partie non pertinente afin de se concentrer sur ce qui est important.</p>
 			<p>
 				<br />
@@ -91,19 +91,19 @@
 			</h2>
 			<div id="Table_of_Contents1">
 				<p>
-					<a href="#Struktur">Premi&egrave;re Partie: Structure des fichiers TEI</a>
+					<a href="#Struktur">Première Partie: Structure des fichiers TEI</a>
 				</p>
 				<p>
-					<a href="#xml_Deklaration">1. Déclaration XML et l&rsquo;élément racine TEI</a>
+					<a href="#xml_Deklaration">1. Déclaration XML et l'élément racine TEI</a>
 				</p>
 				<p>
-					<a href="#TEI_Header">2. L&rsquo;en-t&ecirc;te TEI</a>
+					<a href="#TEI_Header">2. L'en-tête TEI</a>
 				</p>
 				<p>
-					<a href="#Faksimile">3. L&rsquo;élément &lt;facsimile&gt;</a>
+					<a href="#Faksimile">3. L'élément &lt;facsimile&gt;</a>
 				</p>
 				<p>
-					<a href="#Element_Text">4. L&rsquo;élément &lt;text&gt;</a>
+					<a href="#Element_Text">4. L'élément &lt;text&gt;</a>
 				</p>
 				<p>
 					<a href="#Titel_Kolophon">5. Titre et colophon</a>
@@ -115,7 +115,7 @@
 					<br />
 				</p>
 				<p>
-					<a href="#Transkription">Deuxi&egrave;me Partie: Transcription des manuscrits</a>
+					<a href="#Transkription">Deuxième Partie: Transcription des manuscrits</a>
 				</p>
 				<p>
 					<a href="#Seite_Spalte">7. Page / Colonne / Ligne physique</a>
@@ -127,16 +127,16 @@
 					<a href="#Wort_Spatium">9. Mot, espace, écriture conjointe ou séparée</a>
 				</p>
 				<p>
-					<a href="#Grapheme_Majuskeln">10. Graph&egrave;mes et majuscules</a>
+					<a href="#Grapheme_Majuskeln">10. Graphèmes et majuscules</a>
 				</p>
 				<p>
-					<a href="#Diakritika">11. Caract&egrave;res spéciaux, diacritiques et superscripts</a>
+					<a href="#Diakritika">11. Caractères spéciaux, diacritiques et superscripts</a>
 				</p>
 				<p>
 					<a href="#Initialen">12. Initiales</a>
 				</p>
 				<p>
-					<a href="#hei:cue">13. Signes d&rsquo;instructions pour les initiales</a>
+					<a href="#hei:cue">13. Signes d'instructions pour les initiales</a>
 				</p>
 				<p>
 					<a href="#Hervorhebungen">14. Mise en valeur</a>
@@ -157,7 +157,7 @@
 					<a href="#del_add_Tokenisierung">19. Ajouts / Suppressions et tokenisation</a>
 				</p>
 				<p>
-					<a href="#Zeilenspruenge">20. Sautes de ligne &agrave; l&rsquo;intérieur du vers et &agrave; l&rsquo;intérieur du mot</a>
+					<a href="#Zeilenspruenge">20. Sautes de ligne à l'intérieur du vers et à l'intérieur du mot</a>
 				</p>
 				<p>
 					<a href="#Zeilenueberlauf">21. Débordement de ligne</a>
@@ -166,7 +166,7 @@
 					<a href="#nicht_ausgefuehrt">22. Mots / Lignes non executées</a>
 				</p>
 				<p>
-					<a href="#Verswiederholungen">23. Répetitions de vers ou vers tr&egrave;s similaires</a>
+					<a href="#Verswiederholungen">23. Répetitions de vers ou vers très similaires</a>
 				</p>
 				<p>
 					<a href="#gap_damage">24. Pertes et texte endommagé</a>
@@ -193,7 +193,7 @@
 					<br />
 				</p>
 				<p>
-					<a href="#editorische_Bearbeitung">Troisi&egrave;me Partie: Traitement éditorial</a>
+					<a href="#editorische_Bearbeitung">Troisième Partie: Traitement éditorial</a>
 				</p>
 				<p>
 					<a href="#Normalisierung">31. Régularisations</a>
@@ -216,12 +216,12 @@
 			</p>
 			<ol type="A">
 				<li>
-					<h2><a id="Struktur"></a>Premi&egrave;re Partie: Structure des fichiers TEI</h2>
+					<h2><a id="Struktur"></a>Première Partie: Structure des fichiers TEI</h2>
 				</li>
 			</ol>
 			<ol start="1">
 				<li>
-					<h2><a id="xml_Deklaration"></a>Déclaration XML et l&rsquo;élément racine TEI</h2>
+					<h2><a id="xml_Deklaration"></a>Déclaration XML et l'élément racine TEI</h2>
 			</ol>
 			<p>1) Les déclarations pour XML et les schémas de validation sont les suivantes pour tous les fichiers:</p>
 			<p>
@@ -241,7 +241,7 @@
 				<br />
 				<span class="violett">%heiEDITIONS_entities; ]&gt;</span>
 			</p>
-			<p>3) L&rsquo;élément racine <TEI> contient les attributs et les valeurs suivants:</p>
+			<p>3) L'élément racine <TEI> contient les attributs et les valeurs suivants:</p>
 			<p>
 				<span class="blue">&lt;TEI</span>
 				<span class="yellow">xmlns=</span>
@@ -264,19 +264,19 @@
 			</p>
 			<ol start="2">
 				<li>
-					<h2><a id="TEI_Header"></a>L&rsquo;en-t&ecirc;te TEI</h2>
+					<h2><a id="TEI_Header"></a>L'en-tête TEI</h2>
 			</ol>
-			<p>Dans un premier lieu, l&rsquo;élément <span class="blue">&lt;teiHeader&gt;</span> contient seulement deux éléments imbriqués dedans. Ces éléments sont également appelés les &rsquo;descendants&rsquo; du premier: <span class="blue">&lt;fileDesc&gt;</span> et <span class="blue">&lt;encodingDesc&gt;</span>.</p>
+			<p>Dans un premier lieu, l'élément <span class="blue">&lt;teiHeader&gt;</span> contient seulement deux éléments imbriqués dedans. Ces éléments sont également appelés les 'descendants' du premier: <span class="blue">&lt;fileDesc&gt;</span> et <span class="blue">&lt;encodingDesc&gt;</span>.</p>
 			<p>1) La description du fichier <span class="blue">&lt;fileDesc&gt;</span> contient un <span class="blue">&lt;titleStmt&gt;</span>, un <span class="blue">&lt;publicationStmt&gt;</span> et une <span class="blue">&lt;sourceDesc&gt;</span>.</p>
 			<ul>
 				<li>
-					<p>Le <span class="blue">&lt;titleStmt&gt;</span> contient l&rsquo;élément <span class="blue">&lt;title&gt;</span> avec le contenu: &quot;Ms.-Iwein X&quot; ou &quot;Ms.-Gregorius Y&quot;; l&rsquo;élément <span class="blue">&lt;author&gt;</span> avec le contenu &quot;Hartmann von Aue&quot;; et l&rsquo;élément <span class="blue">&lt;respStmt&gt;</span> avec les éléments descendant <span class="blue">&lt;resp&gt;</span> (contenu: &quot;transcription&quot;, &quot;revision&quot;, &quot;edition&quot;) et <span class="blue">&lt;persName&gt;</span> (contenu: &quot;nom du responsable&quot;).</p>
+					<p>Le <span class="blue">&lt;titleStmt&gt;</span> contient l'élément <span class="blue">&lt;title&gt;</span> avec le contenu: &quot;Ms.-Iwein X&quot; ou &quot;Ms.-Gregorius Y&quot;; l'élément <span class="blue">&lt;author&gt;</span> avec le contenu &quot;Hartmann von Aue&quot;; et l'élément <span class="blue">&lt;respStmt&gt;</span> avec les éléments descendant <span class="blue">&lt;resp&gt;</span> (contenu: &quot;transcription&quot;, &quot;revision&quot;, &quot;edition&quot;) et <span class="blue">&lt;persName&gt;</span> (contenu: &quot;nom du responsable&quot;).</p>
 				<li>
 					<p>Le <span class="blue">&lt;publicationStmt&gt;</span> contient juste l'élément descendant <span class="blue">&lt;publisher&gt;</span> avec le contenu &quot;UB Heidelberg&quot;.</p>
 				<li>
-					<p>La <span class="blue">&lt;sourceDesc&gt;</span> comprend l&rsquo;élément <span class="blue">&lt;listWit&gt;</span> avec l&rsquo;elément descendant <span class="blue">&lt;witness&gt;</span>; cet élément re&ccedil;oit comme attribut une <span class="yellow">@xml:id</span> avec la valeur du sigle du manuscrit. <span class="blue">&lt;witness&gt;</span> a <span class="blue">&lt;msDesc&gt;</span> comme élément descendant, et celui-ci a imbriqué &agrave; son tour  <span class="blue">&lt;msIdentifier&gt;</span>. Les éléments descendant de ce dernier sont <span class="blue">&lt;settlement&gt;</span> (contenu: lieu de la biblioth&egrave;que), <span class="blue">&lt;repository&gt;</span> (contenu: nom de la biblioth&egrave;que) et <span class="blue">&lt;idno&gt;</span> (contenu: cote du manuscrit).</p>
+					<p>La <span class="blue">&lt;sourceDesc&gt;</span> comprend l'élément <span class="blue">&lt;listWit&gt;</span> avec l'elément descendant <span class="blue">&lt;witness&gt;</span>; cet élément re&ccedil;oit comme attribut une <span class="yellow">@xml:id</span> avec la valeur du sigle du manuscrit. <span class="blue">&lt;witness&gt;</span> a <span class="blue">&lt;msDesc&gt;</span> comme élément descendant, et celui-ci a imbriqué à son tour  <span class="blue">&lt;msIdentifier&gt;</span>. Les éléments descendant de ce dernier sont <span class="blue">&lt;settlement&gt;</span> (contenu: lieu de la bibliothèque), <span class="blue">&lt;repository&gt;</span> (contenu: nom de la bibliothèque) et <span class="blue">&lt;idno&gt;</span> (contenu: cote du manuscrit).</p>
 			</ul>
-			<p>2) Les descriptions de l&rsquo;encodage sont les suivantes:</p>
+			<p>2) Les descriptions de l'encodage sont les suivantes:</p>
 			<p>
 				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;hc&quot;</span> <span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span> <span class="yellow">replacementPattern=</span><span class="brown">&quot;https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1&quot;</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">&quot;char&quot;</span> <span class="yellow">matchPattern=</span><span class="brown">&quot;(.+)&quot;</span> <span class="yellow">replacementPattern=</span><span class="brown">&quot;https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1&quot;</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
 			</p>
@@ -285,14 +285,14 @@
 			</p>
 			<ol start="3">
 				<li>
-					<h2><a id="Faksimile"></a>L&rsquo;élément  &lt;facsimile&gt;</h2>
+					<h2><a id="Faksimile"></a>L'élément  &lt;facsimile&gt;</h2>
 			</ol>
-			<p>Entre l&rsquo;en-t&ecirc;te TEI et le texte, on trouve l&rsquo;élément <span class="blue">&lt;facsimile&gt;</span>. Il donne des informations sur les pages (<span class="blue">&lt;surface&gt;</span>), les images (<span class="blue">&lt;graphic&gt;</span>) et les zones d&rsquo;image (<span class="blue">&lt;zone/&gt;</span>). </p>
-			<p>1) Chaque page du manuscrit est saisie comme <span class="blue">&lt;surface&gt;</span>. L&rsquo;élément poss&egrave;de les attributs <span class="yellow">@ana</span> (avec la valeur <span class="brown">&quot;hc:Page&quot;</span>), <span class="yellow">@xml:id</span> (dont la valeur est le sigle du manuscrit et le numéro de page, par ex. <span class="brown">&quot;b_12v&quot;</span>) et <span class="yellow">@n</span> (avec la valeur du numéro de page, par ex. <span class="brown">&quot;12v&quot;</span>).</p>
-			<p>2) Le premier élément descendant de <span class="blue">&lt;surface</span>&gt; correspond &aacute; l&rsquo;élément <span class="blue">&lt;graphic/&gt;</span> avec l&rsquo;attribut <span class="yellow">@url</span> et l&rsquo;URL de l&rsquo;image numérique de cette page comme valeur d&rsquo;attribut. L&rsquo;élément est vide.</p>
-			<p>3) Les éléments descendant de <span class="blue">&lt;surface&gt;</span> sont autant d&rsquo;éléments <span class="blue">&lt;zone/&gt;</span> que de zones d&rsquo;image sur la page. Les zones d&rsquo;image de la page sont les colonnes et les éventuelles marges. Une page décrite sur une seule colonne a donc un seul élément <span class="blue">&lt;zone&gt;</span>, une page décrite sur deux colonnes avec un comptage de cahier dans la marge inférieure a trois éléments <span class="blue">&lt;zone&gt;</span>.</p>
+			<p>Entre l'en-tête TEI et le texte, on trouve l'élément <span class="blue">&lt;facsimile&gt;</span>. Il donne des informations sur les pages (<span class="blue">&lt;surface&gt;</span>), les images (<span class="blue">&lt;graphic&gt;</span>) et les zones d'image (<span class="blue">&lt;zone/&gt;</span>). </p>
+			<p>1) Chaque page du manuscrit est saisie comme <span class="blue">&lt;surface&gt;</span>. L'élément possède les attributs <span class="yellow">@ana</span> (avec la valeur <span class="brown">&quot;hc:Page&quot;</span>), <span class="yellow">@xml:id</span> (dont la valeur est le sigle du manuscrit et le numéro de page, par ex. <span class="brown">&quot;b_12v&quot;</span>) et <span class="yellow">@n</span> (avec la valeur du numéro de page, par ex. <span class="brown">&quot;12v&quot;</span>).</p>
+			<p>2) Le premier élément descendant de <span class="blue">&lt;surface</span>&gt; correspond á l'élément <span class="blue">&lt;graphic/&gt;</span> avec l'attribut <span class="yellow">@url</span> et l'URL de l'image numérique de cette page comme valeur d'attribut. L'élément est vide.</p>
+			<p>3) Les éléments descendant de <span class="blue">&lt;surface&gt;</span> sont autant d'éléments <span class="blue">&lt;zone/&gt;</span> que de zones d'image sur la page. Les zones d'image de la page sont les colonnes et les éventuelles marges. Une page décrite sur une seule colonne a donc un seul élément <span class="blue">&lt;zone&gt;</span>, une page décrite sur deux colonnes avec un comptage de cahier dans la marge inférieure a trois éléments <span class="blue">&lt;zone&gt;</span>.</p>
 			<p>a) Les éléments <span class="blue">&lt;zone&gt;</span> pour les <i>colonnes</i> ont les attributs <span class="yellow">@ana</span> (avec la valeur <span class="brown">&quot;hc:Column&quot;</span>), <span class="yellow">@xml:id</span> (dont la valeur est &quot;sigle du manuscrit&quot;_&quot;numéro de page&quot;-&quot;colonne&quot;, par ex. <span class="brown">&quot;b_12v-a&quot;</span>) et <span class="yellow">@n</span> (avec la valeur de la lettre de la colonne, par ex. <span class="brown">&quot;a&quot;</span>).</p>
-			<p>b) Les éléments <span class="blue">&lt;zone&gt;</span> pour les <i>Randbereiche</i> ont les attributs <span class="yellow">@ana</span> (avec la valeur <span class="brown">&quot;hc:MarginalZone&quot;</span>), <span class="yellow">@xml:id</span> (dont la valeur est &quot;sigle du manuscrit&quot;_&quot;numéro de page&quot;-&quot;une lettre de plus que la derni&egrave;re colonne&quot;, par ex. <span class="brown">&quot;b_12v-b&quot;</span>) et <span class="yellow">@hei:placeRef</span> (généralement avec la valeur <span class="brown">&quot;hc:PageBottom&quot;</span>, complétée par <span class="brown">&quot;hc:PageMarginRight&quot;)</span>, le cas écheant. L&rsquo;élément <span class="blue">&lt;zone/&gt;</span> est vide.</p>
+			<p>b) Les éléments <span class="blue">&lt;zone&gt;</span> pour les <i>Randbereiche</i> ont les attributs <span class="yellow">@ana</span> (avec la valeur <span class="brown">&quot;hc:MarginalZone&quot;</span>), <span class="yellow">@xml:id</span> (dont la valeur est &quot;sigle du manuscrit&quot;_&quot;numéro de page&quot;-&quot;une lettre de plus que la dernière colonne&quot;, par ex. <span class="brown">&quot;b_12v-b&quot;</span>) et <span class="yellow">@hei:placeRef</span> (généralement avec la valeur <span class="brown">&quot;hc:PageBottom&quot;</span>, complétée par <span class="brown">&quot;hc:PageMarginRight&quot;)</span>, le cas écheant. L'élément <span class="blue">&lt;zone/&gt;</span> est vide.</p>
 			<p>
 				<i>Beispiel:</i>
 				<br />
@@ -337,9 +337,9 @@
 			</p>
 			<ol start="4">
 				<li>
-					<h2><a id="Element_Text"></a>L&rsquo;élément &lt;text&gt;</h2>
+					<h2><a id="Element_Text"></a>L'élément &lt;text&gt;</h2>
 			</ol>
-			<p>L&rsquo;élément <span class="blue">&lt;facsimile&gt;</span> est désormais suivi du texte. L&rsquo;élément <span class="blue">&lt;text&gt;</span> utilise l&rsquo;attribut <span class="yellow">@ana</span>, dont la valeur est composée par deux éléments : d&rsquo;un c&ocirc;té <span class="brown">&quot;hc:CourtlyRomance&quot;</span> et de l&rsquo;autre c&ocirc;té, selon le cas, <span class="brown">&quot;hc:CompleteExpression&quot;</span> ou <span class="brown">&quot;hc:ExpressionFragmentThroughLoss&quot;</span>.</p>
+			<p>L'élément <span class="blue">&lt;facsimile&gt;</span> est désormais suivi du texte. L'élément <span class="blue">&lt;text&gt;</span> utilise l'attribut <span class="yellow">@ana</span>, dont la valeur est composée par deux éléments : d'un côté <span class="brown">&quot;hc:CourtlyRomance&quot;</span> et de l'autre côté, selon le cas, <span class="brown">&quot;hc:CompleteExpression&quot;</span> ou <span class="brown">&quot;hc:ExpressionFragmentThroughLoss&quot;</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -347,7 +347,7 @@
 				<li>
 					<h2><a id="Titel_Kolophon"></a>Titre et colophon</h2>
 			</ol>
-			<p>L&rsquo;élément <span class="blue">&lt;text&gt;</span> contient toujours l&rsquo;élément <span class="blue">&lt;body&gt;</span>. Il peut contenir également les éléments <span class="blue">&lt;front&gt;</span> et/ou <span class="blue">&lt;back&gt;</span>. Dans <span class="blue">&lt;front&gt;</span> sont notés les titres que certains copistes mettent au début de l&rsquo;oeuvre et qui n&rsquo;appartiennent pas au texte de Hartmann. Autrement dit, si un tel titre existe dans le manuscrit, on établit un élément <span class="blue">&lt;front&gt;</span>. Les premiers éléments descendant sont <span class="blue">&lt;pb&gt;</span> et <span class="blue">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>). En troisi&egrave;me position, on crée un élément <span class="blue">&lt;docTitle&gt;</span> avec un élément descendant <span class="blue">&lt;titlePart&gt;</span>. C&rsquo;est dans cet élément que le titre est désormais saisi, tokenisé (&rarr; <a href="#Wort_Spatium">chap. 9.1</a>) et en indiquant la <span class="blue">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7.3</a>).</p>
+			<p>L'élément <span class="blue">&lt;text&gt;</span> contient toujours l'élément <span class="blue">&lt;body&gt;</span>. Il peut contenir également les éléments <span class="blue">&lt;front&gt;</span> et/ou <span class="blue">&lt;back&gt;</span>. Dans <span class="blue">&lt;front&gt;</span> sont notés les titres que certains copistes mettent au début de l'oeuvre et qui n'appartiennent pas au texte de Hartmann. Autrement dit, si un tel titre existe dans le manuscrit, on établit un élément <span class="blue">&lt;front&gt;</span>. Les premiers éléments descendant sont <span class="blue">&lt;pb&gt;</span> et <span class="blue">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>). En troisième position, on crée un élément <span class="blue">&lt;docTitle&gt;</span> avec un élément descendant <span class="blue">&lt;titlePart&gt;</span>. C'est dans cet élément que le titre est désormais saisi, tokenisé (&rarr; <a href="#Wort_Spatium">chap. 9.1</a>) et en indiquant la <span class="blue">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7.3</a>).</p>
 			<p>
 				<i>Exemple:</i>
 			</p>
@@ -359,14 +359,14 @@
 				<span class="yellow">n=</span><span class="brown">&quot;49&quot;</span><span class="blue">/&gt;&lt;hi</span>
 				<span class="yellow">hei:color=</span><span class="brown">&quot;Red&quot;</span><span class="blue">&gt;&lt;w&gt;</span>Du<span class="blue">&lt;/w&gt;&lt;w&gt;</span>rois><span class="blue">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="blue">&lt;/w&gt;</span><br />
 				<span class="blue"> &lt;/titlePart&gt;&lt;/docTitle&gt;<br /> &lt;/front&gt;</span></p>
-			<p>En revanche, les colophons des copistes sont généralement insérés dans le <span class="blue">&lt;back&gt;</span>. L&rsquo;élément <span class="blue">&lt;back&gt;</span> contient un élément descendant <span class="blue">&lt;trailer&gt;</span> qui utilise l&rsquo;attribut <span class="yellow">@ana</span> et la valeur <span class="brown">&quot;hc:Colophon&quot;</span>.</p>
+			<p>En revanche, les colophons des copistes sont généralement insérés dans le <span class="blue">&lt;back&gt;</span>. L'élément <span class="blue">&lt;back&gt;</span> contient un élément descendant <span class="blue">&lt;trailer&gt;</span> qui utilise l'attribut <span class="yellow">@ana</span> et la valeur <span class="brown">&quot;hc:Colophon&quot;</span>.</p>
 			<p>
 				<i>Exemple:</i>
 			</p>
 			<p><span class="blue">&lt;back&gt;<br /> &lt;trailer</span> <span class="yellow">ana=</span><span class="brown">&quot;hc:Colophon&quot;</span><span class="blue">&gt;</span><br />
 				<span class="blue">&lt;w&gt;</span>Amen<span class="blue">&lt;/w&gt;</span><br />
 				<span class="blue">&lt;/trailer&gt;<br /> &lt;/back&gt;</span></p>
-			<p>Parfois, les colophons contiennent des décorations qu&rsquo;on indique comme <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 16</a>) avec l&rsquo;attribut <span class="yellow">@ana</span> qui porte la valeur <span class="brown">&quot;hc:DecorativeMarker&quot;</span>.</p>
+			<p>Parfois, les colophons contiennent des décorations qu'on indique comme <span class="blue">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 16</a>) avec l'attribut <span class="yellow">@ana</span> qui porte la valeur <span class="brown">&quot;hc:DecorativeMarker&quot;</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -374,18 +374,18 @@
 				<li>
 					<h2><a id="Der_Text"></a>Le texte</h2>
 			</ol>
-			<p>L&rsquo;élément <span class="blue">&lt;body&gt;</span> ne contient que l&rsquo;élément descendant <span class="blue">&lt;div&gt;</span>, qui balise le texte de l&rsquo;oeuvre. La structure du texte est composée par des vers et des paires de vers.</p>
-			<p>On emploie des mod&egrave;les prédéfinis qui rendent plus facile la saisie du texte, car on y a établi la structure numérotée des vers et on l&rsquo;a remplie avec les éléments pour les mots et pour les espaces entre les mots.</p>
-			<p>Il y a en principe trois types d&rsquo;éléments dans le texte : des éléments structurels, des éléments sémantiques et des contructions alternatives.</p>
-			<p> a) Les éléments structurels (<span class="blue">&lt;pb/&gt;</span>, <span class="blue">&lt;cb/&gt;</span>, <span class="blue">&lt;lb/&gt;</span>, <span class="blue">&lt;gap/&gt;</span>) sont descriptifs et objectifs. Ils décrivent les caractéristiques du manuscrit et ils fonctionnent comme des points. C&rsquo;est pourquoi ils sont toujours vides. (&rarr; <a href="#Seite_Spalte">chap. 7</a>, &rarr; <a href="#gap_damage">chap. 24</a>)</p>
-			<p> b) Les éléments sémantiques (<span class="blue">&lt;l&gt;</span>, <span class="blue">&lt;w&gt;</span>, <span class="blue">&lt;hi&gt;</span>, <span class="blue">&lt;pc&gt;</span>) sont basés sur nos définitions: on décide s&rsquo;il s&rsquo;agit soit d&rsquo;un mot, soit d&rsquo;un vers, soit d&rsquo;un signe de ponctuation. Ils contiennent toujours du texte.</p>
-			<p> c) Les constructions alternatives (<span class="blue">&lt;choice&gt;</span>, <span class="blue">&lt;subst&gt;</span>) contiennent toujours deux options d&rsquo;affichage possibles. Chacune doit donc contenir deux éléments descendant (&rarr; <a href="#Normalisierung">chap. 31</a>, &rarr; <a href="#del_add">chap. 18</a>). Par example: <span class="blue">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> permet de voir ce qu&rsquo;il y a dans <span class="blue">&lt;orig&gt;</span> ou ce qu&rsquo;il y a dans <span class="blue">&lt;reg&gt;</span>.</p>
+			<p>L'élément <span class="blue">&lt;body&gt;</span> ne contient que l'élément descendant <span class="blue">&lt;div&gt;</span>, qui balise le texte de l'oeuvre. La structure du texte est composée par des vers et des paires de vers.</p>
+			<p>On emploie des modèles prédéfinis qui rendent plus facile la saisie du texte, car on y a établi la structure numérotée des vers et on l'a remplie avec les éléments pour les mots et pour les espaces entre les mots.</p>
+			<p>Il y a en principe trois types d'éléments dans le texte : des éléments structurels, des éléments sémantiques et des contructions alternatives.</p>
+			<p> a) Les éléments structurels (<span class="blue">&lt;pb/&gt;</span>, <span class="blue">&lt;cb/&gt;</span>, <span class="blue">&lt;lb/&gt;</span>, <span class="blue">&lt;gap/&gt;</span>) sont descriptifs et objectifs. Ils décrivent les caractéristiques du manuscrit et ils fonctionnent comme des points. C'est pourquoi ils sont toujours vides. (&rarr; <a href="#Seite_Spalte">chap. 7</a>, &rarr; <a href="#gap_damage">chap. 24</a>)</p>
+			<p> b) Les éléments sémantiques (<span class="blue">&lt;l&gt;</span>, <span class="blue">&lt;w&gt;</span>, <span class="blue">&lt;hi&gt;</span>, <span class="blue">&lt;pc&gt;</span>) sont basés sur nos définitions: on décide s'il s'agit soit d'un mot, soit d'un vers, soit d'un signe de ponctuation. Ils contiennent toujours du texte.</p>
+			<p> c) Les constructions alternatives (<span class="blue">&lt;choice&gt;</span>, <span class="blue">&lt;subst&gt;</span>) contiennent toujours deux options d'affichage possibles. Chacune doit donc contenir deux éléments descendant (&rarr; <a href="#Normalisierung">chap. 31</a>, &rarr; <a href="#del_add">chap. 18</a>). Par example: <span class="blue">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> permet de voir ce qu'il y a dans <span class="blue">&lt;orig&gt;</span> ou ce qu'il y a dans <span class="blue">&lt;reg&gt;</span>.</p>
 			<p>
 				<br />
 			</p>
 			<ol type="A" start="2">
 				<li>
-					<h2><a id="Transkription"></a>Deuxi&egrave;me Partie: Transcription des manuscrits</h2>
+					<h2><a id="Transkription"></a>Deuxième Partie: Transcription des manuscrits</h2>
 			</ol>
 			<p>
 				<br />
@@ -394,11 +394,11 @@
 				<li>
 					<h2><a id="Seite_Spalte"></a>Page / Colonne / ligne physique</h2>
 			</ol>
-			<p>1) Le début d'une nouvelle page est marqué avec <span class="blue">&lt;pb/&gt;</span>, y compris le début de la premi&egrave;re page (éventuellement déj&agrave; dans <span class="blue">&lt;front&gt;</span>, &rarr; <a href="#Titel_Kolophon">chap. 5</a>). Cet élément est toujours vide. Il se trouve, comme tous les éléments, toujours le plus 'haut' possible dans la structure xml : dans des manuscrits avec des vers détachés (un seul vers par ligne), il se trouve donc apr&egrave;s la fin du dernier <span class="blue">&lt;lg&gt;</span> de la page précédente; dans le cas d'une couplet qui a un vers sur chaque page, il se trouve apr&egrave;s la fin du prémier <span class="blue">&lt;l&gt;</span>. Dans les manuscrits sans des vers détachés, l'élément se trouve pourtant &agrave; sa place correspondante.<br/>Cet élément est toujours suivi de l'élément <span class="blue">&lt;cb/&gt;</span>. Il porte toujours l'attribut <span class="yellow">@n</span>, dont la valeur est le nmero de feuille et de page (recto-verso), par ex. <span class="blue">&lt;pb</span> <span class="yellow">n=</span><span class="brown">&quot;1v&quot;</span><span class="blue">/&gt;</span>, ou <span class="blue">&lt;pb</span> <span class="yellow">n=</span><span class="brown">&quot;2r&quot;</span><span class="blue">/&gt;</span></p>
-			<p>2) Le début d'une nouvelle page est indiqué au moyen de l'élément <span class="blue">&lt;cb/&gt;</span>. Cet élément est toujours vide. Dans des manuscrits avec une seule colonne, il se trouve apr&egrave;s l'élément <span class="blue">&lt;pb/&gt;</span>. Dans des manuscrits &agrave; plusieurs colonnes, il se trouve en outre apr&egrave;s le dernier vers ou couplet de la colonne précédente et avant la premi&egrave;re ligne de la nouvelle colonne. Il contient toujours l'attribut <span class="yellow">@n</span>, dont la valeur est la lettre correspondante &agrave; la colonne concernée (a, b, c), par ex.: <span class="blue">&lt;cb</span>
+			<p>1) Le début d'une nouvelle page est marqué avec <span class="blue">&lt;pb/&gt;</span>, y compris le début de la première page (éventuellement déjà dans <span class="blue">&lt;front&gt;</span>, &rarr; <a href="#Titel_Kolophon">chap. 5</a>). Cet élément est toujours vide. Il se trouve, comme tous les éléments, toujours le plus 'haut' possible dans la structure xml : dans des manuscrits avec des vers détachés (un seul vers par ligne), il se trouve donc après la fin du dernier <span class="blue">&lt;lg&gt;</span> de la page précédente; dans le cas d'une couplet qui a un vers sur chaque page, il se trouve après la fin du prémier <span class="blue">&lt;l&gt;</span>. Dans les manuscrits sans des vers détachés, l'élément se trouve pourtant à sa place correspondante.<br/>Cet élément est toujours suivi de l'élément <span class="blue">&lt;cb/&gt;</span>. Il porte toujours l'attribut <span class="yellow">@n</span>, dont la valeur est le nmero de feuille et de page (recto-verso), par ex. <span class="blue">&lt;pb</span> <span class="yellow">n=</span><span class="brown">&quot;1v&quot;</span><span class="blue">/&gt;</span>, ou <span class="blue">&lt;pb</span> <span class="yellow">n=</span><span class="brown">&quot;2r&quot;</span><span class="blue">/&gt;</span></p>
+			<p>2) Le début d'une nouvelle page est indiqué au moyen de l'élément <span class="blue">&lt;cb/&gt;</span>. Cet élément est toujours vide. Dans des manuscrits avec une seule colonne, il se trouve après l'élément <span class="blue">&lt;pb/&gt;</span>. Dans des manuscrits à plusieurs colonnes, il se trouve en outre après le dernier vers ou couplet de la colonne précédente et avant la première ligne de la nouvelle colonne. Il contient toujours l'attribut <span class="yellow">@n</span>, dont la valeur est la lettre correspondante à la colonne concernée (a, b, c), par ex.: <span class="blue">&lt;cb</span>
 				<span class="yellow">n=</span><span class="brown">&quot;a&quot;</span><span class="blue">/&gt;</span>, ou <span class="blue">&lt;cb</span>
 				<span class="yellow">n=</span><span class="brown">&quot;b&quot;</span><span class="blue">/&gt;</span></p>
-			<p>3) Le début d'une nouvelle ligne physique est encodé gr&acirc;ce &agrave; l'élément <span class="blue">&lt;lb/&gt;</span>. Cet élément est toujours vide. Il contient toujours l'attribut <span class="yellow">@n</span>, qui porte comme valeur le numéro de la ligne physique dans la colonne actuelle, par ex. <span class="blue">&lt;l&gt;&lt;lb </span><span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br/> La place de <span class="blue">&lt;lb&gt;</span> par rapport &agrave; <span class="blue">&lt;l&gt;</span> n'est en principe pas pertinente, car il peut se trouver également au milieu de <span class="blue">&lt;w&gt;</span>. Pour des raisons pratiques, on place <span class="blue">&lt;lb&gt;</span> partout o le début du vers concide avec le début de la ligne <span class="blue">&lt;l&gt;</span> (voir l'exemple ci-dessus).</p>
+			<p>3) Le début d'une nouvelle ligne physique est encodé grâce à l'élément <span class="blue">&lt;lb/&gt;</span>. Cet élément est toujours vide. Il contient toujours l'attribut <span class="yellow">@n</span>, qui porte comme valeur le numéro de la ligne physique dans la colonne actuelle, par ex. <span class="blue">&lt;l&gt;&lt;lb </span><span class="yellow">n=</span><span class="brown">&quot;23&quot;</span><span class="blue">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br/> La place de <span class="blue">&lt;lb&gt;</span> par rapport à <span class="blue">&lt;l&gt;</span> n'est en principe pas pertinente, car il peut se trouver également au milieu de <span class="blue">&lt;w&gt;</span>. Pour des raisons pratiques, on place <span class="blue">&lt;lb&gt;</span> partout o le début du vers concide avec le début de la ligne <span class="blue">&lt;l&gt;</span> (voir l'exemple ci-dessus).</p>
 			<p> Pour la séparation de mots &rarr; <a href="#Wort_Spatium">chap. 9.3</a>; pour les débordements de ligne &rarr; <a href="#Zeilenueberlauf">chap. 21</a>.</p>
 			<p>
 				<br/>
@@ -407,8 +407,8 @@
 				<li>
 					<h2><a id="Verspaar_Vers"></a>Couplet et vers</h2>
 			</ol>
-			<p>1) On trouve chaque couplet ou paire de vers &agrave; l'intérieur de l'élément <span class="blue">&lt;lg&gt;</span>. Il insere l'attribut <span class="yellow">@ana </span> avec la valeur <span class="brown">&quot;hc:Couplet&quot;</span> (=le distique, la valeur la plus fréquente), <span class="brown">&quot;hc:Tercet&quot;</span> ou <span class="brown">&quot;hc:Quatrain&quot;</span>.</p>
-			<p>2) On trouve chaque vers &agrave; l'intérieur de l'élément <span class="blue">&lt;l&gt;</span>. Cet élément introduit premi&egrave;rement l'attribut <span class="yellow">@n</span>; dont la valeur est le numéro du vers selon Lachmann ou les éditions traditionelles. Deuxi&egrave;mement, l'attribut <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>). Et troisi&egrave;mement, une numérotation alternative <span class="yellow">@altN</span> suivant rigoreusement le manuscrit.</p>
+			<p>1) On trouve chaque couplet ou paire de vers à l'intérieur de l'élément <span class="blue">&lt;lg&gt;</span>. Il insere l'attribut <span class="yellow">@ana </span> avec la valeur <span class="brown">&quot;hc:Couplet&quot;</span> (=le distique, la valeur la plus fréquente), <span class="brown">&quot;hc:Tercet&quot;</span> ou <span class="brown">&quot;hc:Quatrain&quot;</span>.</p>
+			<p>2) On trouve chaque vers à l'intérieur de l'élément <span class="blue">&lt;l&gt;</span>. Cet élément introduit premièrement l'attribut <span class="yellow">@n</span>; dont la valeur est le numéro du vers selon Lachmann ou les éditions traditionelles. Deuxièmement, l'attribut <span class="yellow">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>). Et troisièmement, une numérotation alternative <span class="yellow">@altN</span> suivant rigoreusement le manuscrit.</p>
 			<p>Au cas o le copiste effectue une transposition de vers, la transcription suit l'ordre physique des vers du manuscrit. Cela signifie que les numéros des éléments <span class="blue">&lt;lb&gt;</span> restent toujours consécutifs; les numéros des éléments <span class="blue">&lt;l&gt;</span> sont pourtant adaptés (pour le traitement éditorial &rarr; <a href="#Versumstellung_editorisch">chap. 35</a>). Par exemple:</p>
 			<p>
 				<span class="blue">&lt;l</span>
@@ -453,7 +453,7 @@
 				<span class="brown">&quot;25&quot;</span>
 				<span class="blue">/&gt;</span>
 			</p>
-			<p>Dans le cas des vers ajoutés, il est nécessaire d'ajouter les éléments <span class="blue">&lt;l&gt;</span> et <span class="blue">&lt;lg&gt;</span>. La numérotation des éléments <span class="blue">&lt;l&gt;</span> dans l'attribut <span class="yellow">@n</span> est celle du dernier vers correspondant &agrave; la version de Lachmann, suivie d'une virgule et d'un second numéro consécutif (ou bien, selon le projet, d'une lettre), par ex.:</p>
+			<p>Dans le cas des vers ajoutés, il est nécessaire d'ajouter les éléments <span class="blue">&lt;l&gt;</span> et <span class="blue">&lt;lg&gt;</span>. La numérotation des éléments <span class="blue">&lt;l&gt;</span> dans l'attribut <span class="yellow">@n</span> est celle du dernier vers correspondant à la version de Lachmann, suivie d'une virgule et d'un second numéro consécutif (ou bien, selon le projet, d'une lettre), par ex.:</p>
 			<p>
 				<span class="blue">&lt;l</span>
 				<span class="yellow">n=</span>
@@ -470,9 +470,9 @@
 				<span class="brown">&quot;117,2&quot;</span>
 				<span class="blue">&gt;</span>
 			</p>
-			<p>Pour les vers mal ordonnés de mani&egrave;re accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 27</a>.</p>
-			<p>3) On emploie la numérotation standard de vers appartenant &agrave; la recherche. Plus tard, une numérotation alternative, consecutive et propre au manuscrit est rajoutée automatiquement et peut aussi éventuellement &ecirc;tre affichée dans l'édition.</p>
-			<p>4) Dans le fichier Excel "Concordance", les vers manquants sont supprimés, les vers supplémentaires sont ajoutés, les vers transposés sont installés &agrave; leur place correspondante et marqués en couleur, afin de créer une "carte" de vers qui permettra plus tard de visualiser les vers parall&egrave;les également en parall&egrave;le</p>
+			<p>Pour les vers mal ordonnés de manière accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 27</a>.</p>
+			<p>3) On emploie la numérotation standard de vers appartenant à la recherche. Plus tard, une numérotation alternative, consecutive et propre au manuscrit est rajoutée automatiquement et peut aussi éventuellement être affichée dans l'édition.</p>
+			<p>4) Dans le fichier Excel "Concordance", les vers manquants sont supprimés, les vers supplémentaires sont ajoutés, les vers transposés sont installés à leur place correspondante et marqués en couleur, afin de créer une "carte" de vers qui permettra plus tard de visualiser les vers parallèles également en parallèle</p>
 			<p>
 				<br />
 			</p>
@@ -626,7 +626,7 @@
 				<li>
 					<h2><a id="Metamarks"></a>Metazeichen</h2>
 			</ol>
-			<p>1) Metazeichen sind weder Buchstaben noch Satzzeichen. Das k&ouml;nnen Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="blue">&lt;metamark&gt;</span> und f&uuml;hren das Attribut <span class="yellow">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="brown">&quot;hc:Hyphen&quot;</span>(Trennstrich, &rarr; <a href="Wort_Spatium">chap. 9.3</a>), <span class="brown">&quot;hc:RunOverMark&quot;</span> (Zeilenanschlusszeichen), <span class="brown">&quot;hc:WordDivider&quot; </span>(Worttrenner), <span class="brown">&quot;hc:CorrectionMark&quot;</span> (Korrekturzeichen), <span class="brown">&quot;hc:InsertionMark&quot;</span> (Einweisungszeichen), <span class="brown">&quot;hc:TranspositionMark&quot;</span> (Umstellungszeichen), <span class="brown">&quot;hc:ReferenceMark&quot;</span> (Verweiszeichen), <span class="brown">&quot;hc:TokenMark&quot;</span> (Token-Marker), <span class="brown">&quot;hc:DecorativeMark&quot;</span> (Ziermarker), <span class="brown">&quot;hc:LineDelimiter&quot;</span> (Zeilenabgrenzungszeichen), <span class="brown">&quot;hc:CueNumeral&quot;</span> (Anweisung f&uuml;r Nummer).<br /> Ein Token-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>.</p>
+			<p>1) Metazeichen sind weder Buchstaben noch Satzzeichen. Das k&ouml;nnen Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="blue">&lt;metamark&gt;</span> und f&uuml;hren das Attribut <span class="yellow">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="brown">&quot;hc:Hyphen&quot;</span>(Trennstrich, &rarr; <a href="Wort_Spatium">chap. 9.3</a>), <span class="brown">&quot;hc:RunOverMark&quot;</span> (Zeilenanschlusszeichen), <span class="brown">&quot;hc:WordDivider&quot; </span>(Worttrenner), <span class="brown">&quot;hc:CorrectionMark&quot;</span> (Korrekturzeichen), <span class="brown">&quot;hc:InsertionMark&quot;</span> (Einweisungszeichen), <span class="brown">&quot;hc:TranspositionMark&quot;</span> (Umstellungszeichen), <span class="brown">&quot;hc:ReferenceMark&quot;</span> (Verweiszeichen), <span class="brown">&quot;hc:TokenMark&quot;</span> (Token-Marker), <span class="brown">&quot;hc:DecorativeMark&quot;</span> (Ziermarker), <span class="brown">&quot;hc:LineDelimiter&quot;</span> (Zeilenabgrenzungszeichen), <span class="brown">&quot;hc:CueNumeral&quot;</span> (Anweisung f&uuml;r Nummer).<br /> Ein Token-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>ê</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|ê|</i> oder <i>ê'</i>.</p>
 			<p>2) Metamarks k&ouml;nnen au&szlig;erdem das Attribut <span class="yellow">@hei:PlaceRef</span> f&uuml;hren.</p>
 			<p>3) Die Liste und die Anwendungen der Metazeichen findet sich <a href="">hier</a>.</p>
 			<p>4) Im Unterschied zu Trennungszeichen oder anderen Marken, die im Schreibprozess entstanden, stehen Einweisungszeichen zus&auml;tzlich im Element <span class="blue">&lt;add&gt;</span> (&rarr; <a href="#del_add">chap. 18</a>), wobei in diesen F&auml;llen das Attribut <span class="yellow">@hei:PlaceRef</span> am <span class="blue">&lt;add&gt;</span> steht:</p>
@@ -1057,7 +1057,7 @@
 			</ol>
 			<p>1) Abk&uuml;rzungen m&uuml;ssen in der Edition sowohl als Abk&uuml;rzung wie auch aufgel&ouml;st gezeigt werden k&ouml;nnen. Solche Optionen werden stets in ein <span class="blue">&lt;choice&gt;</span>-Element eingebaut. Die <span class="blue">&lt;choice&gt;</span>-Konstruktion steht innerhalb des <span class="blue">&lt;w&gt;</span>-Elements und schlie&szlig;t nur das Abk&uuml;rzungszeichen sowie seine Expansion ein. Alle anderen Buchstaben bleiben au&szlig;erhalb.</p>
 			<p>2) Das Abk&uuml;rzungszeichen wird getaggt mit dem Element <span class="blue">&lt;am&gt;</span>, das nur innerhalb eines <span class="blue">&lt;choice&gt;</span>-Gebildes stehen kann. Die Abk&uuml;rzungszeichen werden eingegeben als Entities. Entities sind Platzhalter, die bei der Transformation in Zeichen verwandelt werden. Die Liste der Entities f&uuml;r Abk&uuml;rzungen findet sich <a href="#">hier</a></p>
-			<p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht &uuml;ber die Sidebar &lsquo;Entities&rsquo; eingeben: Men&uuml; &rarr; Window &rarr; Schow View &rarr; Entities.</p>
+			<p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht &uuml;ber die Sidebar &lsquo;Entities' eingeben: Men&uuml; &rarr; Window &rarr; Schow View &rarr; Entities.</p>
 			<p>3) Die Aufl&ouml;sung einer Abk&uuml;rzung steht im Element <span class="blue">&lt;ex&gt;</span>. Dieses Element steht direkt im Anschluss an das <span class="blue">&lt;am&gt;</span> innerhalb der <span class="blue">&lt;choice&gt;</span>. Die Aufl&ouml;sung ist nicht immer mechanisch und folgt grammatischen Regeln, so kann <i>eine&#773;</i> aufgel&ouml;st werden als <i>einem</i> oder <i>einen</i>; <i>er-</i>Abk&uuml;rzungen m&uuml;ssen in manchen F&auml;llen als <i>re</i> aufgel&ouml;st werden, usw. Die Markierung und Aufl&ouml;sung von Abk&uuml;rzungen ist also schon Teil einer editorischen Arbeit und erfordert entsprechendes Ermessen.</p>
 			<p>
 				<i>Beispiele</i>
@@ -1294,7 +1294,7 @@
 			</p>
 			<ol type="A" start="3">
 				<li>
-					<h2><a id="editorische_Bearbeitung"></a>Troisi&egrave;me Partie: Editorische Bearbeitung</h2>
+					<h2><a id="editorische_Bearbeitung"></a>Troisième Partie: Editorische Bearbeitung</h2>
 			</ol>
 			<ol start="31">
 				<li>
