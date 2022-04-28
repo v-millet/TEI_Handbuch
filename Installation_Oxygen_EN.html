@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="./Handbuch_style.css" />
         <title>Installation von Oxygen, GitHub, Framework, Font</title>
-        <style>
-            p { font-size: 14pt; margin-right: 0.58in } 
-            .back { text-align: right }
-            .punkt { margin-left: 0.4in }
-            .unterpunkt { margin-left: 0.5in }
-        </style>
     </head>
     <body>
-        <h1 style="margin-left: 0.4in; margin-top: 0.4in">Setups for Hartmann von Aue &ndash; digital</h1>
-        <p class="back"><a href="Installation_Oxygen_DE.html">German Version</a></p>
-        <p class="back"><a href="index.html">Go to TEI-Handbuch</a></p>
-        <p><br/></p>
-        <p class="punkt"><b>1.</b> Sign in on <b>GitHub</b>. GitHub is a platform for developers of digital tools that specialises in collaborative work. We use it as a cloud repository that always gives us access to the latest version of files. Unlike other cloud repositories, you always (!) have to give the "fetch" or "pull" command to upload and sync. Go to <a  href="https://github.com">GitHub</a> and register with an email address. You need to create a username and password. Please send me the username and email address so I can grant you access to our repository; you will need it for point 7.</p>
-        <p><br/></p>
-        <p class="punkt"><b>2.</b> Create a folder on your computer where you want to keep the files of this project, e.g. <i>Gregorius</i>.</p>
-        <p><br/></p>
-        <p class="punkt"><b>3.</b> Download and install <a href="https://desktop.github.com">GitHub Desktop</a>. Desktop is a small console that allows you to easily manage the files you download and upload from GitHub. It is very simple and useful.</p>
-        <p><br/></p>
-        <p class="punkt"><b>4.</b> Download and install the <a href="https://sourceforge.net/projects/junicode/files/">Junicode font</a>. Junicode is a special font for medievalists and is used by us for transcriptions. You can download five fonts: Junicode in 4 modes (normal, italic, bold and italic-bold) and FoulisGreek. The latter is optional, but the others are necessary.</p>
-        <p><br/></p>
-        <p  class="punkt"><b>5.</b> Download and install <a href="https://www.oxygenxml.com">Oxygen XML Editor</a>. Be sure to install the version for which we sent you the licence key. You will be asked for the licence key during installation and tick the option "Use licence key". Copy the licence key into the window (only the 9 lines between "Start" and "End").</p>
-        <p><br/></p>
-        <p class="punkt"><b>6.</b> Now you have to install an add-on to be able to use the framework by Gustavo Fernández Riva. The framework allows you to work in author mode without seeing the codes and with a special menu for our encoding.</p>
-        <p class="unterpunkt">a) Within Oxygen go to: Help => Install new Add-ons. In the window "Show new Add-ons from" copy the following address: <u>https://digi.ub.uni-heidelberg.de/frameworks/IweinFramework.xml</u>.</p>
-        <p class="unterpunkt">b) Mark the heiEditions framework with a tick and follow all the steps to install it. At the end you have to close Oxygen and start it again.</p>
-        <p><br/></p>
-        <p class="punkt"><b>7.</b> Now you should also make some settings in Oxygen: Go to Options => Preferences in the top menu.</p>
-        <p><br/></p>
-        <p class="unterpunkt">a) In the left menu go to the entry "Editor" and click on "Format". In the entry "Line Width" set the number "10000".</p>
-        <p class="unterpunkt">b) Now go to the submenu "Format" on the left side and click on XML. On the right side, go to the section "Elements spacing". Click on the "Preserve Space" tab, click on the "Add" button at the bottom and add "l//*" (an l as in 'line', without the quotes).</p>
-        <p class="unterpunkt">c) Now go to the "Mixed Content" tab and add "l" in the same way (again an l as in 'line').</p>
-        <p class="unterpunkt">d) In the "Line Break" tab, also add "l".</p>
-        <p class="unterpunkt">e) Click on Ok and close.</p>
-        <p><br/></p>
-        <p class="punkt"><b>8.</b> Now make a few settings in the framework as well.</p>
-        <p class="unterpunkt">a) Open a template-file and click on the "Author" button at the bottom centre of the window.</p>
-        <p class="unterpunkt">b) Find one of the function buttons at the top with the name "Styles" and open it. Activate "nur Abk&uuml;rzung" and "nur Original" and deactivate "nur Aufl&ouml;sung" and "nur regularisiert". Later you can change this as you wish.</p>
-        <p class="unterpunkt">c) Now look one line further down for a button with three yellow triangles and unfold it. Most people work with "partial tags", but you can also try "full tags".</p>
-        <p><br/></p>
-        <p class="punkt"><b>9.</b>Once I have granted you access to our GitHub-repository (i.e. on another day), go to GitHub Desktop and select "File" => "Clone repository".</p>
-        <p class="unterpunkt">a) In the window that opens, click on the URL tab;</p>
-        <p class="unterpunkt">b) In "Repository URL" copy the following link: <u>https://github.com/v-millet/Gregorius.git</u>.</p>
-        <p class="unterpunkt">c) In "Local Path" click on "choose" and select the folder on your computer that you set up in point 2 above.</p>
-        <p class="unterpunkt">d) Now click on "Clone" and all files and folders on the repository will be copied to your computer.</p>
-        <p><br/></p>
-        <p class="punkt"><b>10.</b> From this moment on you can work. If you make changes in the archive and save them and push them tu GitHub, I can see them and correct them. If I make changes, they will be shown to you.</p>
-        <p><br/></p>
-        <p class="punkt"><b>11.</b> The following work habit is important:</p>
-        <p class="unterpunkt">a) Always open Desktop before working, click on "Fetch" (and then on "Pull" if there is something to update). Only then open your file.</p>
-        <p class="unterpunkt">b) When you are finished, save the file to your computer and then always go to Desktop; you will see that the file appears on the left and the changes you have made on the right. At the bottom left, under "Summary", type in what you did (e.g. "transcribed to v. 123" or "shortcuts") and then click "Commit" and then "Push" at the top right. This will update the file on GitHub.</p>
-        <p class="unterpunkt">c) Once again: always two clicks, both to download and upload files.</p>
-        <p class="back"><a href="Installation_Oxygen_DE.html">German Version</a></p>
-        <p class="back"><a href="index.html">Go to TEI-Handbuch</a></p>
-        
+        <div>
+            <h1>Setups for Hartmann von Aue &ndash; digital</h1>
+            <p class="back">
+                <a href="Installation_Oxygen_DE.html">German Version</a>
+            </p>
+            <p class="back">
+                <a href="index.html">Go to TEI-Handbuch</a>
+            </p>
+            <p>
+                <br />
+            </p>
+            <p><b>1.</b> Sign in on <b>GitHub</b>. GitHub is a platform for developers of digital tools that specialises in collaborative work. We use it as a cloud repository that always gives us access to the latest version of files. Unlike other cloud repositories, you always (!) have to give the "fetch" or "pull" command to upload and sync. Go to <a href="https://github.com">GitHub</a> and register with an email address. You need to create a username and password. Please send me the username and email address so I can grant you access to our repository; you will need it for point 7.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>2.</b> Create a folder on your computer where you want to keep the files of this project, e.g. <i>Gregorius</i>.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>3.</b> Download and install <a href="https://desktop.github.com">GitHub Desktop</a>. Desktop is a small console that allows you to easily manage the files you download and upload from GitHub. It is very simple and useful.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>4.</b> Download and install the <a href="https://sourceforge.net/projects/junicode/files/">Junicode font</a>. Junicode is a special font for medievalists and is used by us for transcriptions. You can download five fonts: Junicode in 4 modes (normal, italic, bold and italic-bold) and FoulisGreek. The latter is optional, but the others are necessary.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>5.</b> Download and install <a href="https://www.oxygenxml.com">Oxygen XML Editor</a>. Be sure to install the version for which we sent you the licence key. You will be asked for the licence key during installation and tick the option "Use licence key". Copy the licence key into the window (only the 9 lines between "Start" and "End").</p>
+            <p>
+                <br />
+            </p>
+            <p><b>6.</b> Now you have to install an add-on to be able to use the framework by Gustavo Fernández Riva. The framework allows you to work in author mode without seeing the codes and with a special menu for our encoding.</p>
+            <p class="unterpunkt">a) Within Oxygen go to: Help => Install new Add-ons. In the window "Show new Add-ons from" copy the following address: <u>https://digi.ub.uni-heidelberg.de/frameworks/IweinFramework.xml</u>.</p>
+            <p class="unterpunkt">b) Mark the heiEditions framework with a tick and follow all the steps to install it. At the end you have to close Oxygen and start it again.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>7.</b> Now you should also make some settings in Oxygen: Go to Options => Preferences in the top menu.</p>
+            <p>
+                <br />
+            </p>
+            <p class="unterpunkt">a) In the left menu go to the entry "Editor" and click on "Format". In the entry "Line Width" set the number "10000".</p>
+            <p class="unterpunkt">b) Now go to the submenu "Format" on the left side and click on XML. On the right side, go to the section "Elements spacing". Click on the "Preserve Space" tab, click on the "Add" button at the bottom and add "l//*" (an l as in 'line', without the quotes).</p>
+            <p class="unterpunkt">c) Now go to the "Mixed Content" tab and add "l" in the same way (again an l as in 'line').</p>
+            <p class="unterpunkt">d) In the "Line Break" tab, also add "l".</p>
+            <p class="unterpunkt">e) Click on Ok and close.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>8.</b> Now make a few settings in the framework as well.</p>
+            <p class="unterpunkt">a) Open a template-file and click on the "Author" button at the bottom centre of the window.</p>
+            <p class="unterpunkt">b) Find one of the function buttons at the top with the name "Styles" and open it. Activate "nur Abkürzung" and "nur Original" and deactivate "nur Auflösung" and "nur regularisiert". Later you can change this as you wish.</p>
+            <p class="unterpunkt">c) Now look one line further down for a button with three yellow triangles and unfold it. Most people work with "partial tags", but you can also try "full tags".</p>
+            <p>
+                <br />
+            </p>
+            <p><b>9.</b>Once I have granted you access to our GitHub-repository (i.e. on another day), go to GitHub Desktop and select "File" => "Clone repository".</p>
+            <p class="unterpunkt">a) In the window that opens, click on the URL tab;</p>
+            <p class="unterpunkt">b) In "Repository URL" copy the following link: <u>https://github.com/v-millet/Gregorius.git</u>.</p>
+            <p class="unterpunkt">c) In "Local Path" click on "choose" and select the folder on your computer that you set up in point 2 above.</p>
+            <p class="unterpunkt">d) Now click on "Clone" and all files and folders on the repository will be copied to your computer.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>10.</b> From this moment on you can work. If you make changes in the archive and save them and push them tu GitHub, I can see them and correct them. If I make changes, they will be shown to you.</p>
+            <p>
+                <br />
+            </p>
+            <p><b>11.</b> The following work habit is important:</p>
+            <p class="unterpunkt">a) Always open Desktop before working, click on "Fetch" (and then on "Pull" if there is something to update). Only then open your file.</p>
+            <p class="unterpunkt">b) When you are finished, save the file to your computer and then always go to Desktop; you will see that the file appears on the left and the changes you have made on the right. At the bottom left, under "Summary", type in what you did (e.g. "transcribed to v. 123" or "shortcuts") and then click "Commit" and then "Push" at the top right. This will update the file on GitHub.</p>
+            <p class="unterpunkt">c) Once again: always two clicks, both to download and upload files.</p>
+            <p class="back">
+                <a href="Installation_Oxygen_DE.html">German Version</a>
+            </p>
+            <p class="back">
+                <a href="index.html">Go to TEI-Handbuch</a>
+            </p>
+        </div>
     </body>
 </html>
