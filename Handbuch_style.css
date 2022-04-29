@@ -20,10 +20,10 @@ ol {
 }
 h1 {
     direction: ltr;
-    text-align: justify;
+    text-align: center;
     background: transparent;
     font-family: "Helvetica", serif;
-    font-size: 20pt;
+    font-size: 24pt;
 }
 h2 {
     direction: ltr;
