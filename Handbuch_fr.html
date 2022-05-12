@@ -550,7 +550,7 @@
 				<span class="blue">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="blue">&lt;w/&gt;</span></p>
 			<p>À la fin d'un vers, lorsque le vers suivant commence avec un nouveau <span class="blue">&lt;lb&gt;</span>, aucun espace après le <span class="blue">&lt;pc&gt;</span> n'est nécessaire.</p>
-			<p>2) Les signes de ponctuation sont balisés de manière individuelle, de sorte que deux signes éventuellement consécutifs se trouvent dans deux balises <span class="blue">&lt;pc&gt;</span> différents. <span class="blue">&lt;pc&gt;</span>.<span class="blue">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="blue">&lt;/pc&gt;</span><br /> Pour le traitement éditorial des signes de ponctuation &rarr; <a href="#Zeichensetzung_editorisch">chap. 35</a>.</p>
+			<p>2) Les signes de ponctuation sont balisés de manière individuelle, de sorte que deux signes éventuellement consécutifs se trouvent dans deux balises <span class="blue">&lt;pc&gt;</span> différents. <span class="blue">&lt;pc&gt;</span>.<span class="blue">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="blue">&lt;/pc&gt;</span><br /> Pour le traitement éditorial des signes de ponctuation &rarr; <a href="#Zeichensetzung_editorisch">chap. 34</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -739,7 +739,7 @@
 			</ol>
 			<p>Dans des manuscrits où les vers ne sont pas détachés, les sauts de ligne à l'intérieur du vers sont indiqués généralement avec l'élément <span class="blue">&lt;lb&gt;</span>avec son attribut <span class="yellow">@n</span> à l'emplacement correspondant.</p>
 			<p>Il en va de même si le saut de ligne a lieu à l'intérieur du mot. Dans ces cas, l'attribut <span class="yellow">@break</span> doit être ajouté au <span class="blue">&lt;lb&gt;</span> avec la valeur <span class="brown">"no"</span>.</p>
-			<p> Si le mot est séparé par un signe séparateur, celui-ci est marqué avec un <span class="blue">&lt;metamark&gt;</span> getaggt (avec l'attribut <span class="yellow">@ana=</span><span class="brown">"hc:Hyphen"</span>), qui est placé devant le <span class="blue">&lt;lb/&gt;</span> (&rarr; <a href="#Wort_Spatium">chap. 9</a>.3, &rarr; <a href="#Zeichensetzung_Hs">chap. 15</a>)</p>
+			<p> Si le mot est séparé par un signe séparateur, celui-ci est marqué avec un <span class="blue">&lt;metamark&gt;</span> getaggt (avec l'attribut <span class="yellow">@ana=</span><span class="brown">"hc:Hyphen"</span>), qui est placé devant le <span class="blue">&lt;lb/&gt;</span> (&rarr; <a href="#Wort_Spatium">chap. 9.3</a>, &rarr; <a href="#Zeichensetzung_Hs">chap. 15</a>)</p>
 			<p>
 				<i>Exemples:</i>
 			</p>
@@ -830,7 +830,7 @@
 				<br />
 				<span class="blue">&lt;/l&gt;</span>
 			</p>
-			<p>3. Débordement vers le haut avec séparation des mots (&rarr; <a href="#Wort_Spatium">chap. 9.3</a>)et signes de débordement:</p>
+			<p>3. Débordement vers le haut avec séparation des mots (&rarr; <a href="#Wort_Spatium">chap. 9.3</a>) et signes de débordement:</p>
 			<p><span class="blue">&lt;l</span>
 				<span class="yellow">n=</span><span class="brown">"419"</span><span class="blue">&gt;</span><br />
 				<span class="blue">&lt;lb</span>
@@ -1046,7 +1046,7 @@
 					<h2><a id="label"></a>Résumés des paragraphes</h2>
 			</ol>
 			<p><i>Yvain</i> ne contient pas de paragraphes, mais quelques manuscrits ont des résumés des extraits du type "Voici le seigneur Yvain qui arrive à la fontaine". On balise ces extraits avec l'élément <span class="blue">&lt;label&gt;</span> et l'attribut <span class="yellow">ana=</span><span class="brown">"hc:SummaryLabel"</span>. Ils sont tokenisés.</p>
-			<p>Lorsque les résumés des paragraphes remplissent les marges des lignes du texte, la segmentation des lignes, décrite pour les débordement de lignes (&rarr; <a href="#Zeilenueberlauf">chap. 20</a>), entre en jeu.</p>
+			<p>Lorsque les résumés des paragraphes remplissent les marges des lignes du texte, la segmentation des lignes, décrite pour les débordement de lignes (&rarr; <a href="#Zeilenueberlauf">chap. 21</a>), entre en jeu.</p>
 			<p>
 				<br />
 			</p>
@@ -1056,7 +1056,7 @@
 			</ol>
 			<p>1) Pour l'encodage de la transpotition de mots et de groupes de mots, il est nécessaire que les mots concernés soient pourvus d'un <span class="yellow">@xml:id</span>. Le passage de texte est d'abord transcrit tel qu'il se présentait avant le changement. Juste après le segmet de texte transposé ou à la fin de la transcription de la ligne concernée (en tout cas <i>avant</i> le prochain <span class="blue">&lt;lb/&gt;</span>), la transposition est immédiatement marquée par <span class="blue">&lt;listTranspose&gt;</span>. L'élément descendant <span class="blue">&lt;transpose&gt;</span> contient une séquence d'éléments <span class="blue">&lt;ptr&gt;</span> qui énumèrent, sous forme de renvois, les mots transposés dans l'ordre correct (c'est-à-dire dans l'ordre après la transposition effectuée).</p>
 			<p>Les signes de transposition peuvent être affichés dans la transcription avec <span class="blue">&lt;metamark</span>
-				<span class="yellow">ana=</span><span class="brown">"hc:TranspositionMark"</span><span class="blue">&gt;</span>. Son attribut <span class="yellow">@target</span> (&rarr; <a href="#xml:id_target">chap. 16</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
+				<span class="yellow">ana=</span><span class="brown">"hc:TranspositionMark"</span><span class="blue">&gt;</span>. Son attribut <span class="yellow">@target</span> (&rarr; <a href="#xml:id_target">chap. 17</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
 			<p><i>Exemple:</i><br />
 				<i>Hs.:</i>Der "auch" &#383;ey &#383;elb &#383;o bewart &rarr;<br />
 				<span class="blue">&lt;w&gt;</span>Der<span class="blue">&lt;/w&gt;</span><br />
@@ -1214,7 +1214,7 @@
 			<p>1) Les annotations sont marquées avec l'élément <span class="blue">&lt;note&gt;</span>, qu'il s'agisse de notes de manuscrits ou de notes de transcription ou d'édition. Les notes des manuscrits sont généralement des gloses ou des signes d'annotation (pour les ajouts de texte &rarr; <a href="#del_add">chap. 18</a>). Les notes concernant la transcription sont des phénomènes du manuscrit qui ne sont pas pertinents pour le texte, par ex. des passages soulignés ou des marques indéterminables dans le temps, des répétitions de caractéristiques spécifiques, des ornements en dehors du miroir de l'écriture, des échantillons de plume, etc. Les notes éditoriales sont typiquement des explications pour des interventions ou similaire.</p>
 			<p>2) En général, on place l'élément <span class="blue">&lt;note&gt;</span> après la fin du vers, c'est-à-dire après <span class="blue">&lt;/l&gt;</span>.</p>
 			<p>3) L'élément <span class="blue">&lt;note&gt;</span> contient l'attribut <span class="yellow">@ana</span>. Pour les notes qui se trouvent dans le témoin manuscrit, les valeurs suivantes sont prévues selon le cas: <span class="brown">"hc:Gloss"</span> (glose), <span class="brown">"hc:NotaBene"</span> (signe de la note), <span class="brown">"hc:Manicula"</span> (manicule), <span class="brown">"hc:Footnote"</span> (note en bas de page), <span class="brown">"hc:Endnote"</span> (note finale). En ce qui concerne les notes de transcription, seulement <span class="brown">"hc:TranscriptionNote"</span> est généralement utilisée. En ce qui concerne les notes éditoriales, les valeurs suivantes sont prévues selon le cas: <span class="brown">"hc:Comment"</span> (commentaire), <span class="brown">"hc:TextCriticalNote"</span> (note critique), <span class="brown">"hc:WitnessesNote"</span> (note sur les témoins utilisés), <span class="brown">"hc:LociNote"</span> (note sur les sources, sur les parallèles et la répercussion), <span class="brown">"hc:FontesNote"</span> (note sur les sources), <span class="brown">"hc:SimiliaNote"</span> (note sur les parallèles), <span class="brown">"hc:TestimoniaNote"</span> (note sur la répercussion), <span class="brown">"hc:BiblicalNote"</span> (note sur les sources bibliques). 
-			<p>4) L'élément <span class="blue">&lt;note&gt;</span> contient également l'attribut <span class="yellow">@target</span>, qui renvoie au mot ou au vers auxquels fait référence la note. (&rarr; <a href="#xml:id_target">chap. 23</a>).</p>
+			<p>4) L'élément <span class="blue">&lt;note&gt;</span> contient également l'attribut <span class="yellow">@target</span>, qui renvoie au mot ou au vers auxquels fait référence la note. (&rarr; <a href="#xml:id_target">chap. 17</a>).</p>
 			<p>5) Entre les annotations existantes, on balise avec <span class="blue">&lt;q&gt;</span> (=quote) les citations du manuscrit ou d'autres manuscrits. Les citations provenant de la littérature de recherche ou la signification particulière de mots sont pourtant balisées avec <span class="blue">&lt;mentioned&gt;</span> au lieu de guillemets.</p>
 			<p>
 				<br />
