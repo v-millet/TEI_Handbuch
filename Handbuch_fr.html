@@ -630,12 +630,12 @@
 			<p>6) Les ajouts et les ratures des vers entiers ne sont pas marqués avec <span class="blue">&lt;del&gt;</span> ou <span class="blue">&lt;add&gt;</span>, mais avec <span class="blue">&lt;delSpan&gt;</span> et <span class="blue">&lt;addSpan&gt;</span>; comme tous les éléments ‚span‘, ils sont vides, un élément <span class="blue">&lt;anchor&gt;</span> marque la fin de ce qui est supprimé.</p>
 			<p><span class="blue">&lt;addSpan</span>
 				<span class="yellow">hei:placeRef=</span><span class="brown">"hc:ColumnMarginLeft"</span>
-				<span class="yellow">spanTo=</span><span class="brown">"#f_addSpan_7657_1"</span><span class="blue">/&gt;</span><br />
+				<span class="yellow">spanTo=</span><span class="brown">"#addSpan_7657_1"</span><span class="blue">/&gt;</span><br />
 				<span class="blue">&lt;l</span>
 				<span class="yellow">n=</span><span class="brown">"7657"</span><span class="blue">&gt;</span><br /> &lt;<span class="blue">w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="blue"> &lt;/l&gt;</span><br />
 				<span class="blue">&lt;anchor</span>
-				<span class="yellow">xml:id=</span><span class="brown">"f_addSpan_7657_1"</span><span class="blue">/&gt;</span></p>
+				<span class="yellow">xml:id=</span><span class="brown">"addSpan_7657_1"</span><span class="blue">/&gt;</span></p>
 			<p>7) Si <i>rien</i> n'indique que le copiste était conscient d'une répétition, alors la décision qu'un morceau de texte est répété (et donc superflu) est une décision de caractère éditorial. Dans ces cas, on indique la seconde séquence de la répétition comme <span class="blue">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">chap. 32</a>); <span class="blue">&lt;subst&gt;</span> et <span class="blue">&lt;add&gt;</span> sont omis:</p>
 			<p><span class="blue">&lt;w&gt;</span>répétés<span class="blue">&lt;/w&gt;&lt;w&gt;</span>mots<span class="blue">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>mots<span class="blue">&lt;/w&gt;&lt;/surplus&gt;</span></p>
 			<p>
@@ -673,7 +673,7 @@
 				<span class="blue"> &lt;/choice&gt;</span>undes<br />
 				<span class="blue">&lt;/w&gt;</span><br />
 				<span class="blue">&lt;w</span>
-				<span class="yellow">xml:id=</span><span class="brown">"w_1234_2"</span><span class="yellow">copyOf=</span><span class="brown">"# w_1234_1"</span><span class="blue">&gt;&lt;/w&gt;</span><br />
+				<span class="yellow">xml:id=</span><span class="brown">"w_1234_2"</span> <span class="yellow">copyOf=</span><span class="brown">"# w_1234_1"</span><span class="blue">&gt;&lt;/w&gt;</span><br />
 				<span class="blue">&lt;/choice&gt;</span></p>
 			<p>2) Là où on ne peut pas utiliser <span class="blue">&lt;subst&gt;</span>, car le <span class="blue">&lt;del&gt;</span> et le <span class="blue">&lt;add&gt;</span> ne sont pas directement adjoints, on emploie <span class="blue">&lt;substJoin&gt;</span>; <span class="blue">&lt;del&gt;</span> et <span class="blue">&lt;add&gt;</span> sont dotés de <span class="yellow">xml:id</span> et le <span class="blue">&lt;substJoin&gt;</span> les met en relation.</p>
 			<p>Ex. 1: <del><i>i</i></del><i>hie</i> (le <i>h</i> est placé entre le <span class="blue">&lt;del&gt;</span> et le <span class="blue">&lt;add&gt;</span>)<br />
