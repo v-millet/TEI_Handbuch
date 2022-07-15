@@ -66,7 +66,8 @@
 			<p><a href="#Spatien_editorisch">33. Editorische Behandlung der Spatien</a></p>
 			<p><a href="#Zeichensetzung_editorisch">34. Editorische Behandlung der Zeichensetzung</a></p>
 			<p><a href="#Versumstellung_editorisch">35. Editorische Behandlung von Versumstellungen</a></p>
-		</div>
+			<p><a href="#Gap_editorisch">35. Editorische Behandlung fehlender Wortteile bei 'gap'</a></p>
+			</div>
 		<p><br/></p>
 		<ol type="A">
 			<li><h2><a id="Struktur"></a>Teil I: Struktur der TEI-Dateien</h2></li>
@@ -104,7 +105,7 @@
 			</ul>
 			<p>2) Die Codierungs-Beschreibungen müssen folgende sein:</p>
 			<p>
-				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"hc"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"char"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
+				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"hc"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"character"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
 			</p>
 			<p>
 				<br />
@@ -452,7 +453,7 @@
 				<li>
 					<h2><a id="Metamarks"></a>Metazeichen</h2>
 			</ol>
-			<p>1) Metazeichen sind weder Buchstaben noch Satzzeichen. Das können Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="blue">&lt;metamark&gt;</span> und führen das Attribut <span class="yellow">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="brown">"hc:Hyphen"</span>(Trennstrich, &rarr; <a href="Wort_Spatium">Kap. 9.3</a>), <span class="brown">"hc:RunOverMark"</span> (Zeilenanschlusszeichen), <span class="brown">"hc:WordDivider" </span>(Worttrenner), <span class="brown">"hc:CorrectionMark"</span> (Korrekturzeichen), <span class="brown">"hc:InsertionMark"</span> (Einweisungszeichen), <span class="brown">"hc:TranspositionMark"</span> (Umstellungszeichen), <span class="brown">"hc:ReferenceMark"</span> (Verweiszeichen), <span class="brown">"hc:TokenMark"</span> (Token-Marker), <span class="brown">"hc:DecorativeMark"</span> (Ziermarker), <span class="brown">"hc:LineDelimiter"</span> (Zeilenabgrenzungszeichen), <span class="brown">"hc:CueNumeral"</span> (Anweisung für Nummer).<br /> Ein Token-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>.</p>
+			<p>1) Metazeichen sind weder Buchstaben noch Ziffern noch Satzzeichen (obwohl manchmal auch Buchstaben die Funktion von Metazeichen einnehmen, z.B. bei Umstellungszeichen). Das können Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="blue">&lt;metamark&gt;</span> und führen das Attribut <span class="yellow">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="brown">"hc:Hyphen"</span>(Trennstrich, &rarr; <a href="Wort_Spatium">Kap. 9.3</a>), <span class="brown">"hc:RunOverMark"</span> (Zeilenanschlusszeichen), <span class="brown">"hc:WordDivider" </span>(Worttrenner), <span class="brown">"hc:CorrectionMark"</span> (Korrekturzeichen), <span class="brown">"hc:InsertionMark"</span> (Einweisungszeichen), <span class="brown">"hc:TranspositionMark"</span> (Umstellungszeichen), <span class="brown">"hc:ReferenceMark"</span> (Verweiszeichen), <span class="brown">"hc:WordMark"</span> (Wort-Zeichen), <span class="brown">"hc:NumberMark"</span> (Nummer-Zeichen), <span class="brown">"hc:DecorativeMark"</span> (Ziermarker), <span class="brown">"hc:LineDelimiter"</span> (Zeilenabgrenzungszeichen), <span class="brown">"hc:CueNumeral"</span> (Anweisung für Nummer).<br /> Ein Word-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Number-Mark sind in der Regel gehobene Punkte, die in mittelalterliche Schrift Ziffern als Nummern markieren, z.B. <i>·xxii·</i>.</p>
 			<p>2) Metamarks können außerdem das Attribut <span class="yellow">@hei:PlaceRef</span> führen.</p>
 			<p>3) Die Liste und die Anwendungen der Metazeichen findet sich <a href="">hier</a>.</p>
 			<p>4) Im Unterschied zu Trennungszeichen oder anderen Marken, die im Schreibprozess entstanden, stehen Einweisungszeichen zusätzlich im Element <span class="blue">&lt;add&gt;</span> (&rarr; <a href="#del_add">Kap. 18</a>), wobei in diesen Fällen das Attribut <span class="yellow">@hei:PlaceRef</span> am <span class="blue">&lt;add&gt;</span> steht:</p>
@@ -867,13 +868,14 @@
 				<li>
 					<h2><a id="gap_damage"></a>Lücken und beschädigter Text</h2>
 			</ol>
-			<p>1) Textverlust durch Beschädigung des Textträgers wird getaggt mit <span class="blue">&lt;gap/&gt;</span>. Dieses Element ist immer leer! Vorsicht: in lückenhaften Fragmenten, wo ein Teil eines Wortes ebenso wie die folgenden Worte verloren sind, muss ein <span class="blue">&lt;gap/&gt;</span> sowohl innerhalb des <span class="blue">&lt;w&gt;</span> stehen, wie außerhalb.</p>
+			<p>1) Textverlust durch Beschädigung des Textträgers wird getaggt mit <span class="blue">&lt;gap/&gt;</span>. Dieses Element ist immer leer! Vorsicht: in lückenhaften Fragmenten, wo ein Teil eines Wortes ebenso wie folgende Worte verloren sind, muss ein <span class="blue">&lt;gap/&gt;</span> sowohl innerhalb des <span class="blue">&lt;w&gt;</span> stehen, wie außerhalb.</p>
 			<p>2) Ein <span class="blue">&lt;gap/&gt;</span> führt das Attribut <span class="yellow">@rendition</span>, je nach Fall mit einem der folgenden Werte: <span class="brown">hc:Overpainted</span> &ndash; <span class="brown">hc:Lost</span> &ndash; <span class="brown">hc:CutOff</span> &ndash; <span class="brown">hc:TornOff</span> &ndash; <span class="brown">hc:Stained</span> &ndash; <span class="brown">hc:Polluted</span> &ndash; <span class="brown">hc:Perforated</span> &ndash; <span class="brown">hc:Mould</span> &ndash; <span class="brown">hc:Faded</span> &ndash; <span class="brown">hc:ChemicalReagent</span> &ndash; <span class="brown">hc:Burnt</span> &ndash; <span class="brown">hc:PastedOver</span> &ndash; <span class="brown">hc:PeeledOff</span> &ndash; <span class="brown">hc:RubbedOff</span> &ndash; <span class="brown">hc:Illegible</span>.</p>
-			<p>3) Außerdem sollte ein <span class="blue">&lt;gap/&gt;</span> nach Möglichkeit die Attribute <span class="yellow">@unit</span> und <span class="yellow">@extent</span> bzw. <span class="yellow">@quantity</span> führen. <span class="yellow">@unit</span> gibt an, was verloren ist (<span class="brown">char</span>=Buchstaben; <span class="brown">line</span>=Zeilen; <span class="brown">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviel von diesen Einheiten verloren sind, steht die im Attribut <span class="yellow">@quantity</span> (z.B. <span class="yellow">@unit</span>=<span class="brown">"line"</span>
+			<p>3) Außerdem sollte ein <span class="blue">&lt;gap/&gt;</span> nach Möglichkeit die Attribute <span class="yellow">@unit</span> und <span class="yellow">@extent</span> bzw. <span class="yellow">@quantity</span> führen. <span class="yellow">@unit</span> gibt an, was verloren ist (<span class="brown">character</span>=Buchstaben; <span class="brown">line</span>=Zeilen; <span class="brown">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviel von diesen Einheiten verloren sind, steht die im Attribut <span class="yellow">@quantity</span> (z.B. <span class="yellow">@unit</span>=<span class="brown">"line"</span>
 				<span class="yellow">@quantity</span>=<span class="brown">"4"</span>). Kann man nicht wissen, wieviel verloren ist, den steht nicht <span class="yellow">@quantity</span>, sondern lediglich <span class="yellow">@extent</span>=<span class="brown">"unknown"</span>.</p>
 			<p>4) Wenn der Text nicht ganz verloren, wohl aber deutlich beschädigt ist, taggen wir ihn mit dem Element &lt;<span class="blue">damage&gt;</span>. Auch dieses führt das Attribut <span class="yellow">@rendition</span>, mit denselben möglichen Werten, wie bei <span class="blue">&lt;gap/&gt;</span>.</p>
 			<p>5) Ist im Fall von <span class="blue">&lt;damage&gt;</span> ein Lesung möglich, aber unsicher, wird der Text zusätzlich mit dem Kindelement <span class="blue">&lt;unclear&gt;</span> getaggt.</p>
 			<p>6) Steht vor oder hinter einem <span class="blue">&lt;gap/&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="blue">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die Lücke das Wort, dann fügen wir stattdessen ein 'editorisches Spatium' ein: <span class="blue">&lt;w&gt;</span>beschä<span class="blue">&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;gap/&gt;</span></p>
+			<p>7) Zur Möglichkeit, ein fehlendes Wortteil zur ergänzen, siehe &rarr; <a href="#Gap_editorisch">Kap. 36</a>)</p>
 			<p>
 				<br />
 			</p>
@@ -1239,6 +1241,22 @@
 			<p>
 				<br />
 			</p>
+			<ol start="36">
+				<li>
+					<h2><a id="Gap_editorisch"></a>Editorische Behandlung fehlender Wortteile bei 'gap'</h2>
+			</ol>
+			<p>Fehlt ein Teil eines Wortes durch Materialverlust und kann das Wort dank der erhaltenen Buchstaben mit einiger Sicherheit erkannt werden, dann kann es editorisch vervollständigt werden:</p>
+			<p><span class="blue">&lt;w&gt;</span>Iwe<span class="blue">&lt;gap</span>
+				<span class="yellow">rendition=</span><span class="brown">"hc:Stained"</span>
+				<span class="yellow">unit=</span><span class="brown">"character"</span>
+				<span class="yellow">quantity=</span><span class="brown">"3"</span>
+				<span class="blue">/&gt;&lt;/w&gt;</span></p>
+			<p>soll werden zu:</p>
+			<p><span class="blue">&lt;w&gt;</span>Iwe<span class="blue">&lt;choice&gt;&lt;orig&gt;&lt;gap</span>
+				<span class="yellow">rendition=</span><span class="brown">"hc:Stained"</span>
+				<span class="yellow">unit=</span><span class="brown">"character"</span>
+				<span class="yellow">quantity=</span><span class="brown">"2"</span>
+				<span class="blue">/&gt;&lt;/orig&gt;&lt;supplied&gt;</span>in<span class="blue">&lt;/supplied&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
 			<p>
 				<br />
 			</p>

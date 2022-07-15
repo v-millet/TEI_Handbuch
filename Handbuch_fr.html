@@ -146,6 +146,9 @@
 				<p>
 					<a href="#Versumstellung_editorisch">35. Traitement éditorial de la transposition de vers</a>
 				</p>
+				<p>
+					<a href="#Gap_editorisch">36. Traitement éditorial des parties de mots manquantes ('gap')</a>
+				</p>
 			</div>
 			<p>
 				<br />
@@ -210,7 +213,7 @@
 			</ul>
 			<p>2) Les descriptions de l'encodage sont les suivantes:</p>
 			<p>
-				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"hc"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"char"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
+				<span class="blue">&lt;encodingDesc&gt;&lt;listPrefixDef&gt;<br/> &lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"hc"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="blue">/&gt;<br/>&lt;prefixDef</span> <span class="yellow">ident=</span><span class="brown">"character"</span> <span class="yellow">matchPattern=</span><span class="brown">"(.+)"</span> <span class="yellow">replacementPattern=</span><span class="brown">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="blue">/&gt;<br/>&lt;/listPrefixDef&gt;&lt;/encodingDesc&gt;</span>
 			</p>
 			<p>
 				<br />
@@ -558,9 +561,10 @@
 				<li>
 					<h2><a id="Metamarks"></a>Méta-signes</h2>
 			</ol>
-			<p>Les méta-signes ne sont ni des lettres ni des signes de ponctuation. Il peut s'agir de signes séparateurs de mots, de signes de correction, de signes d'instructions ou d'autres similaires. Ils sont marqués comme <span class="blue">&lt;metamark&gt;</span> et portent l'attribut <span class="yellow">@ana</span>, dont la valeur, selon la fonction du signe, est l'une des options suivantes: <span class="brown">"hc:Hyphen"</span>(tiret séparateur, &rarr; <a href="Wort_Spatium">chap. 9.3</a>), <span class="brown">"hc:RunOverMark"</span> (signe connecteur), <span class="brown">"hc:WordDivider" </span> (séparateur de mots), <span class="brown">"hc:CorrectionMark"</span> (signe de correction), <span class="brown">"hc:InsertionMark"</span> (signe d'insertions), <span class="brown">"hc:TranspositionMark"</span> (signe de transposition), <span class="brown">"hc:ReferenceMark"</span> (signe de référence), <span class="brown">"hc:TokenMark"</span> (marqueur de token), <span class="brown">"hc:DecorativeMark"</span> (marqueur décoratif), <span class="brown">"hc:LineDelimiter"</span> (délimiteur de fin de ligne), <span class="brown">"hc:CueNumeral"</span> (instruction pour le numéro).<br /> En outre, les métamarques peuvent porter l'attribut <span class="yellow">@hei:PlaceRef</span>.</p>
-			<p> La liste et les utilisations des méta-signes se trouvent <a href="">ici</a>.</p>
-			<p> Contrairement aux signes séparateurs ou à d'autres marques créés lors du processus d'écriture, les marques d'instruction se trouvent en plus dans l'élément <span class="blue">&lt;add&gt;</span> (&rarr; <a href="#del_add">chap. 18</a>), se trouvant l'attribut <span class="yellow">@hei:PlaceRef</span> sur <span class="blue">&lt;add&gt;</span>:</p>
+			<p>1) Les méta-signes ne sont ni des lettres, ni des chiffres, ni des signes de ponctuation (bien que les lettres ou les chiffres jouent parfois le rôle de métasignes, par exemple pour les signes de transposition). Il peut s'agir de signes séparateurs de mots, de signes de correction, de signes d'instructions ou d'autres similaires. Ils sont marqués comme <span class="blue">&lt;metamark&gt;</span> et portent l'attribut <span class="yellow">@ana</span>, dont la valeur, selon la fonction du signe, est l'une des options suivantes: <span class="brown">"hc:Hyphen"</span>(tiret séparateur, &rarr; <a href="Wort_Spatium">chap. 9.3</a>), <span class="brown">"hc:RunOverMark"</span> (signe connecteur), <span class="brown">"hc:WordDivider" </span> (séparateur de mots), <span class="brown">"hc:CorrectionMark"</span> (signe de correction), <span class="brown">"hc:InsertionMark"</span> (signe d'insertions), <span class="brown">"hc:TranspositionMark"</span> (signe de transposition), <span class="brown">"hc:ReferenceMark"</span> (signe de référence), <span class="brown">"hc:WordMark"</span> (marqueur de parole), <span class="brown">"hc:NumberMark"</span> (marqueur de numéro), <span class="brown">"hc:DecorativeMark"</span> (marqueur décoratif), <span class="brown">"hc:LineDelimiter"</span> (délimiteur de fin de ligne), <span class="brown">"hc:CueNumeral"</span> (instruction pour le numéro).<br /> Une 'Word Mark' est un signe parfois utilisé pour les mots composés d'une seule voyelle (p.ex. <i>&ecirc;</i>), pour indiquer qu'il ne s'agit pas d'un faux début de mot, mais d'un mot complet; p. ex. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Les Number Mark sont généralement des points élevés qui, dans l'écriture médiévale, marquent les chiffres comme des nombres, p. ex. <i>·xxii·</i>.</p>
+			<p>2) En outre, les métamarques peuvent porter l'attribut <span class="yellow">@hei:PlaceRef</span>.</p>
+			<p>3) La liste avec les utilisations des méta-signes se trouve <a href="">ici</a>.</p>
+			<p>4) Contrairement aux signes séparateurs ou à d'autres marques créés lors du processus d'écriture, les marques d'instruction se trouvent en plus dans l'élément <span class="blue">&lt;add&gt;</span> (&rarr; <a href="#del_add">chap. 18</a>), se trouvant l'attribut <span class="yellow">@hei:PlaceRef</span> sur <span class="blue">&lt;add&gt;</span>:</p>
 			<p><span class="blue">&lt;w&gt;</span>Hu<span class="blue">&lt;add </span><span class="yellow">hei:PlaceRef=</span><span class="brown">"hc:Below"</span><span class="blue">&gt;&lt;metamark </span><span class="yellow">ana=</span><span class="brown">"hc:InsertionMark"</span><span class="blue">&gt;</span>,<span class="blue">&lt;/metamark&gt;</span><span class="blue">&lt;/add&gt;</span><span class="blue">&lt;add</span><span class="yellow">hei:PlaceRef=</span><span class="brown">"hc:Above"</span><span class="blue">&gt;&lt;metamark </span><span class="yellow">ana=</span><span class="brown">"hc:InsertionMark"</span><span class="blue">&gt;</span>,<span class="blue">&lt;/metamark&gt;</span>n<span class="blue">&lt;/add&gt;</span>d<span class="blue">&lt;/w&gt;</span></p>
 			<p>
 				<br />
@@ -973,13 +977,14 @@
 				<li>
 					<h2><a id="gap_damage"></a>Pertes et texte endommagé</h2>
 			</ol>
-			<p>1) La perte de texte due à un endommagement du support du texte est marquée par <span class="blue">&lt;gap/&gt;</span>. Cet élément reste toujours vide! Attention: Dans des fragments avec des pertes, où une partie d'un mot est perdue tout comme les mots qui la suivent, un <span class="blue">&lt;gap/&gt;</span> doit être placé à l'intérieur et à l'extérieur de <span class="blue">&lt;w&gt;</span>.</p>
+			<p>1) La perte de texte due à un endommagement du support du texte est marquée par <span class="blue">&lt;gap/&gt;</span>. Cet élément reste toujours vide! Attention: Dans des fragments avec des pertes, où une partie d'un mot est perdue tout comme les mots qui la suivent, un <span class="blue">&lt;gap/&gt;</span> doit être placé à l'intérieur comme à l'extérieur de <span class="blue">&lt;w&gt;</span>.</p>
 			<p>2) Un <span class="blue">&lt;gap/&gt;</span> porte l'attribut <span class="yellow">@rendition</span> avec une des valeurs suivantes, selon le cas: <span class="brown">hc:Overpainted</span> &ndash; <span class="brown">hc:Lost</span> &ndash; <span class="brown">hc:CutOff</span> &ndash; <span class="brown">hc:TornOff</span> &ndash; <span class="brown">hc:Stained</span> &ndash; <span class="brown">hc:Polluted</span> &ndash; <span class="brown">hc:Perforated</span> &ndash; <span class="brown">hc:Mould</span> &ndash; <span class="brown">hc:Faded</span> &ndash; <span class="brown">hc:ChemicalReagent</span> &ndash; <span class="brown">hc:Burnt</span> &ndash; <span class="brown">hc:PastedOver</span> &ndash; <span class="brown">hc:PeeledOff</span> &ndash; <span class="brown">hc:RubbedOff</span> &ndash; <span class="brown">hc:Illegible</span>.</p>
-			<p>3) En outre, un <span class="blue">&lt;gap/&gt;</span> devrait contenir les attributs <span class="yellow">@unit</span> et <span class="yellow">@extent</span> ou <span class="yellow">@quantity</span> si possible. <span class="yellow">@unit</span> indique ce qui est perdu (<span class="brown">char</span>=lettres; <span class="brown">line</span>=lignes; <span class="brown">page</span>=pages). Si on peut calculer combien de ces unités sont perdues, cela se trouve dans l'attribut <span class="yellow">@quantity</span> (z.B. <span class="yellow">@unit</span>=<span class="brown">"line"</span>
+			<p>3) En outre, un <span class="blue">&lt;gap/&gt;</span> devrait contenir les attributs <span class="yellow">@unit</span> et <span class="yellow">@extent</span> ou <span class="yellow">@quantity</span> si possible. <span class="yellow">@unit</span> indique ce qui est perdu (<span class="brown">character</span>=lettres; <span class="brown">line</span>=lignes; <span class="brown">page</span>=pages). Si on peut calculer combien de ces unités sont perdues, cela se trouve dans l'attribut <span class="yellow">@quantity</span> (z.B. <span class="yellow">@unit</span>=<span class="brown">"line"</span>
 				<span class="yellow">@quantity</span>=<span class="brown">"4"</span>). S'il n'est pas possible de savoir combien est perdu, on n'emploie pas l'attribut <span class="yellow">@quantity</span>, mais seulement <span class="yellow">@extent</span>=<span class="brown">"unknown"</span>.</p>
 			<p>4) Si le texte n'est pas completement perdu, mais clairement endommagé, on le marque avec l'élément &lt;<span class="blue">damage&gt;</span>. Celui-ci possède également l'attribut <span class="yellow">@rendition</span>, avec les mêmes valeurs possibles que pour <span class="blue">&lt;gap/&gt;</span>.</p>
 			<p>5) Si dans le cas de <span class="blue">&lt;damage&gt;</span> une lecture est possible mais incertaine, le texte est également balisé avec l'élément descendant <span class="blue">&lt;unclear&gt;</span>.</p>
 			<p>6) Entre un <span class="blue">&lt;gap/&gt;</span> et un mot complet, lisible ou endommagé, on place un espace <span class="blue">&lt;c&gt; &lt;/c&gt;</span>. Si une perte comprend également une partie du mot précédent ou suivant, on place un 'espace éditorial', c'est-à-dire un espace dans le <span class="blue">&lt;reg&gt;</span> d'une construction <span class="blue">&lt;choice&gt;</span>.</p>
+			<p>7) Pour la possibilité de compléter une partie de mot manquante, voir &rarr; <a href="#Gap_editorisch">chap. 36</a>)</p>
 			<p>
 				<br />
 			</p>
@@ -1349,6 +1354,22 @@
 			<p>
 				<br />
 			</p>
+			<ol start="36">
+				<li>
+					<h2><a id="Gap_editorisch"></a>Traitement éditorial des parties de mots manquantes ('gap')</h2>
+			</ol>
+			<p>Si une partie d'un mot est manquante en conséquence d'une perte de matériel et que le mot peut être reconnu avec une certaine certitude grâce aux lettres conservées, il peut alors être complété par édition:</p>
+			<p><span class="blue">&lt;w&gt;</span>Iwe<span class="blue">&lt;gap</span>
+				<span class="yellow">rendition=</span><span class="brown">"hc:Stained"</span>
+				<span class="yellow">unit=</span><span class="brown">"character"</span>
+				<span class="yellow">quantity=</span><span class="brown">"3"</span>
+				<span class="blue">/&gt;&lt;/w&gt;</span></p>
+			<p>Cela devient:</p>
+			<p><span class="blue">&lt;w&gt;</span>Iwe<span class="blue">&lt;choice&gt;&lt;orig&gt;&lt;gap</span>
+				<span class="yellow">rendition=</span><span class="brown">"hc:Stained"</span>
+				<span class="yellow">unit=</span><span class="brown">"character"</span>
+				<span class="yellow">quantity=</span><span class="brown">"2"</span>
+				<span class="blue">/&gt;&lt;/orig&gt;&lt;supplied&gt;</span>in<span class="blue">&lt;/supplied&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
 			<p>
 				<br />
 			</p>
