@@ -1,0 +1,79 @@
+teiHeader {
+  display: none;
+}
+
+head[n="1"] {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+head[n="2"] {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+table {
+  padding: 20px;
+}
+
+row {
+  display: block;
+}
+
+row[role="label"] {
+  font-size: large;
+  font-weight: bold;
+}
+
+cell {
+  display: inline-block;
+  width: 130px;
+  line-height: 150px;
+  padding: 10px;
+  border-bottom: solid black 2px;
+  border-right: solid black 2px;
+  border-left: solid black 2px;
+  border-top: solid black 2px;
+}
+
+cell[role="label"] {
+  background-color: rgb(100, 186, 54);
+  font-size: large;
+  font-weight: bold;
+}
+
+row[role="section"] {
+  font-size: large;
+  font-weight: bold;    
+}
+
+graphic[url] {
+  content: attr(url, url);
+  width: 120px;
+  /*display: inline;
+  position: relative;*/
+}
+
+graphic {
+  display: inline-block;
+  position: absolute;
+}
+
+figure {
+  position: relative;
+  display: inline;
+}
+
+figure > label {
+/*  visibility: hidden;*/
+    display: none;
+/*  display: block;
+  position: absolute;*/
+  
+}
+
+figure:hover > label {
+  visibility: visible;
+  display:inline;
+}
+
