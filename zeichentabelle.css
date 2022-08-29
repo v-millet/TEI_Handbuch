@@ -1,0 +1,24 @@
+
+@font-face {
+  font-family: "Junicode";
+  src: url('font/Junicode.ttf');
+}
+
+@font-face {
+    font-family: "Junicode-Bold";
+    src: url('font/Junicode-Bold.ttf');
+ }
+
+@font-face {
+    font-family: "Junicode-Italic";
+    src: url('font/Junicode-Italic.ttf');
+ }
+@font-face {
+    font-family: "Junicode-BoldItalic";
+    src: url('font/Junicode-BoldItalic.ttf');
+ } 
+
+* {
+    font-family: "Junicode";
+    font-size: 14pt;
+}
