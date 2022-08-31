@@ -1014,14 +1014,14 @@
 					<h2><a id="Lagensignaturen"></a>Lagensignaturen und Reklamanten</h2>
 			</ol>
 			<p>Lagensignaturen und Reklamanten (sowie evtl. andere Phänomene außerhalb des Textes) kodieren wir mit dem Element <span class="blue">&lt;fw&gt;</span>, das ein Attribut&nbsp;<span class="yellow">@ana</span> führt, welches folgende Wert haben kann: <span class="brown">"hc:Catchword"</span> (Reklamante), <span class="brown">"hc:QuireSignature"</span> (Lagensignatur), <span class="brown">"hc:PageHeader"</span> (Seitentitel), <span class="brown">"hc:ColumnHeader"</span> (Spaltentitel), <span class="brown">"hc:PageFooter"</span> (Seitentitel im Seitenfuß), <span class="brown">"hc:ColumnFooter"</span> (Spaltentitel im Spaltenfuß), <span class="brown">"hc:PageNumeral"</span> (Seitennummer), <span class="brown">"hc:ColumnNumeral"</span> (Spaltennummer).</p>
-			<p> Wir stellen die Elemente <span class="blue">&lt;fw&gt;</span> an das Ende der Seite, zu der sie gehören, also vor dem <span class="blue">&lt;pb&gt;</span> der folgenden Seite. Wir deklarieren sie als getrennte Textzone; deswegen muss die Kodierung mit dem Zonenwechsel beginnen, z.B. <span class="blue">&lt;milestone</span>
-				<span class="yellow">ana=</span><span class="brown">"hc:ZoneBeginning"</span>
+			<p>Wir stellen die Elemente <span class="blue">&lt;fw&gt;</span> an das Ende der Seite, zu der sie gehören, also vor dem <span class="blue">&lt;pb&gt;</span> der folgenden Seite. Wir deklarieren sie als getrennte Textzone; deswegen muss die Kodierung mit dem Zonenwechsel beginnen, z.B. <span class="blue">&lt;milestone</span>
+				<span class="yellow">ana=</span><span class="brown">"hc:ZoneShift"</span>
 				<span class="yellow">facs=</span><span class="brown">"#Bb_263v-c"</span><span class="blue">/&gt;</span></p>
-			<p> Lagensignaturen und Reklamanten stehen in den Handschriften in eigenen Zeilen, sie müssen also jeweils mit einem <span class="blue">&lt;lb</span>
+			<p>Lagensignaturen und Reklamanten stehen in den Handschriften in eigenen Zeilen, sie müssen also jeweils mit einem <span class="blue">&lt;lb</span>
 				<span class="yellow">n=</span><span class="brown">"1"</span><span class="blue">/&gt;</span> begonnen werden. Das folgende Beispiel ist angepasst an das Beispiel oben (&rarr; <a href="#Faksimile">Kap. 3</a>).</p>
 			<p><i>Beispiel:</i><br />
 				<span class="blue">&lt;milestone</span>
-				<span class="yellow">ana=</span><span class="brown">"hc:ZoneBeginning"</span>
+				<span class="yellow">ana=</span><span class="brown">"hc:ZoneShift"</span>
 				<span class="yellow">facs=</span><span class="brown">"#b_12v-b"</span><span class="blue">/&gt;</span><br />
 				<span class="blue">&lt;lb</span>
 				<span class="yellow">n=</span><span class="brown">"1"</span><span class="blue">/&gt;</span><br />
@@ -1098,6 +1098,7 @@
 				<br />
 				<span class="blue">&lt;/surface&gt;</span>
 			</p>
+			<p><span class="blue">&lt;w&gt;</span>-Elemente in Reklamanten erhalten keine <span class="yellow">@xml:id</span>.</p>
 			<p>
 				<br />
 			</p>

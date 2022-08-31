@@ -1127,13 +1127,13 @@
 			</ol>
 			<p>Les signatures  de cahier et les réclames (ainsi que d'autres phénomènes évetuels hors texte) sont encodées avec l'élément <span class="blue">&lt;fw&gt;</span>, qui porte un attribut <span class="yellow">@ana</span>, qui peut porter à sa fois les valeurs suivantes: <span class="brown">"hc:Catchword"</span> (mot-clé), <span class="brown">"hc:QuireSignature"</span> (signature de cahier), <span class="brown">"hc:PageHeader"</span> (en-tête de page), <span class="brown">"hc:ColumnHeader"</span> (en-tête de colonne), <span class="brown">"hc:PageFooter"</span> (bas de page), <span class="brown">"hc:ColumnFooter"</span> (bas de colonne), <span class="brown">"hc:PageNumeral"</span> (numéro de page), <span class="brown">"hc:ColumnNumeral"</span> (numéro de colonne).</p>
 			<p> On place les éléments <span class="blue">&lt;fw&gt;</span> au bas de page auquel ils apartiennent, c'est-à-dire avant le <span class="blue">&lt;pb&gt;</span> de la page suivante. On les déclare comme des zones de texte séparées; c'est pourquoi l'encodage doit commencer avec le changement de zone, par exemple <span class="blue">&lt;milestone</span>
-				<span class="yellow">ana=</span><span class="brown">"hc:ZoneBeginning"</span>
+				<span class="yellow">ana=</span><span class="brown">"hc:ZoneShift"</span>
 				<span class="yellow">facs=</span><span class="brown">"#Bb_263v-c"</span><span class="blue">/&gt;</span></p>
 			<p> Les signatures de cahier et les réclames se trouvent dans les manuscrits sur des lignes séparées et ils doivent commencer chacun avec un <span class="blue">&lt;lb</span>
 				<span class="yellow">n=</span><span class="brown">"1"</span><span class="blue">/&gt;</span>. L'exemple suivant s'adapte à l'exemple ci-dessus (&rarr; <a href="#Faksimile">chap. 3</a>).</p>
 			<p><i>Exemple:</i><br />
 				<span class="blue">&lt;milestone</span>
-				<span class="yellow">ana=</span><span class="brown">"hc:ZoneBeginning"</span>
+				<span class="yellow">ana=</span><span class="brown">"hc:ZoneShift"</span>
 				<span class="yellow">facs=</span><span class="brown">"#b_12v-b"</span><span class="blue">/&gt;</span><br />
 				<span class="blue">&lt;lb</span>
 				<span class="yellow">n=</span><span class="brown">"1"</span><span class="blue">/&gt;</span><br />
@@ -1210,6 +1210,7 @@
 				<br />
 				<span class="blue">&lt;/surface&gt;</span>
 			</p>
+			<p>Les éléments <span class="blue">&lt;w&gt;</span> dans les reclames ne reçoivent pas d'<span class="yellow">@xml:id</span>.</p>
 			<p>
 				<br />
 			</p>
