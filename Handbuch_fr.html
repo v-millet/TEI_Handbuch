@@ -242,7 +242,7 @@
 				<br />
 				<span class="element">&lt;/surface&gt;</span>
 			</p>
-			<p>Pour les signatures de cahier et les réclames &rarr; <a href="#Lagensignaturen">chap. 28</a>; pour <span class="attribute">@xml:id</span> &rarr; <a href="#xml:id_target">chap. 17</a>.</p>
+			<p>Pour les signatures de cahier et les réclames &rarr; <a href="#Lagensignaturen">chap. 29</a>; pour <span class="attribute">@xml:id</span> &rarr; <a href="#xml:id_target">chap. 18</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -258,7 +258,7 @@
 				<li>
 					<h2><a id="Titel_Kolophon"></a>Titre et colophon</h2>
 			</ol>
-			<p>L'élément <span class="element">&lt;text&gt;</span> contient toujours l'élément <span class="element">&lt;body&gt;</span>. Il peut contenir également les éléments <span class="element">&lt;front&gt;</span> et/ou <span class="element">&lt;back&gt;</span>. Dans <span class="element">&lt;front&gt;</span> sont notés les titres que certains copistes mettent au début de l'oeuvre et qui n'appartiennent pas au texte de Hartmann. Autrement dit, si un tel titre existe dans le manuscrit, on établit un élément <span class="element">&lt;front&gt;</span>. Les premiers éléments descendant sont <span class="element">&lt;pb&gt;</span> et <span class="element">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>). En troisième position, on crée un élément <span class="element">&lt;docTitle&gt;</span> avec un élément descendant <span class="element">&lt;titlePart&gt;</span>. C'est dans cet élément que le titre est désormais saisi, tokenisé (&rarr; <a href="#Wort">chap. 9.1</a>) et en indiquant la <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7.3</a>).</p>
+			<p>L'élément <span class="element">&lt;text&gt;</span> contient toujours l'élément <span class="element">&lt;body&gt;</span>. Il peut contenir également les éléments <span class="element">&lt;front&gt;</span> et/ou <span class="element">&lt;back&gt;</span>. Dans <span class="element">&lt;front&gt;</span> sont notés les titres que certains copistes mettent au début de l'oeuvre et qui n'appartiennent pas au texte de Hartmann. Autrement dit, si un tel titre existe dans le manuscrit, on établit un élément <span class="element">&lt;front&gt;</span>. Les premiers éléments descendant sont <span class="element">&lt;pb&gt;</span> et <span class="element">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>). En troisième position, on crée un élément <span class="element">&lt;docTitle&gt;</span> avec un élément descendant <span class="element">&lt;titlePart&gt;</span>. C'est dans cet élément que le titre est désormais saisi, tokenisé (&rarr; <a href="#Wort">chap. 9</a>) et en indiquant la <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>).</p>
 			<p>
 				<i>Exemple:</i>
 			</p>
@@ -278,7 +278,7 @@
 				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Amen<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/trailer&gt;<br/>
 					&lt;/back&gt;</span></p>
-			<p>Parfois, les colophons contiennent des décorations qu'on indique comme <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 16</a>) avec l'attribut <span class="attribute">@ana</span> qui porte la valeur <span class="value">"hc:DecorativeMarker"</span>.</p>
+			<p>Parfois, les colophons contiennent des décorations qu'on indique comme <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 17</a>) avec l'attribut <span class="attribute">@ana</span> qui porte la valeur <span class="value">"hc:DecorativeMarker"</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -289,9 +289,9 @@
 			<p>L'élément <span class="element">&lt;body&gt;</span> ne contient que l'élément descendant <span class="element">&lt;div&gt;</span>, qui balise le texte de l'oeuvre. La structure du texte est composée par des vers et des paires de vers.</p>
 			<p>On emploie des modèles prédéfinis qui rendent plus facile la saisie du texte, car on y a établi la structure numérotée des vers et on l'a remplie avec les éléments pour les mots et pour les espaces entre les mots.</p>
 			<p>Il y a en principe trois types d'éléments dans le texte: des éléments structurels, des éléments sémantiques et des contructions alternatives.</p>
-			<p> a) Les éléments structurels (<span class="element">&lt;pb/&gt;</span>, <span class="element">&lt;cb/&gt;</span>, <span class="element">&lt;lb/&gt;</span>, <span class="element">&lt;gap/&gt;</span>) sont descriptifs et objectifs. Ils décrivent les caractéristiques du manuscrit et ils fonctionnent comme des points. C'est pourquoi ils sont toujours vides. (&rarr; <a href="#Seite_Spalte">chap. 7</a>, &rarr; <a href="#gap_damage">chap. 24</a>)</p>
+			<p> a) Les éléments structurels (<span class="element">&lt;pb/&gt;</span>, <span class="element">&lt;cb/&gt;</span>, <span class="element">&lt;lb/&gt;</span>, <span class="element">&lt;gap/&gt;</span>) sont descriptifs et objectifs. Ils décrivent les caractéristiques du manuscrit et ils fonctionnent comme des points. C'est pourquoi ils sont toujours vides. (&rarr; <a href="#Seite_Spalte">chap. 7</a>, &rarr; <a href="#gap_damage">chap. 25</a>)</p>
 			<p> b) Les éléments sémantiques (<span class="element">&lt;l&gt;</span>, <span class="element">&lt;w&gt;</span>, <span class="element">&lt;hi&gt;</span>, <span class="element">&lt;pc&gt;</span>) sont basés sur nos définitions: on décide s'il s'agit soit d'un mot, soit d'un vers, soit d'un signe de ponctuation. Ils contiennent toujours du texte.</p>
-			<p> c) Les constructions alternatives (<span class="element">&lt;choice&gt;</span>, <span class="element">&lt;subst&gt;</span>) contiennent toujours deux options d'affichage possibles. Chacune doit donc contenir deux éléments descendant (&rarr; <a href="#Normalisierung">chap. 31</a>, &rarr; <a href="#del_add">chap. 18</a>). Par example: <span class="element">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> permet de voir ce qu'il y a dans <span class="element">&lt;orig&gt;</span> ou ce qu'il y a dans <span class="element">&lt;reg&gt;</span>.</p>
+			<p> c) Les constructions alternatives (<span class="element">&lt;choice&gt;</span>, <span class="element">&lt;subst&gt;</span>) contiennent toujours deux options d'affichage possibles. Chacune doit donc contenir deux éléments descendant (&rarr; <a href="#Normalisierung">chap. 32</a>, &rarr; <a href="#del_add">chap. 19</a>). Par example: <span class="element">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> permet de voir ce qu'il y a dans <span class="element">&lt;orig&gt;</span> ou ce qu'il y a dans <span class="element">&lt;reg&gt;</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -311,7 +311,7 @@
 				<span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span>, ou <span class="element">&lt;cb</span>
 				<span class="attribute">n=</span><span class="value">"b"</span><span class="element">/&gt;</span></p>
 			<p>3) Le début d'une nouvelle ligne physique est encodé grâce à l'élément <span class="element">&lt;lb/&gt;</span>. Cet élément est toujours vide. Il contient toujours l'attribut <span class="attribute">@n</span>, qui porte comme valeur le numéro de la ligne physique dans la colonne actuelle, par ex. <span class="element">&lt;l&gt;&lt;lb </span><span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br/> La place de <span class="element">&lt;lb&gt;</span> par rapport à <span class="element">&lt;l&gt;</span> n'est en principe pas pertinente, car il peut se trouver également au milieu de <span class="element">&lt;w&gt;</span>. Pour des raisons pratiques, on place <span class="element">&lt;lb&gt;</span> partout o le début du vers concide avec le début de la ligne <span class="element">&lt;l&gt;</span> (voir l'exemple ci-dessus).</p>
-			<p> Pour la séparation de mots &rarr; <a href="#Wort">chap. 9.3</a>; pour les débordements de ligne &rarr; <a href="#Zeilenueberlauf">chap. 21</a>.</p>
+			<p> Pour la séparation de mots &rarr; <a href="#Wort">chap. 9</a>; pour les débordements de ligne &rarr; <a href="#Zeilenueberlauf">chap. 22</a>.</p>
 			<p>
 				<br/>
 			</p>
@@ -320,8 +320,8 @@
 					<h2><a id="Verspaar_Vers"></a>Couplet et vers</h2>
 			</ol>
 			<p>1) On trouve chaque couplet ou paire de vers à l'intérieur de l'élément <span class="element">&lt;lg&gt;</span>. Il insere l'attribut <span class="attribute">@ana </span> avec la valeur <span class="value">"hc:Couplet"</span> (=le distique, la valeur la plus fréquente), <span class="value">"hc:Tercet"</span> ou <span class="value">"hc:Quatrain"</span>.</p>
-			<p>2) On trouve chaque vers à l'intérieur de l'élément <span class="element">&lt;l&gt;</span>. Cet élément introduit premièrement l'attribut <span class="attribute">@n</span>; dont la valeur est le numéro du vers selon Lachmann ou les éditions traditionelles. Deuxièmement, l'attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>). Et troisièmement, une numérotation alternative <span class="attribute">@altN</span> suivant rigoreusement le manuscrit.</p>
-			<p>Au cas o le copiste effectue une transposition de vers, la transcription suit l'ordre physique des vers du manuscrit. Cela signifie que les numéros des éléments <span class="element">&lt;lb&gt;</span> restent toujours consécutifs; les numéros des éléments <span class="element">&lt;l&gt;</span> sont pourtant adaptés (pour le traitement éditorial &rarr; <a href="#Versumstellung_editorisch">chap. 35</a>). Par exemple:</p>
+			<p>2) On trouve chaque vers à l'intérieur de l'élément <span class="element">&lt;l&gt;</span>. Cet élément introduit premièrement l'attribut <span class="attribute">@n</span>; dont la valeur est le numéro du vers selon Lachmann ou les éditions traditionelles. Deuxièmement, l'attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 18</a>). Et troisièmement, une numérotation alternative <span class="attribute">@altN</span> suivant rigoreusement le manuscrit.</p>
+			<p>Au cas o le copiste effectue une transposition de vers, la transcription suit l'ordre physique des vers du manuscrit. Cela signifie que les numéros des éléments <span class="element">&lt;lb&gt;</span> restent toujours consécutifs; les numéros des éléments <span class="element">&lt;l&gt;</span> sont pourtant adaptés (pour le traitement éditorial &rarr; <a href="#Versumstellung_editorisch">chap. 36</a>). Par exemple:</p>
 			<p>
 				<span class="element">&lt;l</span>
 				<span class="attribute">n=</span>
@@ -382,7 +382,7 @@
 				<span class="value">"117,2"</span>
 				<span class="element">&gt;</span>
 			</p>
-			<p>Pour les vers mal ordonnés de manière accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 27</a>.</p>
+			<p>Pour les vers mal ordonnés de manière accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 28</a>.</p>
 			<p>3) On emploie la numérotation standard de vers appartenant à la recherche. Plus tard, une numérotation alternative, consecutive et propre au manuscrit est rajoutée automatiquement et peut aussi éventuellement être affichée dans l'édition.</p>
 			<p>4) Dans le fichier Excel "Concordance", les vers manquants sont supprimés, les vers supplémentaires sont ajoutés, les vers transposés sont installés à leur place correspondante et marqués en couleur, afin de créer une "carte" de vers qui permettra plus tard de visualiser les vers parallèles également en parallèle</p>
 			<p>
@@ -392,9 +392,9 @@
 				<li>
 					<h2><a id="Wort"></a>Mot et tokenisation</h2>
 			</ol>
-			<p>1) Chaque mot linguistique est encodé grâce à l'élément <span class="element">&lt;w&gt;</span>. On appelle cela un <i>token</i>. Chaque mot porte un <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 17</a>) avec la structure "type d'élément_numéro de vers_numéro de série", par ex.: <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> (= premier élément <span class="element">&lt;w&gt;</span> du vers 765).</p>
-			<p>2) Puisque nous saisissons les mots dans l'élément &lt;w&gt; selon des critères linguistiques, l'écriture conjointe ou séparée du manuscrit peut être reproduite. Les espaces n'ont plus nécessairement pour fonction de séparer les mots; (&rarr; <a href="#Spatium">Kap. 11</a>).</p>
-			<p>3) En cas de coupure de mot en fin de ligne, l'élément <span class="element">&lt;lb&gt;</span> est inséré à sa place correspondante à l'intérieur du mot avec le numéro de la nouvelle ligne, ainsi qu'avec l'attribut <span class="attribute">@break=</span><span class="value">"no"</span>. S'il y a un signe séparateur, celui-ci est saisi comme <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 16</a>), avec l'attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>, et dans lequel se trouve le signe séparateur:</p>
+			<p>1) Chaque mot linguistique est encodé grâce à l'élément <span class="element">&lt;w&gt;</span>. On appelle cela un <i>token</i>. Chaque mot porte un <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 18</a>) avec la structure "type d'élément_numéro de vers_numéro de série", par ex.: <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> (= premier élément <span class="element">&lt;w&gt;</span> du vers 765).</p>
+			<p>2) Puisque nous saisissons les mots dans l'élément &lt;w&gt; selon des critères linguistiques, l'écriture conjointe ou séparée du manuscrit peut être reproduite. Les espaces n'ont plus nécessairement pour fonction de séparer les mots; (&rarr; <a href="#Spatium">Kap. 10</a>).</p>
+			<p>3) En cas de coupure de mot en fin de ligne, l'élément <span class="element">&lt;lb&gt;</span> est inséré à sa place correspondante à l'intérieur du mot avec le numéro de la nouvelle ligne, ainsi qu'avec l'attribut <span class="attribute">@break=</span><span class="value">"no"</span>. S'il y a un signe séparateur, celui-ci est saisi comme <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">chap. 17</a>), avec l'attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>, et dans lequel se trouve le signe séparateur:</p>
 			<p><span class="element">&lt;lb</span><span class="attribute"> n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;</span>cheva<span class="element">&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
@@ -411,7 +411,7 @@
 			</ol>
 			<p>1) La tokenisation des mots selon des critères linguistiques doit être distinguée de leur écriture conjointe ou séparée.</p>
 			<p>2) En général, entre deux mots il y a un espace. Les espaces sont marqués avec l'élément <span class="element">&lt;c&gt;&nbsp;&lt;/c&gt;</span>, dont le contenu est un espace.</p>
-			<p>3) Lorsque deux mots sont écrits comme un seul mot dans le manuscrit, l'espace disparaît dans la transcription. Cependant, il peut apparaître dans l'édition (&rarr; <a href="#Spatien_editorisch">chap. 35</a>).</p>
+			<p>3) Lorsque deux mots sont écrits comme un seul mot dans le manuscrit, l'espace disparaît dans la transcription. Cependant, il peut apparaître dans l'édition (&rarr; <a href="#Spatien_editorisch">chap. 34</a>).</p>
 			<p>4) Lors de l'effacement et de l'ajout de mots entiers dans le manuscrit, un espace doit être à chaque fois effacé ou ajouté dans le code pour que les mots n'aparaissent pas comme un seul mot lors de l'affichage. Par ex.:</p>
 			<p><span class="element">&lt;w&gt;</span>li<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>buens<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;add&gt;&lt;w&gt;</span>rois<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;&lt;w&gt;</span>de<span class="element">&lt;/w&gt;</span></p>
 			<p>5) L'écriture conjointe ou séparée est loin d'être toujours claire dans les manuscrits. En cas de doute, les mots sont saisis comme l'envisagent les dictionnaires: si deux mots différents sont proches l'un de l'autre, mais qu'ils ne sont pas clairement écrits dans un seul mot, ils sont transcrits comme séparés; si à l'intérieur d'un mot deux lettres sont un peu éloignées l'une de l'autre, mais sans qu'il s'agisse d'une écriture clairement séparée, on écrit le mot comme un seul mot. Ce choix est laissé à l'appréciation du transcripteur.</p>
@@ -419,6 +419,7 @@
 			<p><span class="element">&lt;w&gt;</span>pro<span class="element">&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;</span>esce<span class="element">&lt;/w&gt;</span></p>
 			<p>7) Inversement, si deux mots sont clairement écrits comme un seul, tous les deux sont saisis comme des tokens séparés. Leur écriture conjointe dans le manuscrit est caractérisée par l'absence d'espace <span class="element">&lt;c&gt; &lt;/c&gt;</span> entre les deux tokens. Si l'on veut que les deux mots apparaissent séparés dans l'édition, l'espace peut être ajouté lors du processus de traitement éditorial:</p>
 			<p><span class="element">&lt;w&gt;</span>ma<span class="element">&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;</span>dame<span class="element">&lt;/w&gt;</span></p>
+			<p>8) Un saut de ligne <span class="element">&lt;lb/&gt;</span> insère automatiquement un espace dans la visualisation. Mais dans les manuscrits avec des vers non détachés, nous insérons un espace à la fin des vers qui se terminent au milieu de la ligne (où il n'y en a donc pas du <span class="element">&lt;lb/&gt;</span> avant le vers suivant), afin que le dernier mot du premier vers et le premier du vers suivant ne se touchent pas dans la visualisation.</p>
 			<p>
 				<br />
 			</p>
@@ -435,7 +436,7 @@
 				<li>
 					<h2><a id="Diakritika"></a>Caractères spéciaux, diacritiques et superscripts</h2>
 			</ol>
-			<p>Les diacritiques et les superscripts sont saisis à l'aide d'entités. Ces entités sont des jokers pour certains caractères qui permettent de les retrouver rapidement ou de les régulariser. Ces entités peuvent également être présentées de manière variable. Ici on peut voir les <a href="./Zeichentabelle-nach-Zeichen.html" target="_blank">caractères spéciaux regroupés par caractère</a>, ici les <a href="./Zeichentabelle-nach-Handschrift.html" target="_blank">caractères spéciaux regroupés par manuscrit</a>. Les entités sont également utilisées comme des signes d'abréviation (&rarr; <a href="#Abkuerzungen">chap. 25</a>). On trouverá les métamarques (&rarr; <a href="#Metamarks">chap. 16</a>) également dans ces listes..</p>
+			<p>Les diacritiques et les superscripts sont saisis à l'aide d'entités. Ces entités sont des jokers pour certains caractères qui permettent de les retrouver rapidement ou de les régulariser. Ces entités peuvent également être présentées de manière variable. Ici on peut voir les <a href="./Zeichentabelle-nach-Zeichen.html" target="_blank">caractères spéciaux regroupés par caractère</a>, ici les <a href="./Zeichentabelle-nach-Handschrift.html" target="_blank">caractères spéciaux regroupés par manuscrit</a>. Les entités sont également utilisées comme des signes d'abréviation (&rarr; <a href="#Abkuerzungen">chap. 26</a>). On trouverá les métamarques (&rarr; <a href="#Metamarks">chap. 17</a>) également dans ces listes..</p>
 			<p>Les entités, si on ne les connaît pas par cœur, peuvent également être saisis dans Oxygen, soit en mode Text, soit en mode Author, avec l'aide de la barre d'outils "Entities": Menu &rarr; Window &rarr; Schow View &rarr; Entities.</p>
 			<p>
 				<br />
@@ -471,7 +472,7 @@
 				<li>
 					<h2><a id="hei:cue"></a>Signes d'instructions pour les initiales</h2>
 			</ol>
-			<p>Les instructions pour les initiales ne sont pas des métamarques parce qu'il s'agit de lettres. On a établi l'élément <span class="element">&lt;hei:cue&gt;</span> pour elles. L'élément est placé immédiatement avant le mot qui contient l'initiale et à laquelle le signe renvoie. On la munit d'un attribut <span class="attribute">@ana=</span><span class="value">"hc:CueInitial"</span> et d'un attribut <span class="attribute">@hei:PlaceRef</span>, dont la valeur la plus fréquente est <span class="value">"hc:InSpace"</span> ou <span class="value">"hc:PageMarginLeft"</span> ou bien <span class="value">"hc:PageMarginRight"</span>, mais qui peut être également différente (&rarr; <a href="#del_add">chap. 18</a>).<br /> ). L'élément descendant <span class="element">&lt;c&gt;.</span> balise la lettre.</p>
+			<p>Les instructions pour les initiales ne sont pas des métamarques parce qu'il s'agit de lettres. On a établi l'élément <span class="element">&lt;hei:cue&gt;</span> pour elles. L'élément est placé immédiatement avant le mot qui contient l'initiale et à laquelle le signe renvoie. On la munit d'un attribut <span class="attribute">@ana=</span><span class="value">"hc:CueInitial"</span> et d'un attribut <span class="attribute">@hei:PlaceRef</span>, dont la valeur la plus fréquente est <span class="value">"hc:InSpace"</span> ou <span class="value">"hc:PageMarginLeft"</span> ou bien <span class="value">"hc:PageMarginRight"</span>, mais qui peut être également différente (&rarr; <a href="#del_add">chap. 19</a>).<br /> ). L'élément descendant <span class="element">&lt;c&gt;.</span> balise la lettre.</p>
 			<p><span class="element">&lt;hei:cue</span>
 				<span class="attribute">ana=</span><span class="value">"hc:CueInitial"</span>
 				<span class="attribute">hei:placeRef=</span><span class="value">"hc:InSpace"</span><span class="element">&gt;&lt;c&gt;</span>d<span class="element">&lt;/c&gt;&lt;/hei:cue&gt;</span></p>
@@ -500,7 +501,7 @@
 				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;w/&gt;</span></p>
 			<p>À la fin d'un vers, lorsque le vers suivant commence avec un nouveau <span class="element">&lt;lb&gt;</span>, aucun espace après le <span class="element">&lt;pc&gt;</span> n'est nécessaire.</p>
-			<p>2) Les signes de ponctuation sont balisés de manière individuelle, de sorte que deux signes éventuellement consécutifs se trouvent dans deux balises <span class="element">&lt;pc&gt;</span> différents. <span class="element">&lt;pc&gt;</span>.<span class="element">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="element">&lt;/pc&gt;</span><br /> Pour le traitement éditorial des signes de ponctuation &rarr; <a href="#Zeichensetzung_editorisch">chap. 34</a>.</p>
+			<p>2) Les signes de ponctuation sont balisés de manière individuelle, de sorte que deux signes éventuellement consécutifs se trouvent dans deux balises <span class="element">&lt;pc&gt;</span> différents. <span class="element">&lt;pc&gt;</span>.<span class="element">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="element">&lt;/pc&gt;</span><br /> Pour le traitement éditorial des signes de ponctuation &rarr; <a href="#Zeichensetzung_editorisch">chap. 35</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -508,10 +509,10 @@
 				<li>
 					<h2><a id="Metamarks"></a>Méta-signes</h2>
 			</ol>
-			<p>1) Les méta-signes ne sont ni des lettres, ni des chiffres, ni des signes de ponctuation (bien que les lettres ou les chiffres jouent parfois le rôle de métasignes, par exemple pour les signes de transposition). Il peut s'agir de signes séparateurs de mots, de signes de correction, de signes d'instructions ou d'autres similaires. Ils sont marqués comme <span class="element">&lt;metamark&gt;</span> et portent l'attribut <span class="attribute">@ana</span>, dont la valeur, selon la fonction du signe, est l'une des options suivantes: <span class="value">"hc:Hyphen"</span>(tiret séparateur, &rarr; <a href="Wort_Spatium">chap. 9.3</a>), <span class="value">"hc:RunOverMark"</span> (signe connecteur), <span class="value">"hc:WordDivider" </span> (séparateur de mots), <span class="value">"hc:CorrectionMark"</span> (signe de correction), <span class="value">"hc:InsertionMark"</span> (signe d'insertions), <span class="value">"hc:TranspositionMark"</span> (signe de transposition), <span class="value">"hc:ReferenceMark"</span> (signe de référence), <span class="value">"hc:WordMark"</span> (marqueur de parole), <span class="value">"hc:NumberMark"</span> (marqueur de numéro), <span class="value">"hc:DecorativeMark"</span> (marqueur décoratif), <span class="value">"hc:LineDelimiter"</span> (délimiteur de fin de ligne), <span class="value">"hc:CueNumeral"</span> (instruction pour le numéro).<br /> Une 'Word Mark' est un signe parfois utilisé pour les mots composés d'une seule voyelle (p.ex. <i>&ecirc;</i>), pour indiquer qu'il ne s'agit pas d'un faux début de mot, mais d'un mot complet; p. ex. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Les Number Mark sont généralement des points élevés qui, dans l'écriture médiévale, marquent les chiffres comme des nombres, p. ex. <i>·xxii·</i>.</p>
+			<p>1) Les méta-signes ne sont ni des lettres, ni des chiffres, ni des signes de ponctuation (bien que les lettres ou les chiffres jouent parfois le rôle de métasignes, par exemple pour les signes de transposition). Il peut s'agir de signes séparateurs de mots, de signes de correction, de signes d'instructions ou d'autres similaires. Ils sont marqués comme <span class="element">&lt;metamark&gt;</span> et portent l'attribut <span class="attribute">@ana</span>, dont la valeur, selon la fonction du signe, est l'une des options suivantes: <span class="value">"hc:Hyphen"</span>(tiret séparateur, &rarr; <a href="Wort">chap. 9</a>), <span class="value">"hc:RunOverMark"</span> (signe connecteur), <span class="value">"hc:WordDivider" </span> (séparateur de mots), <span class="value">"hc:CorrectionMark"</span> (signe de correction), <span class="value">"hc:InsertionMark"</span> (signe d'insertions), <span class="value">"hc:TranspositionMark"</span> (signe de transposition), <span class="value">"hc:ReferenceMark"</span> (signe de référence), <span class="value">"hc:WordMark"</span> (marqueur de parole), <span class="value">"hc:NumberMark"</span> (marqueur de numéro), <span class="value">"hc:DecorativeMark"</span> (marqueur décoratif), <span class="value">"hc:LineDelimiter"</span> (délimiteur de fin de ligne), <span class="value">"hc:CueNumeral"</span> (instruction pour le numéro).<br /> Une 'Word Mark' est un signe parfois utilisé pour les mots composés d'une seule voyelle (p.ex. <i>&ecirc;</i>), pour indiquer qu'il ne s'agit pas d'un faux début de mot, mais d'un mot complet; p. ex. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Les Number Mark sont généralement des points élevés qui, dans l'écriture médiévale, marquent les chiffres comme des nombres, p. ex. <i>·xxii·</i>.</p>
 			<p>2) En outre, les métamarques peuvent porter l'attribut <span class="attribute">@hei:PlaceRef</span>.</p>
 			<p>3) La liste avec les utilisations des méta-signes se trouve <a href="">ici</a>.</p>
-			<p>4) Contrairement aux signes séparateurs ou à d'autres marques créés lors du processus d'écriture, les marques d'instruction se trouvent en plus dans l'élément <span class="element">&lt;add&gt;</span> (&rarr; <a href="#del_add">chap. 18</a>), se trouvant l'attribut <span class="attribute">@hei:PlaceRef</span> sur <span class="element">&lt;add&gt;</span>:
+			<p>4) Contrairement aux signes séparateurs ou à d'autres marques créés lors du processus d'écriture, les marques d'instruction se trouvent en plus dans l'élément <span class="element">&lt;add&gt;</span> (&rarr; <a href="#del_add">chap. 19</a>), se trouvant l'attribut <span class="attribute">@hei:PlaceRef</span> sur <span class="element">&lt;add&gt;</span>:
 				Un mot comme "Hund", avec un signe d'insertion et un 'n' ajouté au-dessus de la ligne, serait donc codé comme suit:</p>
 			<p><span class="element">&lt;w&gt;</span>Hu<span class="element">&lt;add </span><span class="attribute">hei:PlaceRef=</span><span class="value">"hc:Below"</span><span class="element">&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:InsertionMark"</span><span class="element">&gt;</span>,<span class="element">&lt;/metamark&gt;</span><span class="element">&lt;/add&gt;</span><span class="element">&lt;add</span><span class="attribute">hei:PlaceRef=</span><span class="value">"hc:Above"</span>n<span class="element">&lt;/add&gt;</span>d<span class="element">&lt;/w&gt;</span></p>
 			<p>
@@ -540,7 +541,7 @@
 			<ul>
 				<li>
 					<p>Lettre ajoutée dans le mot: <span class="element">&lt;w&gt;</span>so<span class="element">&lt;add</span>
-						<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;&lt;/w&gt; </span>(&rarr; <a href="#del_add">chap. 19.1</a>)</p>
+						<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;&lt;/w&gt; </span>(&rarr; <a href="#del_add">chap. 19</a>)</p>
 				</li>
 				<li>
 					<p>Lettre raturée dans le mot: <span class="element">&lt;w&gt;</span>leit<span class="element">&lt;del</span>
@@ -588,7 +589,7 @@
 				<span class="element"> &lt;/l&gt;</span><br />
 				<span class="element">&lt;anchor</span>
 				<span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
-			<p>7) Si <i>rien</i> n'indique que le copiste était conscient d'une répétition, alors la décision qu'un morceau de texte est répété (et donc superflu) est une décision de caractère éditorial. Dans ces cas, on indique la seconde séquence de la répétition comme <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">chap. 32</a>); <span class="element">&lt;subst&gt;</span> et <span class="element">&lt;add&gt;</span> sont omis:</p>
+			<p>7) Si <i>rien</i> n'indique que le copiste était conscient d'une répétition, alors la décision qu'un morceau de texte est répété (et donc superflu) est une décision de caractère éditorial. Dans ces cas, on indique la seconde séquence de la répétition comme <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">chap. 33</a>); <span class="element">&lt;subst&gt;</span> et <span class="element">&lt;add&gt;</span> sont omis:</p>
 			<p><span class="element">&lt;w&gt;</span>répétés<span class="element">&lt;/w&gt;&lt;w&gt;</span>mots<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>mots<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
 			<p>
 				<br />
@@ -691,7 +692,7 @@
 			</ol>
 			<p>Dans des manuscrits où les vers ne sont pas détachés, les sauts de ligne à l'intérieur du vers sont indiqués généralement avec l'élément <span class="element">&lt;lb&gt;</span>avec son attribut <span class="attribute">@n</span> à l'emplacement correspondant.</p>
 			<p>Il en va de même si le saut de ligne a lieu à l'intérieur du mot. Dans ces cas, l'attribut <span class="attribute">@break</span> doit être ajouté au <span class="element">&lt;lb&gt;</span> avec la valeur <span class="value">"no"</span>.</p>
-			<p> Si le mot est séparé par un signe séparateur, celui-ci est marqué avec un <span class="element">&lt;metamark&gt;</span> getaggt (avec l'attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>), qui est placé devant le <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Wort">chap. 9.3</a>, &rarr; <a href="#Zeichensetzung_Hs">chap. 15</a>)</p>
+			<p> Si le mot est séparé par un signe séparateur, celui-ci est marqué avec un <span class="element">&lt;metamark&gt;</span> getaggt (avec l'attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>), qui est placé devant le <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Wort">chap. 9</a>, &rarr; <a href="#Zeichensetzung_Hs">chap. 16</a>)</p>
 			<p>
 				<i>Exemples:</i>
 			</p>
@@ -701,7 +702,7 @@
 				<span class="element">&gt;</span>vol<span class="element">&lt;/w&gt;&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"4" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;</span>get<span class="element">&lt;/w&gt;</span></p>
-			<p>Cela est compatible avec les sauts de colonne ou de page. Dans ces cas, l'élément <span class="element">&lt;lb/&gt;</span> est précédé des éléments <span class="element">&lt;pb/&gt;</span> et <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7.1/2</a>).</p>
+			<p>Cela est compatible avec les sauts de colonne ou de page. Dans ces cas, l'élément <span class="element">&lt;lb/&gt;</span> est précédé des éléments <span class="element">&lt;pb/&gt;</span> et <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">chap. 7</a>).</p>
 			<p>
 				<br />
 			</p>
@@ -712,8 +713,8 @@
 			<p>Lorsque les parties de la fin du vers ont été complétées à la fin de la ligne précédente ou suivante pour des raisons de place, on parle de débordement de ligne. Les débordements de ligne apparaissent surtout dans des manuscrits avec des vers détachés ; mais on les trouve aussi dans des manuscrits sans des vers détachés, par ex. lorsque un nouveau paragraphe avec une initiale commence dans la ligne suivante.</p>
 			<p> Si ce débordement arrive sur une ligne où se trouve un autre texte régulier, il forme ainsi des segments de ligne. Le débordement est donc une partie du vers qui se trouve dans le segment d'une autre ligne. On encode ce débordement à l'intérieur du vers (<span class="element">&lt;l&gt;</span>), auquel il appartient, mais on indique son appartenance à une autre ligne <span class="element">&lt;lb/&gt;</span>.</p>
 			<p> Le début du premier segment de ligne dans une ligne n'a pas besoin d'être marqué (s'il s'agit d'un texte régulier qui n'a pas besoin d'autres informations). On marque le début d'un nouveau segment de ligne (par ex. le segment avec le débordement) comme un point (comme <span class="element">&lt;lb&gt;</span> ou <span class="element">&lt;pb&gt;</span>) avec <span class="element">&lt;milestone&gt;</span>. Ce point est pourtant dans le vers (<span class="element">&lt;l&gt;</span>) auquel appartient le texte. Pour cela, il faut un attribut <span class="attribute">@ana</span> avec deux valeurs: <span class="value">"hc:LineSegmentBeginning"</span> et <span class="value">"hc:RunOverAbove"</span> ou <span class="value"> "hc:RunOverBelow"</span>. En outre, un attribut <span class="attribute">n=</span><span class="value">"2"</span> avec le nombre de segments. Il faut également un attribut <span class="attribute">@hei:belongsToLine</span>, avec lequel on indique dans avec lequel on indique dans <span class="element">&lt;lb&gt;</span>, (et pas <span class="element">&lt;l&gt;</span>!) se trouve le débordement. Cela permet de saisir également les débordements qui ne se trouvent pas dans la ligne immédiatement avant ou après.</p>
-			<p> La ligne de débordement est souvent séparée du reste de la ligne par des tirets ou reliée à la 'ligne mère'. Ces signes sont marqués comme <span class="element">&lt;metamark&gt;</span>; ils portent un attribut <span class="attribute">@ana</span> avec la valeur <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">chap. 16</a>)</p>
-			<p> Tout cela est compatible avec la séparation des mots (&rarr; <a href="#Wort">chap. 9</a> et &rarr; <a href="#del_add_Tokenisierung">chap. 19</a>)</p>
+			<p> La ligne de débordement est souvent séparée du reste de la ligne par des tirets ou reliée à la 'ligne mère'. Ces signes sont marqués comme <span class="element">&lt;metamark&gt;</span>; ils portent un attribut <span class="attribute">@ana</span> avec la valeur <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">chap. 17</a>)</p>
+			<p> Tout cela est compatible avec la séparation des mots (&rarr; <a href="#Wort">chap. 9</a> et &rarr; <a href="#del_add_Tokenisierung">chap. 20</a>)</p>
 			<p>
 				<i>Exemples</i>
 			</p>
@@ -724,14 +725,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span>
 				<span class="attribute">n=</span>
@@ -740,7 +741,8 @@
 				<span class="value">"27"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				<br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>2. Débordement de ligne double vers le haut:</p>
@@ -750,14 +752,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span>
@@ -766,9 +768,9 @@
 				<span class="value">"25"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span>
@@ -777,20 +779,19 @@
 				<span class="value">"24"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element"> </span>
-				<span class="element">&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>3. Débordement vers le haut avec séparation des mots (&rarr; <a href="#Wort">chap. 9.3</a>) et signes de débordement:</p>
+			<p>3. Débordement vers le haut avec séparation des mots (&rarr; <a href="#Wort">chap. 9</a>) et signes de débordement:</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
 				<span class="element"> &lt;w&gt;</span>vr&uuml;me<span class="element">&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element"> &lt;milestone&gt;</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone&gt;</span>
 				<span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span><span class="value">"2"</span>
 				<span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
@@ -802,14 +803,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"27" </span>
 				<span class="attribute">ana=</span>
@@ -818,7 +819,7 @@
 				<span class="value">"hc:FlushRight"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
@@ -829,14 +830,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26.1" </span>
 				<span class="attribute">ana=</span>
@@ -845,7 +846,7 @@
 				<span class="value">"hc:FlushRight"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
@@ -864,33 +865,33 @@
 			</p>
 			<p><span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;space</span>
+				&nbsp;&nbsp;<span class="element">&lt;space</span>
 				<span class="attribute">xml:id=</span><span class="value">"space_1234"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;desc</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;desc</span>
 				<span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span>Espace libre probablement réservé pour le vers 1234.<span class="element">&lt;/desc&gt;</span><br />
-				<span class="element">&lt;/space&gt;</span></p>
+				&nbsp;&nbsp;<span class="element">&lt;/space&gt;</span></p>
 			<p>Ce code peut ou doit être à l'intérieur de <span class="element">&lt;lg&gt;</span>.</p>
-			<p>2) En particulier, pour certains mots omis pour lesquels le copiste a laissé un espace libre, le mot (ou le vers) peut être rajouté à partir d'un autre manuscrit avec <span class="element">&lt;supplied&gt;</span> (voir l'utilisation de cet élément dans &rarr; <a href="#Initialen">chap. 12.3</a>). Cependant, il s'agit désormais d'un traitement éditorial auquel on pourrait ajouter encore des modifications.</p>
+			<p>2) En particulier, pour certains mots omis pour lesquels le copiste a laissé un espace libre, le mot (ou le vers) peut être rajouté à partir d'un autre manuscrit avec <span class="element">&lt;supplied&gt;</span> (voir l'utilisation de cet élément dans &rarr; <a href="#Initialen">chap. 13</a>). Cependant, il s'agit désormais d'un traitement éditorial auquel on pourrait ajouter encore des modifications.</p>
 			<p>
 				<i>Exemple:</i>
 			</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"5638"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;&lt;w&gt;</span>daz<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
-				<span class="element"> </span><span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;orig&gt;</span><br />
-				<span class="element">&lt;space</span>
+				&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;orig&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;space</span>
 				<span class="attribute">xml:id=</span><span class="value">"space_23"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;desc</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;desc</span>
 				<span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span> Espace libre pour le mot qui manque. Le reste des manuscrits ont placé à cet endroit le mot <span class="element">&lt;q&gt;</span>dienen<span class="element">&lt;/q&gt;</span>.<span class="element">&lt;/desc&gt;</span><br />
-				<span class="element"> </span><span class="element">&lt;/space&gt;</span><br />
-				<span class="element">&lt;/orig&gt;</span><br />
-				<span class="element">&lt;supplied&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>dienen<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
-				<span class="element">&lt;/supplied&gt;</span><br />
-				<span class="element">&lt;/choice&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>solt<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>beiden<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/space&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/orig&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;supplied&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>dienen<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/supplied&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/choice&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>solt<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>beiden<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span></p>
 			<p>3) Si des mots ou des lignes sans espace libre sont omis dans le manuscrit, ceux-ci ne sont tout simplement pas saisis dans la transcription dans un premier temps. À cause de cela, on développe un balisage qui permet d'importer le texte d'un autre témoignage à l'endroit précis.</p>
 			<p>
@@ -930,10 +931,19 @@
 			<p>3) En outre, un <span class="element">&lt;gap/&gt;</span> devrait contenir les attributs <span class="attribute">@unit</span> et <span class="attribute">@extent</span> ou <span class="attribute">@quantity</span> si possible. <span class="attribute">@unit</span> indique ce qui est perdu (<span class="value">character</span>=lettres; <span class="value">line</span>=lignes; <span class="value">page</span>=pages). Si on peut calculer combien de ces unités sont perdues, cela se trouve dans l'attribut <span class="attribute">@quantity</span> (z.B. <span class="attribute">@unit</span>=<span class="value">"line"</span>
 				<span class="attribute">@quantity</span>=<span class="value">"4"</span>). S'il n'est pas possible de savoir combien est perdu, on n'emploie pas l'attribut <span class="attribute">@quantity</span>, mais seulement <span class="attribute">@extent</span>=<span class="value">"unknown"</span>.</p>
 			<p>4) Si le texte n'est pas completement perdu, mais clairement endommagé, on le marque avec l'élément &lt;<span class="element">damage&gt;</span>. Celui-ci possède également l'attribut <span class="attribute">@rendition</span>, avec les mêmes valeurs possibles que pour <span class="element">&lt;gap/&gt;</span>.</p>
-			<p>5) Si dans le cas de <span class="element">&lt;damage&gt;</span> une lecture est possible mais incertaine, le texte est également balisé avec l'élément descendant <span class="element">&lt;unclear&gt;</span>.</p>
-			<p>6) Entre un <span class="element">&lt;gap/&gt;</span> et un mot complet, lisible ou endommagé, on place un espace <span class="element">&lt;c&gt; &lt;/c&gt;</span>. Si une perte comprend également une partie du mot précédent ou suivant, on place un 'espace éditorial', c'est-à-dire un espace dans le <span class="element">&lt;reg&gt;</span> d'une construction <span class="element">&lt;choice&gt;</span>.</p>
-			<p>7) Dans le cas des fragments, il se trouve souvent qu'un vers a été perdu, mais que les vers avant et après ont été conservés. Dans ce cas, nous balisons le vers comme une lacune : <span class="element">&lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</span>. Nous exprimons ainsi le fait que le texte perdu correspond à un vers. La numérotation de ces vers inexistants pose un problème: Si nous pouvons déduire du mot rimé et du contexte qu'il s'agissait probablement du même vers que celui qui nous est parvenu à cet endroit dans les autres manuscrits, nous plaçons alors le <span class="element">&lt;l&gt;</span> et lui attribuons le numéro standard attendu. Si nous ne pouvons pas être aussi sûrs de cette hypothèse, par exemple parce que la rime manque dans le partenaire de rime ou parce que le contexte a été modifié, alors nous ne numérotons pas ce vers. Pour les espaces plus grands qu'un vers, nous mettons simplement <span class="element">&lt;gap/&gt;</span>, sans l'élément <span class="element">&lt;l&gt;</span>.</p>
-			<p>8) Pour la possibilité de compléter une partie de mot manquante, voir &rarr; <a href="#Gap_editorisch">chap. 36</a>)</p>
+			<p>5) Si dans le cas de <span class="element">&lt;damage&gt;</span> une lecture est possible mais incertaine, le texte est également balisé avec l'élément descendant <span class="element">&lt;unclear&gt;</span>. Cet élément n'a pas d'attributs; ceux-ci se trouvent uniquement dans l'élément parent <span class="element">&lt;damage&gt;</span>.</p>
+			<p>6) Entre un <span class="element">&lt;gap/&gt;</span> et un mot complet, lisible ou endommagé, on place un espace <span class="element">&lt;c&gt; &lt;/c&gt;</span>. Si une perte comprend également une partie du mot précédent ou suivant, on place un 'espace éditorial', c'est-à-dire un espace dans le <span class="element">&lt;reg&gt;</span> d'une construction <span class="element">&lt;choice&gt;</span>. Si plusieurs mots manquent, ils sont tous remplacés par un seul <span class="element">&lt;gap/&gt;</span>.</p>
+			<p>7) Dans le cas des fragments, il se trouve souvent qu'un vers a été perdu, mais que les vers avant et après ont été conservés. Dans ce cas, nous balisons le vers comme une lacune : <span class="element">&lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</span>. Nous exprimons ainsi le fait que le texte perdu correspond à un vers. La numérotation de ces vers inexistants pose un problème: Si nous pouvons déduire du mot rimé et du contexte qu'il s'agissait probablement du même vers que celui qui nous est parvenu à cet endroit dans les autres manuscrits, nous plaçons alors le <span class="element">&lt;l&gt;</span> et lui attribuons le numéro standard attendu. Si nous ne pouvons pas être aussi sûrs de cette hypothèse, par exemple parce que la rime manque dans le partenaire de rime ou parce que le contexte a été modifié, alors nous ne numérotons pas ce vers. Pour les espaces plus grands qu'un vers, nous mettons simplement <span class="element">&lt;gap/&gt;</span>, en dehors des éléments <span class="element">&lt;l&gt;</span> et <span class="element">&lt;lg&gt;</span>.</p>
+			<p>8) Pour les manuscrits dont les vers ne sont pas détachés et où il y a un espace à la fin d'un vers au milieu de la ligne, nous plaçons un espace après le <span class="element">&lt;gap/&gt;</span> afin que les mots ne se touchent pas avec l'espace lors de la visualisation:<br/>
+				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;<br/>
+					&lt;l&gt;<br/>
+					&nbsp;&nbsp;&lt;gap</span> <span class="attribute">rendition=</span><span class="value">"hc:CutOff"</span> <span class="attribute">unit=</span><span class="value">"character"</span> <span class="attribute">extent=</span><span class="value">"unknown"</span><span class="element">/&gt;<br/>
+					&nbsp;&nbsp;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;<br/>
+					&lt;/l&gt;
+					&lt;l</span> <span class="attribute">n=</span><span class="value">"1234"</span><span class="element">&gt;<br/>
+					&nbsp;&nbsp;&lt;w/&gt;&lt;w/&gt;</span>
+			</p>
+			<p>9) Pour la possibilité de compléter une partie de mot manquante, voir &rarr; <a href="#Gap_editorisch">chap. 37</a>)</p>
 			<p>
 				<br />
 			</p>
@@ -1000,7 +1010,7 @@
 					<h2><a id="label"></a>Résumés des paragraphes</h2>
 			</ol>
 			<p><i>Yvain</i> ne contient pas de paragraphes, mais quelques manuscrits ont des résumés des extraits du type "Voici le seigneur Yvain qui arrive à la fontaine". On balise ces extraits avec l'élément <span class="element">&lt;label&gt;</span> et l'attribut <span class="attribute">ana=</span><span class="value">"hc:SummaryLabel"</span>. Ils sont tokenisés.</p>
-			<p>Lorsque les résumés des paragraphes remplissent les marges des lignes du texte, la segmentation des lignes, décrite pour les débordement de lignes (&rarr; <a href="#Zeilenueberlauf">chap. 21</a>), entre en jeu.</p>
+			<p>Lorsque les résumés des paragraphes remplissent les marges des lignes du texte, la segmentation des lignes, décrite pour les débordement de lignes (&rarr; <a href="#Zeilenueberlauf">chap. 22</a>), entre en jeu.</p>
 			<p>
 				<br />
 			</p>
@@ -1010,7 +1020,7 @@
 			</ol>
 			<p>1) Pour l'encodage de la transpotition de mots et de groupes de mots, il est nécessaire que les mots concernés soient pourvus d'un <span class="attribute">@xml:id</span>. Le passage de texte est d'abord transcrit tel qu'il se présentait avant le changement. Juste après le segmet de texte transposé ou à la fin de la transcription de la ligne concernée (en tout cas <i>avant</i> le prochain <span class="element">&lt;lb/&gt;</span>), la transposition est immédiatement marquée par <span class="element">&lt;listTranspose&gt;</span>. L'élément descendant <span class="element">&lt;transpose&gt;</span> contient une séquence d'éléments <span class="element">&lt;ptr&gt;</span> qui énumèrent, sous forme de renvois, les mots transposés dans l'ordre correct (c'est-à-dire dans l'ordre après la transposition effectuée).</p>
 			<p>Les signes de transposition peuvent être affichés dans la transcription avec <span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span>. Son attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">chap. 17</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
+				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span>. Son attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">chap. 18</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
 			<p><i>Exemple:</i><br />
 				<i>Hs.:</i>Der "auch" &#383;ey &#383;elb &#383;o bewart &rarr;<br />
 				<span class="element">&lt;w&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
@@ -1166,10 +1176,10 @@
 				<li>
 					<h2><a id="Anmerkungen"></a>Annotations</h2>
 			</ol>
-			<p>1) Les annotations sont marquées avec l'élément <span class="element">&lt;note&gt;</span>, qu'il s'agisse de notes de manuscrits ou de notes de transcription ou d'édition. Les notes des manuscrits sont généralement des gloses ou des signes d'annotation (pour les ajouts de texte &rarr; <a href="#del_add">chap. 18</a>). Les notes concernant la transcription sont des phénomènes du manuscrit qui ne sont pas pertinents pour le texte, par ex. des passages soulignés ou des marques indéterminables dans le temps, des répétitions de caractéristiques spécifiques, des ornements en dehors du miroir de l'écriture, des échantillons de plume, etc. Les notes éditoriales sont typiquement des explications pour des interventions ou similaire.</p>
+			<p>1) Les annotations sont marquées avec l'élément <span class="element">&lt;note&gt;</span>, qu'il s'agisse de notes de manuscrits ou de notes de transcription ou d'édition. Les notes des manuscrits sont généralement des gloses ou des signes d'annotation (pour les ajouts de texte &rarr; <a href="#del_add">chap. 19</a>). Les notes concernant la transcription sont des phénomènes du manuscrit qui ne sont pas pertinents pour le texte, par ex. des passages soulignés ou des marques indéterminables dans le temps, des répétitions de caractéristiques spécifiques, des ornements en dehors du miroir de l'écriture, des échantillons de plume, etc. Les notes éditoriales sont typiquement des explications pour des interventions ou similaire.</p>
 			<p>2) En général, on place l'élément <span class="element">&lt;note&gt;</span> après la fin du vers, c'est-à-dire après <span class="element">&lt;/l&gt;</span>.</p>
 			<p>3) L'élément <span class="element">&lt;note&gt;</span> contient l'attribut <span class="attribute">@ana</span>. Pour les notes qui se trouvent dans le témoin manuscrit, les valeurs suivantes sont prévues selon le cas: <span class="value">"hc:Gloss"</span> (glose), <span class="value">"hc:NotaBene"</span> (signe de la note), <span class="value">"hc:Manicula"</span> (manicule), <span class="value">"hc:Footnote"</span> (note en bas de page), <span class="value">"hc:Endnote"</span> (note finale). En ce qui concerne les notes de transcription, seulement <span class="value">"hc:TranscriptionNote"</span> est généralement utilisée. En ce qui concerne les notes éditoriales, les valeurs suivantes sont prévues selon le cas: <span class="value">"hc:Comment"</span> (commentaire), <span class="value">"hc:TextCriticalNote"</span> (note critique), <span class="value">"hc:WitnessesNote"</span> (note sur les témoins utilisés), <span class="value">"hc:LociNote"</span> (note sur les sources, sur les parallèles et la répercussion), <span class="value">"hc:FontesNote"</span> (note sur les sources), <span class="value">"hc:SimiliaNote"</span> (note sur les parallèles), <span class="value">"hc:TestimoniaNote"</span> (note sur la répercussion), <span class="value">"hc:BiblicalNote"</span> (note sur les sources bibliques). 
-			<p>4) L'élément <span class="element">&lt;note&gt;</span> contient également l'attribut <span class="attribute">@target</span>, qui renvoie au mot ou au vers auxquels fait référence la note. (&rarr; <a href="#xml:id_target">chap. 17</a>).</p>
+			<p>4) L'élément <span class="element">&lt;note&gt;</span> contient également l'attribut <span class="attribute">@target</span>, qui renvoie au mot ou au vers auxquels fait référence la note. (&rarr; <a href="#xml:id_target">chap. 18</a>).</p>
 			<p>5) Entre les annotations existantes, on balise avec <span class="element">&lt;q&gt;</span> (=quote) les citations du manuscrit ou d'autres manuscrits. Les citations provenant de la littérature de recherche ou la signification particulière de mots sont pourtant balisées avec <span class="element">&lt;mentioned&gt;</span> au lieu de guillemets.</p>
 			<p>
 				<br />
@@ -1259,7 +1269,7 @@
 					<h2><a id="Spatien_editorisch"></a>Traitement éditorial des espaces</h2>
 			</ol>
 			<p>Les mots tokenisés séparément qui sont écrits ensemble dans les manuscrits, ne doivent pas nécessairement apparaître séparément dans l'édition. <i>irs</i>, <i>hastu</i> ou <i>ensprach</i> peuvent tout à fait apparaître comme un seul mot pourvu qu'ils sont écrits comme un seul mot dans le manuscrit. À cet égard, il n'y a rien à faire sur le plan éditorial: comme il manque un espace <span class="element">&lt;c&gt; &lt;/c&gt;</span>, les deux mots seront également écrits comme un seul mot dans le texte de l'édition.</p>
-			<p> Il n'y a rien à faire non plus en ce qui concerne les mots écrits séparément dans le manuscrit qui constituent pourtant un seul mot et qui ont été tokenisés comme tel (<i>ver lazen</i>, <i>uber wunden</i>, <i>ougen weide</i>. Dans ce cas, on indique un espace dans <span class="element">&lt;orig&gt;</span> dans une construction <span class="element">&lt;choice&gt;</span> qui disparaît dans <span class="element">&lt;reg&gt;</span>, (&rarr; <a href="#Spatium">chap. 9.4</a>).</p>
+			<p> Il n'y a rien à faire non plus en ce qui concerne les mots écrits séparément dans le manuscrit qui constituent pourtant un seul mot et qui ont été tokenisés comme tel (<i>ver lazen</i>, <i>uber wunden</i>, <i>ougen weide</i>. Dans ce cas, on indique un espace dans <span class="element">&lt;orig&gt;</span> dans une construction <span class="element">&lt;choice&gt;</span> qui disparaît dans <span class="element">&lt;reg&gt;</span>, (&rarr; <a href="#Spatium">chap. 10</a>).</p>
 			<p> Il faut traiter sur le plan éditorial tout les cas où les mots sont écrits de maniere conjointe dans le manuscrit (où il n'y a donc aucun espace dans la transcription), mais qu'on veut distinguer dans l'édition. Cela s'effectue à l'aide d'une construction <span class="element">&lt;choice&gt;</span>, dans laquelle l'élément <span class="element">&lt;orig&gt;</span> reste vide et l'élément <span class="element">&lt;reg&gt;</span> contient un espace:</p>
 			<p>
 				<span class="element">&lt;w/&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w/&gt;</span>
@@ -1275,7 +1285,7 @@
 			<p>1. Si le manuscrit n'a pas de ponctuation, le <span class="element">&lt;orig&gt;</span> reste vide:</p>
 			<p><span class="element">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
 				<span class="attribute">ana=</span><span class="value">"hc:PunctuationRegularization"</span><span class="element">&gt;&lt;pc&gt;</span>,<span class="element">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
-			<p>2. Si le manuscrit a un signe de ponctuation ou un point de rime (&rarr; <a href="#Zeichensetzung_Hs">chap. 15</a>), celui-ci est placé dans <span class="element">&lt;orig&gt;</span> et remplacé ou supprimé dans <span class="element">&lt;reg&gt;</span>:</p>
+			<p>2. Si le manuscrit a un signe de ponctuation ou un point de rime (&rarr; <a href="#Zeichensetzung_Hs">chap. 16</a>), celui-ci est placé dans <span class="element">&lt;orig&gt;</span> et remplacé ou supprimé dans <span class="element">&lt;reg&gt;</span>:</p>
 			<p><span class="element">&lt;choice&gt;&lt;orig&gt;&lt;pc&gt;</span>&middot;<span class="element">&lt;/pc&gt;&lt;/orig&gt;&lt;reg</span>
 				<span class="attribute">ana=</span><span class="value">"hc:PunctuationRegularization"</span><span class="element">&gt;&lt;pc&gt;</span>,<span class="element">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
 			<p>3. En cas de discours direct, les deux points (ou une virgule) sont placés après le mot précédent. Par contre, le guillemet est placé avant le premier mot du discours. L'espace doit être placé entre les deux:</p>
@@ -1298,7 +1308,7 @@
 				<li>
 					<h2><a id="Versumstellung_editorisch"></a>Traitement éditorial de la transposition de vers</h2>
 			</ol>
-			<p>La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 27</a>).</p>
+			<p>La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 28</a>).</p>
 			<p>Il existe généralement deux types de transposition de vers qui n'ont pas été marquées par le copiste: la transposition de vers à l'intérieur du couplet et la transposition de groupes de vers (paires de vers ou groupes de paires de vers) à une autre position. Dans ce dernier cas, il faut toujours partir du principe qu'il y a une intentionnalité. Cela signifie qu'on n'y change rien dans l'édition.</p>
 			<p>Dans le premier cas, celui de la transposition de vers à l'intérieur de la paire de vers, les circonstances sont variables: dans de nombreux cas, la transposition n'a guère de répercussion sur la phrase. Si le texte reste grammaticalement correct et compréhensible, on ne change rien au niveau de l'édition. Dans d'autres cas, la transposition de vers implique pourtant des ruptures de sens. Si c'est le cas et qu'on décide comme éditeur que l'emplacement des vers est incorrect, on place les vers dans le fichier de la manière qu'on estime correcte (généralement dans l'ordre de vers correspondant à la version de Lachmann). La numérotation <span class="element">&lt;lb&gt;</span> permet de rétablir l'ordre des vers du manuscrit lors de la visualisation du document.</p>
 			<p>

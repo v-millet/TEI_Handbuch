@@ -132,7 +132,7 @@
 				<br />
 				<span class="element">&lt;/surface&gt;</span>
 			</p>
-			<p>Zu Randbereichen wie Lagensignaturen und Reklamanten &rarr; <a href="#Lagensignaturen">Kap. 28</a>; zu xml:id &rarr; <a href="#xml:id_target">Kap. 17</a>.</p>
+			<p>Zu Randbereichen wie Lagensignaturen und Reklamanten &rarr; <a href="#Lagensignaturen">Kap. 29</a>; zu xml:id &rarr; <a href="#xml:id_target">Kap. 18</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -176,9 +176,9 @@
 			<p>Das Element <span class="element">&lt;body&gt;</span> enthält nur das Kindelement <span class="element">&lt;div&gt;</span>, in welchem der Text des Werks steht. Der Text wird strukturiert in Verspaare und Verse erfasst.</p>
 			<p>Wir verwenden vorgefertigte Templates, die die Eingabe des Textes erleichtern, weil wir in ihnen die durchnummerierte Versstruktur bereits aufgestellt und mit den Elementen für Wörter und Wortzwischenräume gefüllt haben.</p>
 			<p>Es gibt prinzipiell drei Arten von Elementen im Text: strukturelle, semantische und Alternativkonstruktionen.</p>
-			<p> a) Strukturelle Elemente (<span class="element">&lt;pb/&gt;</span>, <span class="element">&lt;cb/&gt;</span>, <span class="element">&lt;lb/&gt;</span>,<span class="element">&lt;gap/&gt;</span>) sind deskriptiv und objektiv, sie beschreiben Eigenschaften der Handschrift und funktionieren wie Punkte, daher sind sie immer leer (&rarr; <a href="#Seite_Spalte">Kap. 7</a>, &rarr; <a href="#gap_damage">Kap. 24</a>)</p>
+			<p> a) Strukturelle Elemente (<span class="element">&lt;pb/&gt;</span>, <span class="element">&lt;cb/&gt;</span>, <span class="element">&lt;lb/&gt;</span>,<span class="element">&lt;gap/&gt;</span>) sind deskriptiv und objektiv, sie beschreiben Eigenschaften der Handschrift und funktionieren wie Punkte, daher sind sie immer leer (&rarr; <a href="#Seite_Spalte">Kap. 7</a>, &rarr; <a href="#gap_damage">Kap. 25</a>)</p>
 			<p> b) Semantische Elemente (<span class="element">&lt;l&gt;</span>, <span class="element">&lt;w&gt;</span>, <span class="element">&lt;hi&gt;</span>,<span class="element"> &lt;pc&gt;</span>) gründen auf unseren Definitionen gründen: wir entscheiden, ob etwas ein Wort, ein Vers oder ein Satzzeichen ist. Sie enthalten immer Text.</p>
-			<p> c) Alternativkonstruktionen (<span class="element">&lt;choice&gt;</span>, <span class="element">&lt;subst&gt;</span>) enthalten immer zwei mögliche Darstellungsoptionen, müssen also jeweils zwei Kindelemente enthalten (&rarr; <a href="#Normalisierung">Kap. 31</a>, &rarr; <a href="#del_add">Kap. 18</a>). Z.B.: <span class="element">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> erlaubt es, entweder das zu visualisieren, was in <span class="element">&lt;orig&gt;</span> steht, oder das, was in <span class="element">&lt;reg&gt;</span> steht.</p>
+			<p> c) Alternativkonstruktionen (<span class="element">&lt;choice&gt;</span>, <span class="element">&lt;subst&gt;</span>) enthalten immer zwei mögliche Darstellungsoptionen, müssen also jeweils zwei Kindelemente enthalten (&rarr; <a href="#Normalisierung">Kap. 32</a>, &rarr; <a href="#del_add">Kap. 19</a>). Z.B.: <span class="element">&lt;choice&gt; &lt;orig&gt; &lt;reg&gt; &lt;/choice&gt;</span> erlaubt es, entweder das zu visualisieren, was in <span class="element">&lt;orig&gt;</span> steht, oder das, was in <span class="element">&lt;reg&gt;</span> steht.</p>
 			<p>
 				<br />
 			</p>
@@ -198,7 +198,7 @@
 				<span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span>, oder <span class="element">&lt;cb</span>
 				<span class="attribute">n=</span><span class="value">"b"</span><span class="element">/&gt;</span></p>
 			<p>3) Der Beginn einer neuen physischen Zeile wird getaggt mit <span class="element">&lt;lb/&gt;</span>. Dieses Element ist immer leer. Es enthält <i>immer</i> das Attribut <span class="attribute">@n</span>; der Wert des Attributs ist die Nummer der physischen Zeile in der aktuellen Spalte, z.B. <span class="element">&lt;l&gt;&lt;lb </span><span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br /> Die Position von <span class="element">&lt;lb&gt;</span> in Bezug zu <span class="element">&lt;l&gt;</span> ist im Grunde irrelevant, es kann auch mitten im <span class="element">&lt;w&gt;</span> stehen. Aus praktischen Gründen setzen wir überall dort, wo der Versbeginn mit dem Zeilenbeginn zusammenfällt, <span class="element">&lt;lb&gt;</span> als erstes Kindelement von <span class="element">&lt;l&gt;</span> (s. das Beispiel oben).</p>
-			<p> Zu Worttrennung &rarr; <a href="#Wort">Kap. 9.3</a>; zu Zeilenüberhängen &rarr; <a href="#Zeilenueberlauf">Kap. 21</a>.</p>
+			<p> Zu Worttrennung &rarr; <a href="#Wort">Kap. 9</a>; zu Zeilenüberhängen &rarr; <a href="#Zeilenueberlauf">Kap. 22</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -207,8 +207,8 @@
 					<h2><a id="Verspaar_Vers"></a>Verspaar und Vers</h2>
 			</ol>
 			<p>1) Jedes Verspaar steht innerhalb des Elements <span class="element">&lt;lg&gt;</span>. Es führt das Attribut <span class="attribute">@ana </span>mit den Werten <span class="value">"hc:Couplet"</span> (=Reimpaar, das häufigste), <span class="value">"hc:Tercet"</span> oder <span class="value">"hc:Quatrain"</span>.</p>
-			<p>2) Jeder Vers steht innerhalb des Elements <span class="element">&lt;l&gt;</span>. Dieses Element führt erstens das Attribut <span class="attribute">@n</span>; der Wert des Attributs ist die Versnummer nach Lachmann oder den Standard-Editionen. Zweitens eine <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>). Und drittens eine alternative Nummerierung strikt nach der Handschrift.</p>
-			<p>Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="element">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="element">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 35</a>). Zum Beispiel:</p>
+			<p>2) Jeder Vers steht innerhalb des Elements <span class="element">&lt;l&gt;</span>. Dieses Element führt erstens das Attribut <span class="attribute">@n</span>; der Wert des Attributs ist die Versnummer nach Lachmann oder den Standard-Editionen. Zweitens eine <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>). Und drittens eine alternative Nummerierung strikt nach der Handschrift.</p>
+			<p>Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="element">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="element">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 36</a>). Zum Beispiel:</p>
 			<p>
 				<span class="element">&lt;l</span>
 				<span class="attribute">n=</span>
@@ -269,7 +269,7 @@
 				<span class="value">"117,2"</span>
 				<span class="element">&gt;</span>
 			</p>
-			<p>Für versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 27</a>.</p>
+			<p>Für versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 28</a>.</p>
 			<p>3) Wir verwenden die Standard-Versnummerierung der Forschung. Später wird automatisch eine alternative, Handschrifteneigene konsekutive Nummerierung eingefügt, die evtl. auch in der Edition dargestellt werden kann.</p>
 			<p>4) In der Excel-Datei "Konkordanz" werden fehlende Verse gelöscht, zusätzliche Verse ergänzt, umgestellte Vers an die entsprechende Position gestellt und farbig markiert, damit eine "Karte" der Verse entstehen kann, die es später erlaubt, parallele Verse auch parallel zu visualisieren.</p>
 			<p>
@@ -279,9 +279,9 @@
 				<li>
 					<h2><a id="Wort"></a>Wort und Tokenisierung</h2>
 			</ol>
-			<p>1) Jedes linguistische Wort wird getaggt mit dem Element <span class="element">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort führt eine <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>) mit der Struktur "Element_Versnummer_laufende Nummer", z.B.: <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> (=erstes Element <span class="element">&lt;w&gt;</span> im Vers 765).</p>
-			<p>2) Da wir Worte im Element <span class="element">&lt;w&gt;</span> nach linguistischen Kriterien erfassen, kann die Zusammen- oder Getrenntschreibung der Handschrift wiedergegeben werden. Spatien aber haben nicht mehr unbedingt die Funktion der Worttrennung; &rarr; <a href="#Spatium">Kap. 10</a>.</p>
-			<p>3) Bei Worttrennung am Zeilenende wird an der entsprechenden Stelle innerhalb des Wortes das <span class="element">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingefügt, sowie mit dem Attribut <span class="attribute">@break=</span><span class="value">"no"</span>. Gibt es ein Trennungszeichen, wird dieses als <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) erfasst, mit dem Attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>, darin das Trennungszeichen. Z.B.:</p>
+			<p>1) Jedes linguistische Wort wird getaggt mit dem Element <span class="element">&lt;w&gt;</span>. Dies nennt man auch ein <i>token</i>. Jedes Wort führt eine <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) mit der Struktur "Element_Versnummer_laufende Nummer", z.B.: <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> (=erstes Element <span class="element">&lt;w&gt;</span> im Vers 765).</p>
+			<p>2) Da wir Worte im Element <span class="element">&lt;w&gt;</span> nach linguistischen Kriterien erfassen, kann die Zusammen- oder Getrenntschreibung der Handschrift wiedergegeben werden. Spatien aber haben nicht mehr unbedingt die Funktion der Worttrennung; &rarr; <a href="#Spatium">Kap. 11</a>.</p>
+			<p>3) Bei Worttrennung am Zeilenende wird an der entsprechenden Stelle innerhalb des Wortes das <span class="element">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingefügt, sowie mit dem Attribut <span class="attribute">@break=</span><span class="value">"no"</span>. Gibt es ein Trennungszeichen, wird dieses als <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 17</a>) erfasst, mit dem Attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>, darin das Trennungszeichen. Z.B.:</p>
 			<p><span class="element">&lt;lb</span><span class="attribute"> n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;</span>vrüme<span class="element">&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
@@ -329,7 +329,7 @@
 			</ol>
 			<p>1) Die Tokenisierung von Worten nach linguistischen Kriterien muss unterschieden werden von ihrer Zusammenschreibung oder Getrenntschreibung.</p>
 			<p>2) Zwischen zwei Worten steht in der Regel ein Spatium. Spatien werde getaggt mit dem Element <span class="element">&lt;c&gt;&nbsp;&lt;/c&gt;</span>, dessen Inhalt ein Spatium ist.</p>
-			<p>3) Werden zwei Worte in der Hs. zusammen geschrieben, bleibt das Spatium in der Transkription weg, kann in der Edition aber ergänzt werden (&rarr; <a href="#Spatien_editorisch">Kap. 35</a>).</p>
+			<p>3) Werden zwei Worte in der Hs. zusammen geschrieben, bleibt das Spatium in der Transkription weg, kann in der Edition aber ergänzt werden (&rarr; <a href="#Spatien_editorisch">Kap. 34</a>).</p>
 			<p>4) Bei der Tilgung und Ergänzung ganzer Worte in der Handschrift muss im Code jeweils ein Spatium getilgt bzw. ergänzt werden, damit bei der Darstellung die Worte nicht zusammen geschrieben erscheinen. Z.B.:</p>
 			<p><span class="element">&lt;w&gt;</span>Swer<span class="element">&lt;/w&gt;&lt;w&gt;</span>an<span class="element">&lt;/w&gt;&lt;add&gt;&lt;w&gt;</span>rehte<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;&lt;w&gt;</span>güete<span class="element">&lt;/w&gt;</span></p>
 			<p>5) Zusammen- und Getrenntschreibung ist in Handschriften bei weitem nicht immer eindeutig. Im Zweifelsfall werden die Worte so erfasst, wie es die Wörterbücher vorsehen: stehen zwei verschiedene Worte nahe beieinander, sind aber nicht eindeutig zusammengeschrieben, transkribieren wir sie als getrennt; sind innerhalb eines Wortes zwei Buchstaben ein klein wenig voneinander entfernt, ohne dass es sich aber um eine eindeutige Getrenntschreibung handelt, wird das Wort zusammengeschrieben. Dies zu entscheiden, liegt im Ermessen des Transkribenden.</p>
@@ -337,7 +337,7 @@
 			<p><span class="element">&lt;w&gt;</span>ge<span class="element">&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;</span>lesen<span class="element">&lt;/w&gt;</span></p>
 			<p>7) Umgekehrt gilt: Bei eindeutiger Zusammenschreibung zweier Worte werden beide als getrennte Tokens erfasst. Ihre Zusammenschreibung in der Handschrift wird dadurch gekennzeichnet, dass kein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> zwischen den beiden Tokens steht. Will man in der Edition die beiden Worte getrennt erscheinen lassen, kann man das Spatium editorisch hinzufügen:</p>
 			<p><span class="element">&lt;w&gt;</span>ze<span class="element">&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;</span>lesen<span class="element">&lt;/w&gt;</span></p>
-			<p>
+			<p>8) Ein Zeilensprung <span class="element">&lt;lb/&gt;</span> fügt automatisch in der Visualisierung ein Spatium ein. Aber bei Handschriften mit nicht abgesetzten Versen fügen wir am Ende von Versen, die mitten in der Zeile enden (wo also kein <span class="element">&lt;w&gt;</span> vor dem folgenden Vers steht), ein Spatium ein, damit sich das letzte Wort des ersten Verses und das erste des folgenden in der Ansicht nicht berühren. <p>
 				<br />
 			</p>
 			<ol start="11">
@@ -353,7 +353,7 @@
 				<li>
 					<h2><a id="Diakritika"></a>Sonderzeichen, Diakritika und Superskripte</h2>
 			</ol>
-			<p>Diakritika und Superskripte werden mit Entities erfasst. Entities sind Platzhalter für bestimmte Zeichen, die es erlauben, diese schnell wiederzufinden oder zu normalisieren. Auch können sie variabel dargestellt werden. Hier können die <a href="./Zeichentabelle-nach-Zeichen.html" target="_blank">Sonderzeichen gruppiert nach Zeichen</a> eingesehen werden, hier die <a href="./Zeichentabelle-nach-Handschrift.html" target="_blank">Sonderzeichen gruppiert nach Handschrift</a>. Entities kommen auch als Abkürzungszeichen zum Einsatz (&rarr; <a href="#Abkuerzungen">Kap. 25</a>). Sonderzeichen, die als Metamarks (&rarr; <a href="#Metamarks">Kap. 16</a>) gelten, finden sich ebenfalls in diesen Listen.</p>
+			<p>Diakritika und Superskripte werden mit Entities erfasst. Entities sind Platzhalter für bestimmte Zeichen, die es erlauben, diese schnell wiederzufinden oder zu normalisieren. Auch können sie variabel dargestellt werden. Hier können die <a href="./Zeichentabelle-nach-Zeichen.html" target="_blank">Sonderzeichen gruppiert nach Zeichen</a> eingesehen werden, hier die <a href="./Zeichentabelle-nach-Handschrift.html" target="_blank">Sonderzeichen gruppiert nach Handschrift</a>. Entities kommen auch als Abkürzungszeichen zum Einsatz (&rarr; <a href="#Abkuerzungen">Kap. 26</a>). Sonderzeichen, die als Metamarks (&rarr; <a href="#Metamarks">Kap. 17</a>) gelten, finden sich ebenfalls in diesen Listen.</p>
 			<p>Die Entities lassen sich, wenn man sie nicht auswendig kann, sowohl im Text- wie im Author-Modus von Oxygen leicht über die Sidebar "Entities" eingeben: Menü &rarr; Window &rarr; Schow View &rarr; Entities.</p>
 			<p>
 				<br />
@@ -364,7 +364,7 @@
 			</ol>
 			<p>1) Initialen werden getaggt mit dem Element <span class="element">&lt;hei:initial&gt;</span>. Sie führen drei Attribute:<br /> a) <span class="attribute">@rendition</span>, das den Initialentypus bezeichnet; dessen häufigster Wert ist <span class="value">"hc:Lombard"</span>, doch das Schema sieht unter anderem auch vor: <span class="value">"hc:FlourishInitial"</span> (Fleuronn&eacute;-Initiale), <span class="value">"hc:SilhouetteInitial"</span> (Silhouetten-Initiale), <span class="value">"hc:ScrollworkInitial"</span> (Rankeninitiale), <span class="value">"hc:SpaltleistenInitial"</span> (Spaltleisteninitiale), <span class="value">"hc:FigureInitial"</span> (Figureninitiale), <span class="value">"hc:AnthropomorphicInitial"</span> (anthropomorphe Initiale), <span class="value">"hc:ZoomorphicInitial"</span> (Tierinitiale), <span class="value">"hc:HistoriatedInitial"</span> (historisierte Initiale);<br /> b) <span class="attribute">@hei:color</span>, das die Farbe bestimmt, z.B. <span class="value">"Red"</span>, <span class="value">"Blue"</span>, <span class="value">"Gold"</span>; und <br /> c) <span class="attribute">@hei:heightLines</span>, das die Höhe der Initiale in Zeilen angibt, dessen Wert also eine volle Zahl ist. </p>
 			<p>2) Vorgezeichnete, aber nicht ausgeführte Initialen, die in Form, Format und Platzierung aber bereits die Initiale zeigen, werden wie normale Initialen erfasst, erhalten aber zusätzlich in <span class="attribute">@rendition</span> den Wert: <span class="value">"hc:Sketch"</span>. Dieser ist kompatibel mit den anderen Attributwerten, z.B. <span class="value">"hc: Sketch hc:Lombard"</span>.</p>
-			<p>3) Nicht ausgeführte Initialen, für die Raum freigelassen wurde oder die am Spaltenrand zu stehen hatten, werden mit einer besonderen <span class="element">&lt;choice&gt;</span>-Konstruktion erfasst: in deren Kindelement <span class="element">&lt;orig&gt;</span> steht ein leeres Element <span class="element">&lt;space/&gt;</span> für den Freiraum (optional kann dieses <span class="element">&lt;space&gt;</span> auch ein Element <span class="element">&lt;desc&gt;</span> für die freie Beschreibung eines Phänomens enthalten); anstatt eines <span class="element">&lt;reg&gt;</span> steht hier das Element <span class="element">&lt;supplied&gt;</span>, mit dem Kindelement <span class="element">&lt;hei:initial&gt;</span> (&rarr; <a href="#Initialen">Kap. 12</a>), ohne Attribute. </p>
+			<p>3) Nicht ausgeführte Initialen, für die Raum freigelassen wurde oder die am Spaltenrand zu stehen hatten, werden mit einer besonderen <span class="element">&lt;choice&gt;</span>-Konstruktion erfasst: in deren Kindelement <span class="element">&lt;orig&gt;</span> steht ein leeres Element <span class="element">&lt;space/&gt;</span> für den Freiraum (optional kann dieses <span class="element">&lt;space&gt;</span> auch ein Element <span class="element">&lt;desc&gt;</span> für die freie Beschreibung eines Phänomens enthalten); anstatt eines <span class="element">&lt;reg&gt;</span> steht hier das Element <span class="element">&lt;supplied&gt;</span>, mit dem Kindelement <span class="element">&lt;hei:initial&gt;</span> (&rarr; <a href="#Initialen">Kap. 13</a>), ohne Attribute. </p>
 			<p><i>Beispiel:</i></p>
 			<p><span class="element">&lt;hei:cue</span><span class="attribute">ana=</span><span class="value">"hc:CueInitial"</span><span class="attribute">hei:placeRef=</span><span class="value">"hc:Inspace"</span><span class="element">&gt;</span>s<span class="element">&lt;/hei:cue&gt;</span><br />
 				<span class="element">&lt;w&gt;</span><br />
@@ -388,7 +388,7 @@
 				<li>
 					<h2><a id="hei:cue"></a>Anweisungszeichen für Initialen</h2>
 			</ol>
-			<p>Die Anweisungen für Initialen sind keine Metamarks, weil sie ja Buchstaben sind. Für sie wurde das Elemene <span class="element">&lt;hei:cue&gt;</span> geschaffen. Wir setzen das Element immer unmittelbar vor das Wort, das die Initiale enthält, auf die das Zeichen verweist. Wir versehen es mit einem Attribut <span class="attribute">@ana=</span><span class="value">"hc:CueInitial"</span> und einem Attribut <span class="attribute">@hei:PlaceRef</span>, dessen Wert meist <span class="value">"hc:InSpace"</span> oder <span class="value">"hc:PageMarginLeft"</span> bzw. <span class="value">"hc:PageMarginRight"</span> sein wird, der aber auch ein anderer sein kann (&rarr; <a href="#del_add">Kap. 18</a>).<br /> Der Buchstabe steht in einem Kindelement <span class="element">&lt;c&gt;.</span></p>
+			<p>Die Anweisungen für Initialen sind keine Metamarks, weil sie ja Buchstaben sind. Für sie wurde das Elemene <span class="element">&lt;hei:cue&gt;</span> geschaffen. Wir setzen das Element immer unmittelbar vor das Wort, das die Initiale enthält, auf die das Zeichen verweist. Wir versehen es mit einem Attribut <span class="attribute">@ana=</span><span class="value">"hc:CueInitial"</span> und einem Attribut <span class="attribute">@hei:PlaceRef</span>, dessen Wert meist <span class="value">"hc:InSpace"</span> oder <span class="value">"hc:PageMarginLeft"</span> bzw. <span class="value">"hc:PageMarginRight"</span> sein wird, der aber auch ein anderer sein kann (&rarr; <a href="#del_add">Kap. 19</a>).<br /> Der Buchstabe steht in einem Kindelement <span class="element">&lt;c&gt;.</span></p>
 			<p><span class="element">&lt;hei:cue</span>
 				<span class="attribute">ana=</span><span class="value">"hc:CueInitial"</span>
 				<span class="attribute">hei:placeRef=</span><span class="value">"hc:InSpace"</span><span class="element">&gt;&lt;c&gt;</span>d<span class="element">&lt;/c&gt;&lt;/hei:cue&gt;</span></p>
@@ -402,7 +402,7 @@
 			<p>1) Hervorhebung durch farbige Schrift wird getaggt mit dem Element <span class="element">&lt;hi&gt;</span> mit dem Attribut <span class="attribute">@hei:color</span> und den Werten <span class="value">"Red"</span>, <span class="value">"Green"</span>, <span class="value">"Blue"</span> etc. Ist ein ganzes Wort farbig geschrieben, steht das Element <span class="element">&lt;hi&gt;</span> außerhalb des <span class="element">&lt;w&gt;</span>-Elements, ebenso bei mehreren Wörtern.</p>
 			<p>2) Hervorhebung der Versanfänge durch rote Striche (typisch für Papierhandschriften) wird ebenfalls getaggt mit <span class="element">&lt;hi&gt;</span>; diesmal kommt das Attribut <span class="attribute">@rendition</span> ins Spiel, mit dem Wert <span class="value">"hc:RedStroke"</span>, in manchen Fällen auch <span class="value">"hc:RedRetrace"</span>. Hervorgehobene Buchstaben am Versanfang werden als Majuskeln transkribiert.</p>
 			<p>3) Hervorhebung der Versanfänge durch Herausrücken der Anfangsbuchstaben in die Versalienspalte wird ebenfalls getaggt mit <span class="element">&lt;hi&gt;</span> und dem Attribut <span class="attribute">@rendition</span>, doch in diesen Fällen lautet der Attributwert <span class="value">"hc:Versal"</span>.</p>
-			<p>4)Auf spätere Unterstreichungen oder sonstige Hervorhebungen von moderneren Händen verweisen wir in <span class="element">&lt;note&gt;</span> (&rarr; <a href="#Anmerkungen">Kap. 30</a>).</p>
+			<p>4) Auf spätere Unterstreichungen oder sonstige Hervorhebungen von moderneren Händen verweisen wir in <span class="element">&lt;note&gt;</span> (&rarr; <a href="#Anmerkungen">Kap. 30</a>).</p>
 			<p>5) Kadellen (oder Cadellen) sind in normaler Tinte ausgeschmückte Buchstaben, die aber keine Initialen sind; sie leiten keine Abschnitte ein, sie stehen auch nicht an herausragender Stelle. Sie erscheinen meist in der obersten Zeile einer Spalte und müssen daher auch nicht immer der erste Buchstabe im Vers sein. Wir taggen sie mit dem Element <span class="element">&lt;hi&gt;</span>, dem Attribut <span class="attribute">@rendition</span> und dem Wert <span class="value">"hc:Cadel"</span>.</p>
 			<p>
 				<br />
@@ -417,7 +417,7 @@
 				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;w/&gt;</span></p>
 			<p>Am Ende eines Verses, wenn der folgende Vers mit einer neuen <span class="element">&lt;lb&gt;</span> beginnt, ist kein Spatium hinter dem <span class="element">&lt;pc&gt;</span> nötig.</p>
-			<p>2) Satzzeichen werden individuell erfasst, so dass zwei evtl. aufeinander folgende Zeichen in zwei unterschiedlichen Tags <span class="element">&lt;pc&gt;</span> stehen. <span class="element">&lt;pc&gt;</span>.<span class="element">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="element">&lt;/pc&gt;</span><br /> Zur editorischen Behandlung von Satzzeichen &rarr; <a href="#Zeichensetzung_editorisch">Kap. 34</a>.</p>
+			<p>2) Satzzeichen werden individuell erfasst, so dass zwei evtl. aufeinander folgende Zeichen in zwei unterschiedlichen Tags <span class="element">&lt;pc&gt;</span> stehen. <span class="element">&lt;pc&gt;</span>.<span class="element">&lt;/pc&gt;&lt;pc&gt;</span>&lsaquo;<span class="element">&lt;/pc&gt;</span><br /> Zur editorischen Behandlung von Satzzeichen &rarr; <a href="#Zeichensetzung_editorisch">Kap. 35</a>.</p>
 			<p>
 				<br />
 			</p>
@@ -425,10 +425,10 @@
 				<li>
 					<h2><a id="Metamarks"></a>Metazeichen</h2>
 			</ol>
-			<p>1) Metazeichen sind weder Buchstaben noch Ziffern noch Satzzeichen (obwohl manchmal auch Buchstaben die Funktion von Metazeichen einnehmen, z.B. bei Umstellungszeichen). Das können Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="element">&lt;metamark&gt;</span> und führen das Attribut <span class="attribute">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="value">"hc:Hyphen"</span>(Trennstrich, &rarr; <a href="Wort_Spatium">Kap. 9.3</a>), <span class="value">"hc:RunOverMark"</span> (Zeilenanschlusszeichen), <span class="value">"hc:WordDivider" </span>(Worttrenner), <span class="value">"hc:CorrectionMark"</span> (Korrekturzeichen), <span class="value">"hc:InsertionMark"</span> (Einweisungszeichen), <span class="value">"hc:TranspositionMark"</span> (Umstellungszeichen), <span class="value">"hc:ReferenceMark"</span> (Verweiszeichen), <span class="value">"hc:WordMark"</span> (Wort-Zeichen), <span class="value">"hc:NumberMark"</span> (Nummer-Zeichen), <span class="value">"hc:DecorativeMark"</span> (Ziermarker), <span class="value">"hc:LineDelimiter"</span> (Zeilenabgrenzungszeichen), <span class="value">"hc:CueNumeral"</span> (Anweisung für Nummer).<br /> Ein Word-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Number-Mark sind in der Regel gehobene Punkte, die in mittelalterliche Schrift Ziffern als Nummern markieren, z.B. <i>·xxii·</i>.</p>
+			<p>1) Metazeichen sind weder Buchstaben noch Ziffern noch Satzzeichen (obwohl manchmal auch Buchstaben die Funktion von Metazeichen einnehmen, z.B. bei Umstellungszeichen). Das können Worttrennungszeichen, Korrekturzeichen, Einweisungszeichen oder &Auml;hnliches sein. Sie werden getaggt als <span class="element">&lt;metamark&gt;</span> und führen das Attribut <span class="attribute">@ana</span>, dessen Wert, je nach Funktion des Zeichens, eine der folgenden Optionen sein wird: <span class="value">"hc:Hyphen"</span>(Trennstrich, &rarr; <a href="Wort_Spatium">Kap. 9</a>), <span class="value">"hc:RunOverMark"</span> (Zeilenanschlusszeichen), <span class="value">"hc:WordDivider" </span>(Worttrenner), <span class="value">"hc:CorrectionMark"</span> (Korrekturzeichen), <span class="value">"hc:InsertionMark"</span> (Einweisungszeichen), <span class="value">"hc:TranspositionMark"</span> (Umstellungszeichen), <span class="value">"hc:ReferenceMark"</span> (Verweiszeichen), <span class="value">"hc:WordMark"</span> (Wort-Zeichen), <span class="value">"hc:NumberMark"</span> (Nummer-Zeichen), <span class="value">"hc:DecorativeMark"</span> (Ziermarker), <span class="value">"hc:LineDelimiter"</span> (Zeilenabgrenzungszeichen), <span class="value">"hc:CueNumeral"</span> (Anweisung für Nummer).<br /> Ein Word-Mark ist ein Zeichen, das manchmal bei Worten zum Einsatz kommt, die nur aus einem Vokal bestehen (z.B. <i>&ecirc;</i>), um anzuzeigen, dass dies kein falscher Wortansatz ist, sondern ein volles Wort; z.B. <i>|&ecirc;|</i> oder <i>&ecirc;'</i>. Number-Mark sind in der Regel gehobene Punkte, die in mittelalterliche Schrift Ziffern als Nummern markieren, z.B. <i>·xxii·</i>.</p>
 			<p>2) Metamarks können außerdem das Attribut <span class="attribute">@hei:PlaceRef</span> führen.</p>
 			<p>3) Die Liste und die Anwendungen der Metazeichen findet sich <a href="">hier</a>.</p>
-			<p>4) Im Unterschied zu Trennungszeichen oder anderen Marken, die im Schreibprozess entstanden, stehen Einweisungszeichen zusätzlich im Element <span class="element">&lt;add&gt;</span> (&rarr; <a href="#del_add">Kap. 18</a>), wobei in diesen Fällen das Attribut <span class="attribute">@hei:PlaceRef</span> am <span class="element">&lt;add&gt;</span> steht.
+			<p>4) Im Unterschied zu Trennungszeichen oder anderen Marken, die im Schreibprozess entstanden, stehen Einweisungszeichen zusätzlich im Element <span class="element">&lt;add&gt;</span> (&rarr; <a href="#del_add">Kap. 19</a>), wobei in diesen Fällen das Attribut <span class="attribute">@hei:PlaceRef</span> am <span class="element">&lt;add&gt;</span> steht.
 				Ein Wort wie 'Hu,<sup>n</sup>d', mit Einweisungszeichen und über der Zeile nachgetragenem 'n' würde also wie folgt kodiert:</p>
 			<p><span class="element">&lt;w&gt;</span>Hu<span class="element">&lt;add</span> <span class="attribute">hei:PlaceRef=</span><span class="value">"hc:Below"</span><span class="element">&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:InsertionMark"</span><span class="element">&gt;</span>,<span class="element">&lt;/metamark&gt;</span><span class="element">&lt;/add&gt;</span><span class="element">&lt;add </span><span class="attribute">hei:PlaceRef=</span><span class="value">"hc:Above"</span>n<span class="element">&lt;/add&gt;</span>d<span class="element">&lt;/w&gt;</span></p>
 			<p>
@@ -456,7 +456,7 @@
 			<ul>
 				<li>
 					<p>Buchstabe im Wort hinzugefügt: <span class="element">&lt;w&gt;</span>so<span class="element">&lt;add</span>
-						<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;&lt;/w&gt; </span>(&rarr; <a href="#del_add">Kap. 19.1</a>)</p>
+						<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;&lt;/w&gt; </span>(&rarr; <a href="#del_add">Kap. 19</a>)</p>
 				</li>
 				<li>
 					<p>Buchstabe im Wort gestrichen: <span class="element">&lt;w&gt;</span>leit<span class="element">&lt;del</span>
@@ -504,7 +504,7 @@
 				<span class="element"> &lt;/l&gt;</span><br />
 				<span class="element">&lt;anchor</span>
 				<span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
-			<p>7) Gibt es <i>keine</i> Anzeichen dafür, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein Stück Text wiederholt (und damit überflüssig) ist, eine editorische. In diesen Fällen taggen wir die zweite Sequenz der Wiederholung als <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 32</a>); <span class="element">&lt;subst&gt;</span> und <span class="element">&lt;add&gt;</span> fallen weg:</p>
+			<p>7) Gibt es <i>keine</i> Anzeichen dafür, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein Stück Text wiederholt (und damit überflüssig) ist, eine editorische. In diesen Fällen taggen wir die zweite Sequenz der Wiederholung als <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 33</a>); <span class="element">&lt;subst&gt;</span> und <span class="element">&lt;add&gt;</span> fallen weg:</p>
 			<p><span class="element">&lt;w&gt;</span>wiederholte<span class="element">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
 			<p>
 				<br />
@@ -607,7 +607,7 @@
 			</ol>
 			<p>Bei Handschriften, die die Verse nicht absetzen, werden Zeilensprünge im Versinnern normal mit einem <span class="element">&lt;lb&gt;</span>-Element mit seinem Attribut <span class="attribute">@n</span> an der entsprechenden Position markiert.</p>
 			<p>Dasselbe geschieht, wenn der Zeilensprung im Wortinneren stattfindet. In diesen Fällen sollte am <span class="element">&lt;lb&gt;</span> noch das Attribut <span class="attribute">@break</span> stehen, mit dem Wert <span class="value">"no"</span>.</p>
-			<p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="element">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>), das vor dem <span class="element">&lt;lb/&gt;</span> steht (&rarr; <a href="#Wort">Kap. 9</a>.3, &rarr; <a href="#Zeichensetzung_Hs">Kap. 15</a>)</p>
+			<p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="element">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>), das vor dem <span class="element">&lt;lb/&gt;</span> steht (&rarr; <a href="#Wort">Kap. 9</a>.3, &rarr; <a href="#Zeichensetzung_Hs">Kap. 16</a>)</p>
 			<p>
 				<i>Beispiele:</i>
 			</p>
@@ -617,7 +617,7 @@
 				<span class="element">&gt;</span>vol<span class="element">&lt;/w&gt;&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"4" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;</span>get<span class="element">&lt;/w&gt;</span></p>
-			<p>Dies ist kompatibel mit Spalten- oder Seitenumbrüchen. Dann stehen <i>vor</i> dem <span class="element">&lt;lb/&gt;</span>-Element die entsprechenden Elemente <span class="element">&lt;pb/&gt;</span> und <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7.1/2</a>).</p>
+			<p>Dies ist kompatibel mit Spalten- oder Seitenumbrüchen. Dann stehen <i>vor</i> dem <span class="element">&lt;lb/&gt;</span>-Element die entsprechenden Elemente <span class="element">&lt;pb/&gt;</span> und <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>).</p>
 			<p>
 				<br />
 			</p>
@@ -628,8 +628,8 @@
 			<p>Wenn Teile des Versendes aus Platzgründen am Ende der vorangehenden oder folgenden Zeile vervollständigt wurden, sprechen wir von Zeilenüberlauf. Zeilenüberläufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
 			<p>Gelangt dieser &Uuml;berlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der &Uuml;berlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen &Uuml;berlauf innerhalb des Verses (<span class="element">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="element">&lt;lb/&gt;</span> an.</p>
 			<p> Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem &Uuml;berlauf) markieren wir als Punkt (wie <span class="element">&lt;lb&gt;</span> oder <span class="element">&lt;pb&gt;</span>) mit <span class="element">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="element">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="attribute">@ana</span> mit 2 Werten: <span class="value">"hc:LineSegmentBeginning"</span> und <span class="value">"hc:RunOverAbove"</span> bzw. <span class="value"> "hc:RunOverBelow"</span>. Außerdem ein Attribut <span class="attribute">n=</span><span class="value">"2"</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="attribute">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="element">&lt;lb&gt;</span>, nicht <span class="element">&lt;l&gt;</span>!) der &Uuml;berlauf steht. Dadurch können auch &Uuml;berläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
-			<p>Oft wird die &Uuml;berhangzeile durch Striche vom Rest der Zeile getrennt oder mit der 'Mutterzeile' verbunden. Diese Zeichen werden als <span class="element">&lt;metamark&gt;</span> getaggt; sie führen ein Attribut <span class="attribute">@ana</span> mit dem Wert <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">Kap. 16</a>)</p>
-			<p>Das ist alles kompatibel mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a> und &rarr; <a href="#del_add_Tokenisierung">Kap. 19</a>)</p>
+			<p>Oft wird die &Uuml;berhangzeile durch Striche vom Rest der Zeile getrennt oder mit der 'Mutterzeile' verbunden. Diese Zeichen werden als <span class="element">&lt;metamark&gt;</span> getaggt; sie führen ein Attribut <span class="attribute">@ana</span> mit dem Wert <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">Kap. 17</a>)</p>
+			<p>Das ist alles kompatibel mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a> und &rarr; <a href="#del_add_Tokenisierung">Kap. 20</a>)</p>
 			<p>
 				<i>Beispiele</i>
 			</p>
@@ -640,14 +640,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span>
 				<span class="attribute">n=</span>
@@ -656,7 +656,8 @@
 				<span class="value">"27"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				<br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>2. Doppelter Zeilenüberhang nach oben:</p>
@@ -666,14 +667,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span>
@@ -682,9 +683,9 @@
 				<span class="value">"25"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element"> &lt;milestone</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
 				<span class="attribute">ana=</span>
 				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span>
@@ -693,20 +694,19 @@
 				<span class="value">"24"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element"> </span>
-				<span class="element">&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9.3</a>) und Überlaufzeichen:</p>
+			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a>) und Überlaufzeichen:</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
 				<span class="element"> &lt;w&gt;</span>vrüme<span class="element">&lt;metamark</span>
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element"> &lt;milestone&gt;</span>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone&gt;</span>
 				<span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
 				<span class="attribute">n=</span><span class="value">"2"</span>
 				<span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
@@ -718,14 +718,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"27" </span>
 				<span class="attribute">ana=</span>
@@ -734,7 +734,7 @@
 				<span class="value">"hc:FlushRight"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
@@ -745,14 +745,14 @@
 				<span class="value">"419"</span>
 				<span class="element">&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
 				<br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span>
 				<span class="value">"26.1" </span>
 				<span class="attribute">ana=</span>
@@ -761,7 +761,7 @@
 				<span class="value">"hc:FlushRight"</span>
 				<span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;w&gt;&lt;w&gt;</span>
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
 				<br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
@@ -780,33 +780,33 @@
 			</p>
 			<p><span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;space</span>
+				&nbsp;&nbsp;<span class="element">&lt;space</span>
 				<span class="attribute">xml:id=</span><span class="value">"space_1234"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;desc</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;desc</span>
 				<span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span>Freiraum wahrscheinlich für Vers 1234 ausgespart.<span class="element">&lt;/desc&gt;</span><br />
-				<span class="element">&lt;/space&gt;</span></p>
+				&nbsp;&nbsp;<span class="element">&lt;/space&gt;</span></p>
 			<p>Diese Kodierung kann bzw. soll innerhalb von <span class="element">&lt;lg&gt;</span> stehen.</p>
-			<p>2) Besonders bei einzelnen ausgelassenen Worten, für die der Schreiber einen Freiraum gelassen hat, kann aus einer anderen Handschrift das Wort (oder der Vers) mit <span class="element">&lt;supplied&gt;</span> ergänzt werden (vgl. den Gebrauch dieses Elements in &rarr; <a href="#Initialen">Kap. 12.3</a>). Dies ist aber bereits eine editorische Bearbeitung, zu der es noch &Auml;nderungen geben könnte.</p>
+			<p>2) Besonders bei einzelnen ausgelassenen Worten, für die der Schreiber einen Freiraum gelassen hat, kann aus einer anderen Handschrift das Wort (oder der Vers) mit <span class="element">&lt;supplied&gt;</span> ergänzt werden (vgl. den Gebrauch dieses Elements in &rarr; <a href="#Initialen">Kap. 13</a>). Dies ist aber bereits eine editorische Bearbeitung, zu der es noch &Auml;nderungen geben könnte.</p>
 			<p>
 				<i>Beispiel:</i>
 			</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"5638"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
+				&nbsp;&nbsp;<span class="element">&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="element">/&gt;&lt;w&gt;</span>daz<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
-				<span class="element"> </span><span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;orig&gt;</span><br />
-				<span class="element">&lt;space</span>
+				&nbsp;&nbsp;<span class="element"> </span><span class="element">&lt;choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;orig&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;space</span>
 				<span class="attribute">xml:id=</span><span class="value">"space_23"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;desc</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;desc</span>
 				<span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span>Freiraum für fehlendes Wort. Die übrigen Handschriften haben an dieser Stelle das Wort <span class="element">&lt;q&gt;</span>dienen<span class="element">&lt;/q&gt;</span>.<span class="element">&lt;/desc&gt;</span><br />
-				<span class="element"> </span><span class="element">&lt;/space&gt;</span><br />
-				<span class="element">&lt;/orig&gt;</span><br />
-				<span class="element">&lt;supplied&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>dienen<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
-				<span class="element">&lt;/supplied&gt;</span><br />
-				<span class="element">&lt;/choice&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>solt<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>beiden<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/space&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/orig&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;supplied&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>dienen<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/supplied&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/choice&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>solt<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>beiden<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span></p>
 			<p>3) Werden Worte oder Zeilen ohne Freiraum in der Handschrift weggelassen, werden sie in der Transkription zunächst schlicht nicht erfasst. Dazu wird noch ein Tagging entwickelt, das es erlaubt, Text aus einem anderen Zeugnis an der präzisen Stelle zu importieren.</p>
 			<p>
@@ -846,10 +846,19 @@
 			<p>3) Außerdem sollte ein <span class="element">&lt;gap/&gt;</span> nach Möglichkeit die Attribute <span class="attribute">@unit</span> und <span class="attribute">@extent</span> bzw. <span class="attribute">@quantity</span> führen. <span class="attribute">@unit</span> gibt an, was verloren ist (<span class="value">character</span>=Buchstaben; <span class="value">line</span>=Zeilen; <span class="value">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviel von diesen Einheiten verloren sind, steht die im Attribut <span class="attribute">@quantity</span> (z.B. <span class="attribute">@unit</span>=<span class="value">"line"</span>
 				<span class="attribute">@quantity</span>=<span class="value">"4"</span>). Kann man nicht wissen, wieviel verloren ist, den steht nicht <span class="attribute">@quantity</span>, sondern lediglich <span class="attribute">@extent</span>=<span class="value">"unknown"</span>.</p>
 			<p>4) Wenn der Text nicht ganz verloren, wohl aber deutlich beschädigt ist, taggen wir ihn mit dem Element &lt;<span class="element">damage&gt;</span>. Auch dieses führt das Attribut <span class="attribute">@rendition</span>, mit denselben möglichen Werten, wie bei <span class="element">&lt;gap/&gt;</span>.</p>
-			<p>5) Ist im Fall von <span class="element">&lt;damage&gt;</span> ein Lesung möglich, aber unsicher, wird der Text zusätzlich mit dem Kindelement <span class="element">&lt;unclear&gt;</span> getaggt.</p>
-			<p>6) Steht vor oder hinter einem <span class="element">&lt;gap/&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die Lücke das Wort, dann fügen wir stattdessen ein 'editorisches Spatium' ein: <span class="element">&lt;w&gt;</span>beschä<span class="element">&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;gap/&gt;</span></p>
-			<p>7) Bei Fragmenten kommt es wiederholt vor, dass ein Vers verloren gegangen ist, die Verse davor und danach aber erhalten sind. In diesen Fällen taggen wir den Vers als Lücke: <span class="element">&lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</span>. Wir drücken damit aus, dass der verlorene Text einem Vers entspricht. Ein Problem stellt die Nummerierung solcher nicht vorhandenen Verse dar: Können wir aus dem Reimwort und dem Kontext schließen, dass hier wahrscheinlich der gleiche Vers stand, der in den übrigen Handschriften an dieser Stelle überliefert ist, dann setzen wir das <span class="element">&lt;l&gt;</span> und vergeben ihm die zu erwartende Standard-Nummer. Können wir nicht so sicher sein in dieser Annahme, z.B. weil im Reimpartner der Reim fehlt oder weil der Kontext geändert ist, dann nummerieren wir diesen Vers nicht. Bei Lücken, die größer sind als ein Vers, setzen wir lediglich <span class="element">&lt;gap/&gt;</span>, ohne das Element <span class="element">&lt;l&gt;</span>.</p>
-			<p>8) Zur Möglichkeit, ein fehlendes Wortteil zur ergänzen, siehe &rarr; <a href="#Gap_editorisch">Kap. 36</a>)</p>
+			<p>5) Ist im Fall von <span class="element">&lt;damage&gt;</span> ein Lesung möglich, aber unsicher, wird der Text zusätzlich mit dem Kindelement <span class="element">&lt;unclear&gt;</span> getaggt. Dieses Element führt keine Attribute; diese befinden sich ausschließlich im Elternelement <span class="element">&lt;damage&gt;</span>.</p>
+			<p>6) Steht vor oder hinter einem <span class="element">&lt;gap/&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die Lücke ein Teil des Wortes, dann fügen wir stattdessen ein 'editorisches Spatium' ein: <span class="element">&lt;w&gt;</span>beschä<span class="element">&lt;gap/&gt;&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w/&gt;&lt;w/&gt;</span>. Fehlen mehrere Worte, dann werden sie alle durch ein einziges <span class="element">&lt;gap/&gt;</span> ersetzt.</p>
+			<p>7) Bei Fragmenten kommt es wiederholt vor, dass ein Vers verloren gegangen ist, die Verse davor und danach aber erhalten sind. In diesen Fällen taggen wir den Vers als Lücke: <span class="element">&lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</span>. Wir drücken damit aus, dass der verlorene Text einem Vers entspricht. Ein Problem stellt die Nummerierung solcher nicht vorhandenen Verse dar: Können wir aus dem Reimwort und dem Kontext schließen, dass hier wahrscheinlich der gleiche Vers stand, der in den übrigen Handschriften an dieser Stelle überliefert ist, dann setzen wir das <span class="element">&lt;l&gt;</span> und vergeben ihm die zu erwartende Standard-Nummer. Können wir nicht so sicher sein in dieser Annahme, z.B. weil im Reimpartner der Reim fehlt oder weil der Kontext geändert ist, dann nummerieren wir diesen Vers nicht. Bei Lücken, die größer sind als ein Vers, setzen wir lediglich <span class="element">&lt;gap/&gt;</span>, außerhalb von <span class="element">&lt;l&gt;</span> und <span class="element">&lt;lg&gt;</span>.</p>
+			<p>8) Bei Handschriften mit nicht abgesetzten Verse, in denen am Ende eines Verse mitten in der Zeile ein Lücke vorliegt, setzen wir hinter das <span class="element">&lt;gap/&gt;</span> ein Spatium, damit sich die Worte in der Transkriptionsansicht nicht mit der Lücke berühren:<br/>
+				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;<br/>
+				&lt;l&gt;<br/>
+					&nbsp;&nbsp;&lt;gap</span> <span class="attribute">rendition=</span><span class="value">"hc:CutOff"</span> <span class="attribute">unit=</span><span class="value">"character"</span> <span class="attribute">extent=</span><span class="value">"unknown"</span><span class="element">/&gt;<br/>
+					&nbsp;&nbsp;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;<br/>
+				&lt;/l&gt;
+				&lt;l</span> <span class="attribute">n=</span><span class="value">"1234"</span><span class="element">&gt;<br/>
+					&nbsp;&nbsp;&lt;w/&gt;&lt;w/&gt;</span>
+			</p>
+			<p>9) Zur Möglichkeit, ein fehlendes Wortteil zur ergänzen, siehe &rarr; <a href="#Gap_editorisch">Kap. 37</a>)</p>
 			<p>
 				<br />
 			</p>
@@ -913,7 +922,7 @@
 					<h2><a id="label"></a>Abschnittszusammenfassungen</h2>
 			</ol>
 			<p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art "Hier kommt Herr Iwein an den Brunnen". Diese Stücke taggen wir mit dem Element <span class="element">&lt;label&gt;</span> und dem Attribut <span class="attribute">ana=</span><span class="value">"hc:SummaryLabel"</span>. Sie werden tokenisiert.</p>
-			<p>Wo Abschnittszusammenfassungen in Randbereiche der Textzeilen geraten, kommt die Zeilensegmentierung zum Wirken, die bei Zeilenüberläufen beschrieben wurde (&rarr; <a href="#Zeilenueberlauf">Kap. 21</a>).</p>
+			<p>Wo Abschnittszusammenfassungen in Randbereiche der Textzeilen geraten, kommt die Zeilensegmentierung zum Wirken, die bei Zeilenüberläufen beschrieben wurde (&rarr; <a href="#Zeilenueberlauf">Kap. 22</a>).</p>
 			<p>
 				<br />
 			</p>
@@ -923,7 +932,7 @@
 			</ol>
 			<p>1) Für die Kodierung der Umstellungen von Wörtern und Wortgruppen ist es notwendig, dass die betroffenen Wörter jeweils mit einer <span class="attribute">@xml:id</span> versehen sind. Die Textpassage wird zunächst so transkribiert, wie sie vor der Umstellung aussah. Direkt nach dem umgestellten Textsegment oder am Ende der Transkription der betroffenen Zeile (jedenfalls <i>vor</i> dem nächsten <span class="element">&lt;lb/&gt;</span>) wird anschließend mit <span class="element">&lt;listTranspose&gt;</span> die Umstellung dokumentiert. Das Kindelement <span class="element">&lt;transpose&gt; </span>enthält eine Sequenz von <span class="element">&lt;ptr&gt;</span>-Elementen, welche die umgestellten Wörter in der richtigen Reihenfolge (d.h. in der Reihenfolge nach der durchgeführten Umstellung) als Verweise auflisten.</p>
 			<p> Umstellungszeichen können in der Transkription mit <span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span> dokumentiert werden. Ihr Attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">Kap. 17</a>) verweist jeweils auf das Wort oder die Wörter, auf das bzw. auf die sich das Umstellungszeichen als Anweisung bezieht.</p>
+				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span> dokumentiert werden. Ihr Attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) verweist jeweils auf das Wort oder die Wörter, auf das bzw. auf die sich das Umstellungszeichen als Anweisung bezieht.</p>
 			<p><i>Beispiel:</i><br />
 				<i>Hs.:</i> Der "auch "&#383;ey &#383;elb &#383;o bewart &rarr;<br />
 				<span class="element">&lt;w&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
@@ -1079,10 +1088,10 @@
 				<li>
 					<h2><a id="Anmerkungen"></a>Anmerkungen</h2>
 			</ol>
-			<p>1) Anmerkungen werden mit dem Element <span class="element">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen, oder Nota-Zeichen (zu Textergänzungen &rarr; <a href="#del_add">Kap. 18</a>). Anmerkungen zur Transkription sind Phänomene der Handschrift, die für den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen außerhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erklärungen für Eingriffe oder ähnliches.</p>
+			<p>1) Anmerkungen werden mit dem Element <span class="element">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen, oder Nota-Zeichen (zu Textergänzungen &rarr; <a href="#del_add">Kap. 19</a>). Anmerkungen zur Transkription sind Phänomene der Handschrift, die für den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen außerhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erklärungen für Eingriffe oder ähnliches.</p>
 			<p>2) Wir stellen die <span class="element">&lt;note&gt;</span>-Elemente in der Regel hinter den Abschluss des Verses, also hinter <span class="element">&lt;/l&gt;</span>.</p>
 			<p>3) Das Element <span class="element">&lt;note&gt;</span> enthält das Attribut <span class="attribute">@ana</span>. Für Anmerkungen, die im Textzeuge stehen, sind je nach Fall folgende Werte vorgesehen: <span class="value">"hc:Gloss"</span> (Glosse), <span class="value">"hc:NotaBene"</span> (Notazeichen), <span class="value">"hc:Manicula"</span> (Zeigehand), <span class="value">"hc:Footnote"</span> (Fußnote), <span class="value">"hc:Endnote"</span> (Endnote). Für Anmerkungen zur Transkription kommt in der Regel nur <span class="value">"hc:TranscriptionNote"</span> in Frage. Für editorische Anmerkungen sind je nach Fall folgende Werte vorgesehen: <span class="value">"hc:Comment"</span> (Kommentar), <span class="value">"hc:TextCriticalNote"</span> (textkritische Anmerkung), <span class="value">"hc:WitnessesNote"</span> (Anmerkung zu herangezogenen Textzeugen), <span class="value">"hc:LociNote"</span> (Anmerkung zu Quellen, Parallelen und Nachwirkung), <span class="value">"hc:FontesNote"</span> (Anmerkung über Quellen), <span class="value">"hc:SimiliaNote"</span> (Anmerkung über Parallelen), <span class="value">"hc:TestimoniaNote"</span> (Anmerkung über Nachwirkung), <span class="value">"hc:BiblicalNote"</span> (Anmerkung über biblische Quellen). 
-			<p>4) Das Element <span class="element">&lt;note&gt;</span> enthält zusätzlich das Attribut <span class="attribute">@target</span>, mit dem auf das Wort oder auf den Vers verwiesen wird, auf die sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 17</a>).</p>
+			<p>4) Das Element <span class="element">&lt;note&gt;</span> enthält zusätzlich das Attribut <span class="attribute">@target</span>, mit dem auf das Wort oder auf den Vers verwiesen wird, auf die sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 18</a>).</p>
 			<p>5) Innerhalb der Anmerkungen werden Zitate aus der Handschrift oder aus anderen Handschriften mit <span class="element">&lt;q&gt;</span> (=quote) getaggt. Zitate aus Forschungsliteratur oder besondere Bedeutung von Worten wird hingegen &ndash;statt mit Anführungszeichen&ndash; getaggt mit <span class="element">&lt;mentioned&gt;</span>.</p>
 			<p>
 				<br />
@@ -1187,7 +1196,7 @@
 			<p>1. Wenn die Handschrift keine Zeichensetzung hat, bleibt das <span class="element">&lt;orig&gt;</span> leer:</p>
 			<p><span class="element">&lt;choice&gt;&lt;orig/&gt;&lt;reg</span>
 				<span class="attribute">ana=</span><span class="value">"hc:PunctuationRegularization"</span><span class="element">&gt;&lt;pc&gt;</span>,<span class="element">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
-			<p>2. Hat die Handschrift an der entsprechenden Stelle ein Satzzeichen oder einen Reimpunkt (&rarr; <a href="#Zeichensetzung_Hs">Kap. 15</a>), steht dieses im <span class="element">&lt;orig&gt;</span> und wird im <span class="element">&lt;reg&gt;</span> ersetzt bzw. unterdrückt:</p>
+			<p>2. Hat die Handschrift an der entsprechenden Stelle ein Satzzeichen oder einen Reimpunkt (&rarr; <a href="#Zeichensetzung_Hs">Kap. 16</a>), steht dieses im <span class="element">&lt;orig&gt;</span> und wird im <span class="element">&lt;reg&gt;</span> ersetzt bzw. unterdrückt:</p>
 			<p><span class="element">&lt;choice&gt;&lt;orig&gt;&lt;pc&gt;</span>&middot;<span class="element">&lt;/pc&gt;&lt;/orig&gt;&lt;reg</span>
 				<span class="attribute">ana=</span><span class="value">"hc:PunctuationRegularization"</span><span class="element">&gt;&lt;pc&gt;</span>,<span class="element">&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;</span></p>
 			<p>3. Bei direkter Rede steht evtl. ein Doppelpunkt (oder ein Komma) am vorangehenden Wort, das Anführungszeichen aber am ersten Redewort. Dazwischen muss das Spatium stehen:</p>
@@ -1210,7 +1219,7 @@
 				<li>
 					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Versumstellungen</h2>
 			</ol>
-			<p>Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 27</a>) behandelt.</p>
+			<p>Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
 			<p>Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, gibt es typischerweise in zwei Arten: Umstellung der Verse innerhalb des Verspaares und Umstellungen von Versgruppen (Verspaare oder Gruppen von Verspaaren) an eine andere Position. In diesem zweiten Fall muss immer von einer Intentionalität ausgegangen werden. Das bedeutet, dass wir daran in der Edition nichts ändern.</p>
 			<p>Im ersteren Fall, dem der Umstellungen innerhalb des Verspaares, sind die Umstände variabel: in vielen Fällen hat die Umstellung kaum Auswirkung auf den Satz. Bleibt der Text verständlich und grammatisch, ändern wir editorisch nichts an der Umstellung. In anderen Fällen allerdings entstehen durch die Umstellung Sinnbrüche. Ist dies der Fall und entscheiden wir als Herausgeber, dass die Position der Verse falsch ist, ordnen wir die Verse in der Datei so an, wie wir es für richtig halten (meist in der Reihenfolge der Lachmann-Verszahlen). Die <span class="element">&lt;lb&gt;</span>-Nummerierung erlaubt es, bei der Dokumentansicht die Versfolge der Handschrift herzustellen.</p>
 			<p>
