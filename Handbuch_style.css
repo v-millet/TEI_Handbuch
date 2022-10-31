@@ -49,22 +49,22 @@ del {
 .back {
     text-align: right
 }
-.yellow {
+.attribute {
     color: #ffc000
 }
-.blue {
+.element {
     color: #0070c0
 }
-.brown {
+.value {
     color: #c45911
 }
-.green {
+.entity {
     color: #92d050
 }
 .link {
     color: #0563c1
 }
-.violett {
+.declaration {
     color: #8b26c9
 }
 .punkt {
