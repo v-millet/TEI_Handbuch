@@ -117,7 +117,7 @@
 					<a href="#label">27. Résumés de paragraphes</a>
 				</p>
 				<p>
-					<a href="#transpose">28. Transpositions de verset de mots</a>
+					<a href="#transpose">28. Transpositions des mots et des vers</a>
 				</p>
 				<p>
 					<a href="#Lagensignaturen">29. Signatures de cahier et réclames</a>
@@ -1016,65 +1016,46 @@
 			</p>
 			<ol start="28">
 				<li>
-					<h2><a id="transpose"></a>Transposition de vers</h2>
+					<h2><a id="transpose"></a>Transposition des mots et des vers</h2>
 			</ol>
-			<p>1) Pour l'encodage de la transpotition de mots et de groupes de mots, il est nécessaire que les mots concernés soient pourvus d'un <span class="attribute">@xml:id</span>. Le passage de texte est d'abord transcrit tel qu'il se présentait avant le changement. Juste après le segmet de texte transposé ou à la fin de la transcription de la ligne concernée (en tout cas <i>avant</i> le prochain <span class="element">&lt;lb/&gt;</span>), la transposition est immédiatement marquée par <span class="element">&lt;listTranspose&gt;</span>. L'élément descendant <span class="element">&lt;transpose&gt;</span> contient une séquence d'éléments <span class="element">&lt;ptr&gt;</span> qui énumèrent, sous forme de renvois, les mots transposés dans l'ordre correct (c'est-à-dire dans l'ordre après la transposition effectuée).</p>
-			<p>Les signes de transposition peuvent être affichés dans la transcription avec <span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span>. Son attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">chap. 18</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
+			<p>1) Pour l'encodage de la transpotition de mots et de groupes de mots, il est nécessaire que les mots <i><b>et les espaces</b></i> concernés soient pourvus d'un <span class="attribute">@xml:id</span>. Le passage de texte est d'abord transcrit tel qu'il se présentait avant le changement. Juste après le segmet de texte transposé ou à la fin de la transcription de la ligne concernée (en tout cas <i>avant</i> le prochain <span class="element">&lt;lb/&gt;</span>), la transposition est immédiatement marquée par <span class="element">&lt;listTranspose&gt;</span>. L'élément descendant <span class="element">&lt;transpose&gt;</span> contient une séquence d'éléments <span class="element">&lt;ptr&gt;</span> qui énumèrent, sous forme de renvois, les mots et les espaces transposés dans l'ordre correct (c'est-à-dire dans l'ordre après la transposition effectuée).</p>
+			<p>2) Les signes de transposition sont balisés dans la transcription avec <span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span>. Son attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">chap. 18</a>) renvoie à chaque fois au mot ou groupe de mots auxquels le signe de transposition fait référence comme instruction.</p>
 			<p><i>Exemple:</i><br />
-				<i>Hs.:</i>Der "auch" &#383;ey &#383;elb &#383;o bewart &rarr;<br />
-				<span class="element">&lt;w&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span>
-				<span class="attribute">target=</span><span class="value">"#w_13_2"</span><span class="element">&gt;</span>" <span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_13_2"</span><span class="element">&gt;</span>auch<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span>
-				<span class="attribute">target=</span><span class="value">"#w_13_3"</span><span class="element">&gt;</span>" <span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_13_3"</span><span class="element">&gt;</span>se&#375;<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>&#383;elb<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;o<span class="element">&lt;/w&gt;&lt;w&gt;</span>bewart<span class="element">&lt;/w&gt;</span><br />
+				<i>Ms.:</i>Der "auch" &#383;ey &#383;elb &rarr;<br />
+				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_1"</span><span class="element">&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
+				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">target=</span><span class="value">"#w_13_2"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
+				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_2"</span><span class="element">&gt;</span>auch<span class="element">&lt;/w&gt;</span><br />
+				<span class="element">&lt;c</span> <span class="attribute">xml:id=</span><span class="value">"c_13_1"</span><span class="element">&gt;</span> <span class="element">&lt;/c&gt;</span><br/>
+				<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">target=</span><span class="value">"#w_13_3"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
+				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_3"</span><span class="element">&gt;</span>sey<span class="element">&lt;/w&gt;</span><br />
+				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				<span class="element">&lt;w&gt;</span>&#383;elb<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;listTranspose&gt;</span><br />
-				<span class="element">&lt;transpose</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_13_2</span>
-				<span class="value">#w_13_3"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;ptr</span>
-				<span class="attribute">target=</span><span class="value">"#w_13_3"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				<span class="element">&lt;ptr</span>
-				<span class="attribute">target</span><span class="value">="#w_13_2"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				<span class="element">&lt;/transpose&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;transpose</span> <span class="attribute">corresp=</span><span class="value">"#w_13_2 #c_13_1 #w_13_3"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#w_13_3"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target</span><span class="value">="#c_13_1"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target</span><span class="value">="#w_13_2"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
 				<span class="element">&lt;/listTranspose&gt;</span></p>
-			<p>2) Pour les vers entiers qui sont recopiés dans un ordre 'inversé' et marqués par le copiste à travers de signes comme devant être lus dans un ordre différent, on transcrit les vers dans l'ordre 'correct', c'est-à-dire dans l'ordre voulu par le copiste. La numérotation sur l'élément <span class="element">&lt;lb&gt;</span> reflète pourtant l'ordre physique de l'original. Un élément <span class="element">listTranspose&gt;</span> renseigne sur le processus d'écriture.</p>
+			<p>3) Pour les vers entiers qui sont recopiés dans un ordre 'inversé' et marqués par le copiste à travers de signes comme devant être lus dans un ordre différent, on transcrit les vers dans l'ordre 'correct', c'est-à-dire dans l'ordre voulu par le copiste. La numérotation sur l'élément <span class="element">&lt;lb&gt;</span> reflète pourtant l'ordre physique de l'original. Un élément <span class="element">listTranspose&gt;</span> renseigne sur le processus d'écriture. Pour simplifier, les spaties sont ici omises.</p>
 			<p><i>Exemple:</i><br />
 				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"3399"</span>
-				<span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span><span class="value">"17"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>Daz<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;&#305;n<span class="element">&lt;/w&gt;&lt;w&gt;</span>hat<span class="element">&lt;/w&gt;&lt;w&gt;</span>verlorn<span class="element">&lt;/w&gt;</span><br />
+				<span class="attribute">n=</span><span class="value">"3399"</span> <span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"17"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Daz<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;&#305;n<span class="element">&lt;/w&gt;&lt;w&gt;</span>hat<span class="element">&lt;/w&gt;&lt;w&gt;</span>verlorn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
-				<span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span>
-				<span class="attribute">xml:id=</span><span class="value">"l_3400</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>b<span class="element">&lt;/metamark&gt;</span><br />
-				<span class="element">&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>bezzern<span class="element">&lt;/w&gt;&lt;w&gt;</span>zvhten<span class="element">&lt;/w&gt;&lt;w&gt;</span>wart<span class="element">&lt;/w&gt;&lt;w&gt;</span>geborn<span class="element">&lt;/w&gt;</span><br />
+				<span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span> <span class="attribute">xml:id=</span><span class="value">"l_3400</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>b<span class="element">&lt;/metamark&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>bezzern<span class="element">&lt;/w&gt;&lt;w&gt;</span>zvhten<span class="element">&lt;/w&gt;&lt;w&gt;</span>wart<span class="element">&lt;/w&gt;&lt;w&gt;</span>geborn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
 				<span class="element">&lt;listTranspose&gt;</span><br />
-				<span class="element">&lt;transpose&gt;</span><br />
-				<span class="element">&lt;ptr</span>
-				<span class="attribute">target=</span><span class="value">"#l_3400"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				<span class="element">&lt;ptr</span>
-				<span class="attribute">target=</span><span class="value">"#l_3399"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				<span class="element">&lt;/transpose&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;transpose&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3400"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3399"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
 				<span class="element">&lt;/listTranspose&gt;</span></p>
 			<p>
 				<br />
