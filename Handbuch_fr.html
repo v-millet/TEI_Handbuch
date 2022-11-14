@@ -604,29 +604,20 @@
 			<p>En règle générale, on veut tokeniser le résultat dans de tels cas. Par contre, das certains cas, par ex. soit car la prescription est intéressante et révélatrice, soit car la correction n'a manifestement eu lieu que lors d'une révision, on pourrait également placer deux tokens dans une construction <span class="element">&lt;choice&gt;</span>; la seconde restant vide et renvoyant à la première:</p>
 			<p>Ex. 1: <i>so</i> &rarr; <i>sol</i><br />
 				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;w </span><span class="attribute">xml:id=</span><span class="value">"w_123_1"</span><span class="element">&gt;</span>so<br />
-				<span class="element">&lt;add </span><span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_123_2"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;</span><br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_123_2"</span>
-				<span class="attribute">copyOf=</span><span class="value">"# w_123_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w </span><span class="attribute">xml:id=</span><span class="value">"w_123_1"</span><span class="element">&gt;</span>so<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;add </span><span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">corresp=</span><span class="value">"#w_123_2"</span><span class="element">&gt;</span>l<span class="element">&lt;/add&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_123_2"</span> <span class="attribute">copyOf=</span><span class="value">"# w_123_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
 			<p>Ex. 2: <i>hundes &rarr; bundes</i><br />
 				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_1234_1"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Strikethrough"</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_1234_1"</span><span class="element">&gt;</span>h<span class="element">&lt;/del&gt;</span><br />
-				<span class="element">&lt;add</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_1234_2"</span><span class="element">&gt;</span>b<span class="element">&lt;/add&gt;</span><br />
-				<span class="element"> &lt;/choice&gt;</span>undes<br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_1234_2"</span> <span class="attribute">copyOf=</span><span class="value">"# w_1234_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_1234_1"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;subst&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Strikethrough"</span> <span class="attribute">corresp=</span><span class="value">"#w_1234_1"</span><span class="element">&gt;</span>h<span class="element">&lt;/del&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">corresp=</span><span class="value">"#w_1234_2"</span><span class="element">&gt;</span>b<span class="element">&lt;/add&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element"> &lt;/subst&gt;</span>undes<br />
+				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_1234_2"</span> <span class="attribute">copyOf=</span><span class="value">"# w_1234_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
 			<p>2) Là où on ne peut pas utiliser <span class="element">&lt;subst&gt;</span>, car le <span class="element">&lt;del&gt;</span> et le <span class="element">&lt;add&gt;</span> ne sont pas directement adjoints, on emploie <span class="element">&lt;substJoin&gt;</span>; <span class="element">&lt;del&gt;</span> et <span class="element">&lt;add&gt;</span> sont dotés de <span class="attribute">xml:id</span> et le <span class="element">&lt;substJoin&gt;</span> les met en relation.</p>
 			<p>Ex. 1: <del><i>i</i></del><i>hie</i> (le <i>h</i> est placé entre le <span class="element">&lt;del&gt;</span> et le <span class="element">&lt;add&gt;</span>)<br />
