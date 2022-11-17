@@ -156,16 +156,18 @@
 				<span class="element">&lt;front&gt;<br /> &lt;pb</span> <span class="attribute">n=</span><span class="value">"5v"</span><span class="element">/&gt;&lt;cb</span>
 				&nbsp;&nbsp;<span class="attribute">n=</span><span class="value">"c"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;docTitle&gt;&lt;titlePart&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;&lt;hi</span><span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>künig><span class="element">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="element">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;&lt;hi</span> <span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>künig><span class="element">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="element">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element"> &lt;/titlePart&gt;&lt;/docTitle&gt;<br /> &lt;/front&gt;</span></p>
 			<p>In <span class="element">&lt;back&gt;</span> hingegen werden typischerweise Schreiberkolophone eingetragen. Das Element <span class="element">&lt;back&gt;</span> enthält ein Kindelement <span class="element">&lt;trailer&gt;</span> mit dem Attribut <span class="attribute">@ana</span> und dem Wert <span class="value">"hc:Colophon"</span>.</p>
-			<p><i>Beispiel:</i><br/>
-			<span class="element">&lt;back&gt;<br />
+			<p><i>Beispiel:</i></p>
+			<p><span class="element">&lt;back&gt;<br />
 				&nbsp;&nbsp;&lt;trailer</span> <span class="attribute">ana=</span><span class="value">"hc:Colophon"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Amen<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"50"</span><span class="element">/&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>Amen<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/trailer&gt;<br />
-					&nbsp;&nbsp;&lt;/back&gt;</span></p>
+				&lt;/back&gt;</span></p>
 			<p>Manchmal enthalten Kolophone Verzierungen, die wir als <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) mit dem Attribut <span class="attribute">@ana</span> und dem Wert <span class="value">"hc:DecorativeMarker"</span> taggen.</p>
+			<p>Ist der Schreibertitel oder das Kolophon in Versen geschrieben, so erfassen wir diese mit dem Element <span class="element">&lt;l/&gt;</span>. Wir nummerieren aber Verse in diesen Paratexten nicht, setzen also <i>nicht</i> die Attribute <span class="attribute">@n</span> oder <span class="attribute">@hei:altN</span>, lediglich eine <span class="attribute">xml:id</span>.</p>
 			<p>
 				<br />
 			</p>
