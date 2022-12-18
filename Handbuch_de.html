@@ -209,71 +209,47 @@
 					<h2><a id="Verspaar_Vers"></a>Verspaar und Vers</h2>
 			</ol>
 			<p>1) Jedes Verspaar steht innerhalb des Elements <span class="element">&lt;lg&gt;</span>. Es führt das Attribut <span class="attribute">@ana </span>mit den Werten <span class="value">"hc:Couplet"</span> (=Reimpaar, das häufigste), <span class="value">"hc:Tercet"</span> oder <span class="value">"hc:Quatrain"</span>.</p>
-			<p>2) Jeder Vers steht innerhalb des Elements <span class="element">&lt;l&gt;</span>. Dieses Element führt erstens das Attribut <span class="attribute">@n</span>; der Wert des Attributs ist die Versnummer nach Lachmann oder den Standard-Editionen. Zweitens eine <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>). Und drittens eine alternative Nummerierung strikt nach der Handschrift.</p>
-			<p>Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="element">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="element">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 36</a>). Zum Beispiel:</p>
+			<p>2) Jeder Vers steht innerhalb des Elements <span class="element">&lt;l&gt;</span>. Dieses Element hat drei Attribute: <span class="attribute">@n</span>, <span class="attribute">@xml:id</span> und <span class="attribute">@hei:altN</span>:</p>
+			<p>&nbsp;&nbsp; a) Das Attribut <span class="attribute">@n</span> führt als Wert die Versnummer nach der jeweiligen Standard-Edition. Wir benutzen diese Nummerierung als Identifizierung der Verse. Zusatzverse oder Verse, die komplett anders sind aber einen 'Standardvers' an der Stelle ersetzen (sog. 'Ersatzverse') erhalten eine Zusatznummerierung. Zusatznummern bestehen grundsätzlich aus der Standard-Nummer des vorangehenden Verses und (je nach Text und Fachtradition) einen angehängten Buchstaben (z.B. 123a, 123b im <i>Armen Heinrich</i> oder im <i>Gregorius</i>) oder eine durch Komma getrennte Zusatzzahl (z.B. 123,1 123,2 im <i>Iwein</i>).</p>
+			<p>&nbsp;&nbsp; b) Das Attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) enthält als Wert dieselbe Nummer wie <span class="attribute">@n</span>, mit einem 'l' (wie 'line') und einem Unterstrich davor. Zum Beispiel: </p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123a"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123,1"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123.1"</span><span class="element">&gt;</span> (eine <span class="attribute">@xml:id</span> darf kein Komma führen, daher wird dieses durch einen Punkt ersetzt.)</p>
+			<p>&nbsp;&nbsp; c) Das Attribut <span class="attribute">@hei:altN</span>, das eine alternative Nummerierung der Verse ermöglicht, zählt die Verse strikt in der Reihenfolge der Handschrift.</p>
+			<p>3) Über die <span class="attribute">@xml:id</span> wird die Korrespondenz der jeweiligen Verse in den verschiedenen Handschriften kontrolliert. Verse mit gleicher <span class="attribute">@xml:id</span> in zwei verschiedenen Dateien können dadurch bei der Visualisierung auf gleicher Höhe angezeigt werden. Bei Zusatzversen, die ja eine andere <span class="attribute">@xml:id</span> haben, entstehen dadurch zusätzliche Zeilen; bei einer Parallelansicht verschiedener Zeugnisse wird in den Hs., die diese Verse nicht haben, eine Leerzeile an der entsprechenden Stelle angezeigt. Bei sog. 'Ersatzversen', d.h. komplett geänderte Zeilen, deren Reimpartner aber der entsprechende 'Standardvers' ist, wollen wir in der Visualisierung hier keine leeren Zeilen in den anderen Textzeugen anzeigen. Deswegen geben wir in diesen Fällen der <span class="attribute">@xml:id</span> den Wert des Standardverses.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_124"</span> <span class="element">&gt;&lt;lb</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"125"</span> <span class="attribute"> xml:id=</span><span class="value">"l_125"</span> <span class="element">&gt;&lt;lb</span><br/>
+				(Der Zusatzvers 123a nimmt die Position des Verses 124 ein; da wir ihn auch an dieser Position zeigen wollen, geben wir ihm die <span class="attribute">@xml:id</span>, die in anderen Datein der Vers 124 hat.)
+			
+			<p>4) Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="element">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="element">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 36</a>). Zum Beispiel:</p>
 			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"113"</span>
-				<span class="attribute"> xml:id=</span>
-				<span class="value">"l_113"</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"24"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				<span class="element">&lt;l </span>
-				<span class="attribute">n=</span>
-				<span class="value">"112" </span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"l_112"</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute"> n=</span>
-				<span class="value">"25"</span>
-				<span class="element">/&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"113"</span> <span class="attribute">xml:id=</span><span class="value">"l_113"</span> <span class="attribute">hei:altN=</span><span class="value">"109"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"112" </span> <span class="attribute">xml:id=</span><span class="value">"l_112"</span> <span class="attribute">hei:altN=</span><span class="value">"110"</span><span class="element">&gt;&lt;lb</span> <span class="attribute"> n=</span><span class="value">"25"</span><span class="element">/&gt;</span>
 			</p>
-			<p>Fehlt ein Vers oder eine Gruppe von Versen, stehen sie schlicht nicht in der Transkription:</p>
+			<p>5) Fehlt ein Vers oder fehlen eine Gruppe von Versen in der Handschrift, stehen sie schlicht nicht in der Transkription:</p>
 			<p>
-				<span class="element">&lt;l </span>
-				<span class="attribute">n=</span>
-				<span class="value">"101"</span>
-				<span class="attribute"> xml:id=</span>
-				<span class="value">"l_101</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"24"</span>
-				<span class="element">/&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"101"</span> <span class="attribute">xml:id=</span><span class="value">"l_101</span> <span class="attribute">hei:altN=</span><span class="value">"101"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"24"</span><span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"112"</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"l_112</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"25"</span>
-				<span class="element">/&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"112"</span> <span class="attribute">xml:id=</span><span class="value">"l_112</span> <span class="attribute">hei:altN=</span><span class="value">"102"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"25"</span><span class="element">/&gt;</span>
 			</p>
-			<p>Bei hinzugefügten Versen werden die notwendigen <span class="element">&lt;l&gt;</span> und <span class="element">&lt;lg&gt;</span>-Elemente hinzugefügt. Die Nummerierung der <span class="element">&lt;l&gt;</span>-Elemente im <span class="attribute">@n</span>-Attribut ist die des letzten mit Lachmann übereinstimmenden Verses, gefolgt von einem Komma und einer zweiten konsekutiven Zahl (bzw., je nach Projekt, ein Buchstabe), z.B.:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117,1"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117,2"</span>
-				<span class="element">&gt;</span>
+			<p>6) Bei hinzugefügten Versen werden die notwendigen <span class="element">&lt;l&gt;</span> und <span class="element">&lt;lg&gt;</span>-Elemente hinzugefügt.</p>
+			<p><span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"117"</span> <span class="attribute">xml:id=</span><span class="value">"l_117"</span> <span class="attribute">hei:altN=</span><span class="value">"117"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"11"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118"</span> <span class="attribute">xml:id=</span><span class="value">"l_118"</span> <span class="attribute">hei:altN=</span><span class="value">"118"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"12"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118a"</span> <span class="attribute">xml:id=</span><span class="value">"l_118a"</span> <span class="attribute">hei:altN=</span><span class="value">"119"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"13"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118b"</span> <span class="attribute">xml:id=</span><span class="value">"l_118b"</span> <span class="attribute">hei:altN=</span><span class="value">"120"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"14"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"119"</span> <span class="attribute">xml:id=</span><span class="value">"l_119"</span> <span class="attribute">hei:altN=</span><span class="value">"121"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"15"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"120"</span> <span class="attribute">xml:id=</span><span class="value">"l_120"</span> <span class="attribute">hei:altN=</span><span class="value">"122"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				
 			</p>
-			<p>Für versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 28</a>.</p>
-			<p>3) Wir verwenden die Standard-Versnummerierung der Forschung. Später wird automatisch eine alternative, Handschrifteneigene konsekutive Nummerierung eingefügt, die evtl. auch in der Edition dargestellt werden kann.</p>
-			<p>4) In der Excel-Datei "Konkordanz" werden fehlende Verse gelöscht, zusätzliche Verse ergänzt, umgestellte Vers an die entsprechende Position gestellt und farbig markiert, damit eine "Karte" der Verse entstehen kann, die es später erlaubt, parallele Verse auch parallel zu visualisieren.</p>
+			<p>7) Für versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 28</a>.</p>
+			<p>8) Fehlende und zusätzliche Verse, sog. 'Ersatzverse', Versumstellungen und Reimänderungen werden in der Konkordanz markiert.</p>
 			<p>
 				<br />
 			</p>

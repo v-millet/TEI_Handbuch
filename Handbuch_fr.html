@@ -320,72 +320,48 @@
 				<li>
 					<h2><a id="Verspaar_Vers"></a>Couplet et vers</h2>
 			</ol>
-			<p>1) On trouve chaque couplet ou paire de vers à l'intérieur de l'élément <span class="element">&lt;lg&gt;</span>. Il insere l'attribut <span class="attribute">@ana </span> avec la valeur <span class="value">"hc:Couplet"</span> (=le distique, la valeur la plus fréquente), <span class="value">"hc:Tercet"</span> ou <span class="value">"hc:Quatrain"</span>.</p>
-			<p>2) On trouve chaque vers à l'intérieur de l'élément <span class="element">&lt;l&gt;</span>. Cet élément introduit premièrement l'attribut <span class="attribute">@n</span>; dont la valeur est le numéro du vers selon Lachmann ou les éditions traditionelles. Deuxièmement, l'attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">chap. 18</a>). Et troisièmement, une numérotation alternative <span class="attribute">@altN</span> suivant rigoreusement le manuscrit.</p>
-			<p>Au cas o le copiste effectue une transposition de vers, la transcription suit l'ordre physique des vers du manuscrit. Cela signifie que les numéros des éléments <span class="element">&lt;lb&gt;</span> restent toujours consécutifs; les numéros des éléments <span class="element">&lt;l&gt;</span> sont pourtant adaptés (pour le traitement éditorial &rarr; <a href="#Versumstellung_editorisch">chap. 36</a>). Par exemple:</p>
+			<p>1) Chaque couplet ou paire de vers est insérée à l'intérieur de l'élément <span class="element">&lt;lg&gt;</span>. Il contient l'attribut <span class="attribute">@ana </span> avec la valeur <span class="value">"hc:Couplet"</span> (=le distique, la valeur la plus fréquente), <span class="value">"hc:Tercet"</span> ou <span class="value">"hc:Quatrain"</span>.</p>
+			<p>2) Chaque vers s'insère à l'intérieur de l'élément <span class="element">&lt;l&gt;</span>. Cet élément a trois attributs : <span class="attribute">@n</span>, <span class="attribute">@xml:id</span> et <span class="attribute">@hei:altN</span>:</p>
+			<p>&nbsp;&nbsp; a) L'attribut <span class="attribute">@n</span> a pour valeur le numéro de vers selon l'édition standard correspondante. Nous utilisons cette numérotation pour identifier les versets. Les vers supplémentaires ou les vers qui sont complètement différents mais qui remplacent un 'vers standard' à cet endroit (appelés 'vers de remplacement') reçoivent une numérotation supplémentaire. Les numéros supplémentaires se composent en principe du numéro standard du verset précédent et (selon le texte et la tradition spécialisée) d'une lettre ajoutée (p. ex. 123a, 123b dans <i>Armer Heinrich</i> ou dans <i>Gregorius</i>) ou d'un numéro supplémentaire séparé par une virgule (p. ex.123,1 123,2 dans <i>Iwein</i>).</p>
+			<p>&nbsp;&nbsp; b) L'attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) a pour valeur le même numéro que <span class="attribute">@n</span>, précédé d'un 'l' (comme 'line') et d'un tiret bas. Par exemple: </p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123a"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123,1"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123.1"</span><span class="element">&gt;</span> (eine <span class="attribute">@xml:id</span> darf kein Komma führen, daher wird dieses durch einen Punkt ersetzt.)</p>
+			<p>&nbsp;&nbsp; c) L'attribut <span class="attribute">@hei:altN</span>, qui permet une numérotation alternative des vers, compte les vers strictement dans l'ordre du manuscrit.</p>
+			<p>3) L'attribut <span class="attribute">@xml:id</span> permet de contrôler la correspondance des vers respectifs dans les différents manuscrits. Les vers ayant le même <span class="attribute">@xml:id</span> dans deux fichiers différents peuvent ainsi être affichés à la même hauteur lors de la visualisation. Pour les versets supplémentaires, qui ont un autre <span class="attribute">@xml:id</span>, des lignes supplémentaires sont ainsi créées ; lors d'une visualisation parallèle de différents témoignages, une ligne vide est affichée à l'endroit correspondant dans les manuscrits qui ne possèdent pas ces versets. Dans le cas de ce que l'on appelle des 'vers de remplacement', c'est-à-dire des lignes complètement modifiées dont le partenaire de rime est cependant le 'vers standard' correspondant, nous ne voulons pas afficher ici dans la visualisation des lignes vides dans les autres témoins de texte. C'est pourquoi, dans ces cas, nous donnons à <span class="attribute">@xml:id</span> la valeur du vers standard.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_124"</span> <span class="element">&gt;&lt;lb</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"125"</span> <span class="attribute"> xml:id=</span><span class="value">"l_125"</span> <span class="element">&gt;&lt;lb</span><br/>
+				(Le vers additionnel 123a occupe la position du vers 124; comme nous voulons aussi le montrer à cette position, nous lui donnons le même <span class="attribute">@xml:id</span> que le vers 124 a dans d'autres fichiers.)
+				
+			<p>4) Dans le cas d'une transposition de vers par le copiste, la transcription suit d'abord l'ordre physique des vers du manuscrit. Cela signifie que les numéros des éléments <span class="element">&lt;lb&gt;</span> restent toujours consécutifs; en revanche, les numéros des éléments<span class="element">&lt;l&gt;</span> sont adaptés (pour le traitement éditorial  &rarr; <a href="#Versumstellung_editorisch">chap. 36</a>). Por exemple:</p>
 			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"113"</span>
-				<span class="attribute"> xml:id=</span>
-				<span class="value">"l_113"</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"24"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				<span class="element">&lt;l </span>
-				<span class="attribute">n=</span>
-				<span class="value">"112" </span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"l_112"</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute"> n=</span>
-				<span class="value">"25"</span>
-				<span class="element">/&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"113"</span> <span class="attribute">xml:id=</span><span class="value">"l_113"</span> <span class="attribute">hei:altN=</span><span class="value">"109"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"112" </span> <span class="attribute">xml:id=</span><span class="value">"l_112"</span> <span class="attribute">hei:altN=</span><span class="value">"110"</span><span class="element">&gt;&lt;lb</span> <span class="attribute"> n=</span><span class="value">"25"</span><span class="element">/&gt;</span>
 			</p>
-			<p>S'il manque un vers ou un groupe de vers, ceux-ci ne figurent simplement pas dans la transcription:</p>
+			<p>5) S'il manque un vers ou un groupe de vers dans le manuscrit, ils ne figurent tout simplement pas dans la transcription:</p>
 			<p>
-				<span class="element">&lt;l </span>
-				<span class="attribute">n=</span>
-				<span class="value">"101"</span>
-				<span class="attribute"> xml:id=</span>
-				<span class="value">"l_101</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"24"</span>
-				<span class="element">/&gt;</span>
-				<br/>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"112"</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"l_112</span>
-				<span class="element">&gt;&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"25"</span>
-				<span class="element">/&gt;</span>
-			</p>
-			<p>Dans le cas des vers ajoutés, il est nécessaire d'ajouter les éléments <span class="element">&lt;l&gt;</span> et <span class="element">&lt;lg&gt;</span>. La numérotation des éléments <span class="element">&lt;l&gt;</span> dans l'attribut <span class="attribute">@n</span> est celle du dernier vers correspondant à la version de Lachmann, suivie d'une virgule et d'un second numéro consécutif (ou bien, selon le projet, d'une lettre), par ex.:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117"</span>
-				<span class="element">&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"101"</span> <span class="attribute">xml:id=</span><span class="value">"l_101</span> <span class="attribute">hei:altN=</span><span class="value">"101"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"24"</span><span class="element">/&gt;</span>
 				<br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117,1"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"117,2"</span>
-				<span class="element">&gt;</span>
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"112"</span> <span class="attribute">xml:id=</span><span class="value">"l_112</span> <span class="attribute">hei:altN=</span><span class="value">"102"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"25"</span><span class="element">/&gt;</span>
 			</p>
-			<p>Pour les vers mal ordonnés de manière accidentelle, ceux que le copiste remet dans le bon ordre au moyen de signes de transposition &rarr; <a href="#transpose">chap. 28</a>.</p>
-			<p>3) On emploie la numérotation standard de vers appartenant à la recherche. Plus tard, une numérotation alternative, consecutive et propre au manuscrit est rajoutée automatiquement et peut aussi éventuellement être affichée dans l'édition.</p>
-			<p>4) Dans le fichier Excel "Concordance", les vers manquants sont supprimés, les vers supplémentaires sont ajoutés, les vers transposés sont installés à leur place correspondante et marqués en couleur, afin de créer une "carte" de vers qui permettra plus tard de visualiser les vers parallèles également en parallèle</p>
+			<p>6) Dans le cas de vers ajoutés, les éléments <span class="element">&lt;l&gt;</span> et <span class="element">&lt;lg&gt;</span> nécessaires seront également ajoutés.</p>
+			<p><span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"117"</span> <span class="attribute">xml:id=</span><span class="value">"l_117"</span> <span class="attribute">hei:altN=</span><span class="value">"117"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"11"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118"</span> <span class="attribute">xml:id=</span><span class="value">"l_118"</span> <span class="attribute">hei:altN=</span><span class="value">"118"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"12"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118a"</span> <span class="attribute">xml:id=</span><span class="value">"l_118a"</span> <span class="attribute">hei:altN=</span><span class="value">"119"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"13"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118b"</span> <span class="attribute">xml:id=</span><span class="value">"l_118b"</span> <span class="attribute">hei:altN=</span><span class="value">"120"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"14"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"119"</span> <span class="attribute">xml:id=</span><span class="value">"l_119"</span> <span class="attribute">hei:altN=</span><span class="value">"121"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"15"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"120"</span> <span class="attribute">xml:id=</span><span class="value">"l_120"</span> <span class="attribute">hei:altN=</span><span class="value">"122"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lg&gt;</span><br/>
+				
+			</p>
+			<p>7) Pour les vers mal ordonnés par inadvertance, que le scribe remet dans le bon ordre avec des signes de conversion &rarr; <a href="#transpose">Kap. 28</a>.</p>
+			<p>8) Les vers manquants et les vers supplémentaires, les 'vers de remplacement', les transpositions de vers et les changements de rimes sont marqués dans la concordance.</p>
 			<p>
 				<br />
 			</p>
