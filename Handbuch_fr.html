@@ -105,7 +105,7 @@
 					<a href="#nicht_ausgefuehrt">23. Mots / Lignes non executées</a>
 				</p>
 				<p>
-					<a href="#Verswiederholungen">24. Répetitions de vers ou vers très similaires</a>
+					<a href="#Verswiederholungen">24. Répetitions de vers ou vers similaires</a>
 				</p>
 				<p>
 					<a href="#gap_damage">25. Pertes et texte endommagé</a>
@@ -867,18 +867,20 @@
 			</p>
 			<ol start="24">
 				<li>
-					<h2><a id="Verswiederholungen"></a>Répétitions de vers ou vers très similaires</h2>
+					<h2><a id="Verswiederholungen"></a>Répétitions de vers ou vers similaires</h2>
 			</ol>
-			<p>Les répétitions de vers sont marquées par un attribut dans l'élément <span class="element">&lt;l&gt;</span> des deux vers correspondants: <span class="attribute">@hei:Replicates</span>; ; s'il est clair lequel des vers est le vers "répété" et lequel est le vers "original", l'attribut peut aussi se trouver uniquement dans le vers "répété". La valeur de l'attribut renvoie par un dièse au <span class="attribute">@xml:id</span> dans <span class="element">&lt;l&gt;</span> du vers "original".</p>
-			<p>
-				<i>Exemple:</i>
-			</p>
+			<p>1) Dans le cas de vers similaires qui se réfèrent probablement ou peut-être intentionnellement l'un à l'autre, nous marquons cette appartenance avec l'attribut <span class="attribute">@corresp</span> dans l'élément <span class="element">&lt;l&gt;</span> des deux versets correspondants. La valeur de l'attribut est un pointeur et renvoie avec un losange à l'<span class="attribute">@xml:id</span> dans l'<span class="element">&lt;l&gt;</span> de l'autre verset. Par exemple:</p>
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"23"</span> <span class="attribute">xml:id=</span><span class="value">"l_23"</span> <span class="attribute">corresp</span><span class="attribute">=</span><span class="value">"#l_897"</span><span class="element">&gt;</span>...<span class="element">&lt;l/&gt;</span><br />
+				[...]<br />
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"897"</span> <span class="attribute">xml:id=</span><span class="value">"l_897"</span> <span class="attribute">corresp</span><span class="attribute">=</span><span class="value">"#l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;/l&gt;</span></p>
+			<p>2) Les répétitions de vers se distinguent de ces vers similaires par le fait qu'en tant qu'éditeurs, nous les considérons comme étant d'une manière ou d'une autre défectueuses. Cela peut être le cas, par exemple, d'une répétition de couple de vers après un saut de page, ou d'une répétition de vers qui rompt la structure des couples de rimes (et souvent aussi la syntaxe). De telles répétitions sont signalées par l'attribut <span class="attribute">@hei:Replicates</span> dans l'élément <span class="element">&lt;l&gt;</span> du vers répété. La valeur de l'attribut est un pointeur et renvoie par un losange à l'<span class="attribute">@xml:id</span> du <span class="element">&lt;l&gt;</span> du vers 'original':</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="attribute"> xml:id=</span><span class="value">"l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;l/&gt;</span><br /> [...]<br />
 				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"46"</span>
+				<span class="attribute">n=</span><span class="value">"45,1"</span>
 				<span class="attribute">@hei:Replicates</span><span class="attribute">=</span><span class="value">"#l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;/l&gt;</span></p>
-			<p>Dans certains cas, une partie d'une ligne répète la partie correspondante d'une autre ligne (généralement car le copiste a sauté à la mauvaise ligne au milieu de vers). Dans ces cas, les parties de vers correspondantes respectives sont marquées avec l'élément <span class="element">&lt;seg&gt;</span> (<i>segment</i>) et elles sont liées les unes aux autres de manière attributive avec <span class="attribute">@xml:id</span> et <span class="attribute">@target</span>.</p>
+			<p>Comme nous ne comptons pas seulement les vers en continu (avec <span class="attribute">@hei:altN</span>), mais aussi et surtout (via l'attribut <span class="attribute">@n</span>) les identifions, il faut d'abord déterminer quel vers est le 'répété' et quel vers est l''original'. Si cela est clarifié, l'attribut <span class="attribute">@hei:Replicates</span> ne peut se trouver que dans le vers 'répété', qui reçoit alors en règle générale un 'numéro supplémentaire'. Si cela n'est pas clair, l'attribut doit se trouver dans les deux vers.</p>
+			<p>3) Dans certains cas, une partie d'une ligne répète la partie correspondante d'une autre ligne (généralement car le copiste a sauté à la mauvaise ligne au milieu de vers). Dans ces cas, les parties de vers correspondantes respectives sont marquées avec l'élément <span class="element">&lt;seg&gt;</span> (<i>segment</i>) et elles sont liées les unes aux autres de manière attributive avec <span class="attribute">@xml:id</span> et <span class="attribute">@target</span>.</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"6936"</span><span class="element">&gt;&lt;w&gt;</span>Das<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;seg</span>
 				<span class="attribute">xml:id=</span><span class="value">"seg_6936_1"</span><span class="element">&gt;&lt;w&gt;</span>tot<span class="element">&lt;/w&gt;</span>

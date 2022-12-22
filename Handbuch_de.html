@@ -52,7 +52,7 @@
 			<p><a href="#Zeilenspruenge">21. Zeilensprünge im Versinneren und im Wortinneren</a></p>
 			<p><a href="#Zeilenueberlauf">22. Zeilenüberlauf</a></p>
 			<p><a href="#nicht_ausgefuehrt">23. Nicht ausgeführte Wörter / Zeilen</a></p>
-			<p><a href="#Verswiederholungen">24. Verswiederholungen oder sehr ähnliche Verse</a></p>
+			<p><a href="#Verswiederholungen">24. Verswiederholungen oder ähnliche Verse</a></p>
 			<p><a href="#gap_damage">25. Lücken und beschädigter Text</a></p>
 			<p><a href="#Abkuerzungen">26. Abkürzungen</a></p>
 			<p><a href="#label">27. Abschnittszusammenfassungen</a></p>
@@ -783,25 +783,27 @@
 			</p>
 			<ol start="24">
 				<li>
-					<h2><a id="Verswiederholungen"></a>Verswiederholungen oder sehr ähnliche Verse</h2>
+					<h2><a id="Verswiederholungen"></a>Verswiederholungen und ähnliche Verse</h2>
 			</ol>
-			<p>Verswiederholungen werden mit einem Attribut im <span class="element">&lt;l&gt;</span>-Element der beiden korrespondieren Verse gekennzeichnet: <span class="attribute">@hei:Replicates</span>; wenn klar ist, welcher Vers der 'wiederholte' und welcher das 'Original' ist, dann kann das Attribut auch nur im 'wiederholten' Vers stehen. Der Attributwert verweist mit einer Raute auf die <span class="attribute">@xml:id</span> am <span class="element">&lt;l&gt;</span> des 'ursprünglichen' Verses.</p>
-			<p>
-				<i>Beispiel:</i>
-			</p>
-			<p><span class="element">&lt;l</span>
+			<p>1) Bei ähnlichen Versen, die wahrscheinlich oder möglicherweise intentional aufeinander Bezug nehmen, taggen wir diese Zugehörigkeit mit dem Attribut <span class="attribute">@corresp</span> im Element <span class="element">&lt;l&gt;</span> der beiden korrespondierenden Verse. Der Attributwert ist ein Pointer und verweist mit einer Raute auf die  <span class="attribute">@xml:id</span> am <span class="element">&lt;l&gt;</span> des jeweils anderen Verses. Z.B.:</p>
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"23"</span> <span class="attribute">xml:id=</span><span class="value">"l_23"</span> <span class="attribute">corresp</span><span class="attribute">=</span><span class="value">"#l_897"</span><span class="element">&gt;</span>...<span class="element">&lt;l/&gt;</span><br />
+				[...]<br />
+				<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"897"</span> <span class="attribute">xml:id=</span><span class="value">"l_897"</span> <span class="attribute">corresp</span><span class="attribute">=</span><span class="value">"#l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;/l&gt;</span></p>
+			<p>2) Verswiederholungen unterscheiden sich von diesen ähnlichen Versen dadurch, dass wir sie als Editoren für irgendwie fehlerhaftig halten. Das kann der Fall sein z.B. bei einer Verspaarwiederholung nach einem Blattwechsel, oder bei einer Verswiederholung, die die Reimpaarstruktur (und oft auch die Syntax) durchbricht. Solche Wiederholungen werden mit dem Attribut <span class="attribute">@hei:Replicates</span> im <span class="element">&lt;l&gt;</span>-Element des wiederholten Verses gekennzeichnet. Der Attributwert ist ein Pointer und verweist mit einer Raute auf die <span class="attribute">@xml:id</span> am <span class="element">&lt;l&gt;</span> des 'ursprünglichen' Verses:</p>
+				<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"23"</span><span class="attribute"> xml:id=</span><span class="value">"l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;l/&gt;</span><br /> [...]<br />
 				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"46"</span>
+				<span class="attribute">n=</span><span class="value">"45,1"</span>
 				<span class="attribute">@hei:Replicates</span><span class="attribute">=</span><span class="value">"#l_23"</span><span class="element">&gt;</span>...<span class="element">&lt;/l&gt;</span></p>
-			<p>Es gibt Fälle, in denen ein Teil einer Zeile den entsprechenden Teil einer anderen Zeile wiederholt (meist weil der Schreiber mitten im Vers in die falsche Zeile gesprungen ist). In diesen Fällen werden die jeweils korrespondieren Versteile mit dem Element <span class="element">&lt;seg&gt;</span> (<i>segment</i>) getaggt und attributiv mit <span class="attribute">@xml:id</span> und <span class="attribute">@target</span> aufeinander bezogen.</p>
+			<p>Da wir Verse nicht nur laufend zählen (mit <span class="attribute">@hei:altN</span>), sondern vor allem auch (über das Attribut <span class="attribute">@n</span>) identifizieren, muss zunächst bestimmt werden, welcher Vers der 'wiederholte' und welcher das 'Original' ist. Ist dies geklärt, kann das Attribut <span class="attribute">@hei:Replicates</span> nur im 'wiederholten' Vers stehen, der dann in der Regel eine 'Zusatznummer' erhält. Sollte dies nicht klar sein, müsste das Attribut in beiden Versen stehen.</p>
+			<p>3) Es gibt Fälle, in denen ein Teil einer Zeile den entsprechenden Teil einer anderen Zeile wiederholt (meist weil der Schreiber mitten im Vers in die falsche Zeile gesprungen ist). In diesen Fällen werden die jeweils korrespondieren Versteile mit dem Element <span class="element">&lt;seg&gt;</span> (<i>segment</i>) getaggt und attributiv mit <span class="attribute">@xml:id</span> und <span class="attribute">@hei:Replicates</span> aufeinander bezogen.</p>
 			<p><span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"6936"</span><span class="element">&gt;&lt;w&gt;</span>Das<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;seg</span>
 				<span class="attribute">xml:id=</span><span class="value">"seg_6936_1"</span><span class="element">&gt;&lt;w&gt;</span>tot<span class="element">&lt;/w&gt;</span>
 				<span class="element">&lt;w&gt;</span>&#383;ehen<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;ol<span class="element">&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;</span><br />
 				<span class="element">&lt;l</span>
 				<span class="attribute">n=</span><span class="value">"6936,1"</span><span class="element">&gt;&lt;w&gt;</span>Das<span class="element">&lt;/w&gt;&lt;w&gt;</span>doch<span class="element">&lt;/w&gt;&lt;w&gt;</span>dem<span class="element">&lt;/w&gt;&lt;w&gt;</span>andern<span class="element">&lt;/w&gt;&lt;seg</span>
-				<span class="attribute">hei:replicates=</span>
+				<span class="attribute">hei:Replicates=</span>
 				<span class="value">"#seg_6936_1"</span><span class="element">&gt;&lt;w&gt;</span>dot<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;ehin<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;ol<span class="element">&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;</span></p>
 			<p>
 				<br />
