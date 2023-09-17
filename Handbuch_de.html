@@ -599,76 +599,31 @@
 					<h2><a id="Zeilenueberlauf"></a>Zeilenüberlauf</h2>
 			</ol>
 			<p>Wenn Teile des Versendes aus Platzgründen am Ende der vorangehenden oder folgenden Zeile vervollständigt wurden, sprechen wir von Zeilenüberlauf. Zeilenüberläufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
-			<p>Gelangt dieser &Uuml;berlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der &Uuml;berlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen &Uuml;berlauf innerhalb des Verses (<span class="element">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="element">&lt;lb/&gt;</span> an.</p>
-			<p> Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem &Uuml;berlauf) markieren wir als Punkt (wie <span class="element">&lt;lb&gt;</span> oder <span class="element">&lt;pb&gt;</span>) mit <span class="element">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="element">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="attribute">@ana</span> mit 2 Werten: <span class="value">"hc:LineSegmentBeginning"</span> und <span class="value">"hc:RunOverAbove"</span> bzw. <span class="value"> "hc:RunOverBelow"</span>. Außerdem ein Attribut <span class="attribute">n=</span><span class="value">"2"</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="attribute">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="element">&lt;lb&gt;</span>, nicht <span class="element">&lt;l&gt;</span>!) der &Uuml;berlauf steht. Dadurch können auch &Uuml;berläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
-			<p>Oft wird die &Uuml;berhangzeile durch Striche vom Rest der Zeile getrennt oder mit der 'Mutterzeile' verbunden. Diese Zeichen werden als <span class="element">&lt;metamark&gt;</span> getaggt; sie führen ein Attribut <span class="attribute">@ana</span> mit dem Wert <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">Kap. 17</a>)</p>
+			<p>Gelangt dieser Überlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der Überlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen Überlauf innerhalb des Verses (<span class="element">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="element">&lt;lb/&gt;</span> an.</p>
+			<p> Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem Überlauf) markieren wir als Punkt (wie <span class="element">&lt;lb&gt;</span> oder <span class="element">&lt;pb&gt;</span>) mit <span class="element">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="element">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="attribute">@ana</span> mit 2 Werten: <span class="value">"hc:LineSegmentBeginning"</span> und <span class="value">"hc:RunOverAbove"</span> bzw. <span class="value"> "hc:RunOverBelow"</span>. Außerdem ein Attribut <span class="attribute">n=</span><span class="value">"2"</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="attribute">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="element">&lt;lb&gt;</span>, nicht <span class="element">&lt;l&gt;</span>!) der &Uuml;berlauf steht. Dadurch können auch &Uuml;berläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
+			<p>Oft wird die Überhangzeile durch Striche vom Rest der Zeile getrennt oder mit der 'Mutterzeile' verbunden. Diese Zeichen werden als <span class="element">&lt;metamark&gt;</span> getaggt; sie führen ein Attribut <span class="attribute">@ana</span> mit dem Wert <span class="value">"hc:RunOverMark"</span> (&rarr; <a href="#Metamarks">Kap. 17</a>)</p>
 			<p>Das ist alles kompatibel mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a> und &rarr; <a href="#del_add_Tokenisierung">Kap. 20</a>)</p>
 			<p>
 				<i>Beispiele</i>
 			</p>
 			<p>1. Normaler Zeilenüberhang nach unten:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"2"</span>
-				<span class="attribute">hei:belongsToLine=</span>
-				<span class="value">"27"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br/>
+			<p><span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>2. Doppelter Zeilenüberhang nach oben:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"2"</span>
-				<span class="attribute">hei:belongsToLine=</span>
-				<span class="value">"25"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"2"</span>
-				<span class="attribute">hei:belongsToLine=</span>
-				<span class="value">"24"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>
-				<br />
+			<p><span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a>) und Überlaufzeichen:</p>
