@@ -607,90 +607,46 @@
 				<i>Beispiele</i>
 			</p>
 			<p>1. Normaler Zeilenüberhang nach unten:</p>
-			<p><span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>2. Doppelter Zeilenüberhang nach oben:</p>
-			<p><span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a>) und Überlaufzeichen:</p>
-			<p><span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
-				<span class="element"> &lt;w&gt;</span>vrüme<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone&gt;</span>
-				<span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
-				<span class="attribute">n=</span><span class="value">"2"</span>
-				<span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;w&gt;</span>vr&uuml;me<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;milestone&gt;</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span></p>
 			<p>4. Steht der Zeilenüberlauf in der nachfolgenden Zeile, regulär ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilenüberlauf gesprochen werden; wir taggen einfach mit <span class="element">&lt;lb&gt;</span> innerhalb von <span class="element">&lt;l&gt;</span>. Wird der überschüssige Text aber in dieser nachfolgenden Zeile nach rechts gerückt oder sonst als &Uuml;berlauf markiert, dann wird die Zeile mit <span class="element">&lt;lb&gt;</span> getaggt, zusätzlich aber erhält das <span class="element">&lt;lb&gt;</span> das Attribut <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span>, sowie das Attribut <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span> (andere Ausrichtungsfunktionen sind möglich <span class="value">"hc:Centered"</span>, <span class="value">"hc:RightIndent" </span>u.a.):</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"27" </span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:RunOverBelow"</span>
-				<span class="attribute">rendition=</span>
-				<span class="value">"hc:FlushRight"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"27" </span> <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span> <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>5. Zwischen den Zeilen ergänzte &Uuml;berläufe werden ebenfalls mit <span class="element">&lt;lb&gt;</span> getaggt, allerdings erhält hier die Nummer am <span class="attribute">@n</span> den Wert <span class="value">"x.1"</span>. Außerdem steht in diesen Fällen das Attribut <span class="attribute">@ana</span> mit den Werten <span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> (meist stehen die Interlinearzeilen über der regulären Zeile, aber nicht zwingend), sowie optional das Attribut <span class="attribute">@rendition</span> z.B. mit dem Wert <span class="value">"hc:FlushRight"</span>:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26.1" </span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:InterlinearLine hc:RunOverAbove" </span>
-				<span class="attribute">rendition=</span>
-				<span class="value">"hc:FlushRight"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br />
+			<p>5. Zwischen den Zeilen ergänzte Überläufe werden ebenfalls mit <span class="element">&lt;lb&gt;</span> getaggt, allerdings erhält hier die Nummer am <span class="attribute">@n</span> den Wert <span class="value">"x.1"</span>. Außerdem steht in diesen Fällen das Attribut <span class="attribute">@ana</span> mit den Werten <span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> (meist stehen die Interlinearzeilen über der regulären Zeile, aber nicht zwingend), sowie optional das Attribut <span class="attribute">@rendition</span> z.B. mit dem Wert <span class="value">"hc:FlushRight"</span>:</p>
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26.1" </span> <span class="attribute">ana=</span><span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>6. &Uuml;berlaufzeilen, die <i>über</i> der ersten regulären Textzeile stehen, erhalten die Nummer <span class="attribute">@n=</span><span class="value">"0"</span>; evtl. weitere &Uuml;berlaufzeilen &sbquo;nach oben&lsquo; würden negative Nummern erhalten. &Uuml;berlaufzeilen <i>unter</i> der letzten regulären Textzeile werden als normale Zeilen (<span class="element">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer. </p>

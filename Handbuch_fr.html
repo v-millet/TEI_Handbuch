@@ -692,90 +692,46 @@
 				<i>Exemples</i>
 			</p>
 			<p>1. Débordement de ligne normal vers le bas:</p>
-			<p><span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>2. Débordement de ligne double vers le haut:</p>
-			<p>
-				<span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span><br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone</span><span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span><span class="attribute">n=</span><span class="value">"2"</span><span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>3. Débordement vers le haut avec séparation des mots (&rarr; <a href="#Wort">chap. 9</a>) et signes de débordement:</p>
-			<p><span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span><span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span><br />
-				<span class="element"> &lt;w&gt;</span>vr&uuml;me<span class="element">&lt;metamark</span>
-				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
-				&nbsp;&nbsp;<span class="element"> &lt;milestone&gt;</span>
-				<span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span>
-				<span class="attribute">n=</span><span class="value">"2"</span>
-				<span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;w&gt;</span>vr&uuml;me<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;milestone&gt;</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span></p>
 			<p>4. Si le débordement de ligne se trouve dans la ligne suivante, aligné régulièrement et sans aucune autre marque, on ne peut pas parler de débordement de ligne ; on marque simplement avec <span class="element">&lt;lb&gt;</span> à l'intérieur de <span class="element">&lt;l&gt;</span>. Si le texte excédentaire est pourtant déplacé vers la droite dans cette ligne suivante ou s'il est marqué comme débordement, la ligne est donc marquée avec <span class="element">&lt;lb&gt;</span>, mais le <span class="element">&lt;lb&gt;</span> contient en plus l'attribut <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span>, ainsi que l'attribut <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span> (d'autres fonctions d'alignement sont possibles <span class="value">"hc:Centered"</span>, <span class="value">"hc:RightIndent" </span> entre autres):</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"27" </span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:RunOverBelow"</span>
-				<span class="attribute">rendition=</span>
-				<span class="value">"hc:FlushRight"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"27" </span> <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span> <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>5. Les débordements complétés entre les lignes sont marqués également avec <span class="element">&lt;lb&gt;</span> mais le numéro à <span class="attribute">@n</span> reçoit ici la valeur <span class="value">"x.1"</span>. En outre, dans ces cas, on trouve l'attribut <span class="attribute">@ana</span> avec les valeurs <span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> (généralement les lignes interlinéaires se trouvent au-dessus de la ligne régulière, mais ce n'est pas obligatoire), ainsi que l'attribut optionnel <span class="attribute">@rendition</span> par ex. avec la valeur <span class="value">"hc:FlushRight"</span>:</p>
-			<p>
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span>
-				<span class="value">"419"</span>
-				<span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;&lt;w&gt;&lt;w&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span>
-				<span class="value">"26.1" </span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:InterlinearLine hc:RunOverAbove" </span>
-				<span class="attribute">rendition=</span>
-				<span class="value">"hc:FlushRight"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;w&gt;&lt;w&gt;</span>
-				<br />
+			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26.1" </span> <span class="attribute">ana=</span><span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>6. Les lignes de débordement situées <i>au-dessus</i> de la ligne de texte régulier contiennent le numéro <span class="attribute">@n=</span><span class="value">"0"</span>; les éventuelles lignes de débordement 'vers le haut' recevraient des numéros négatifs. Les lignes de débordement sous la dernière ligne de texte régulière sont traitées comme des lignes normales (<span class="element">&lt;lb&gt;</span>) et reçoivent le numéro correspondant.</p>
