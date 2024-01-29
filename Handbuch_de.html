@@ -53,7 +53,7 @@
 			<p><a href="#xml:id_target">18. @xml:id und @target</a></p>
 			<p><a href="#del_add">19. Hinzufügungen, Streichungen, Substitutionen</a></p>
 			<p><a href="#del_add_Tokenisierung">20. Hinzufügungen / Streichungen und Tokenisierung</a></p>
-			<p><a href="#Zeilenspruenge">21. Zeilensprünge im Versinneren und im Wortinneren</a></p>
+			<p><a href="#figure">21. Abbildungen</a></p>
 			<p><a href="#Zeilenueberlauf">22. Zeilenüberlauf</a></p>
 			<p><a href="#nicht_ausgefuehrt">23. Nicht ausgeführte Wörter / Zeilen</a></p>
 			<p><a href="#Verswiederholungen">24. Verswiederholungen oder ähnliche Verse</a></p>
@@ -63,15 +63,14 @@
 			<p><a href="#transpose">28. Umstellungen</a></p>
 			<p><a href="#Lagensignaturen">29. Lagensignaturen und Reklamanten</a></p>
 			<p><a href="#Anmerkungen">30. Anmerkungen</a></p>
-			<p><a href="#Kommentar">31. Kommentar</a></p>
 			<p><br/></p>
 			<p><a href="#editorische_Bearbeitung">Teil III: Editorische Bearbeitung</a></p>
-			<p><a href="#Normalisierung">32. Normalisierungen</a></p>
-			<p><a href="#Korrekturen">33. Editorische Eingriffe und Korrekturen</a></p>
-			<p><a href="#Spatien_editorisch">34. Editorische Behandlung der Spatien</a></p>
-			<p><a href="#Zeichensetzung_editorisch">35. Editorische Behandlung der Zeichensetzung</a></p>
-			<p><a href="#Versumstellung_editorisch">36. Editorische Behandlung von Versumstellungen</a></p>
-			<p><a href="#Gap_editorisch">37. Editorische Behandlung fehlender Wortteile bei 'gap'</a></p>
+			<p><a href="#Normalisierung">31. Normalisierungen</a></p>
+			<p><a href="#Korrekturen">32. Editorische Eingriffe und Korrekturen</a></p>
+			<p><a href="#Spatien_editorisch">33. Editorische Behandlung der Spatien</a></p>
+			<p><a href="#Zeichensetzung_editorisch">34. Editorische Behandlung der Zeichensetzung</a></p>
+			<p><a href="#Versumstellung_editorisch">35. Editorische Behandlung von Versumstellungen</a></p>
+			<p><a href="#Gap_editorisch">36. Editorische Behandlung fehlender Wortteile bei 'gap'</a></p>
 			</div>
 		<p><br/></p>
 		<ol type="A">
@@ -399,7 +398,7 @@
 			<p>2) Hervorhebung der Versanfänge durch rote Striche (typisch für Papierhandschriften) wird ebenfalls getaggt mit <span class="element">&lt;hi&gt;</span>; diesmal kommt das Attribut <span class="attribute">@rendition</span> ins Spiel, mit dem Wert <span class="value">"hc:RedStroke"</span>, in manchen Fällen auch <span class="value">"hc:RedRetrace"</span>. Hervorgehobene Buchstaben am Versanfang werden als Majuskeln transkribiert.</p>
 			<p>3) Hervorhebung der Versanfänge durch Herausrücken der Anfangsbuchstaben in die Versalienspalte wird ebenfalls getaggt mit <span class="element">&lt;hi&gt;</span> und dem Attribut <span class="attribute">@rendition</span>, doch in diesen Fällen lautet der Attributwert <span class="value">"hc:Versal"</span>.</p>
 			<p>4) Auf spätere Unterstreichungen oder sonstige Hervorhebungen von moderneren Händen verweisen wir in <span class="element">&lt;note&gt;</span> (&rarr; <a href="#Anmerkungen">Kap. 30</a>).</p>
-			<p>5) Kadellen (oder Cadellen) sind in normaler Tinte ausgeschmückte Buchstaben, die aber keine Initialen sind; sie leiten keine Abschnitte ein, sie stehen auch nicht an herausragender Stelle. Sie erscheinen meist in der obersten Zeile einer Spalte und müssen daher auch nicht immer der erste Buchstabe im Vers sein. Wir taggen sie mit dem Element <span class="element">&lt;hi&gt;</span>, dem Attribut <span class="attribute">@rendition</span> und dem Wert <span class="value">"hc:Cadel"</span>.</p>
+			<p>5) Kadellen (oder Cadellen) sind in normaler Tinte ausgeschmückte Buchstaben, die aber keine Initialen sind; sie leiten keine Abschnitte ein, sie stehen auch nicht an herausragender Stelle. Sie erscheinen in der Regel in der obersten Zeile einer Spalte und müssen daher auch nicht immer der erste Buchstabe im Vers sein. Wir taggen sie mit dem Element <span class="element">&lt;hi&gt;</span>, dem Attribut <span class="attribute">@rendition</span> und dem Wert <span class="value">"hc:Cadel"</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -434,7 +433,8 @@
 				<li>
 					<h2><a id="xml:id_target"></a>@xml:id und @target</h2>
 			</ol>
-			<p>Elemente, die markiert werden sollen, um an anderer Stelle auf sie zu verweisen, werden mit einer <span class="attribute">@xml:id</span> versehen. Der Wert des Attributs muss eine in der Datei einzigartige Zeichenkette sein, <span class="attribute">xml:id</span>s dürfen sich also nicht wiederholen. Zur Einheitlichkeit wählen wir folgenden Aufbau von <span class="attribute">@xml:id</span>s: "Element_Versnummer_laufendeNummer". So wäre z.B. eine <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> sofort erkennbar als Element 'Wort', Vers 765, erstes Wort des Verses. Prinzipiell tragen alle Wörter (<span class="element">&lt;w&gt;</span>) und Verse (<span class="element">&lt;l&gt;</span>) <span class="attribute">xml:id</span>s.<br /> IDs, die sich nicht auf Bereiche des Textes beziehen, haben allerdings eine andere Struktur, &rarr; <a href="#Faksimile">Kap. 3</a>.</p>
+			<p>Elemente, die markiert werden sollen, um an anderer Stelle auf sie zu verweisen, werden mit einer <span class="attribute">@xml:id</span> versehen. Der Wert des Attributs muss eine in der Datei einzigartige Zeichenkette sein, <span class="attribute">xml:id</span>s dürfen sich also nicht wiederholen. Zur Einheitlichkeit wählen wir folgenden Aufbau von <span class="attribute">@xml:id</span>s: "Element_Versnummer_laufendeNummer". So wäre z.B. eine <span class="attribute">@xml:id=</span><span class="value">"w_765_1"</span> sofort erkennbar als Element 'Wort', Vers 765, erstes Wort des Verses. Prinzipiell tragen alle Wörter (<span class="element">&lt;w&gt;</span>) und Verse (<span class="element">&lt;l&gt;</span>) <span class="attribute">xml:id</span>s. Bei den Versen dienen die IDs der Synchronisierung zwischen Zeilen aus unterschiedlichen Zeugnissen. Bei den Wörtern sollen sie später der linguistischen Annotation dienen. 
+				<br /> IDs, die sich nicht auf Bereiche des Textes beziehen, haben allerdings eine andere Struktur, &rarr; <a href="#Faksimile">Kap. 3</a>.</p>
 			<p> Auf <span class="attribute">@xml:id</span>s wird verwiesen mit dem Attribut <span class="attribute">@target</span>, dessen Wert die <span class="attribute">xml:id</span> des Elements ist, auf das verwiesen wird, mit einer Raute davor, z.B.: <span class="attribute">@target=</span><span class="value">"#w_765_1"</span>.</p>
 			<p>
 				<br />
@@ -485,21 +485,20 @@
 			</ul>
 			<p>4) Tags, die ganze Wörter betreffen, sollten nach Möglichkeit außerhalb des <span class="element">&lt;w&gt;</span>-Tags stehen, wie die Beispiele zeigen.</p>
 			<p>5) Bei ganzen Wörtern gehört auch ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> in <span class="element">&lt;del&gt;</span> oder <span class="element">&lt;add</span>&gt;, damit die Darstellung korrekt bleibt:</p>
-			<p><span class="element">&lt;subst&gt;</span><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Erased"</span><span class="element">&gt;&lt;w&gt;</span>falsche<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Wörter<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/del&gt;</span><br />
-				<span class="element"> &lt;add</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;&lt;w&gt;</span>richtige<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;</span><br />
+			<p><span class="element">&lt;subst&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Erased"</span><span class="element">&gt;<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>falsche<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Wörter<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br/>
+						&nbsp;&nbsp;&lt;/del&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>richtige<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br/>
+						&nbsp;&nbsp;&lt;/add&gt;</span><br/>
 				<span class="element">&lt;/subst&gt;</span></p>
 			<p>6) Hinzufügungen und Streichungen ganzer Verse werden nicht mit <span class="element">&lt;del&gt;</span> oder <span class="element">&lt;add&gt;</span> getaggt, sondern mit <span class="element">&lt;delSpan&gt;</span> und <span class="element">&lt;addSpan&gt;</span>; wie alle &sbquo;span&lsquo;-Elemente sind sie leer, ein <span class="element">&lt;anchor&gt;</span>-Element markiert das Ende des Gestrichenen:</p>
-			<p><span class="element">&lt;addSpan</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span>
-				<span class="attribute">spanTo=</span><span class="value">"#addSpan_7657_1"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"7657"</span><span class="element">&gt;</span><br /> &lt;<span class="element">w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
-				<span class="element"> &lt;/l&gt;</span><br />
-				<span class="element">&lt;anchor</span>
-				<span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
+			<p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#addSpan_7657_1"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"7657"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element"> &lt;/l&gt;</span><br/>
+				<span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
 			<p>7) Gibt es <i>keine</i> Anzeichen dafür, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein Stück Text wiederholt (und damit überflüssig) ist, eine editorische. In diesen Fällen taggen wir die zweite Sequenz der Wiederholung als <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 33</a>); <span class="element">&lt;subst&gt;</span> und <span class="element">&lt;add&gt;</span> fallen weg:</p>
 			<p><span class="element">&lt;w&gt;</span>wiederholte<span class="element">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
 			<p>
@@ -533,65 +532,55 @@
 			<p>2) Wo man kein <span class="element">&lt;subst&gt;</span> einsetzen kann, weil das <span class="element">&lt;del&gt;</span> und <span class="element">&lt;add&gt;</span> nicht direkt adjazent sind, kommt <span class="element">&lt;substJoin&gt;</span> zum Einsatz; <span class="element">&lt;del&gt;</span> und <span class="element">&lt;add&gt;</span> werden mit <span class="attribute">xml:id</span> ausgestattet und das <span class="element">&lt;substJoin&gt;</span> setzt sie miteinander in Beziehung:</p>
 			<p>Beispiel 1: <del><i>i</i></del><i>hie</i> (das <i>h</i> stellt sich zwischen das <span class="element">&lt;del&gt;</span> und das <span class="element">&lt;add&gt;</span>)<br />
 				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_5276_5"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">xml:id=</span><span class="value">"del_5276_5_1"</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Erased"</span>
-				<span class="attribute">corresp</span><span class="value">="#w_5276_5"</span><span class="element">&gt;</span>i<span class="element">&lt;/del&gt;</span>h<br />
-				<span class="element">&lt;add</span>
-				<span class="attribute">xml:id=</span><span class="value">"add_5276_5_1"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:Inline"</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_5276_6"</span><span class="element">&gt;</span>ie<span class="element">&lt;/add&gt;</span><br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element"> &lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_5276_6"</span>
-				<span class="attribute">copyOf=</span><span class="value">"#w_5276_5"</span><span class="element">&gt;&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_5276_5"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">xml:id=</span><span class="value">"del_5276_5_1"</span>&nbsp;<span class="attribute">rendition=</span><span class="value">"hc:Erased"</span> <span class="attribute">corresp</span><span class="value">="#w_5276_5"</span><span class="element">&gt;</span>i<span class="element">&lt;/del&gt;</span>h<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">xml:id=</span><span class="value">"add_5276_5_1"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:Inline"</span> <span class="attribute">corresp=</span><span class="value">"#w_5276_6"</span><span class="element">&gt;</span>ie<span class="element">&lt;/add&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_5276_6"</span> <span class="attribute">copyOf=</span><span class="value">"#w_5276_5"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span><br />
-				<span class="element">&lt;substJoin</span>
-				<span class="attribute">target=</span><span class="value">"#del_5276_5_1 #add_5276_5_1"</span><span class="element">&gt;&lt;/substJoin&gt;</span></p>
+				<span class="element">&lt;substJoin</span> <span class="attribute">target=</span><span class="value">"#del_5276_5_1 #add_5276_5_1"</span><span class="element">/&gt;</span></p>
 			<p>Beispiel 2: <del><i>ich d</i></del><i>ir &rarr; yrs</i><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Strikethrough"</span>
-				<span class="attribute">xml:id=</span><span class="value">"del_162_3"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_162_3"</span><span class="element">&gt;</span>ich<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
+				<span class="element">&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Strikethrough"</span> <span class="attribute">xml:id=</span><span class="value">"del_162_3"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_162_3"</span><span class="element">&gt;</span>ich<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;/del&gt;</span><br />
 				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_162_4"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">xml:id=</span><span class="value">"del_162_4_1"</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Strikethrough" </span><span class="attribute">corresp=</span><span class="value">"#w_162_4"</span><span class="element">&gt;</span>d<span class="element">&lt;/del&gt;</span><br />
-				<span class="element">&lt;del</span>
-				<span class="attribute">xml:id=</span><span class="value">"del_162_4_2"</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Adapted"</span>
-				<span class="attribute">corresp</span><span class="value">="#w_162_4"</span><span class="element">&gt;</span>i<span class="element">&lt;/del&gt;</span><br />
-				<span class="element">&lt;add</span>
-				<span class="attribute">xml:id=</span><span class="value">"add_162_4_1"</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Adapted"</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_162_5"</span><span class="element">&gt;</span>y<span class="element">&lt;/add&gt;</span>r<br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_162_5"</span>
-				<span class="attribute">copyOf=</span><span class="value">"#w_162_4"</span><span class="element">&gt;&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_162_4"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">xml:id=</span><span class="value">"del_162_4_1"</span> <span class="attribute">rendition=</span><span class="value">"hc:Strikethrough" </span><span class="attribute">corresp=</span><span class="value">"#w_162_4"</span><span class="element">&gt;</span>d<span class="element">&lt;/del&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">xml:id=</span><span class="value">"del_162_4_2"</span> <span class="attribute">rendition=</span><span class="value">"hc:Adapted"</span> <span class="attribute">corresp</span><span class="value">="#w_162_4"</span><span class="element">&gt;</span>i<span class="element">&lt;/del&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">xml:id=</span><span class="value">"add_162_4_1"</span> <span class="attribute">rendition=</span><span class="value">"hc:Adapted"</span> <span class="attribute">corresp=</span><span class="value">"#w_162_5"</span><span class="element">&gt;</span>y<span class="element">&lt;/add&gt;</span>r<br />
+				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_162_5"</span> <span class="attribute">copyOf=</span><span class="value">"#w_162_4"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span><br />
-				<span class="element">&lt;add</span>
-				<span class="attribute">xml:id=</span><span class="value">"add_162_6"</span>
-				<span class="attribute">hei:placeRef=</span><span class="value">"hc:Inline"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"w_162_6"</span><span class="element">&gt;</span>s<span class="element">&lt;/w&gt;</span><br />
+				<span class="element">&lt;add</span> <span class="attribute">xml:id=</span><span class="value">"add_162_6"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:Inline"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_162_6"</span><span class="element">&gt;</span>s<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/add&gt;</span><br />
-				<span class="element">&lt;substJoin</span>
-				<span class="attribute">target=</span><span class="value">"#del_162_3 #del_162_4_1 #del_162_4_2 #add_162_4_1 #add_162_6"</span><span class="element">&gt;&lt;/substJoin&gt;</span></p>
+				<span class="element">&lt;substJoin</span> <span class="attribute">target=</span><span class="value">"#del_162_3 #del_162_4_1 #del_162_4_2 #add_162_4_1 #add_162_6"</span><span class="element">&gt;&lt;/substJoin&gt;</span></p>
 			<p>
 				<br />
 			</p>
 			<ol start="21">
 				<li>
-					<h2><a id="Zeilenspruenge"></a>Zeilensprünge im Versinneren und im Wortinneren</h2>
+					<h2><a id="figure"></a>Bilder</h2>
 			</ol>
+			<p>1. Abbildungen in den Handschriften werden im Element <span class="element">&lt;facsimile&gt;</span> als <span class="element">&lt;zone&gt;</span> deklariert. An der entsprechenden Stelle in der Datei wird die neue Zone dann mit <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span><span class="element">/&gt;</span> initiiert. Zusätzlich erhält dieses Element das Attribut <span class="attribute">@facs</span> mit dem Bezug auf die <span class="attribute">@xml:id</span> der <span class="element">&lt;zone&gt;</span> in <span class="element">&lt;facsimile&gt;</span>.</p>
+			<p>2. Die Abbildungen selbst taggen wir mit dem Element <span class="element">&lt;figure&gt;</span>. Dieses Element führt immer das Attribut <span class="attribute">@n</span> mit der laufenden Nummer der Abbildung; und optional das Attribut <span class="attribute">@label</span>, wenn man der Abbildung einen Titel geben will.</p>
+			<p>3. Das Element <span class="element">&lt;figure&gt;</span> enthält die Kindelemente <span class="element">&lt;figDesc&gt;</span>, das eine kurze Beschreibung der Abbildung in wenigen Worten bietet, und <span class="element">&lt;note&gt;</span>, das eine Erklärung der Abbildung enthält; <span class="element">&lt;note&gt;</span> führt immer das Attribut <span class="attribute">@ana=</span><span class="value">"hc:EditorialContent"</span>.</p>
+			<p><i>Beispiel</i>:<br/>
+				<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#B_44r-b"</span><span class="element">/&gt;</span><br/>
+				<span class="element">&lt;figure</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;figDesc&gt;</span>Zeichnung eines Falken in roter Tinte<span class="element">&lt;/figDesc&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;note</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialContent"</span><span class="element">&gt;</span>[ <i>Inhalt der Anmerkung</i> ]<span class="element">&lt;/note&gt;</span><br/>
+				<span class="element">&lt;/figure&gt;</span>
+			</p>
+			<p>
+				<br />
+			</p>
+			<ol start="22">
+				<li>
+					<h2><a id="Zeilenueberlauf"></a>Zeilensprung und Zeilenüberlauf</h2>
+			</ol>
+			<p>1. Zeilensprung innerhalb des Verses und des Wortes</p>
 			<p>Bei Handschriften, die die Verse nicht absetzen, werden Zeilensprünge im Versinnern normal mit einem <span class="element">&lt;lb&gt;</span>-Element mit seinem Attribut <span class="attribute">@n</span> an der entsprechenden Position markiert.</p>
 			<p>Dasselbe geschieht, wenn der Zeilensprung im Wortinneren stattfindet. In diesen Fällen sollte am <span class="element">&lt;lb&gt;</span> noch das Attribut <span class="attribute">@break</span> stehen, mit dem Wert <span class="value">"no"</span>.</p>
 			<p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="element">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="attribute">@ana=</span><span class="value">"hc:Hyphen"</span>), das vor dem <span class="element">&lt;lb/&gt;</span> steht (&rarr; <a href="#Wort">Kap. 9</a>.3, &rarr; <a href="#Zeichensetzung_Hs">Kap. 16</a>)</p>
@@ -605,13 +594,8 @@
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"4" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;</span>get<span class="element">&lt;/w&gt;</span></p>
 			<p>Dies ist kompatibel mit Spalten- oder Seitenumbrüchen. Dann stehen <i>vor</i> dem <span class="element">&lt;lb/&gt;</span>-Element die entsprechenden Elemente <span class="element">&lt;pb/&gt;</span> und <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>).</p>
-			<p>
-				<br />
-			</p>
-			<ol start="22">
-				<li>
-					<h2><a id="Zeilenueberlauf"></a>Zeilenüberlauf</h2>
-			</ol>
+			<br/>
+			<p>2. Zeilenüberlauf</p>
 			<p>Wenn Teile des Versendes aus Platzgründen am Ende der vorangehenden oder folgenden Zeile vervollständigt wurden, sprechen wir von Zeilenüberlauf. Zeilenüberläufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
 			<p>Gelangt dieser Überlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der Überlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen Überlauf innerhalb des Verses (<span class="element">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="element">&lt;lb/&gt;</span> an.</p>
 			<p> Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem Überlauf) markieren wir als Punkt (wie <span class="element">&lt;lb&gt;</span> oder <span class="element">&lt;pb&gt;</span>) mit <span class="element">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="element">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="attribute">@ana</span> mit 2 Werten: <span class="value">"hc:LineSegmentBeginning"</span> und <span class="value">"hc:RunOverAbove"</span> bzw. <span class="value"> "hc:RunOverBelow"</span>. Außerdem ein Attribut <span class="attribute">n=</span><span class="value">"2"</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="attribute">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="element">&lt;lb&gt;</span>, nicht <span class="element">&lt;l&gt;</span>!) der &Uuml;berlauf steht. Dadurch können auch &Uuml;berläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
@@ -620,7 +604,7 @@
 			<p>
 				<i>Beispiele</i>
 			</p>
-			<p>1. Normaler Zeilenüberhang nach unten:</p>
+			<p>a. Normaler Zeilenüberhang nach unten:</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
@@ -629,7 +613,7 @@
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br/>
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>2. Doppelter Zeilenüberhang nach oben:</p>
+			<p>b. Doppelter Zeilenüberhang nach oben:</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
@@ -640,14 +624,14 @@
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>3. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a>) und Überlaufzeichen:</p>
+			<p>c. &Uuml;berlauf nach oben mit Worttrennung (&rarr; <a href="#Wort">Kap. 9</a>) und Überlaufzeichen:</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element"> &lt;w&gt;</span>vr&uuml;me<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;milestone&gt;</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;&lt;metamark </span><span class="attribute">ana=</span><span class="value">"hc:RunOverMark"</span><span class="element">&gt;</span>|<span class="element">&lt;/metamark&gt;</span>keit<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span></p>
-			<p>4. Steht der Zeilenüberlauf in der nachfolgenden Zeile, regulär ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilenüberlauf gesprochen werden; wir taggen einfach mit <span class="element">&lt;lb&gt;</span> innerhalb von <span class="element">&lt;l&gt;</span>. Wird der überschüssige Text aber in dieser nachfolgenden Zeile nach rechts gerückt oder sonst als &Uuml;berlauf markiert, dann wird die Zeile mit <span class="element">&lt;lb&gt;</span> getaggt, zusätzlich aber erhält das <span class="element">&lt;lb&gt;</span> das Attribut <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span>, sowie das Attribut <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span> (andere Ausrichtungsfunktionen sind möglich <span class="value">"hc:Centered"</span>, <span class="value">"hc:RightIndent" </span>u.a.):</p>
+			<p>d. Steht der Zeilenüberlauf in der nachfolgenden Zeile, regulär ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilenüberlauf gesprochen werden; wir taggen einfach mit <span class="element">&lt;lb&gt;</span> innerhalb von <span class="element">&lt;l&gt;</span>. Wird der überschüssige Text aber in dieser nachfolgenden Zeile nach rechts gerückt oder sonst als &Uuml;berlauf markiert, dann wird die Zeile mit <span class="element">&lt;lb&gt;</span> getaggt, zusätzlich aber erhält das <span class="element">&lt;lb&gt;</span> das Attribut <span class="attribute">ana=</span><span class="value">"hc:RunOverBelow"</span>, sowie das Attribut <span class="attribute">rendition=</span><span class="value">"hc:FlushRight"</span> (andere Ausrichtungsfunktionen sind möglich <span class="value">"hc:Centered"</span>, <span class="value">"hc:RightIndent" </span>u.a.):</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
@@ -655,7 +639,7 @@
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>5. Zwischen den Zeilen ergänzte Überläufe werden ebenfalls mit <span class="element">&lt;lb&gt;</span> getaggt, allerdings erhält hier die Nummer am <span class="attribute">@n</span> den Wert <span class="value">"x.1"</span>. Außerdem steht in diesen Fällen das Attribut <span class="attribute">@ana</span> mit den Werten <span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> (meist stehen die Interlinearzeilen über der regulären Zeile, aber nicht zwingend), sowie optional das Attribut <span class="attribute">@rendition</span> z.B. mit dem Wert <span class="value">"hc:FlushRight"</span>:</p>
+			<p>e. Zwischen den Zeilen ergänzte Überläufe werden ebenfalls mit <span class="element">&lt;lb&gt;</span> getaggt, allerdings erhält hier die Nummer am <span class="attribute">@n</span> den Wert <span class="value">"x.1"</span>. Außerdem steht in diesen Fällen das Attribut <span class="attribute">@ana</span> mit den Werten <span class="value">"hc:InterlinearLine hc:RunOverAbove"</span> (meist stehen die Interlinearzeilen über der regulären Zeile, aber nicht zwingend), sowie optional das Attribut <span class="attribute">@rendition</span> z.B. mit dem Wert <span class="value">"hc:FlushRight"</span>:</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
@@ -663,7 +647,7 @@
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
-			<p>6. &Uuml;berlaufzeilen, die <i>über</i> der ersten regulären Textzeile stehen, erhalten die Nummer <span class="attribute">@n=</span><span class="value">"0"</span>; evtl. weitere &Uuml;berlaufzeilen &sbquo;nach oben&lsquo; würden negative Nummern erhalten. &Uuml;berlaufzeilen <i>unter</i> der letzten regulären Textzeile werden als normale Zeilen (<span class="element">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer. </p>
+			<p>f. &Uuml;berlaufzeilen, die <i>über</i> der ersten regulären Textzeile stehen, erhalten die Nummer <span class="attribute">@n=</span><span class="value">"0"</span>; evtl. weitere &Uuml;berlaufzeilen &sbquo;nach oben&lsquo; würden negative Nummern erhalten. &Uuml;berlaufzeilen <i>unter</i> der letzten regulären Textzeile werden als normale Zeilen (<span class="element">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer. </p>
 			<p>
 				<br />
 			</p>
@@ -821,7 +805,7 @@
 				<li>
 					<h2><a id="label"></a>Abschnittszusammenfassungen</h2>
 			</ol>
-			<p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art "Hier kommt Herr Iwein an den Brunnen". Diese Stücke taggen wir mit dem Element <span class="element">&lt;label&gt;</span> und dem Attribut <span class="attribute">ana=</span><span class="value">"hc:SummaryLabel"</span>. Sie werden tokenisiert.</p>
+			<p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art "Hier kommt Herr Iwein an den Brunnen". Diese Stücke taggen wir mit dem Element <span class="element">&lt;label&gt;</span> und dem Attribut <span class="attribute">ana=</span><span class="value">"hc:SummaryLabel"</span>. Sie werden tokenisiert, aber die Worte erhalten keine <span class="attribute">@xml:id</span>s.</p>
 			<p>Wo Abschnittszusammenfassungen in Randbereiche der Textzeilen geraten, kommt die Zeilensegmentierung zum Wirken, die bei Zeilenüberläufen beschrieben wurde (&rarr; <a href="#Zeilenueberlauf">Kap. 22</a>).</p>
 			<p>
 				<br />
@@ -977,23 +961,16 @@
 			<p>
 				<br />
 			</p>
-			<ol start="31">
-				<li>
-					<h2><a id="Kommentar"></a>Kommentar</h2>
-			</ol>
-			<p>In der xml-Datei können private Kommentare hinterlassen werden, die keinen Effekt auf die Formatierung haben. In der Regel dient dies zu Notizen für spätere &Uuml;berarbeitung, z.B. Anmerkungen der Transkribenden für die Editoren. Solchen Kommentare werden Geschrieben innerhalb der Zeichen <span class="entity">&lt;!-- --&gt;</span>. Kommentare können überall stehen, aber gewöhnlich stellen wir sie hinter den Abschluss des <span class="element">&lt;/l&gt;</span>-Elements stehen.</p>
-			<p>
-				<br />
-			</p>
 			<ol type="A" start="3">
 				<li>
 					<h2><a id="editorische_Bearbeitung"></a>Teil III: Editorische Bearbeitung</h2>
 			</ol>
-			<ol start="32">
+			<ol start="31">
 				<li>
-					<h2><a id="Normalisierung"></a>Normalisierungen</h2>
+					<h2><a id="Normalisierung"></a>Regularisierung</h2>
 			</ol>
-			<p>Wir führen bei der Transkription bereits standardmäßige sprachliche Normalisierungen durch. Wir normalisieren konsonantisches <i>u/i</i> zu <i>v/j</i>, vokalisches <i>v/j</i> zu <i>u/i</i>, sowie konsonantisch-vokalisches <i>w</i> zu <i>wu</i>. &Auml;hnlich wie bei Abkürzungen werden Normalisierungen mit einem <span class="element">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="element">&lt;orig&gt;</span>. Die Normalisierung wird erfasst im Element <span class="element">&lt;reg&gt;</span>.</p>
+			<p>Da wir die Texte nicht in ein <i>Normalmittelhochdeutsch</i> überführen, sprechen wir eher von 'Regularisierung' als von 'Normalisierung'.</p>
+			<p>Die editorischen Entscheidungen bezüglich was regularisiert wird und was nicht finden ist im Abschnitt <a href="https://digi.ub.uni-heidelberg.de/iwd/einfuehrung/textgestaltung.html" target="_blank">Textgestaltung</a> der jeweiligen Projektseite. &Auml;hnlich wie bei Abkürzungen werden Regularisierungen mit einem <span class="element">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="element">&lt;orig&gt;</span>. Die Regularisierung wird erfasst im Element <span class="element">&lt;reg&gt;</span>.</p>
 			<p>
 				<i>Beispiele</i>
 			</p>
@@ -1017,7 +994,7 @@
 			<p>
 				<br />
 			</p>
-			<ol start="33">
+			<ol start="32">
 				<li>
 					<h2><a id="Korrekturen"></a>Editorische Eingriffe und Korrekturen</h2>
 			</ol>
@@ -1029,39 +1006,36 @@
 				<span class="element">&lt;w&gt;</span>wa<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="element">&lt;/w&gt;</span></p>
 			<p>3. Fehlende Wörter: das <span class="element">&lt;w&gt;</span> steht innerhalb des <span class="element">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingefügt wird.<br />
 				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
-			<p>4. Bei der Korrektur ändert sich das Wort:<br />
+			<p>4. Bei der Korrektur ändert sich das Wort: Vch &rarr; Ovch<br />
 				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;w</span>
-				<span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;sic</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_145_1"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;corr</span>
-				<span class="attribute">corresp=</span><span class="value">"#w_145_2"</span><span class="element">&gt;</span>O<span class="element">&lt;/corr&gt;</span><br />
-				<span class="element">&lt;/choice&gt;&lt;hi</span>
-				<span class="attribute">rendition=</span><span class="value">"hc:Versal"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;choice&gt;</span><br />
-				<span class="element">&lt;orig&gt;</span>V<span class="element">&lt;/orig&gt;</span><br />
-				<span class="element">&lt;reg&gt;</span>u<span class="element">&lt;/reg&gt;</span><br />
-				<span class="element">&lt;/choice&gt;</span><br />
-				<span class="element">&lt;/hi&gt;</span>ch<br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;sic</span> <span class="attribute">corresp=</span><span class="value">"#w_145_1"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;corr</span> <span class="attribute">corresp=</span><span class="value">"#w_145_2"</span><span class="element">&gt;</span>O<span class="element">&lt;/corr&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/choice&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;hi</span> <span class="attribute">rendition=</span><span class="value">"hc:Versal"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;orig&gt;</span>V<span class="element">&lt;/orig&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;reg&gt;</span>u<span class="element">&lt;/reg&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/hi&gt;</span>ch<br />
+				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
 			<p>5. Wiederholte Worte oder Satzteile, die nicht gestrichen sind, unterdrücken wir durch <span class="element">&lt;surplus&gt;</span>:</p>
 			<p>
 				<span class="element">&lt;w/&gt;&lt;surplus&gt;&lt;w/&gt;&lt;w/&gt;&lt;/surplus&gt;&lt;w/&gt;</span>
 			</p>
-			<p>6. Fehlende Verse: gelegentlich kommt es vor, dass ein Vers in der Handschrift fehlt, ohne den der Satz aber keinen Sinn ergibt. In solchen Fällen kann editorisch ein Vers aus einer anderen Handschrift übernommen werden. Das kann aber nicht über eine <span class="element">&lt;choice&gt;</span>-Konstruktion gemacht werden, sondern nur unter Verwendung von <span class="element">&lt;app&gt;</span>,&nbsp;<span class="element">&lt;lem&gt;</span> und <span class="element">&lt;rdg&gt;</span>. Dazu aber fehlt noch Dokumentation aus Heidelberg.</p>
+			<p>6. Fehlende Verse: zur editorischen Ergänzung fehlender Verse vgl. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
 			<p>
 				<br />
 			</p>
-			<ol start="34">
+			<ol start="33">
 				<li>
 					<h2><a id="Spatien_editorisch"></a>Editorische Behandlung der Spatien</h2>
 			</ol>
 			<p>1) Getrennt tokenisierte Worte, die in der Handschrift zusammen geschrieben werden, müssen nicht unbedingt in der Edition getrennt erscheinen. <i>irs</i>, <i>hastu</i> oder <i>ensprach</i> können durchaus zusammen erscheinen, wenn sie in der Handschrift zusammen stehen. Dazu ist editorisch nichts zu tun: da ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> fehlt, werden die beiden Worte auch im Editionstext zusammenstehen.</p>
-			<p>2) Auch bei Worten, die in der Handschrift auseinander geschrieben werden, die aber ein Wort sind und als solches Tokenisiert wurden (<i>ver lazen</i>, <i>uber wunden</i>, <i>ougen weide</i>), muss editorisch nichts geschehen. Dort steht bereits ein Spatium im <span class="element">&lt;orig&gt;</span> in einer <span class="element">&lt;choice&gt;</span>-Konstruktion, das im <span class="element">&lt;reg&gt;</span> verschwindet, (&rarr; <a href="#Spatium">Kap. 10</a>).</p>
+			<p>2) Bei Worten, die in der Handschrift auseinander geschrieben werden, die aber linguistisch ein Wort sind und als solches tokenisiert wurden (<i>ver lazen</i>, <i>uber wunden</i>, <i>ougen weide</i>), wird das Spatium erfasst und mit <span class="element">&lt;orig&gt;</span> + <span class="element">&lt;reg&gt;</span> in einer <span class="element">&lt;choice&gt;</span>-Konstruktion gelöscht (das <span class="element">&lt;reg&gt;</span> bleibt leer); (&rarr; <a href="#Spatium">Kap. 10</a>).</p>
 			<p>3) Editorisch bearbeitet werden müssen jene Fälle, in denen Worte in der Handschrift zusammen geschrieben werden (wo also in der Transkription kein Spatium steht), die wir aber in der Edition auseinander halten wollen. Das geschieht mit einer <span class="element">&lt;choice&gt;</span>-Konstruktion, in der <span class="element">&lt;orig&gt;</span> leer ist und das <span class="element">&lt;reg&gt;</span> ein Spatium enthält:</p>
 			<p>
 				<span class="element">&lt;w/&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w/&gt;</span>
@@ -1072,7 +1046,7 @@
 			<p>
 				<br />
 			</p>
-			<ol start="35">
+			<ol start="34">
 				<li>
 					<h2><a id="Zeichensetzung_editorisch"></a>Editorische Behandlung der Zeichensetzung</h2>
 			</ol>
@@ -1099,7 +1073,7 @@
 			<p>
 				<br />
 			</p>
-			<ol start="36">
+			<ol start="35">
 				<li>
 					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Versumstellungen</h2>
 			</ol>
@@ -1109,7 +1083,7 @@
 			<p>
 				<br />
 			</p>
-			<ol start="37">
+			<ol start="36">
 				<li>
 					<h2><a id="Gap_editorisch"></a>Editorische Behandlung fehlender Wortteile bei 'gap'</h2>
 			</ol>
