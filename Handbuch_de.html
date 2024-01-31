@@ -12,6 +12,7 @@
 				Hartmann von Aue &ndash; digital<br/>
 				<br/>
 				<span class="secondaryTitleLine">von Victor Millet (Univ. Santiago de Compostela)</span></h1>
+			<p class="back"><i>Letzte Aktualisierung: 1. Februar 2024</i></p>
 			<p>
 				<br />
 			</p>
@@ -127,17 +128,19 @@
 			<p>1) Jede Seite der Handschrift wird als <span class="element">&lt;surface&gt;</span> erfasst. Das Element hat die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:Page"</span>), <span class="attribute">@xml:id</span> (dessen Wert die Sigle der Handschrift und die Seitenzahl ist, z.B. <span class="value">"b_12v"</span>) und <span class="attribute">@n</span> (mit dem Wert der Seitenzahl, z.B. <span class="value">"12v"</span>).</p>
 			<p>2) Als erstes Kindelement der <span class="element">&lt;surface</span>&gt; steht das Element <span class="element">&lt;graphic/&gt;</span> mit dem Attribut <span class="attribute">@url</span> und als Attributwert die url der digitalen Abbildung dieser Seite. Das Element ist leer.</p>
 			<p>3) Als weitere Kindelemente von <span class="element">&lt;surface&gt;</span> folgen nun so viele Elemente <span class="element">&lt;zone&gt;</span> wie die Seite Bildbereiche hat. Bildbereiche der Seite sind Spalten und evtl. existierende Randbereiche. Eine einspaltig beschriebene Seite hat also ein einziges Element <span class="element">&lt;zone&gt;</span>, eine zweispaltig beschriebene Seite mit einer Lagenzählung im unteren Rand hat drei <span class="element">&lt;zone&gt;</span>-Elemente.</p>
-			<p>&nbsp;a) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Spalten</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:Column"</span>), <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"Spalte", z.B. <span class="value">"b_12v-a"</span>) und <span class="attribute">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. <span class="value">"a"</span>).</p>
-			<p>&nbsp;b) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Randbereiche</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:MarginalZone"</span>), <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"ein Buchstabe mehr als die letzte Spalte", z.B. <span class="value">"b_12v-b"</span>) und <span class="attribute">@hei:placeRef</span> (in der Regel mit dem Wert <span class="value">"hc:PageBottom"</span>, ggf. ergänzt durch <span class="value">"hc:PageMarginRight"</span>). Das Element <span class="element">&lt;zone/&gt;</span> ist leer.</p>
-			<p><i>Beispiel:</i><br />
-				<span class="element">&lt;surface</span><span class="attribute">ana=</span><span class="value">"hc:Page"</span><span class="attribute">xml:id=</span><span class="value">"b_12v"</span><span class="attribute">n=</span><span class="value">"12v"</span><span class="element">&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;graphic</span><span class="attribute">url=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/cpg391/0028/image"</span><span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element">&lt;zone</span><span class="attribute">ana=</span><span class="value">"hc:Column"</span><span class="attribute">xml:id=</span><span class="value">"b_12v-a"</span><span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span>
-				<br />
-				&nbsp;&nbsp;<span class="element"></span><span class="element">&lt;zone</span><span class="attribute">ana=</span><span class="value">"hc:MarginalZone"</span><span class="attribute">xml:id=</span><span class="value">"b_12v-b"</span><span class="attribute">hei:placeRef=</span><span class="value">"hc:PageBottom hc:PageMarginRight"</span><span class="element">/&gt;</span>
-				<br />
+			<p>4) Nebeneinander stehende Spalten werden gruppiert in ein übergeordnetes <span class="element">&lt;zone&gt;</span>-Element. Es führt das Attribut <span class="attribute">@ana</span> mit dem Wert <span class="value">"hc:HorizontalLayout"</span>.</p>
+			<p>5) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Spalten</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:Column"</span>), <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"Spalte", z.B. <span class="value">"b_12v-a"</span>) und <span class="attribute">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. <span class="value">"a"</span>).</p>
+			<p>6) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Randbereiche</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:MarginalZone"</span>), <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"ein Buchstabe mehr als die letzte Spalte", z.B. <span class="value">"b_12v-b"</span>) und <span class="attribute">@hei:placeRef</span> (in der Regel mit dem Wert <span class="value">"hc:PageBottom"</span>, ggf. ergänzt durch <span class="value">"hc:PageMarginRight"</span>). Das Element <span class="element">&lt;zone/&gt;</span> ist leer.</p>
+			<p><i>Beispiel (zweispaltige Handschrift mit einem Randbereich unten):</i><br />
+				<span class="element">&lt;surface</span> <span class="attribute">ana=</span><span class="value">"hc:Page"</span> <span class="attribute">xml:id=</span><span class="value">"D_330"</span> <span class="attribute">n=</span><span class="value">"330"</span><span class="element">&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;graphic</span> <span class="attribute">url=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/bncf_cod_b_r_226/0048/image"</span><span class="element">/&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:VerticalLayout"</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:MainZone hc:HorizontalLayout"</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:Column"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-a"</span> <span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:Column"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-b"</span> <span class="attribute">n=</span><span class="value">"b"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/zone&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:MarginalZone"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-c"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:PageBottom hc:PageMarginRight"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/zone&gt;</span><br/>
 				<span class="element">&lt;/surface&gt;</span>
 			</p>
 			<p>Zu Randbereichen wie Lagensignaturen und Reklamanten &rarr; <a href="#Lagensignaturen">Kap. 29</a>; zu xml:id &rarr; <a href="#xml:id_target">Kap. 18</a>.</p>
@@ -158,18 +161,25 @@
 					<h2><a id="Titel_Kolophon"></a>Titel und Kolophon</h2>
 			</ol>
 			<p>Das Element <span class="element">&lt;text&gt;</span> enthält immer das Element <span class="element">&lt;body&gt;</span>. Es kann auch die Elemente <span class="element">&lt;front&gt;</span> und/oder <span class="element">&lt;back&gt;</span> enthalten. Sie sind für Schreiber-Titel und Kolophone gedacht.</p>
-			<p>In <b><span class="element">&lt;front&gt; </span></b> werden die Titel notiert, die manche Schreiber dem Werk voranstellen und die nicht zu Hartmanns Text gehören. Falls so ein Titel in der Handschrift existiert, wird ein <span class="element">&lt;front&gt;</span>&ndash;Element angelegt. Als erste Kindelemente stehen <span class="element">&lt;pb&gt;</span> und <span class="element">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>). An dritter Stelle wird ein Element <span class="element">&lt;docTitle&gt;</span> angelegt mit einem Kindelement <span class="element">&lt;titlePart&gt;</span>. In diesem wird nun der Titel eingetragen, tokenisiert (&rarr; <a href="#Wort">Kap. 9.1</a>) und mit Angabe der <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7.3</a>).</p>
+			<p>In <span class="element">&lt;front&gt;</span> werden die Titel notiert, die manche Schreiber dem Werk voranstellen und die nicht zu Hartmanns Text gehören. Falls so ein Titel in der Handschrift existiert, wird ein <span class="element">&lt;front&gt;</span>&ndash;Element angelegt. Als erste Kindelemente stehen <span class="element">&lt;pb&gt;</span> und <span class="element">&lt;cb&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>). An dritter Stelle wird ein Element <span class="element">&lt;docTitle&gt;</span> angelegt mit einem Kindelement <span class="element">&lt;titlePart&gt;</span>. In diesem wird nun der Titel eingetragen, tokenisiert (&rarr; <a href="#Wort">Kap. 9.1</a>) und mit Angabe der <span class="element">&lt;lb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7.3</a>).</p>
 			<p>
 				<i>Beispiel:</i>
 			</p>
 			<p>
-				<span class="element">&lt;front&gt;<br /> &lt;pb</span> <span class="attribute">n=</span><span class="value">"5v"</span><span class="element">/&gt;&lt;cb</span>
-				&nbsp;&nbsp;<span class="attribute">n=</span><span class="value">"c"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;docTitle&gt;&lt;titlePart&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;&lt;hi</span> <span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>künig><span class="element">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="element">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="element">&lt;/w&gt;</span><br />
-				&nbsp;&nbsp;<span class="element"> &lt;/titlePart&gt;&lt;/docTitle&gt;<br /> &lt;/front&gt;</span></p>
+				<span class="element">&lt;front&gt;<br/>
+				&nbsp;&nbsp;&lt;pb</span> <span class="attribute">n=</span><span class="value">"5v"</span><span class="element">/&gt;<br/>
+				&nbsp;&nbsp;&lt;cb</span> <span class="attribute">n=</span><span class="value">"c"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;docTitle&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;titlePart&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hi</span> <span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>künig><span class="element">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="element">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/hi&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/titlePart&gt;<br/>
+				&nbsp;&nbsp;&lt;/docTitle&gt;<br />
+				&lt;/front&gt;</span></p>
 			<p></p>
-			<p>In <b><span class="element">&lt;back&gt;</span></b> hingegen werden typischerweise Schreiberkolophone eingetragen. Das Element <span class="element">&lt;back&gt;</span> enthält ein Kindelement <span class="element">&lt;trailer&gt;</span> mit dem Attribut <span class="attribute">@ana</span> und dem Wert <span class="value">"hc:Colophon"</span>.</p>
+			<p>In <span class="element">&lt;back&gt;</span> hingegen werden typischerweise Schreiberkolophone eingetragen. Das Element <span class="element">&lt;back&gt;</span> enthält ein Kindelement <span class="element">&lt;trailer&gt;</span> mit dem Attribut <span class="attribute">@ana</span> und dem Wert <span class="value">"hc:Colophon"</span>.</p>
 			<p><i>Beispiel:</i></p>
 			<p><span class="element">&lt;back&gt;<br />
 				&nbsp;&nbsp;&lt;trailer</span> <span class="attribute">ana=</span><span class="value">"hc:Colophon"</span><span class="element">&gt;</span><br />
@@ -179,8 +189,8 @@
 				&lt;/back&gt;</span></p>
 			<p>Manchmal enthalten Kolophone Verzierungen, die wir als <span class="element">&lt;metamark&gt;</span> (&rarr; <a href="#Metamarks">Kap. 16</a>) mit dem Attribut <span class="attribute">@ana</span> und dem Wert <span class="value">"hc:DecorativeMarker"</span> taggen.</p>
 			<p></p>
-			<p>Ist der Schreibertitel oder das Kolophon in Versen geschrieben, so erfassen wir diese mit dem Element <span class="element">&lt;l/&gt;</span>. Wir nummerieren aber Verse in diesen Paratexten nicht, setzen also <i>nicht</i> die Attribute <span class="attribute">@n</span> oder <span class="attribute">@hei:altN</span>, lediglich eine <span class="attribute">xml:id</span>.</p>
-			<p>Titel und Kolophone werden tokenisiert (&rarr; <a href="#Wort">Kap. 9</a>), aber die Wort-Elemente enthalten keine <span class="attribute">xml:id</span>. 
+			<p>Ist der Schreibertitel oder das Kolophon in Versen geschrieben, so erfassen wir diese mit dem Element <span class="element">&lt;l&gt;</span>. Wir nummerieren aber Verse in diesen Paratexten nicht, setzen also <i>nicht</i> die Attribute <span class="attribute">@n</span> oder <span class="attribute">@hei:altN</span>, lediglich eine <span class="attribute">@xml:id</span>.</p>
+			<p>Titel und Kolophone werden tokenisiert (&rarr; <a href="#Wort">Kap. 9</a>), aber die Wort-Elemente enthalten keine <span class="attribute">@xml:id</span>. 
 			
 			<p>
 				<br />
@@ -860,92 +870,33 @@
 				<li>
 					<h2><a id="Lagensignaturen"></a>Lagensignaturen und Reklamanten</h2>
 			</ol>
-			<p>Lagensignaturen und Reklamanten (sowie evtl. andere Phänomene außerhalb des Textes) kodieren wir mit dem Element <span class="element">&lt;fw&gt;</span>, das ein Attribut&nbsp;<span class="attribute">@ana</span> führt, welches folgende Wert haben kann: <span class="value">"hc:Catchword"</span> (Reklamante), <span class="value">"hc:QuireSignature"</span> (Lagensignatur), <span class="value">"hc:PageHeader"</span> (Seitentitel), <span class="value">"hc:ColumnHeader"</span> (Spaltentitel), <span class="value">"hc:PageFooter"</span> (Seitentitel im Seitenfuß), <span class="value">"hc:ColumnFooter"</span> (Spaltentitel im Spaltenfuß), <span class="value">"hc:PageNumeral"</span> (Seitennummer), <span class="value">"hc:ColumnNumeral"</span> (Spaltennummer).</p>
-			<p>Wir stellen die Elemente <span class="element">&lt;fw&gt;</span> an das Ende der Seite, zu der sie gehören, also vor dem <span class="element">&lt;pb&gt;</span> der folgenden Seite. Wir deklarieren sie als getrennte Textzone; deswegen muss die Kodierung mit dem Zonenwechsel beginnen, z.B. <span class="element">&lt;milestone</span>
-				<span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span>
-				<span class="attribute">facs=</span><span class="value">"#Bb_263v-c"</span><span class="element">/&gt;</span></p>
-			<p>Lagensignaturen und Reklamanten stehen in den Handschriften in eigenen Zeilen, sie müssen also jeweils mit einem <span class="element">&lt;lb</span>
-				<span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span> begonnen werden. Das folgende Beispiel ist angepasst an das Beispiel oben (&rarr; <a href="#Faksimile">Kap. 3</a>).</p>
-			<p><i>Beispiel:</i><br />
-				<span class="element">&lt;milestone</span>
-				<span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span>
-				<span class="attribute">facs=</span><span class="value">"#b_12v-b"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;lb</span>
-				<span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;fw</span>
-				<span class="attribute">ana=</span><span class="value">"hc:QuireSignature"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;num</span>
-				<span class="attribute">value=</span><span class="value">"2"</span><span class="element">&gt;</span><br />
-				<span class="element">&lt;w&gt;</span><br />
-				<span class="element">&lt;choice&gt;&lt;orig&gt;</span>&#305;&#305;<span class="element">&lt;/orig&gt;&lt;reg&gt;</span>secund<span class="element">&lt;/reg&gt;&lt;/choice&gt;</span>
-				<span class="element">&lt;choice&gt;&lt;am&gt;</span>&#42864;<span class="element">&lt;/am&gt;&lt;ex&gt;us&lt;/ex&gt;&lt;/choice&gt;</span><br />
-				<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;/num&gt;</span><br />
+			<p>1. Lagensignaturen und Reklamanten (sowie evtl. andere Phänomene außerhalb des Textspiegels) bilden gesonderte Zonen, die als solche in <span class="element">&lt;facsimile&gt;</span> deklariert werden; &rarr; <a href="#Faksimile">Kap. 3</a>. Deswegen muss die Kodierung von Lagensignaturen und Reklamanten mit dem Zonenwechsel beginnen <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">n=</span><span class="value">"b"</span> <span class="attribute">facs=</span><span class="value">"#b_12v-b"</span><span class="element">/&gt;</span></p>
+			<p>2. Lagensignaturen und Reklamanten stehen in den Handschriften in eigenen Zeilen, sie müssen also jeweils mit einem <span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span> begonnen werden.</p>
+			<p>3. Wir kodieren die Signaturen und Reklamanten mit dem Element <span class="element">&lt;fw&gt;</span>, das ein Attribut&nbsp;<span class="attribute">@ana</span> führt, welches folgende Wert haben kann: <span class="value">"hc:Catchword"</span> (Reklamante), <span class="value">"hc:QuireSignature"</span> (Lagensignatur), <span class="value">"hc:PageHeader"</span> (Seitentitel), <span class="value">"hc:ColumnHeader"</span> (Spaltentitel), <span class="value">"hc:PageFooter"</span> (Seitentitel im Seitenfuß), <span class="value">"hc:ColumnFooter"</span> (Spaltentitel im Spaltenfuß), <span class="value">"hc:PageNumeral"</span> (Seitennummer), <span class="value">"hc:ColumnNumeral"</span> (Spaltennummer).</p>
+			<p>4. Wir stellen das Element <span class="element">&lt;fw&gt;</span> an das Ende der Seite, zu der sie gehören, also vor dem <span class="element">&lt;pb&gt;</span> der folgenden Seite.</p>
+			<p></p>
+			<p><i>Beispiel (angepasst an das Beispiel oben &rarr; <a href="#Faksimile">Kap. 3</a>):</i><br />
+				<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#b_12v-b"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;fw</span> <span class="attribute">ana=</span><span class="value">"hc:QuireSignature"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;num</span> <span class="attribute">value=</span><span class="value">"2"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;&lt;orig&gt;</span>&#305;&#305;<span class="element">&lt;/orig&gt;&lt;reg&gt;</span>secund<span class="element">&lt;/reg&gt;&lt;/choice&gt;</span> <span class="element">&lt;choice&gt;&lt;am&gt;</span>&#42864;<span class="element">&lt;/am&gt;&lt;ex&gt;us&lt;/ex&gt;&lt;/choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/num&gt;</span><br />
 				<span class="element">&lt;/fw&gt;</span></p>
-			<p>Die Deklaration von Randbereichen im Element <span class="element">&lt;facsimile&gt;</span> folgt folgendem Muster:</p>
+			<p><span class="element">&lt;w&gt;</span>-Elemente in Reklamanten erhalten keine <span class="attribute">@xml:id</span>.</p>
+			<p>5. Die Deklaration von Randbereichen im Element <span class="element">&lt;facsimile&gt;</span> folgt folgendem Muster:</p>
 			<p>
-				<span class="element">&lt;surface</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"Bb_263v"</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:Page"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"263v"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;graphic</span>
-				<span class="attribute">url=</span>
-				<span class="value">"https://digi.ub.uni-heidelberg.de/diglit/fmb_cb72_fol256-265/0016"</span>
-				<span class="attribute">mimeType=</span>
-				<span class="value">"image/*</span>
-				<span class="element">/&gt;</span>
-				<br />
-				<span class="element">&lt;zone</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:VerticalLayout"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;zone</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:HorizontalLayout"</span>
-				<span class="element">&gt;</span>
-				<br />
-				<span class="element">&lt;zone</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"Bb_263v-a"</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:MainColumn hc:TextZone"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"a"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				<span class="element">&lt;zone</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"Bb_263v-b"</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:MainColumn hc:TextZone"</span>
-				<span class="attribute">n=</span>
-				<span class="value">"b"</span>
-				<span class="element">/&gt;</span>
-				<br />
-				<span class="element">&lt;/zone&gt;</span>
-				<br />
-				<span class="element">&lt;zone</span>
-				<span class="attribute">xml:id=</span>
-				<span class="value">"Bb_263v-c"</span>
-				<span class="attribute">ana=</span>
-				<span class="value">"hc:MarginalZone hc:TextZone"</span>
-				<span class="attribute">rendition=</span>
-				<span class="value">"hc:SelfAlignmentCentered"</span>
-				<span class="attribute">hei:placeRef=</span>
-				<span class="value">"hc:PageBottom"</span>
-				<span class="element">&gt;&lt;/zone&gt;</span>
-				<br />
-				<span class="element">&lt;/zone&gt;</span>
-				<br />
+				<span class="element">&lt;surface</span> <span class="attribute">xml:id=</span><span class="value">"Bb_263v"</span> <span class="attribute">ana=</span><span class="value">"hc:Page"</span> <span class="attribute">n=</span><span class="value">"263v"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;graphic</span> <span class="attribute">url=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/fmb_cb72_fol256-265/0016"</span> <span class="attribute">mimeType=</span><span class="value">"image/*</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:HorizontalLayout"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">xml:id=</span><span class="value">"Bb_263v-a"</span> <span class="attribute">ana=</span><span class="value">"hc:MainColumn hc:TextZone"</span> <span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">xml:id=</span><span class="value">"Bb_263v-b"</span> <span class="attribute">ana=</span><span class="value">"hc:MainColumn hc:TextZone"</span> <span class="attribute">n=</span><span class="value">"b"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;/zone&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">xml:id=</span><span class="value">"Bb_263v-c"</span> <span class="attribute">ana=</span><span class="value">"hc:MarginalZone hc:TextZone"</span> <span class="attribute">rendition=</span><span class="value">"hc:SelfAlignmentCentered"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:PageBottom"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;/surface&gt;</span>
 			</p>
-			<p><span class="element">&lt;w&gt;</span>-Elemente in Reklamanten erhalten keine <span class="attribute">@xml:id</span>.</p>
 			<p>
 				<br />
 			</p>
@@ -953,11 +904,14 @@
 				<li>
 					<h2><a id="Anmerkungen"></a>Anmerkungen</h2>
 			</ol>
-			<p>1) Anmerkungen werden mit dem Element <span class="element">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen, oder Nota-Zeichen (zu Textergänzungen &rarr; <a href="#del_add">Kap. 19</a>). Anmerkungen zur Transkription sind Phänomene der Handschrift, die für den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen außerhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erklärungen für Eingriffe oder ähnliches.</p>
+			<p>1) Anmerkungen werden mit dem Element <span class="element">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen oder Nota-Zeichen (zu Textergänzungen &rarr; <a href="#del_add">Kap. 19</a>). Anmerkungen zur Transkription sind Phänomene der Handschrift, die für den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen außerhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erklärungen für Eingriffe oder Ähnliches.</p>
 			<p>2) Wir stellen die <span class="element">&lt;note&gt;</span>-Elemente in der Regel hinter den Abschluss des Verses, also hinter <span class="element">&lt;/l&gt;</span>.</p>
-			<p>3) Das Element <span class="element">&lt;note&gt;</span> enthält das Attribut <span class="attribute">@ana</span>. Für Anmerkungen, die im Textzeuge stehen, sind je nach Fall folgende Werte vorgesehen: <span class="value">"hc:Gloss"</span> (Glosse), <span class="value">"hc:NotaBene"</span> (Notazeichen), <span class="value">"hc:Manicula"</span> (Zeigehand), <span class="value">"hc:Footnote"</span> (Fußnote), <span class="value">"hc:Endnote"</span> (Endnote). Für Anmerkungen zur Transkription kommt in der Regel nur <span class="value">"hc:TranscriptionNote"</span> in Frage. Für editorische Anmerkungen sind je nach Fall folgende Werte vorgesehen: <span class="value">"hc:Comment"</span> (Kommentar), <span class="value">"hc:TextCriticalNote"</span> (textkritische Anmerkung), <span class="value">"hc:WitnessesNote"</span> (Anmerkung zu herangezogenen Textzeugen), <span class="value">"hc:LociNote"</span> (Anmerkung zu Quellen, Parallelen und Nachwirkung), <span class="value">"hc:FontesNote"</span> (Anmerkung über Quellen), <span class="value">"hc:SimiliaNote"</span> (Anmerkung über Parallelen), <span class="value">"hc:TestimoniaNote"</span> (Anmerkung über Nachwirkung), <span class="value">"hc:BiblicalNote"</span> (Anmerkung über biblische Quellen). 
-			<p>4) Das Element <span class="element">&lt;note&gt;</span> enthält zusätzlich das Attribut <span class="attribute">@target</span>, mit dem auf das Wort oder auf den Vers verwiesen wird, auf die sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 18</a>).</p>
-			<p>5) Innerhalb der Anmerkungen werden Zitate aus der Handschrift oder aus anderen Handschriften mit <span class="element">&lt;q&gt;</span> (=quote) getaggt. Zitate aus Forschungsliteratur oder besondere Bedeutung von Worten wird hingegen &ndash;statt mit Anführungszeichen&ndash; getaggt mit <span class="element">&lt;mentioned&gt;</span>.</p>
+			<p>3) Das Element <span class="element">&lt;note&gt;</span> enthält das Attribut <span class="attribute">@ana</span>. Dafür sind in heiEditions vielfache Werte vorgesehen. Wir beschränken uns im Prinzip auf folgende:<br/>
+				&nbsp;&nbsp;a. für Anmerkungen, die in der Handschrift stehen, benutzen wir in der Regel <span class="value">"hc:Gloss"</span> (Glosse) oder <span class="value">"hc:NotaBene"</span> (Notazeichen);<br/>
+				&nbsp;&nbsp;b. für Anmerkungen zur Transkription (zur Notierung besonderer Phänomene) kommt in der Regel nur <span class="value">"hc:TranscriptionNote"</span> zum Einsatz;<br/>
+				&nbsp;&nbsp;c. für Anmerkungen über editorische Entscheidungen kommt <span class="value">"hc:TextConstitutionNote"</span> (Anmerkung zur Edition) zum Einsatz.</p>
+			<p>4) Das Element <span class="element">&lt;note&gt;</span> enthält zusätzlich das Attribut <span class="attribute">@target</span>, mit dem auf die <span class="attribute">@xml:id</span> des Verses verwiesen wird, auf den sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 18</a>). Wir beziehen die Anmerkungen im Prinzip <i>nicht</i> auf spezifische Worte, weil dies in der Editionsansicht einen großen Freiraum hinter dem Wort hinterlässt.</p>
+			<p>5) Innerhalb der Anmerkungen werden Zitate aus der Handschrift, aus anderen Handschriften oder aus dem edierten Text mit <span class="element">&lt;quote&gt;</span> getaggt; sie erscheinen kursiv. Für hypothetische Formen oder z.B. Infinitive der zitierten Verben oder Worte in anderen alten Sprachen (v.a. Lateinisch) verwenden wir <span class="element">&lt;mentioned&gt;</span>; sie erscheinen ebenfalls kursiv. Uneigentliche Rede, besondere Bedeutung von Worten, Bedeutungsangaben oder markieren wir mit einfachen Anführungszeichen; Zitate aus Forschungsliteratur stehen zwischen doppelten Anführungszeichen.</p>
 			<p>
 				<br />
 			</p>
@@ -1091,9 +1045,9 @@
 			<p><span class="element">&lt;w&gt;</span>Iwe<span class="element">&lt;gap</span>
 				<span class="attribute">rendition=</span><span class="value">"hc:Stained"</span>
 				<span class="attribute">unit=</span><span class="value">"character"</span>
-				<span class="attribute">quantity=</span><span class="value">"3"</span>
+				<span class="attribute">quantity=</span><span class="value">"2"</span>
 				<span class="element">/&gt;&lt;/w&gt;</span></p>
-			<p>soll werden zu:</p>
+			<p>kann mit <span class="element">&lt;choice&gt;</span>, <span class="element">&lt;orig&gt;</span> und <span class="element">&lt;supplied&gt;</span> editorisch ergänzt werden zu:</p>
 			<p><span class="element">&lt;w&gt;</span>Iwe<span class="element">&lt;choice&gt;&lt;orig&gt;&lt;gap</span>
 				<span class="attribute">rendition=</span><span class="value">"hc:Stained"</span>
 				<span class="attribute">unit=</span><span class="value">"character"</span>
