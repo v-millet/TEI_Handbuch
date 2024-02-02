@@ -76,4 +76,7 @@ del {
 .secondaryTitleLine {
     font-size: 18pt
     }
-
+.comment {
+    font-weight: bold;
+    color: #9400D3
+}
