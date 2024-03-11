@@ -884,8 +884,20 @@
 				<span class="element">&lt;seg</span>
 				<span class="attribute">ana=</span><span class="value">"hc:ExpandedTokenSegment"</span><span class="element">&gt;&lt;ex&gt;</span>er<span class="element">&lt;/ex&gt;</span>r<span class="element">&lt;/seg&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
-			<p>7) Tokenisierung und Abkürzung: In besonderen Fällen enthalten Abkürzungen klitisch angehängte Pronomina oder Negationspartikeln, sodass eine korrekte Tokenisierung erst nach der Auflösung der Abkürzung erfolgen kann. Solche Fälle lösen wir, indem wir die <span class="element">&lt;choice&gt;</span>-Konstruktion mit der Abkürzung in ein separates <span class="element">&lt;w&gt;</span>-Element setzen: 
-			<p><span class="element">&lt;w&gt;</span>moht<span class="element">&lt;/w&gt;&lt;w&gt;&lt;choice&gt;&lt;am&gt;</span><span class="entity">&amp;er;</span><span class="element">&lt;/am&gt;ex&gt;</span>er<span class="element">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>7) Tokenisierung und Abkürzung 1: In besonderen Fällen enthalten Abkürzungen klitisch angehängte Pronomina oder Negationspartikeln, sodass eine korrekte Tokenisierung erst nach der Auflösung der Abkürzung erfolgen kann. Solche Fälle lösen wir, indem wir die <span class="element">&lt;choice&gt;</span>-Konstruktion mit der Abkürzung in ein separates <span class="element">&lt;w&gt;</span>-Element setzen:</p>
+			<p><i>Beispiel</i>: moht<span class="entity">&amp;er;</span> &rarr; moht er<br/>
+				<span class="element">&lt;w&gt;</span>moht<span class="element">&lt;/w&gt;<br/>&lt;w&gt;&lt;choice&gt;&lt;am&gt;</span><span class="entity">&amp;er;</span><span class="element">&lt;/am&gt;ex&gt;</span>er<span class="element">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p>8) Tokenisierung und Abkürzung 2: Komplexer sind solche Fälle, in denen die Auflösung der Abkürzung zwei Tokens ergibt, die Auflösung sich aber auf beide Tokens verteilt. Wir lösen dies, indem wir eine <span class="element">&lt;choice&gt;</span>-Konstuktion außerhalb des Wortes setzen, welche die Kindelemente <span class="element">&lt;abbr&gt;</span> und <span class="element">&lt;expan&gt;</span> enthält. Im ersten steht die abgekürzte Form, im zweiten stehen dann die beiden Tokens mit der Auflösung:</p>
+			<p><i>Beispiel</i>: ·i· &rarr; id est<br/>
+				<span class="element">&lt;choice&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;<span class="element">&lt;abbr&gt;&lt;am&gt;</span>·<span class="element">&lt;/am&gt;</span>i<span class="element">&lt;am&gt;</span>·<span class="element">&lt;/am&gt;&lt;/abbr&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&lt;expan&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>i<span class="element">&lt;ex&gt;</span>d<span class="element">&lt;/ex&gt;&lt;/w&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;c&gt; &lt;/c&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;&lt;ex&gt;</span>est<span class="element">&lt;/ex&gt;&lt;/w&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&lt;/expan&gt;<br/>
+				&lt;/choice&gt;</span>
+			</p>
 			<p>
 				<br />
 			</p>
