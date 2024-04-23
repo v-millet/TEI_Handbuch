@@ -934,25 +934,18 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target</span><span class="value">="#w_13_2"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
 				<span class="element">&lt;/listTranspose&gt;</span></p>
-			<p>3) Bei ganzen Versen, die in 'verkehrter' Reihenfolge abgeschrieben und vom Schreiber durch Zeichen als in anderer Reihenfolge zu lesen markiert sind, transkribieren wir die Verse in der 'richtigen' Reihenfolge, also in der vom Schreiber intendierten. Die Nummerierung am <span class="element">&lt;lb&gt;</span>-Element allerdings gibt die physische Abfolge des Originals wieder. Ein &lt;<span class="element">listTranspose&gt;</span>-Element informiert über den Schreibprozess. Zur Vereinfachung werden hier die Spatien ausgespart.</p>
+			<p>3) Bei ganzen Versen, die in 'verkehrter' Reihenfolge abgeschrieben und vom Schreiber durch Zeichen als in anderer Reihenfolge zu lesen markiert sind, transkribieren wir die Verse in der 'richtigen' Reihenfolge, also in der vom Schreiber intendierten. Die Nummerierung am <span class="element">&lt;lb&gt;</span>-Element und die im Attribut <span class="attribute">@hei:altN</span> geben die physische Abfolge des Originals wieder. Zur Vereinfachung werden im folgenden Beispiel die Spatien ausgespart.</p>
 			<p><i>Beispiel:</i><br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"3399"</span> <span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span><span class="element">&gt;</span><br />
+				<span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"3399"</span> <span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span> <span class="attribute">hei:altN</span><span class="attribute">=</span><span class="value">"3400"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"17"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Daz<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;&#305;n<span class="element">&lt;/w&gt;&lt;w&gt;</span>hat<span class="element">&lt;/w&gt;&lt;w&gt;</span>verlorn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
-				<span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span> <span class="attribute">xml:id=</span><span class="value">"l_3400</span><span class="element">&gt;</span><br />
+			    <span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span> <span class="attribute">xml:id=</span><span class="value">"l_3400</span> <span class="attribute">hei:altN</span><span class="attribute">=</span><span class="value">"3399"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>b<span class="element">&lt;/metamark&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>bezzern<span class="element">&lt;/w&gt;&lt;w&gt;</span>zvhten<span class="element">&lt;/w&gt;&lt;w&gt;</span>wart<span class="element">&lt;/w&gt;&lt;w&gt;</span>geborn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
-				<span class="element">&lt;listTranspose&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;transpose&gt;</span> <span class="attribute">corresp=</span><span class="value">"#l_3399 #l_3400"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3400"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3399"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
-				<span class="element">&lt;/listTranspose&gt;</span></p>
 			<p>
 				<br />
 			</p>
@@ -1042,15 +1035,15 @@
 				<li>
 					<h2><a id="Korrekturen"></a>Editorische Eingriffe und Korrekturen</h2>
 			</ol>
-			<p>&Auml;hnlich wie bei Abkürzungen werden editorische Eingriffe mit einem <span class="element">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="element">&lt;sic&gt;</span>. Die editorische Korrektur wird erfasst im Element <span class="element">&lt;corr&gt;</span>.</p>
-			<p><i>Beispiele</i>:</p>
-			<p>1. Korrektur von Buchstaben:<br />
+			<p>1) &Auml;hnlich wie bei Abkürzungen werden editorische Eingriffe mit einem <span class="element">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="element">&lt;sic&gt;</span>. Die editorische Korrektur wird erfasst im Element <span class="element">&lt;corr&gt;</span>.</p>
+			<p><i>Beispiele:</i></p>
+			<p>a. Korrektur von Buchstaben:<br />
 				<span class="element">&lt;w&gt;</span>mi<span class="element">&lt;choice&gt;&lt;sic&gt;</span>m<span class="element">&lt;/sic&gt;&lt;corr&gt;</span>nn<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>e<span class="element">&lt;/w&gt;</span></p>
-			<p>2. Fehlende Buchstaben:<br />
+			<p>b. Fehlende Buchstaben:<br />
 				<span class="element">&lt;w&gt;</span>wa<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="element">&lt;/w&gt;</span></p>
-			<p>3. Fehlende Wörter: das <span class="element">&lt;w&gt;</span> steht innerhalb des <span class="element">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingefügt wird.<br />
+			<p>c. Fehlende Wörter: das <span class="element">&lt;w&gt;</span> steht innerhalb des <span class="element">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingefügt wird.<br />
 				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
-			<p>4. Bei der Korrektur ändert sich das Wort: Vch &rarr; Ovch<br />
+			<p>d. Bei der Korrektur ändert sich das Wort: Vch &rarr; Ovch<br />
 				<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
@@ -1066,12 +1059,28 @@
 				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
-			<p>5. Wiederholte Worte oder Satzteile, die nicht gestrichen sind, unterdrücken wir durch <span class="element">&lt;surplus&gt;</span>:</p>
+			<p>2. Wiederholte Worte oder Satzteile, die nicht gestrichen sind, unterdrücken wir durch <span class="element">&lt;surplus&gt;</span>:</p>
 			<p>
-				<span class="element">&lt;w/&gt;&lt;surplus&gt;&lt;w/&gt;&lt;w/&gt;&lt;/surplus&gt;&lt;w/&gt;</span>
+			    <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;w&gt;</span>kam<span class="element">&lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;/surplus&gt;&lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
 			</p>
-			<p>6. Fehlende Verse: zur editorischen Ergänzung fehlender Verse vgl. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
-			<p>
+		    <p>3. Entscheidet man editorisch, dass Sätze oder Satzteile, die über die Versgrenze hinausgehen, zu streichen sind, kodieren wir den Beginn der Streichung mit dem Element <span class="element">&lt;milestone&gt;</span>, das die Attribute <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> und <span class="attribute">spanTo=</span><span class="value">"anchor1"</span> führt. Am Ende der Tilgung steht das Element <span class="element">&lt;anchor&gt;</span> mit einer <span class="attribute">@xml:id</span>. Die Kodierung ist parallel der Streichung ganzer Verse durch den Schreiber, vgl. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
+		        <p><i>Beispiel:</i><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
+		    </p>
+		    <p>4. Parallel dazu funktionieren editorische Einfügungen ganzer Verse oder von Blöcken, die über die Versgrenze hinausgehen (z.B. weil der Schreiber etwas offensichtlich übersprungen hat). Es ändert sich lediglich der Attriburtwert von <span class="attribute">@ana</span> im <span class="element">&lt;milestone&gt;</span>:</p>
+		    <p><i>Beispiel:</i><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
+		    </p>
+		    <p>Editorisch ergänzte Verse führen weder ein Attribut <span class="attribute">@hei:altN</span> noch enthalten sie ein Element <span class="element">&lt;lb&gt;</span>.</p>
+		    <p>
 				<br />
 			</p>
 			<ol start="33">
@@ -1119,11 +1128,14 @@
 			</p>
 			<ol start="35">
 				<li>
-					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Versumstellungen</h2>
+					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Umstellungen</h2>
 			</ol>
-			<p>Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
-			<p>Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, gibt es typischerweise in zwei Arten: Umstellung der Verse innerhalb des Verspaares und Umstellungen von Versgruppen (Verspaare oder Gruppen von Verspaaren) an eine andere Position. In diesem zweiten Fall muss immer von einer Intentionalität ausgegangen werden. Das bedeutet, dass wir daran in der Edition nichts ändern.</p>
-			<p>Im ersteren Fall, dem der Umstellungen innerhalb des Verspaares, sind die Umstände variabel: in vielen Fällen hat die Umstellung kaum Auswirkung auf den Satz. Bleibt der Text verständlich und grammatisch, ändern wir editorisch nichts an der Umstellung. In anderen Fällen allerdings entstehen durch die Umstellung Sinnbrüche. Ist dies der Fall und entscheiden wir als Herausgeber, dass die Position der Verse falsch ist, ordnen wir die Verse in der Datei so an, wie wir es für richtig halten (meist in der Reihenfolge der Lachmann-Verszahlen). Die <span class="element">&lt;lb&gt;</span>-Nummerierung erlaubt es, bei der Dokumentansicht die Versfolge der Handschrift herzustellen.</p>
+		             <p>1) Worte oder Verse, die im Vergleich zu anderen Handschriften in geänderter Reihenfolge stehen, bezeichnen wir als Umstellungen. Den Terminus nutzen wir frei von textkritischer Semantik.</p>
+			<p>2) Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
+		             <p>3) Editorisch beschlossene Umstellung von Worten behandeln wir XXX</p>
+			<p>4) Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, gibt es typischerweise in zwei Arten: Umstellung der Verse innerhalb des Verspaares und Umstellungen von Versgruppen (Verspaare oder Gruppen von Verspaaren) an eine andere Position. In diesem zweiten Fall muss immer von einer Intentionalität ausgegangen werden. Das bedeutet, dass wir daran in der Edition nichts ändern.</p>
+			<p>5) Im ersteren Fall, dem der Umstellungen innerhalb des Verspaares, sind die Umstände variabel: in vielen Fällen hat die Umstellung kaum Auswirkung auf den Satz. Bleibt der Text verständlich und grammatisch, ändern wir editorisch nichts.</p>
+			<p>6) In anderen Fällen allerdings entstehen durch die Umstellung Sinnbrüche. Ist dies der Fall und entscheiden wir als Herausgeber, dass die Position der Verse falsch ist, ordnen wir die Verse in der XML-Datei so an, wie wir es für richtig halten (meist in der Reihenfolge der Mehrheit der Handschriften). Die <span class="element">&lt;lb&gt;</span>-Nummerierung und die Reihenfolge der Verszahlen im Attribut <span class="attribute">@hei:altN</span> erlauben es, bei der Dokumentansicht die Versfolge der Handschrift herzustellen.</p>
 			<p>
 				<br />
 			</p>

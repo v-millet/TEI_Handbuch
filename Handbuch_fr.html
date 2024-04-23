@@ -1018,25 +1018,18 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target</span><span class="value">="#w_13_2"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
 				<span class="element">&lt;/listTranspose&gt;</span></p>
-			<p>3) Pour les vers entiers qui sont recopiés dans un ordre 'inversé' et marqués par le copiste à travers de signes comme devant être lus dans un ordre différent, on transcrit les vers dans l'ordre 'correct', c'est-à-dire dans l'ordre voulu par le copiste. La numérotation sur l'élément <span class="element">&lt;lb&gt;</span> reflète pourtant l'ordre physique de l'original. Un élément <span class="element">listTranspose&gt;</span> renseigne sur le processus d'écriture. Pour simplifier, les spaties sont ici omises.</p>
+			<p>3) Pour les vers entiers qui sont recopiés dans un ordre 'inversé' et marqués par le copiste à travers de signes comme devant être lus dans un ordre différent, on transcrit les vers dans l'ordre 'correct', c'est-à-dire dans l'ordre voulu par le copiste. La numérotation sur l'élément <span class="element">&lt;lb&gt;</span> ainsi como l'attribut <span class="attribute">@hei:altN</span> reflètent l'ordre physique de l'original. Pour simplifier, les spaties sont omises dans l'exemple suivant.</p>
 			<p><i>Exemple:</i><br />
-				<span class="element">&lt;l</span>
-				<span class="attribute">n=</span><span class="value">"3399"</span> <span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span><span class="element">&gt;</span><br />
+			    <span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"3399"</span> <span class="attribute">xml:id</span><span class="attribute">=</span><span class="value">"l_3399"</span> <span class="attribute">hei:altN</span><span class="attribute">=</span><span class="value">"3400"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"17"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Daz<span class="element">&lt;/w&gt;&lt;w&gt;</span>er<span class="element">&lt;/w&gt;&lt;w&gt;</span>den<span class="element">&lt;/w&gt;&lt;w&gt;</span>&#383;&#305;n<span class="element">&lt;/w&gt;&lt;w&gt;</span>hat<span class="element">&lt;/w&gt;&lt;w&gt;</span>verlorn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
-				<span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span> <span class="attribute">xml:id=</span><span class="value">"l_3400</span><span class="element">&gt;</span><br />
+			    <span class="element">&lt;l </span><span class="attribute">n=</span><span class="value">"3400"</span> <span class="attribute">xml:id=</span><span class="value">"l_3400</span> <span class="attribute">hei:altN</span><span class="attribute">=</span><span class="value">"3399"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span><span class="element">&gt;</span>b<span class="element">&lt;/metamark&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>bezzern<span class="element">&lt;/w&gt;&lt;w&gt;</span>zvhten<span class="element">&lt;/w&gt;&lt;w&gt;</span>wart<span class="element">&lt;/w&gt;&lt;w&gt;</span>geborn<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span><br />
-				<span class="element">&lt;listTranspose&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;transpose&gt;</span> <span class="attribute">corresp=</span><span class="value">"#l_3399 #l_3400"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3400"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;ptr</span> <span class="attribute">target=</span><span class="value">"#l_3399"</span><span class="element">&gt;&lt;/ptr&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;/transpose&gt;</span><br />
-				<span class="element">&lt;/listTranspose&gt;</span></p>
 			<p>
 				<br />
 			</p>
@@ -1126,15 +1119,15 @@
 				<li>
 					<h2><a id="Korrekturen"></a>Interventions éditoriales et corrections</h2>
 			</ol>
-			<p>Comme pour les abréviations, les interventions éditoriales sont saisies avec une construction <span class="element">&lt;choice&gt;</span>. L'écriture du manuscrit est reproduite dans l'élément <span class="element">&lt;sic&gt;</span>. La correction éditoriale est saisie dans l'élément <span class="element">&lt;corr&gt;</span>.</p>
+			<p>1) Comme pour les abréviations, les interventions éditoriales sont saisies avec une construction <span class="element">&lt;choice&gt;</span>. L'écriture du manuscrit est reproduite dans l'élément <span class="element">&lt;sic&gt;</span>. La correction éditoriale est saisie dans l'élément <span class="element">&lt;corr&gt;</span>.</p>
 			<p><i>Exemples</i>:</p>
-			<p>1. La correction de lettres:<br />
+			<p>a. La correction de lettres:<br />
 				<span class="element">&lt;w&gt;</span>mi<span class="element">&lt;choice&gt;&lt;sic&gt;</span>m<span class="element">&lt;/sic&gt;&lt;corr&gt;</span>nn<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>e<span class="element">&lt;/w&gt;</span></p>
-			<p>2. Des lettres manquantes:<br />
+			<p>b. Des lettres manquantes:<br />
 				<span class="element">&lt;w&gt;</span>wa<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="element">&lt;/w&gt;</span></p>
-			<p>3. Des mots manquants: la <span class="element">&lt;w&gt;</span> reste à l'intérieur de <span class="element">&lt;corr&gt;</span>, car le mot n'est créé que lorsqu'il est inséré.<br />
+			<p>c. Des mots manquants: la <span class="element">&lt;w&gt;</span> reste à l'intérieur de <span class="element">&lt;corr&gt;</span>, car le mot n'est créé que lorsqu'il est inséré.<br />
 				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
-			<p>4. Le mot change lors de la correction: Vch &rarr; Ovch<br />
+			<p>d. Le mot change lors de la correction: Vch &rarr; Ovch<br />
 				<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
@@ -1150,11 +1143,26 @@
 				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
-			<p>5. Les mots ou les parties de phrases répétés qui ne sont pas raturés, on les enlève avec <span class="element">&lt;surplus&gt;</span>:</p>
+			<p>2. Les mots ou les parties de phrases répétés qui ne sont pas raturés, on les enlève avec <span class="element">&lt;surplus&gt;</span>:</p>
 			<p>
-				<span class="element">&lt;w/&gt;&lt;surplus&gt;&lt;w/&gt;&lt;w/&gt;&lt;/surplus&gt;&lt;w/&gt;</span>
+			    <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;w&gt;</span>kam<span class="element">&lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;/surplus&gt;&lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
 			</p>
-			<p>6. Versets manquants : pour l'ajout éditorial des versets manquants, voir &rarr; <a href="#del_add">chap. 19</a>, no. 6.</p>
+		    <p>3. Si l'on décide, sur le plan éditorial, de supprimer des phrases ou des parties de phrases qui dépassent la limite du vers, nous encodons le début de la suppression avec l'élément <span class="element">&lt;milestone&gt;</span>, qui porte les attributs <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> et <span class="attribute">spanTo=</span><span class="value">"anchor1"</span>. A la fin de l'éradication se trouve l'élément <span class="element">&lt;anchor&gt;</span> avec une <span class="attribute">@xml:id</span>. L'encodage est parallèle à la suppression de vers entiers par le scribe, cf. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
+		    <p><i>Exemple:</i><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
+		    </p>
+		    <p>4. Les insertions éditoriales de vers entiers ou de blocs qui dépassent la limite du vers (par exemple parce que le scribe a manifestement sauté quelque chose) fonctionnent de manière parallèle. Seule la valeur de l'attribut <span class="attribute">@ana</span> dans le <span class="element">&lt;milestone&gt;</span> est modifiée.</p>
+		    <p><i>Exemple:</i><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
+		    </p>
 			<p>
 				<br />
 			</p>
@@ -1203,11 +1211,14 @@
 			</p>
 			<ol start="35">
 				<li>
-					<h2><a id="Versumstellung_editorisch"></a>Traitement éditorial de la transposition de vers</h2>
+					<h2><a id="Versumstellung_editorisch"></a>Traitement éditorial de les transpositions</h2>
 			</ol>
-			<p>La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 28</a>).</p>
-			<p>Il existe généralement deux types de transposition de vers qui n'ont pas été marquées par le copiste: la transposition de vers à l'intérieur du couplet et la transposition de groupes de vers (paires de vers ou groupes de paires de vers) à une autre position. Dans ce dernier cas, il faut toujours partir du principe qu'il y a une intentionnalité. Cela signifie qu'on n'y change rien dans l'édition.</p>
-			<p>Dans le premier cas, celui de la transposition de vers à l'intérieur de la paire de vers, les circonstances sont variables: dans de nombreux cas, la transposition n'a guère de répercussion sur la phrase. Si le texte reste grammaticalement correct et compréhensible, on ne change rien au niveau de l'édition. Dans d'autres cas, la transposition de vers implique pourtant des ruptures de sens. Si c'est le cas et qu'on décide comme éditeur que l'emplacement des vers est incorrect, on place les vers dans le fichier de la manière qu'on estime correcte (généralement dans l'ordre de vers correspondant à la version de Lachmann). La numérotation <span class="element">&lt;lb&gt;</span> permet de rétablir l'ordre des vers du manuscrit lors de la visualisation du document.</p>
+		               <p>1) Les mots ou les versets dont l'ordre a été modifié par rapport à d'autres manuscrits sont appelés "réarrangements". Nous utilisons ce terme sans tenir compte de la sémantique de la critique textuelle.</p>
+			<p>2) La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 28</a>).</p>
+		              <p>3) Nous traitons les changements de mots décidés au niveau de l'éditeur XXX</p>
+			<p>4) Il existe généralement deux types de transposition de vers qui n'ont pas été marquées par le copiste: la transposition de vers à l'intérieur du couplet et la transposition de groupes de vers (paires de vers ou groupes de paires de vers) à une autre position. Dans ce dernier cas, il faut toujours partir du principe qu'il y a une intentionnalité. Cela signifie qu'on n'y change rien dans l'édition.</p>
+			<p>5) Dans le premier cas, celui de la transposition de vers à l'intérieur de la paire de vers, les circonstances sont variables: dans de nombreux cas, la transposition n'a guère de répercussion sur la phrase. Si le texte reste grammaticalement correct et compréhensible, on ne change rien au niveau de l'édition.</p>
+		    <p>6) Dans d'autres cas, la transposition de vers implique pourtant des ruptures de sens. Si c'est le cas et qu'on décide comme éditeur que l'emplacement des vers est incorrect, on place les vers dans le fichier XML  de la manière qu'on estime correcte (généralement dans l'ordre de la pluspart des manuscrits). La numérotation <span class="element">&lt;lb&gt;</span> et l'ordre des numéros de vers dans l'attribut <span class="attribute">@hei:altN</span> permetent de rétablir l'ordre des vers du manuscrit lors de la visualisation du document.</p>
 			<p>
 				<br />
 			</p>
