@@ -914,10 +914,10 @@
 				<li>
 					<h2><a id="transpose"></a>Umstellungen</h2>
 			</ol>
-			<p>1) Für die Kodierung der Umstellungen von Wörtern und Wortgruppen wird der Text zunächst so transkribiert, wie er in der Handschrift steht. Am Versende wird dann mit <span class="element">&lt;listTranspose&gt;</span> die Umstellung dokumentiert. Das Kindelement <span class="element">&lt;transpose&gt; </span>enthält eine Sequenz von <span class="element">&lt;ptr&gt;</span>-Elementen, welche die umgestellten Wörter in der richtigen Reihenfolge (d.h. in der Reihenfolge nach der durchgeführten Umstellung) als Verweise auflisten.</p>
+			<p>1) Für die Kodierung der Umstellungen von Wörtern und Wortgruppen wird der Text zunächst so transkribiert, wie er in der Handschrift steht. Am Versende wird dann mit <span class="element">&lt;listTranspose&gt;</span> die Umstellung dokumentiert. Das Kindelement <span class="element">&lt;transpose&gt; </span>enthält eine Sequenz von <span class="element">&lt;ptr&gt;</span>-Elementen, welche umzustellenden Wörter in der richtigen Reihenfolge (d.h. in der Reihenfolge nach der durchgeführten Umstellung) als Verweise auflisten.</p>
 			<p>2) Umstellungszeichen dokumentieren wir in der Transkription mit <span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span><span class="element">&gt;</span>. Ihr Attribut <span class="attribute">@target</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) verweist jeweils auf das Wort oder die Wörter, auf das bzw. auf die sich das Umstellungszeichen als Anweisung bezieht.</p>
 			<p><i>Beispiel:</i><br />
-				<i>Hs.:</i> Der "auch "&#383;ey &#383;elb &rarr;<br />
+			    <i>Hs.:</i> Der "auch "&#383;ey &#383;elb &rarr; Der &#383;ey auch &#383;elb<br />
 				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_1"</span><span class="element">&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
 				<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">target=</span><span class="value">"#w_13_2"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
