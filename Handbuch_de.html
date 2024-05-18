@@ -1135,12 +1135,19 @@
 				<li>
 					<h2><a id="Versumstellung_editorisch"></a>Editorische Behandlung von Umstellungen</h2>
 			</ol>
-		             <p>1) Worte oder Verse, die im Vergleich zu anderen Handschriften in geänderter Reihenfolge stehen, bezeichnen wir als Umstellungen. Den Terminus nutzen wir frei von textkritischer Semantik.</p>
-			<p>2) Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
-		             <p>3) Editorisch beschlossene Umstellung von Worten behandeln wir XXX</p>
-			<p>4) Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, gibt es typischerweise in zwei Arten: Umstellung der Verse innerhalb des Verspaares und Umstellungen von Versgruppen (Verspaare oder Gruppen von Verspaaren) an eine andere Position. In diesem zweiten Fall muss immer von einer Intentionalität ausgegangen werden. Das bedeutet, dass wir daran in der Edition nichts ändern.</p>
-			<p>5) Im ersteren Fall, dem der Umstellungen innerhalb des Verspaares, sind die Umstände variabel: in vielen Fällen hat die Umstellung kaum Auswirkung auf den Satz. Bleibt der Text verständlich und grammatisch, ändern wir editorisch nichts.</p>
-			<p>6) In anderen Fällen allerdings entstehen durch die Umstellung Sinnbrüche. Ist dies der Fall und entscheiden wir als Herausgeber, dass die Position der Verse falsch ist, ordnen wir die Verse in der XML-Datei so an, wie wir es für richtig halten (meist in der Reihenfolge der Mehrheit der Handschriften). Die <span class="element">&lt;lb&gt;</span>-Nummerierung und die Reihenfolge der Verszahlen im Attribut <span class="attribute">@hei:altN</span> erlauben es, bei der Dokumentansicht die Versfolge der Handschrift herzustellen.</p>
+		             <p>1) Worte oder Verse, die im Vergleich zu anderen Handschriften in geänderter Reihenfolge stehen, bezeichnen wir als Umstellungen. Den Terminus nutzen wir frei von textkritischer Semantik. Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
+		    <p>2) Wollen wir als Herausgeber Worte umstellen, um Sätze verständlich zu machen, zeigen wir mit einem Element <span class="element">&lt;link&gt;</span> und dem Attribut <span class="attribute">@target</span> die richtige Reihenfolge der Worte an. Das Attribut <span class="attribute">@ana=</span><span class="value">"hc:EditorialTransposition"</span> gibt die Art der Umstellung an. Das gilt auch für Fälle, in denen die Worte, die umgestellt werden sollen, nicht nebeneinander stehen, oder für mehr als zwei Worte.</p>
+		    <p><i>Beispiel (vereinfacht):</i> und <u>ſi ſin</u> in ir muote &rarr; und <u>ſin ſi</u> in ir muote<br/>
+		        <span class="element">&lt;l&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_1"</span><span class="element">&gt;</span>und<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_2"</span><span class="element">&gt;</span>ſi<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_3"</span><span class="element">&gt;</span>ſin<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_4"</span><span class="element">&gt;</span>in<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_5"</span><span class="element">&gt;</span>ir<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_6"</span><span class="element">&gt;</span>muote<span class="element">&lt;/w&gt;</span><br/>
+		        <span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;link</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialTransposition"</span> <span class="attribute">target=</span><span class="value">"#w_2706_3 #w_2706_2"</span><span class="element">/&gt;</span></p>
+		    <p>3) Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, aber von den Herausgebern als notwendig betrachtet werden für die Herstellung einer korrekten Syntax und Semantik, werden auf gleiche Weise hergestellt, nur verweist das Attribut <span class="attribute">@target</span> in diesem Fall auf die <span class="attribute">xml:id</span> der betroffenen Verse. Auch hier gilt, dass nur die Verse referenziert werden müssen, die umzustellen sind, alles Andere bleibt unberührt.</p>
 			<p>
 				<br />
 			</p>

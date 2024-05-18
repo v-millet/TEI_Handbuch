@@ -1218,12 +1218,20 @@
 				<li>
 					<h2><a id="Versumstellung_editorisch"></a>Traitement éditorial de les transpositions</h2>
 			</ol>
-		               <p>1) Les mots ou les versets dont l'ordre a été modifié par rapport à d'autres manuscrits sont appelés "réarrangements". Nous utilisons ce terme sans tenir compte de la sémantique de la critique textuelle.</p>
-			<p>2) La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 28</a>).</p>
-		              <p>3) Nous traitons les changements de mots décidés au niveau de l'éditeur XXX</p>
-			<p>4) Il existe généralement deux types de transposition de vers qui n'ont pas été marquées par le copiste: la transposition de vers à l'intérieur du couplet et la transposition de groupes de vers (paires de vers ou groupes de paires de vers) à une autre position. Dans ce dernier cas, il faut toujours partir du principe qu'il y a une intentionnalité. Cela signifie qu'on n'y change rien dans l'édition.</p>
-			<p>5) Dans le premier cas, celui de la transposition de vers à l'intérieur de la paire de vers, les circonstances sont variables: dans de nombreux cas, la transposition n'a guère de répercussion sur la phrase. Si le texte reste grammaticalement correct et compréhensible, on ne change rien au niveau de l'édition.</p>
-		    <p>6) Dans d'autres cas, la transposition de vers implique pourtant des ruptures de sens. Si c'est le cas et qu'on décide comme éditeur que l'emplacement des vers est incorrect, on place les vers dans le fichier XML  de la manière qu'on estime correcte (généralement dans l'ordre de la pluspart des manuscrits). La numérotation <span class="element">&lt;lb&gt;</span> et l'ordre des numéros de vers dans l'attribut <span class="attribute">@hei:altN</span> permetent de rétablir l'ordre des vers du manuscrit lors de la visualisation du document.</p>
+		               <p>1) Les mots ou les versets dont l'ordre a été modifié par rapport à d'autres manuscrits sont appelés "réarrangements". Nous utilisons ce terme sans tenir compte de la sémantique de la critique textuelle. La transposition de mots ou de vers indiquée par le copiste a déjà été traitée ci-dessus (&rarr; <a href="#transpose">chap. 28</a>).</p>
+		              <p>2) Si, en tant qu'éditeurs, nous voulons réarranger des mots pour rendre des phrases compréhensibles, nous indiquons l'ordre correct des mots avec un élément <span class="element">&lt;link&gt;</span> et l'attribut <span class="attribute">@target</span>. L'attribut <span class="attribute">@ana=</span><span class="value">"hc:EditorialTransposition"</span> indique le type de reárrangement. Cela vaut également pour les cas où les mots à convertir ne sont pas juxtaposés ou pour plus de deux mots.</p>
+		    <p><i>Example (simplifié):</i> und <u>ſi ſin</u> in ir muote &rarr; und <u>ſin ſi</u> in ir muote<br/>
+		        <span class="element">&lt;l&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_1"</span><span class="element">&gt;</span>und<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_2"</span><span class="element">&gt;</span>ſi<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_3"</span><span class="element">&gt;</span>ſin<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_4"</span><span class="element">&gt;</span>in<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_5"</span><span class="element">&gt;</span>ir<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_6"</span><span class="element">&gt;</span>muote<span class="element">&lt;/w&gt;</span><br/>
+		        <span class="element">&lt;/l&gt;</span><br/>
+		        <span class="element">&lt;link</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialTransposition"</span> <span class="attribute">target=</span><span class="value">"#w_2706_3 #w_2706_2"</span><span class="element">/&gt;</span></p>
+		    <p>3) Les réarrangements de vers non identifiés par le scripteur, mais considérés comme nécessaires par les éditeurs pour établir une syntaxe et une sémantique correctes, sont réalisés de la même manière, sauf que l'attribut <span class="attribute">@target</span> renvoie dans ce cas au <span class="attribute">xml:id</span> des vers concernés. Ici aussi, seuls les versets à convertir doivent être référencés, tout le reste n'est pas affecté.</p>
+
 			<p>
 				<br />
 			</p>
