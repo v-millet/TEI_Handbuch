@@ -583,6 +583,18 @@
 				<span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
 			<p>7) Gibt es <i>keine</i> Anzeichen dafür, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein Stück Text wiederholt (und damit überflüssig) ist, eine editorische. In diesen Fällen taggen wir die zweite Sequenz der Wiederholung als <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 33</a>); <span class="element">&lt;subst&gt;</span> und <span class="element">&lt;add&gt;</span> fallen weg:</p>
 			<p><span class="element">&lt;w&gt;</span>wiederholte<span class="element">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
+		    <p>8) Ergänzungen ganzer Verse am Seitenrand müssen zusätzlich zum <span class="element">&lt;addSpan&gt;</span> (vgl. Nr. 6) mit einem neuen Zonenbeginn und am Ende einen Zonenwechsel getaggt werden. Denn die Marginalie muss im Element <span class="element">&lt;facsimile&gt;</span> als marginale Textzone deklariert werden. Und das bedeutet, dass im Text die Zonenwechsel mit <span class="element">&lt;milestone&gt;</span> angegeben werden müssen. In der neuen Zone gilt eine neue Zeilenzählung, die mit "1" beginnt. Das geschieht nach folgendem Modell:</p>
+		    <p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-c"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"646"</span> <span class="attribute">xml:id=</span><span class="value">"l_646"</span> <span class="attribute">hei:altN=</span><span class="value">"538"</span><span class="element">&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-a"</span><span class="element">/&gt;</span><br/>
+		     </p>
 			<p>
 				<br />
 			</p>
@@ -916,6 +928,7 @@
 			<p>
 				<br />
 			</p>
+		    
 			<ol start="28">
 				<li>
 					<h2><a id="transpose"></a>Umstellungen</h2>

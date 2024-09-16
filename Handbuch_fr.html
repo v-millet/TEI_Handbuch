@@ -663,6 +663,19 @@
 				<span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
 			<p>7) Si <i>rien</i> n'indique que le copiste était conscient d'une répétition, alors la décision qu'un morceau de texte est répété (et donc superflu) est une décision de caractère éditorial. Dans ces cas, on indique la seconde séquence de la répétition comme <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">chap. 33</a>); <span class="element">&lt;subst&gt;</span> et <span class="element">&lt;add&gt;</span> sont omis:</p>
 			<p><span class="element">&lt;w&gt;</span>mots<span class="element">&lt;/w&gt;&lt;w&gt;</span>répétés<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>répétés<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
+		    <p>8) Les ajouts de vers entiers en marge de la page doivent être tagués avec un nouveau début de zone et un changement de zone à la fin, en plus de l'élément <span class="element">&lt;addSpan&gt;</span> (cf. nº 6). Car la marginale doit être déclarée comme zone de texte marginale dans l'élément <span class="element">&lt;facsimile&gt;</span>. Et cela signifie que dans le texte, les changements de zone doivent être déclarés avec <span class="element">&lt;milestone&gt;</span>. Dans la nouvelle zone, un nouveau comptage de lignes s'applique, qui commence par « 1 ». Cela se fait selon le modèle suivant :</p>
+		    <p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-c"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"646"</span> <span class="attribute">xml:id=</span><span class="value">"l_646"</span> <span class="attribute">hei:altN=</span><span class="value">"538"</span><span class="element">&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-a"</span><span class="element">/&gt;</span><br/>
+		    </p>
+		    
 			<p>
 				<br />
 			</p>
