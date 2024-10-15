@@ -1174,7 +1174,7 @@
 		    <p>3. Si l'on décide, sur le plan éditorial, de supprimer des phrases ou des parties de phrases qui dépassent la limite du vers, nous encodons le début de la suppression avec l'élément <span class="element">&lt;milestone&gt;</span>, qui porte les attributs <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> et <span class="attribute">spanTo=</span><span class="value">"anchor1"</span>. A la fin de l'éradication se trouve l'élément <span class="element">&lt;anchor&gt;</span> avec une <span class="attribute">@xml:id</span>. L'encodage est parallèle à la suppression de vers entiers par le scribe, cf. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
 		    <p><i>Exemple:</i><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
 		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
@@ -1182,7 +1182,7 @@
 		    <p>4. Les insertions éditoriales de vers entiers ou de blocs qui dépassent la limite du vers (par exemple parce que le scribe a manifestement sauté quelque chose) fonctionnent de manière parallèle. Seule la valeur de l'attribut <span class="attribute">@ana</span> dans le <span class="element">&lt;milestone&gt;</span> est modifiée.</p>
 		    <p><i>Exemple:</i><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
 		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>

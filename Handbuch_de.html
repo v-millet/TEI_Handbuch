@@ -1090,7 +1090,7 @@
 		    <p>3. Entscheidet man editorisch, dass Sätze oder Satzteile, die über die Versgrenze hinausgehen, zu streichen sind, kodieren wir den Beginn der Streichung mit dem Element <span class="element">&lt;milestone&gt;</span>, das die Attribute <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> und <span class="attribute">spanTo=</span><span class="value">"anchor1"</span> führt. Am Ende der Tilgung steht das Element <span class="element">&lt;anchor&gt;</span> mit einer <span class="attribute">@xml:id</span>. Die Kodierung ist parallel der Streichung ganzer Verse durch den Schreiber, vgl. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
 		        <p><i>Beispiel:</i><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
 		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
@@ -1098,7 +1098,7 @@
 		    <p>4. Parallel dazu funktionieren editorische Einfügungen ganzer Verse oder von Blöcken, die über die Versgrenze hinausgehen (z.B. weil der Schreiber etwas offensichtlich übersprungen hat). Es ändert sich lediglich der Attriburtwert von <span class="attribute">@ana</span> im <span class="element">&lt;milestone&gt;</span>:</p>
 		    <p><i>Beispiel:</i><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
 		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
