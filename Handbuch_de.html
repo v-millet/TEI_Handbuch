@@ -7,10 +7,10 @@
 	</head>
 	<body>
 		<div>
-			<h1>TEI-Handbuch<br/>
-				<span class="secondaryTitleLine">für die Editionen von</span><br/>
-				Hartmann von Aue &ndash; digital<br/>
-				<br/>
+			<h1>TEI-Handbuch<br />
+				<span class="secondaryTitleLine">für die Editionen von</span><br />
+				Hartmann von Aue &ndash; digital<br />
+				<br />
 				<span class="secondaryTitleLine">von Victor Millet (Univ. Santiago de Compostela)</span></h1>
 			<p class="back"><i>Letzte Aktualisierung: 1. Februar 2024</i></p>
 			<p>
@@ -38,7 +38,7 @@
 			<p><a href="#Element_Text">4. Das Element &lt;text&gt;</a></p>
 			<p><a href="#Titel_Kolophon">5. Titel und Kolophon</a></p>
 			<p><a href="#Der_Text">6. Der Text</a></p>
-			<p><br/></p>
+			<p><br /></p>
 			<p><a href="#Transkription">Teil II: Transkription der Handschriften</a></p>
 			<p><a href="#Seite_Spalte">7. Seite / Spalte / physische Zeile</a></p>
 			<p><a href="#Verspaar_Vers">8. Verspaar und Vers</a></p>
@@ -64,7 +64,7 @@
 			<p><a href="#transpose">28. Umstellungen</a></p>
 			<p><a href="#Lagensignaturen">29. Lagensignaturen und Reklamanten</a></p>
 			<p><a href="#Anmerkungen">30. Anmerkungen</a></p>
-			<p><br/></p>
+			<p><br /></p>
 			<p><a href="#editorische_Bearbeitung">Teil III: Editorische Bearbeitung</a></p>
 			<p><a href="#Normalisierung">31. Normalisierungen</a></p>
 			<p><a href="#Korrekturen">32. Editorische Eingriffe und Korrekturen</a></p>
@@ -73,7 +73,7 @@
 			<p><a href="#Versumstellung_editorisch">35. Editorische Behandlung von Versumstellungen</a></p>
 			<p><a href="#Gap_editorisch">36. Editorische Behandlung fehlender Wortteile bei 'gap'</a></p>
 			</div>
-		<p><br/></p>
+		<p><br /></p>
 		<ol type="A">
 			<li><h2><a id="Struktur"></a>Teil I: Struktur der TEI-Dateien</h2></li>
 		</ol>
@@ -81,107 +81,107 @@
 			<li><h2><a id="xml_Deklaration"></a>XML-Deklaration und TEI-Root-Element</h2>
 		</ol>
 		<p>1) Die Deklarationen für XML und Schema sind für alle Dateien folgende:</p>
-		<p><span class="declaration">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br/>
-			<span class="declaration">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</span><br/>
+		<p><span class="declaration">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br />
+			<span class="declaration">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</span><br />
 			<span class="declaration">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span></p>
 		<p>2) Für die Erkennung der Entities braucht es folgende Deklaration (Absätze beachten):</p>
-		<p><span class="declaration">&lt;!DOCTYPE TEI</span><br/>
-			<span class="declaration">[</span><br/> 
-			<span class="declaration">&lt;!ENTITY % heiEDITIONS_entities SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/ heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span><br/>
+		<p><span class="declaration">&lt;!DOCTYPE TEI</span><br />
+			<span class="declaration">[</span><br /> 
+			<span class="declaration">&lt;!ENTITY % heiEDITIONS_entities SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/ heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span><br />
 			<span class="declaration">%heiEDITIONS_entities; ]&gt;</span></p>
 		<p>3) Das Root-Element <span class="element">&lt;TEI&gt;</span> enthält folgende Attribute und Werte:</p>
 		<p><span class="element">&lt;TEI</span> <span class="attribute">xmlns=</span><span class="value">"http://www.tei-c.org/ns/1.0"</span> <span class="declaration">xmlns:hei</span><span class="attribute">=</span><span class="value">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS"</span> <span class="attribute">ana=</span><span class="value">"hc:IWDDocument"</span><span class="element">&gt;</span></p>
 		<p>4) Die Struktur der Datei sieht dann wie folgt aus:</p>
 			<img src="./Dateistruktur.png" alt="Struktur der Datei" style="width:1200px;"/>
-			<p><br/></p>
+			<p><br /></p>
 		<ol start="2">
 			<li><h2><a id="TEI_Header"></a>Der TEI-Header</h2>
 		</ol>
 			<p>Das Element <span class="element">&lt;teiHeader&gt;</span> enthält zunächst nur die zwei Kindelemente <span class="element">&lt;fileDesc&gt;</span> und <span class="element">&lt;encodingDesc&gt;</span>. Sie werden nach folgendem Modell gefüllt (bitte anpassen an den jeweiligen Text).</p>
-			<p><span class="element">&lt;teiHeader&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;fileDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;titleStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title</span> <span class="attribute">ana=</span><span class="value">"hc:MainTitle"</span><span class="element">&gt;</span>Iwein<span class="element">&lt;/title&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title</span> <span class="attribute">ana=</span><span class="value">"hc:Subtitle"</span><span class="element">&gt;</span>Digitale Edition der Handschrift A<span class="element">&lt;/title&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persName&gt;</span>Hartmann von Aue<span class="element">&lt;/persName&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/118546228<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/author&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;editor&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persName&gt;</span>Emilio González Miranda<span class="element">&lt;/persName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/1053134711<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:ORCIDURI"</span><span class="element">&gt;</span>https://orcid.org/0000-0003-3632-5379<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;affiliation&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universidade de Santiago de Compostela<span class="element">&lt;/orgName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/1016480-7<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/affiliation&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/editor&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;funder&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Ministerio de Ciencia e Innovación<span class="element">&lt;/orgName&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/16325456-4<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/funder&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/titleStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;editionStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;edition&gt;</span>Transkription, Edition, Anmerkungen, Untersuchung der defekten Seiten<span class="element">&lt;/edition&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/editionStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publicationStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publisher&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universitätsbibliothek Heidelberg<span class="element">&lt;/orgName&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/2002498-8<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listRef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:URLReference"</span> <span class="attribute">target=</span><span class="value">"https://www.ub.uni-heidelberg.de/"</span><span class="element">/&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listRef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/publisher&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pubPlace&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;placeName&gt;</span>Heidelberg<span class="element">&lt;/placeName&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/4023996-2<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/pubPlace&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;date</span> <span class="attribute">when=</span><span class="value">"2023"</span><span class="element">&gt;</span>2023<span class="element">&lt;/date&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;availability&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;licence</span> <span class="attribute">target=</span><span class="value">"https://creativecommons.org/licenses/by-sa/4.0"</span><span class="element">&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;</span>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)<span class="element">&lt;/p&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/licence&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/availability&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/edition.iwd<span class="element">&lt;/idno&gt;</span> <span class="comment">DOI der Leseansicht!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listBibl&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl</span> <span class="attribute">ana=</span><span class="value">"hc:RecommendedBibliographicReference"</span><span class="element">&gt;</span>Hartmann von Aue: ›Iwein‹. Digitale Edition der Handschrift A. Hrsg. von Emilio González Miranda. In: Hartmann von Aue: Iwein. Textgeschichtliche elektronische Ausgabe, hg. von Victor Millet, Emilio González Miranda und Lorena Pérez Ben. Heidelberg: Universitätsbibliothek, 2019–2023. DOI: <span class="element">&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/edition.iwd<span class="element">&lt;/idno&gt;</span> [Datum des Abrufs]<span class="element">&lt;/bibl&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/publicationStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;notesStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;note</span> <span class="attribute">xml:lang=</span><span class="value">"en"</span><span class="element">&gt;</span>This publication is part of the research project PID2019 105258RB I00, funded by Agencia Estatal de Investigación (AEI)<span class="element">&lt;/note&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;note</span> <span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span>Wir bedanken uns bei Prof. Dr. Stefan Müller und Dr. Michael Berger (Univ. Wien) für die Multispektralaufnahmen der defekten Seiten sowie deren Transkription.<span class="element">&lt;/note&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/notesStmt&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sourceDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;msDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;msIdentifier&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;settlement&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;placeName&gt;</span>Heidelberg<span class="element">&lt;/placeName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/4023996-2<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/settlement&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;repository&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universitätsbibliothek Heidelberg<span class="element">&lt;/orgName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/2002498-8<span class="element">&lt;/idno&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/repository&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:Shelfmark"</span><span class="element">&gt;</span>Cod. Pal. germ. 397<span class="element">&lt;/idno&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialSiglum"</span><span class="element">&gt;</span>A<span class="element">&lt;/idno&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/msIdentifier&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;additional&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;surrogates&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listBibl&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl</span> <span class="attribute">ana=</span><span class="value">"hc:BibliographicReferenceForOnlineFacsimile"</span><span class="element">&gt;</span>Hartmann von Aue: Iwein – Universitätsbibliothek Heidelberg, Cod. Pal. germ. 397. Online-Ausgabe. Heidelberg: Universitätsbibliothek 2009 (Bibliotheca Palatina – digital) (Permalink: <span class="element">&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:URLReference"</span> <span class="attribute">target=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/cpg397"</span><span class="element">/&gt;</span>; DOI: <span class="element">&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/diglit.199<span class="element">&lt;/idno&gt;</span>; IIIF-Manifest [v3.0]: <span class="element">&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:IIIFManifestURL"</span> <span class="attribute">target=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg397/manifest"</span><span class="element">/&gt;</span>)<span class="element">&lt;/bibl&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/surrogates&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/additional&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/msDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sourceDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;/fileDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;encodingDesc&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listPrefixDef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prefixDef</span> <span class="attribute">ident=</span><span class="value">"hc"</span> <span class="attribute">matchPattern=</span><span class="value">"(.+)"</span> <span class="attribute">replacementPattern=</span><span class="value">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="element">&gt; &lt;/prefixDef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prefixDef</span> <span class="attribute">ident=</span><span class="value">"char"</span> <span class="attribute">matchPattern=</span><span class="value">"(.+)"</span> <span class="attribute">replacementPattern=</span><span class="value">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="element">&gt; &lt;/prefixDef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listPrefixDef&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hei:elementsWithTokenizedContent</span> <span class="attribute">include=</span><span class="value">"l head ab trailer"</span><span class="element">/&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;/encodingDesc&gt;<br/>
+			<p><span class="element">&lt;teiHeader&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;fileDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;titleStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title</span> <span class="attribute">ana=</span><span class="value">"hc:MainTitle"</span><span class="element">&gt;</span>Iwein<span class="element">&lt;/title&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title</span> <span class="attribute">ana=</span><span class="value">"hc:Subtitle"</span><span class="element">&gt;</span>Digitale Edition der Handschrift A<span class="element">&lt;/title&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persName&gt;</span>Hartmann von Aue<span class="element">&lt;/persName&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/118546228<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/author&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;editor&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persName&gt;</span>Emilio González Miranda<span class="element">&lt;/persName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/1053134711<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:ORCIDURI"</span><span class="element">&gt;</span>https://orcid.org/0000-0003-3632-5379<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;affiliation&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universidade de Santiago de Compostela<span class="element">&lt;/orgName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/1016480-7<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/affiliation&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/editor&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;funder&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Ministerio de Ciencia e Innovación<span class="element">&lt;/orgName&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/16325456-4<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/funder&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/titleStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;editionStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;edition&gt;</span>Transkription, Edition, Anmerkungen, Untersuchung der defekten Seiten<span class="element">&lt;/edition&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/editionStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publicationStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publisher&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universitätsbibliothek Heidelberg<span class="element">&lt;/orgName&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/2002498-8<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listRef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:URLReference"</span> <span class="attribute">target=</span><span class="value">"https://www.ub.uni-heidelberg.de/"</span><span class="element">/&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listRef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/publisher&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pubPlace&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;placeName&gt;</span>Heidelberg<span class="element">&lt;/placeName&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/4023996-2<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/pubPlace&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;date</span> <span class="attribute">when=</span><span class="value">"2023"</span><span class="element">&gt;</span>2023<span class="element">&lt;/date&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;availability&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;licence</span> <span class="attribute">target=</span><span class="value">"https://creativecommons.org/licenses/by-sa/4.0"</span><span class="element">&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;</span>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)<span class="element">&lt;/p&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/licence&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/availability&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/edition.iwd<span class="element">&lt;/idno&gt;</span> <span class="comment">DOI der Leseansicht!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listBibl&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl</span> <span class="attribute">ana=</span><span class="value">"hc:RecommendedBibliographicReference"</span><span class="element">&gt;</span>Hartmann von Aue: ›Iwein‹. Digitale Edition der Handschrift A. Hrsg. von Emilio González Miranda. In: Hartmann von Aue: Iwein. Textgeschichtliche elektronische Ausgabe, hg. von Victor Millet, Emilio González Miranda und Lorena Pérez Ben. Heidelberg: Universitätsbibliothek, 2019–2023. DOI: <span class="element">&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/edition.iwd<span class="element">&lt;/idno&gt;</span> [Datum des Abrufs]<span class="element">&lt;/bibl&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/publicationStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;notesStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;note</span> <span class="attribute">xml:lang=</span><span class="value">"en"</span><span class="element">&gt;</span>This publication is part of the research project PID2019 105258RB I00, funded by Agencia Estatal de Investigación (AEI)<span class="element">&lt;/note&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;note</span> <span class="attribute">xml:lang=</span><span class="value">"de"</span><span class="element">&gt;</span>Wir bedanken uns bei Prof. Dr. Stefan Müller und Dr. Michael Berger (Univ. Wien) für die Multispektralaufnahmen der defekten Seiten sowie deren Transkription.<span class="element">&lt;/note&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/notesStmt&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sourceDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;msDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;msIdentifier&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;settlement&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;placeName&gt;</span>Heidelberg<span class="element">&lt;/placeName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/4023996-2<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/settlement&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;repository&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;orgName&gt;</span>Universitätsbibliothek Heidelberg<span class="element">&lt;/orgName&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:GNDURI"</span><span class="element">&gt;</span>https://d-nb.info/gnd/2002498-8<span class="element">&lt;/idno&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/repository&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:Shelfmark"</span><span class="element">&gt;</span>Cod. Pal. germ. 397<span class="element">&lt;/idno&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialSiglum"</span><span class="element">&gt;</span>A<span class="element">&lt;/idno&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/msIdentifier&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;additional&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;surrogates&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listBibl&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bibl</span> <span class="attribute">ana=</span><span class="value">"hc:BibliographicReferenceForOnlineFacsimile"</span><span class="element">&gt;</span>Hartmann von Aue: Iwein – Universitätsbibliothek Heidelberg, Cod. Pal. germ. 397. Online-Ausgabe. Heidelberg: Universitätsbibliothek 2009 (Bibliotheca Palatina – digital) (Permalink: <span class="element">&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:URLReference"</span> <span class="attribute">target=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/cpg397"</span><span class="element">/&gt;</span>; DOI: <span class="element">&lt;idno</span> <span class="attribute">ana=</span><span class="value">"hc:DOI"</span><span class="element">&gt;</span>https://doi.org/10.11588/diglit.199<span class="element">&lt;/idno&gt;</span>; IIIF-Manifest [v3.0]: <span class="element">&lt;ptr</span> <span class="attribute">ana=</span><span class="value">"hc:IIIFManifestURL"</span> <span class="attribute">target=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg397/manifest"</span><span class="element">/&gt;</span>)<span class="element">&lt;/bibl&gt;</span> <span class="comment">ANPASSEN!</span><span class="element"><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listBibl&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/surrogates&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/additional&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/msDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sourceDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;/fileDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;encodingDesc&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;listPrefixDef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prefixDef</span> <span class="attribute">ident=</span><span class="value">"hc"</span> <span class="attribute">matchPattern=</span><span class="value">"(.+)"</span> <span class="attribute">replacementPattern=</span><span class="value">"https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"</span><span class="element">&gt; &lt;/prefixDef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prefixDef</span> <span class="attribute">ident=</span><span class="value">"char"</span> <span class="attribute">matchPattern=</span><span class="value">"(.+)"</span> <span class="attribute">replacementPattern=</span><span class="value">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"</span><span class="element">&gt; &lt;/prefixDef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/listPrefixDef&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hei:elementsWithTokenizedContent</span> <span class="attribute">include=</span><span class="value">"l head ab trailer"</span><span class="element">/&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;/encodingDesc&gt;<br />
 				&lt;/teiHeader&gt;</span>
 			</p>
 			<p>
@@ -200,12 +200,12 @@
 			<p>6) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Spalten</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:Column"</span>), <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"Spalte", z.B. <span class="value">"b_12v-a"</span>) und <span class="attribute">@n</span> (mit dem Wert des Spaltenbuchstabens, z.B. <span class="value">"a"</span>).</p>
 			<p>7) <span class="element">&lt;zone&gt;</span>-Elemente für <i>Randbereiche</i> haben die Attribute <span class="attribute">@ana</span> (mit dem Wert <span class="value">"hc:MarginalZone"</span>) und <span class="attribute">@xml:id</span> (dessen Wert ist "Sigle der Handschrift"_"Seitenzahl"-"ein Buchstabe mehr als die letzte Spalte", z.B. <span class="value">"b_12v-b"</span>). Bei Bereichen mit besonderer Ausrichtung (z.B. bei zentrierten oder rechtsbündigen Lagensignaturen) kann auch <span class="attribute">@rendition</span> zum Einsatz kommen (mit Werten wie <span class="value">"hc:SelfAlignmentCentered"</span> oder <span class="value">"hc:SelfAlignmentRight"</span>. Das Element <span class="element">&lt;zone/&gt;</span> ist leer.</p>
 			<p><i>Beispiel (zweispaltige Handschrift mit einem Randbereich unten):</i><br />
-				<span class="element">&lt;surface</span> <span class="attribute">ana=</span><span class="value">"hc:Page"</span> <span class="attribute">xml:id=</span><span class="value">"D_330"</span> <span class="attribute">n=</span><span class="value">"330"</span><span class="element">&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;<span class="element">&lt;graphic</span> <span class="attribute">url=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/bncf_cod_b_r_226/0048/image"</span><span class="element">/&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:MainZone hc:HorizontalLayout"</span><span class="element">&gt;</span><br/>
+				<span class="element">&lt;surface</span> <span class="attribute">ana=</span><span class="value">"hc:Page"</span> <span class="attribute">xml:id=</span><span class="value">"D_330"</span> <span class="attribute">n=</span><span class="value">"330"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;<span class="element">&lt;graphic</span> <span class="attribute">url=</span><span class="value">"https://digi.ub.uni-heidelberg.de/diglit/bncf_cod_b_r_226/0048/image"</span><span class="element">/&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:MainZone hc:HorizontalLayout"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:Column"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-a"</span> <span class="attribute">n=</span><span class="value">"a"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:Column"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-b"</span> <span class="attribute">n=</span><span class="value">"b"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;<span class="element">&lt;/zone&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;<span class="element">&lt;/zone&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;<span class="element">&lt;zone</span> <span class="attribute">ana=</span><span class="value">"hc:MarginalZone"</span> <span class="attribute">xml:id=</span><span class="value">"D_330-c"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:PageBottom hc:PageMarginRight"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;/surface&gt;</span>
 			</p>
@@ -232,16 +232,16 @@
 				<i>Beispiel:</i>
 			</p>
 			<p>
-				<span class="element">&lt;front&gt;<br/>
-				&nbsp;&nbsp;&lt;pb</span> <span class="attribute">n=</span><span class="value">"5v"</span><span class="element">/&gt;<br/>
+				<span class="element">&lt;front&gt;<br />
+				&nbsp;&nbsp;&lt;pb</span> <span class="attribute">n=</span><span class="value">"5v"</span><span class="element">/&gt;<br />
 				&nbsp;&nbsp;&lt;cb</span> <span class="attribute">n=</span><span class="value">"c"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;docTitle&gt;<br/>
+				&nbsp;&nbsp;<span class="element">&lt;docTitle&gt;<br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&lt;titlePart&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hi</span> <span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"49"</span><span class="element">/&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hi</span> <span class="attribute">hei:color=</span><span class="value">"Red"</span><span class="element">&gt;<br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>Von<span class="element">&lt;/w&gt;&lt;w&gt;</span>künig><span class="element">&lt;/w&gt;&lt;w&gt;</span>Artus<span class="element">&lt;/w&gt;&lt;w&gt;</span>hochzeit<span class="element">&lt;/w&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/hi&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/titlePart&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/hi&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/titlePart&gt;<br />
 				&nbsp;&nbsp;&lt;/docTitle&gt;<br />
 				&lt;/front&gt;</span></p>
 			<p></p>
@@ -249,7 +249,7 @@
 			<p><i>Beispiel:</i></p>
 			<p><span class="element">&lt;back&gt;<br />
 				&nbsp;&nbsp;&lt;trailer</span> <span class="attribute">ana=</span><span class="value">"hc:Colophon"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"50"</span><span class="element">/&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"50"</span><span class="element">/&gt;<br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>Amen<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/trailer&gt;<br />
 				&lt;/back&gt;</span></p>
@@ -300,14 +300,14 @@
 			<p>2) Jeder Vers steht innerhalb des Elements <span class="element">&lt;l&gt;</span>. Dieses Element hat drei Attribute: <span class="attribute">@n</span>, <span class="attribute">@xml:id</span> und <span class="attribute">@hei:altN</span>:</p>
 			<p>&nbsp;&nbsp; a) Das Attribut <span class="attribute">@n</span> führt als Wert die Versnummer nach der jeweiligen Standard-Edition. Wir benutzen diese Nummerierung als Identifizierung der Verse. Zusatzverse oder Verse, die komplett anders sind aber einen 'Standardvers' an der Stelle ersetzen (sog. 'Ersatzverse') erhalten eine Zusatznummerierung. Zusatznummern bestehen grundsätzlich aus der Standard-Nummer des vorangehenden Verses und (je nach Text und Fachtradition) einen angehängten Buchstaben (z.B. 123a, 123b im <i>Armen Heinrich</i> oder im <i>Gregorius</i>) oder eine durch Komma getrennte Zusatzzahl (z.B. 123,1 123,2 im <i>Iwein</i>).</p>
 			<p>&nbsp;&nbsp; b) Das Attribut <span class="attribute">@xml:id</span> (&rarr; <a href="#xml:id_target">Kap. 18</a>) enthält als Wert dieselbe Nummer wie <span class="attribute">@n</span>, mit einem 'l' (wie 'line') und einem Unterstrich davor. Zum Beispiel: </p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123a"</span><span class="element">&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123,1"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123.1"</span><span class="element">&gt;</span> (eine <span class="attribute">@xml:id</span> darf kein Komma führen, daher wird dieses durch einen Punkt ersetzt.)<br/></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123a"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123,1"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123.1"</span><span class="element">&gt;</span> (eine <span class="attribute">@xml:id</span> darf kein Komma führen, daher wird dieses durch einen Punkt ersetzt.)<br /></p>
 			<p>&nbsp;&nbsp; c) Das Attribut <span class="attribute">@hei:altN</span>, das eine alternative Nummerierung der Verse ermöglicht, zählt die Verse strikt in der Reihenfolge der Handschrift.</p>
 			<p>3) Über die <span class="attribute">@xml:id</span> wird die Korrespondenz und Synchronisierung der jeweiligen Verse in den verschiedenen Handschriften kontrolliert. Verse mit gleicher <span class="attribute">@xml:id</span> in zwei verschiedenen Dateien können dadurch bei der Visualisierung auf gleicher Höhe angezeigt werden. Bei Zusatzversen, die ja eine andere <span class="attribute">@xml:id</span> haben, entstehen dadurch zusätzliche Zeilen; bei einer Parallelansicht verschiedener Zeugnisse wird in den Hs., die diese Verse nicht haben, eine Leerzeile an der entsprechenden Stelle angezeigt. Bei sog. 'Ersatzversen', d.h. komplett geänderte Zeilen, deren Reimpartner aber der entsprechende 'Standardvers' ist, wollen wir in der Visualisierung hier keine leeren Zeilen in den anderen Textzeugen anzeigen. Deswegen geben wir in diesen Fällen der <span class="attribute">@xml:id</span> den Wert des Standardverses. Der Vers zeigt damit eine anderen Nummer an, steht aber auf gleicher Höhe wie die anderen.</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_124"</span> <span class="element">&gt;&lt;lb</span><br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"125"</span> <span class="attribute"> xml:id=</span><span class="value">"l_125"</span> <span class="element">&gt;&lt;lb</span><br/>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123"</span> <span class="attribute"> xml:id=</span><span class="value">"l_123"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"123a"</span> <span class="attribute"> xml:id=</span><span class="value">"l_124"</span> <span class="element">&gt;&lt;lb</span><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"125"</span> <span class="attribute"> xml:id=</span><span class="value">"l_125"</span> <span class="element">&gt;&lt;lb</span><br />
 				(Der Zusatzvers 123a nimmt die Position des Verses 124 ein; da wir ihn auch an dieser Position zeigen wollen, geben wir ihm die <span class="attribute">@xml:id</span>, die in anderen Datein der Vers 124 hat.)
 			
 			<p>4) Bei Versumstellungen durch den Schreiber folgt die Transkription zunächst der physischen Versanordnung der Handschrift. Das bedeutet, dass die Nummern der <span class="element">&lt;lb&gt;</span>-Elemente stets konsekutiv bleiben; die Nummern der <span class="element">&lt;l&gt;</span>-Elemente hingegen werden angepasst (zur editorischen Behandlung &rarr; <a href="#Versumstellung_editorisch">Kap. 36</a>). Zum Beispiel:</p>
@@ -325,15 +325,15 @@
 			<p><span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"117"</span> <span class="attribute">xml:id=</span><span class="value">"l_117"</span> <span class="attribute">hei:altN=</span><span class="value">"117"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"11"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118"</span> <span class="attribute">xml:id=</span><span class="value">"l_118"</span> <span class="attribute">hei:altN=</span><span class="value">"118"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"12"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg&gt;</span><br />
 				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118a"</span> <span class="attribute">xml:id=</span><span class="value">"l_118a"</span> <span class="attribute">hei:altN=</span><span class="value">"119"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"13"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"118b"</span> <span class="attribute">xml:id=</span><span class="value">"l_118b"</span> <span class="attribute">hei:altN=</span><span class="value">"120"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"14"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg&gt;</span><br />
 				<span class="element">&lt;lg</span> <span class="attribute">ana=</span><span class="value">"hc:Couplet"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"119"</span> <span class="attribute">xml:id=</span><span class="value">"l_119"</span> <span class="attribute">hei:altN=</span><span class="value">"121"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"15"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"120"</span> <span class="attribute">xml:id=</span><span class="value">"l_120"</span> <span class="attribute">hei:altN=</span><span class="value">"122"</span><span class="element">&gt;&lt;lb</span> <span class="attribute">n=</span><span class="value">"16"</span><span class="element">/&gt;</span><br />
-				<span class="element">&lt;lg&gt;</span><br/>
+				<span class="element">&lt;lg&gt;</span><br />
 				
 			</p>
 			<p>7) Für versehentlich falsch geordnete Verse, die der Schreiber mit Umstellungszeichen wieder in die richtige Reihenfolge bringt &rarr; <a href="#transpose">Kap. 28</a>.</p>
@@ -446,11 +446,11 @@
 			<p>5) Manche Hs. setzen anstatt Initialen oder in Abwechslung mit ihnen ein Paragraphenzeichen oder Pilcrow &para;.</p>
 			<p>&nbsp;&nbsp;a) Sie werden getaggt als <span class="element">&lt;label&gt;</span> mit dem Attribut <span class="attribute">ana=</span><span class="value">"hc:SectionMarker"</span> und dem Attribut <span class="attribute">hei:PlaceRef</span>. Das Paragraphenzeichen muss im Element <span class="element">&lt;c&gt;</span> stehen. Dies alles stellen wir außerhalb des Verses <span class="element">&lt;l&gt;</span>. Außerdem muss in diesem Fall das Element <span class="element">&lt;lb&gt;</span> <i>vor</i> dem <span class="element">&lt;label&gt;</span> stehen.</p>
 			<p>&nbsp;&nbsp;b) In der Transkriptionsansicht sollen die Paragraphenzeichen sichtbar sein. Aber in der Editionsansicht wollen wir sie nicht; sie werden bei der Verarbeitung daher unterdrück. Stattdessen wollen wir, dass in der Editionsansicht der erste Buchstabe des ersten Verses wie die Initialen fett gedruckt erscheint. Dazu taggen wir diesen ersten Buchstaben mit <span class="element">&lt;seg</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialEmphasis"</span><span class="element">&gt;</span>.
-			<p><span class="element">&lt;lb</span>&nbsp;<span class="attribute">n=</span><span class="value">"7"</span><span class="element">/&gt;</span><br/>
+			<p><span class="element">&lt;lb</span>&nbsp;<span class="attribute">n=</span><span class="value">"7"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;label</span>
 				&nbsp;<span class="attribute">ana=</span><span class="value">"hc:SectionMarker"</span>
-				<span class="attribute">hei:PlaceRef=</span><span class="value">"hc:PageMarginLeft"</span><span class="element">&gt;&lt;c&gt;</span>&para;<span class="element">&lt;/c&gt;&lt;/label&gt;</span><br/>
-				<span class="element">&lt;l</span>&nbsp;<span class="attribute">n=</span><span class="value">"12"</span><span class="element">&gt;</span><br/>
+				<span class="attribute">hei:PlaceRef=</span><span class="value">"hc:PageMarginLeft"</span><span class="element">&gt;&lt;c&gt;</span>&para;<span class="element">&lt;/c&gt;&lt;/label&gt;</span><br />
+				<span class="element">&lt;l</span>&nbsp;<span class="attribute">n=</span><span class="value">"12"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span>&nbsp;<span class="attribute">xml:id=</span><span class="value">"w_1234_1"</span><span class="element">&gt;</span><span class="element">&lt;seg</span>&nbsp;<span class="attribute">ana=</span><span class="value">"hc:EditorialEmphasis"</span><span class="element">&gt;</span>N<span class="element">&lt;/seg&gt;</span>u<span class="element">&lt;/w&gt;</span>
 			</p>
 			<p>
@@ -567,33 +567,33 @@
 			</ul>
 			<p>4) Tags, die ganze Wörter betreffen, sollten nach Möglichkeit außerhalb des <span class="element">&lt;w&gt;</span>-Tags stehen, wie die Beispiele zeigen.</p>
 			<p>5) Bei ganzen Wörtern gehört auch ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> in <span class="element">&lt;del&gt;</span> oder <span class="element">&lt;add</span>&gt;, damit die Darstellung korrekt bleibt:</p>
-			<p><span class="element">&lt;subst&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Erased"</span><span class="element">&gt;<br/>
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>falsche<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Wörter<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br/>
-						&nbsp;&nbsp;&lt;/del&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;<br/>
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>richtige<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br/>
-						&nbsp;&nbsp;&lt;/add&gt;</span><br/>
+			<p><span class="element">&lt;subst&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Erased"</span><span class="element">&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>falsche<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Wörter<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+						&nbsp;&nbsp;&lt;/del&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;add</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span><span class="element">&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>richtige<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+						&nbsp;&nbsp;&lt;/add&gt;</span><br />
 				<span class="element">&lt;/subst&gt;</span></p>
 			<p>6) Hinzufügungen und Streichungen ganzer Verse werden nicht mit <span class="element">&lt;del&gt;</span> oder <span class="element">&lt;add&gt;</span> getaggt, sondern mit <span class="element">&lt;delSpan&gt;</span> und <span class="element">&lt;addSpan&gt;</span>; wie alle &sbquo;span&lsquo;-Elemente sind sie leer, ein <span class="element">&lt;anchor&gt;</span>-Element markiert das Ende des Gestrichenen:</p>
 			<p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#addSpan_7657_1"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;l</span><span class="attribute">n=</span><span class="value">"7657"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element"> &lt;/l&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
+				&nbsp;&nbsp;<span class="element"> &lt;/l&gt;</span><br />
 				<span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"addSpan_7657_1"</span><span class="element">/&gt;</span></p>
 			<p>7) Gibt es <i>keine</i> Anzeichen dafür, dass der Schreiber sich einer Wiederholung bewusst war, dann ist die Entscheidung, dass ein Stück Text wiederholt (und damit überflüssig) ist, eine editorische. In diesen Fällen taggen wir die zweite Sequenz der Wiederholung als <span class="element">&lt;surplus&gt;</span> (&rarr; <a href="#Korrekturen">Kap. 33</a>); <span class="element">&lt;subst&gt;</span> und <span class="element">&lt;add&gt;</span> fallen weg:</p>
 			<p><span class="element">&lt;w&gt;</span>wiederholte<span class="element">&lt;/w&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;surplus&gt;&lt;w&gt;</span>Worte<span class="element">&lt;/w&gt;&lt;/surplus&gt;</span></p>
 		    <p>8) Ergänzungen ganzer Verse am Seitenrand müssen zusätzlich zum <span class="element">&lt;addSpan&gt;</span> (vgl. Nr. 6) mit einem neuen Zonenbeginn und am Ende einen Zonenwechsel getaggt werden. Denn die Marginalie muss im Element <span class="element">&lt;facsimile&gt;</span> als marginale Textzone deklariert werden. Und das bedeutet, dass im Text die Zonenwechsel mit <span class="element">&lt;milestone&gt;</span> angegeben werden müssen. In der neuen Zone gilt eine neue Zeilenzählung, die mit "1" beginnt. Das geschieht nach folgendem Modell:</p>
-		    <p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-c"</span><span class="element">/&gt;</span><br/>
-		        <span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"646"</span> <span class="attribute">xml:id=</span><span class="value">"l_646"</span> <span class="attribute">hei:altN=</span><span class="value">"538"</span><span class="element">&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br/>
-		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"f_addSpan_646_1"</span><span class="element">/&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-a"</span><span class="element">/&gt;</span><br/>
+		    <p><span class="element">&lt;addSpan</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:ColumnMarginLeft"</span> <span class="attribute">spanTo=</span><span class="value">"#f_addSpan_646_1"</span><span class="element">/&gt;</span><br />
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-c"</span><span class="element">/&gt;</span><br />
+		        <span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"646"</span> <span class="attribute">xml:id=</span><span class="value">"l_646"</span> <span class="attribute">hei:altN=</span><span class="value">"538"</span><span class="element">&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w&gt;</span>...<span class="element">&lt;/w&gt;</span><br />
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"f_addSpan_646_1"</span><span class="element">/&gt;</span><br />
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneShift"</span> <span class="attribute">facs=</span><span class="value">"#f_8r-a"</span><span class="element">/&gt;</span><br />
 		     </p>
 			<p>
 				<br />
@@ -660,11 +660,11 @@
 			<p>1. Abbildungen in den Handschriften werden im Element <span class="element">&lt;facsimile&gt;</span> als <span class="element">&lt;zone&gt;</span> deklariert. An der entsprechenden Stelle in der Datei wird die neue Zone dann mit <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span><span class="element">/&gt;</span> initiiert. Zusätzlich erhält dieses Element das Attribut <span class="attribute">@facs</span> mit dem Bezug auf die <span class="attribute">@xml:id</span> der <span class="element">&lt;zone&gt;</span> in <span class="element">&lt;facsimile&gt;</span>.</p>
 			<p>2. Die Abbildungen selbst taggen wir mit dem Element <span class="element">&lt;figure&gt;</span>. Dieses Element führt immer das Attribut <span class="attribute">@n</span> mit der laufenden Nummer der Abbildung; und optional das Attribut <span class="attribute">@label</span>, wenn man der Abbildung einen Titel geben will.</p>
 			<p>3. Das Element <span class="element">&lt;figure&gt;</span> enthält die Kindelemente <span class="element">&lt;figDesc&gt;</span>, das eine kurze Beschreibung der Abbildung in wenigen Worten bietet, und <span class="element">&lt;note&gt;</span>, das eine Erklärung der Abbildung enthält; <span class="element">&lt;note&gt;</span> führt immer das Attribut <span class="attribute">@ana=</span><span class="value">"hc:EditorialContent"</span>.</p>
-			<p><i>Beispiel</i>:<br/>
-				<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#B_44r-b"</span><span class="element">/&gt;</span><br/>
-				<span class="element">&lt;figure</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element">&lt;figDesc&gt;</span>Zeichnung eines Falken in roter Tinte<span class="element">&lt;/figDesc&gt;</span><br/>
-				&nbsp;&nbsp;<span class="element">&lt;note</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialContent"</span><span class="element">&gt;</span>[ <i>Inhalt der Anmerkung</i> ]<span class="element">&lt;/note&gt;</span><br/>
+			<p><i>Beispiel</i>:<br />
+				<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:ZoneBeginning"</span> <span class="attribute">facs=</span><span class="value">"#B_44r-b"</span><span class="element">/&gt;</span><br />
+				<span class="element">&lt;figure</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;figDesc&gt;</span>Zeichnung eines Falken in roter Tinte<span class="element">&lt;/figDesc&gt;</span><br />
+				&nbsp;&nbsp;<span class="element">&lt;note</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialContent"</span><span class="element">&gt;</span>[ <i>Inhalt der Anmerkung</i> ]<span class="element">&lt;/note&gt;</span><br />
 				<span class="element">&lt;/figure&gt;</span>
 			</p>
 			<p>
@@ -688,7 +688,7 @@
 				<span class="attribute">ana=</span><span class="value">"hc:Hyphen"</span><span class="element">&gt;</span>&#11799;<span class="element">&lt;/metamark&gt;&lt;lb</span>
 				<span class="attribute">n=</span><span class="value">"4" </span><span class="attribute">break=</span><span class="value">"no"</span><span class="element">/&gt;</span>get<span class="element">&lt;/w&gt;</span></p>
 			<p>Dies ist kompatibel mit Spalten- oder Seitenumbrüchen. Dann stehen <i>vor</i> dem <span class="element">&lt;lb/&gt;</span>-Element die entsprechenden Elemente <span class="element">&lt;pb/&gt;</span> und <span class="element">&lt;cb/&gt;</span> (&rarr; <a href="#Seite_Spalte">Kap. 7</a>).</p>
-			<br/>
+			<br />
 			<p>2. Zeilenüberlauf</p>
 			<p>Wenn Teile des Versendes aus Platzgründen am Ende der vorangehenden oder folgenden Zeile vervollständigt wurden, sprechen wir von Zeilenüberlauf. Zeilenüberläufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
 			<p>Gelangt dieser Überlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der Überlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen Überlauf innerhalb des Verses (<span class="element">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="element">&lt;lb/&gt;</span> an.</p>
@@ -702,16 +702,16 @@
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverBelow"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"27"</span><span class="element">/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				<span class="element">&lt;/l&gt;</span>
 			</p>
 			<p>b. Doppelter Zeilenüberhang nach oben:</p>
 			<p><span class="element">&lt;l</span> <span class="attribute">n=</span><span class="value">"419"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"26"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w/&gt;</span><br />
-				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				&nbsp;&nbsp;<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"25"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w/&gt;&lt;w/&gt;</span><br />
 				&nbsp;&nbsp;<span class="element"> &lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:LineSegmentBeginning hc:RunOverAbove"</span> <span class="attribute">n=</span><span class="value">"2"</span> <span class="attribute">hei:belongsToLine=</span><span class="value">"24"</span><span class="element">/&gt;</span><br />
@@ -823,29 +823,29 @@
 			<p>1) Beschädigten Text taggen wir mit dem Element<span class="element"> &lt;damage&gt;</span>. Es führt das Attribut <span class="attribute">@rendition</span>; die häufigsten Werte dieses Attributs (unter den vielen im Schema vorgesehenen) sind: <span class="value">hc:CutOff</span> &ndash; <span class="value">hc:Erased</span> &ndash; <span class="value">hc:Faded</span> &ndash; <span class="value">hc:Lost</span> &ndash; <span class="value">hc:Mould</span> &ndash; <span class="value">hc:Perforated</span> &ndash; <span class="value">hc:RubbedOff</span> &ndash; <span class="value">hc:Stained</span> &ndash; <span class="value">hc:TornOff</span>.</p>
 			<p>2) Oft ist es eine Ermessensfrage, wann ein Text als 'beschädigt' markiert wird. In einer gut erhaltenen Handschrift tendieren wir dazu, auch kleinere Schäden zu taggen. In einer stark beschädigten Handschrift tendieren wir dazu, nur dann ein <span class="element"> &lt;damage&gt;</span> zu setzen, wenn die Lesbarkeit beeinträchtigt ist.</p>
 			<p>3) Ist im Fall von <span class="element">&lt;damage&gt;</span> ein Lesung möglich, aber unsicher, wird der Text zusätzlich mit dem Kindelement <span class="element">&lt;unclear&gt;</span> getaggt. Dieses Element führt keine Attribute; diese befinden sich ausschließlich im Elternelement <span class="element">&lt;damage&gt;</span>.</p>
-			<br/>
+			<br />
 			<p>B. Lücken</p>
 			<p>1) Textverlust durch Beschädigung des Textträgers wird getaggt mit <span class="element">&lt;gap/&gt;</span>. Dieses Element ist immer leer. </p>
 			<p>2) Ein <span class="element">&lt;gap/&gt;</span> führt das Attribut <span class="attribute">@rendition</span>; die häufigsten Werte dieses Attributs (unter den vielen im Schema vorgesehenen) sind: <span class="value">hc:CutOff</span> &ndash; <span class="value">hc:Erased</span> &ndash; <span class="value">hc:Faded</span> &ndash; <span class="value">hc:Illegible</span> &ndash; <span class="value">hc:Lost</span> &ndash; <span class="value">hc:Mould</span> &ndash; <span class="value">hc:Perforated</span> &ndash; <span class="value">hc:RubbedOff</span> &ndash; <span class="value">hc:Stained</span> &ndash; <span class="value">hc:TornOff</span>.</p>
 			<p>3) Außerdem führt <span class="element">&lt;gap/&gt;</span> die Attribute <span class="attribute">@unit</span> und <span class="attribute">@extent</span> bzw. <span class="attribute">@quantity</span>. <span class="attribute">@unit</span> gibt an, was verloren ist (<span class="value">character</span>=Buchstabe[n] [nur innerhalb von <span class="element">&lt;l&gt;</span>]; <span class="value">line</span>Zeile[n]; <span class="value">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviele von diesen Einheiten verloren sind, steht dies im Attribut <span class="attribute">@quantity</span> (z.B. <span class="attribute">@unit=</span><span class="value">"line"</span> <span class="attribute">@quantity=</span><span class="value">"4"</span>). Kann man nicht wissen, wieviel verloren ist, den steht nicht <span class="attribute">@quantity</span>, sondern lediglich das Attribut <span class="attribute">@extent</span> mit dem Wert <span class="value">"unknown"</span>.</p>
 			<p>4) Ist ein Teil eines Wortes ebenso wie folgende (oder vorherige) Worte verloren, muss ein <span class="element">&lt;gap/&gt;</span> sowohl innerhalb des <span class="element">&lt;w&gt;</span> stehen, wie außerhalb.</p>
-			<p>5) Steht vor oder hinter einem <span class="element">&lt;gap/&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die Lücke ein Teil des Wortes, dann fügen wir stattdessen ein 'editorisches Spatium' ein:<br/>
-				<span class="element">&lt;w&gt;</span>beschä<span class="element">&lt;gap/&gt;&lt;/w&gt;<br/>
-				&lt;choice&gt;<br/>
-				&nbsp;&nbsp;&lt;orig/&gt;<br/>
-				&nbsp;&nbsp;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;<br/>
-				&lt;/choice&gt;<br/>
-				&lt;w/&gt;&lt;w/&gt;</span>.<br/>
+			<p>5) Steht vor oder hinter einem <span class="element">&lt;gap/&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="element">&lt;c&gt; &lt;/c&gt;</span> ein; betrifft die Lücke ein Teil des Wortes, dann fügen wir stattdessen ein 'editorisches Spatium' ein:<br />
+				<span class="element">&lt;w&gt;</span>beschä<span class="element">&lt;gap/&gt;&lt;/w&gt;<br />
+				&lt;choice&gt;<br />
+				&nbsp;&nbsp;&lt;orig/&gt;<br />
+				&nbsp;&nbsp;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;<br />
+				&lt;/choice&gt;<br />
+				&lt;w/&gt;&lt;w/&gt;</span>.<br />
 				Fehlen mehrere Worte, dann werden sie alle durch ein einziges <span class="element">&lt;gap/&gt;</span> ersetzt.</p>
 			<p>6) Bei Lücken, die größer sind als ein Vers, setzen wir lediglich <span class="element">&lt;gap/&gt;</span>, außerhalb von <span class="element">&lt;l&gt;</span> und <span class="element">&lt;lg&gt;</span>.</p>
 			<p>7) Bei Fragmenten kommt es wiederholt vor, dass ein Vers verloren gegangen ist, der Reimpartner davor oder danach aber erhalten ist. In diesen Fällen taggen wir den Vers als Lücke: <span class="element">&lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</span>. Wir drücken damit aus, dass der verlorene Text einem Vers entspricht. Über die Grenze des Reimpaars gehen wir jedoch nicht hinaus. Ein Problem stellt die Nummerierung solcher nicht mehr vorhandenen oder nicht mehr lesbaren Verse dar: Können wir aus dem Reimwort und dem Kontext schließen, dass hier wahrscheinlich der gleiche Vers stand, der in den übrigen Handschriften an dieser Stelle überliefert ist, dann setzen wir das <span class="element">&lt;l&gt;</span> und vergeben ihm die zu erwartende Standard-Nummer. Können wir nicht so sicher sein in dieser Annahme, z.B. weil im Reimpartner der Reim fehlt oder weil der Kontext geändert ist, dann nummerieren wir diesen Vers nicht.</p>
-			<p>8) Bei Handschriften mit nicht abgesetzten Verse, in denen am Ende eines Verse mitten in der Zeile ein Lücke vorliegt, setzen wir hinter das <span class="element">&lt;gap/&gt;</span> ein Spatium, damit sich die Worte in der Transkriptionsansicht nicht mit der Lücke berühren:<br/>
-				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;<br/>
-				&lt;l&gt;<br/>
-					&nbsp;&nbsp;&lt;gap</span> <span class="attribute">rendition=</span><span class="value">"hc:CutOff"</span> <span class="attribute">unit=</span><span class="value">"character"</span> <span class="attribute">extent=</span><span class="value">"unknown"</span><span class="element">/&gt;<br/>
-					&nbsp;&nbsp;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;<br/>
-				&lt;/l&gt;<br/>
-				&lt;l</span> <span class="attribute">n=</span><span class="value">"1234"</span><span class="element">&gt;<br/>
+			<p>8) Bei Handschriften mit nicht abgesetzten Verse, in denen am Ende eines Verse mitten in der Zeile ein Lücke vorliegt, setzen wir hinter das <span class="element">&lt;gap/&gt;</span> ein Spatium, damit sich die Worte in der Transkriptionsansicht nicht mit der Lücke berühren:<br />
+				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">&gt;<br />
+				&lt;l&gt;<br />
+					&nbsp;&nbsp;&lt;gap</span> <span class="attribute">rendition=</span><span class="value">"hc:CutOff"</span> <span class="attribute">unit=</span><span class="value">"character"</span> <span class="attribute">extent=</span><span class="value">"unknown"</span><span class="element">/&gt;<br />
+					&nbsp;&nbsp;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;<br />
+				&lt;/l&gt;<br />
+				&lt;l</span> <span class="attribute">n=</span><span class="value">"1234"</span><span class="element">&gt;<br />
 					&nbsp;&nbsp;&lt;w/&gt;&lt;w/&gt;</span>
 			</p>
 			<p>9) Zur Möglichkeit, ein fehlendes Wortteil zur ergänzen, siehe &rarr; <a href="#Gap_editorisch">Kap. 36</a>)</p>
@@ -903,17 +903,17 @@
 				<span class="attribute">ana=</span><span class="value">"hc:ExpandedTokenSegment"</span><span class="element">&gt;&lt;ex&gt;</span>er<span class="element">&lt;/ex&gt;</span>r<span class="element">&lt;/seg&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
 			<p>7) Tokenisierung und Abkürzung 1: In besonderen Fällen enthalten Abkürzungen klitisch angehängte Pronomina oder Negationspartikeln, sodass eine korrekte Tokenisierung erst nach der Auflösung der Abkürzung erfolgen kann. Solche Fälle lösen wir, indem wir die <span class="element">&lt;choice&gt;</span>-Konstruktion mit der Abkürzung in ein separates <span class="element">&lt;w&gt;</span>-Element setzen:</p>
-			<p><i>Beispiel</i>: moht<span class="entity">&amp;er;</span> &rarr; moht er<br/>
-				<span class="element">&lt;w&gt;</span>moht<span class="element">&lt;/w&gt;<br/>&lt;w&gt;&lt;choice&gt;&lt;am&gt;</span><span class="entity">&amp;er;</span><span class="element">&lt;/am&gt;ex&gt;</span>er<span class="element">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
+			<p><i>Beispiel</i>: moht<span class="entity">&amp;er;</span> &rarr; moht er<br />
+				<span class="element">&lt;w&gt;</span>moht<span class="element">&lt;/w&gt;<br />&lt;w&gt;&lt;choice&gt;&lt;am&gt;</span><span class="entity">&amp;er;</span><span class="element">&lt;/am&gt;ex&gt;</span>er<span class="element">&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</span></p>
 			<p>8) Tokenisierung und Abkürzung 2: Komplexer sind solche Fälle, in denen die Auflösung der Abkürzung zwei Tokens ergibt, die Auflösung sich aber auf beide Tokens verteilt. Wir lösen dies, indem wir eine <span class="element">&lt;choice&gt;</span>-Konstuktion außerhalb des Wortes setzen, welche die Kindelemente <span class="element">&lt;abbr&gt;</span> und <span class="element">&lt;expan&gt;</span> enthält. Im ersten steht die abgekürzte Form, im zweiten stehen dann die beiden Tokens mit der Auflösung:</p>
-			<p><i>Beispiel</i>: ·i· &rarr; id est<br/>
-				<span class="element">&lt;choice&gt;</span><br/>
-				&nbsp;&nbsp;&nbsp;<span class="element">&lt;abbr&gt;&lt;am&gt;</span>·<span class="element">&lt;/am&gt;</span>i<span class="element">&lt;am&gt;</span>·<span class="element">&lt;/am&gt;&lt;/abbr&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;expan&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>i<span class="element">&lt;ex&gt;</span>d<span class="element">&lt;/ex&gt;&lt;/w&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;c&gt; &lt;/c&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;&lt;ex&gt;</span>est<span class="element">&lt;/ex&gt;&lt;/w&gt;<br/>
-				&nbsp;&nbsp;&nbsp;&lt;/expan&gt;<br/>
+			<p><i>Beispiel</i>: ·i· &rarr; id est<br />
+				<span class="element">&lt;choice&gt;</span><br />
+				&nbsp;&nbsp;&nbsp;<span class="element">&lt;abbr&gt;&lt;am&gt;</span>·<span class="element">&lt;/am&gt;</span>i<span class="element">&lt;am&gt;</span>·<span class="element">&lt;/am&gt;&lt;/abbr&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;expan&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;</span>i<span class="element">&lt;ex&gt;</span>d<span class="element">&lt;/ex&gt;&lt;/w&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;c&gt; &lt;/c&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;w&gt;&lt;ex&gt;</span>est<span class="element">&lt;/ex&gt;&lt;/w&gt;<br />
+				&nbsp;&nbsp;&nbsp;&lt;/expan&gt;<br />
 				&lt;/choice&gt;</span>
 			</p>
 			<p>
@@ -938,13 +938,13 @@
 			<p><i>Beispiel:</i><br />
 			    <i>Hs.:</i> Der "auch "&#383;ey &#383;elb &rarr; Der &#383;ey auch &#383;elb<br />
 				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_1"</span><span class="element">&gt;</span>Der<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">target=</span><span class="value">"#w_13_2"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
 				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_2"</span><span class="element">&gt;</span>auch<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;metamark</span> <span class="attribute">ana=</span><span class="value">"hc:TranspositionMark"</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:AboveLine"</span> <span class="attribute">target=</span><span class="value">"#w_13_3"</span><span class="element">&gt;</span>"<span class="element">&lt;/metamark&gt;</span><br />
 				<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_13_3"</span><span class="element">&gt;</span>sey<span class="element">&lt;/w&gt;</span><br />
-				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br/>
+				<span class="element">&lt;c&gt; &lt;/c&gt;</span><br />
 				<span class="element">&lt;w&gt;</span>&#383;elb<span class="element">&lt;/w&gt;</span><br />
 				<span class="element">&lt;listTranspose&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;transpose&gt;</span><br />
@@ -987,7 +987,7 @@
 				<span class="element">&lt;lb</span> <span class="attribute">n=</span><span class="value">"1"</span><span class="element">/&gt;</span><br />
 				<span class="element">&lt;fw</span> <span class="attribute">ana=</span><span class="value">"hc:QuireSignature"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;num</span> <span class="attribute">value=</span><span class="value">"2"</span><span class="element">&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;w&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;&lt;orig&gt;</span>&#305;&#305;<span class="element">&lt;/orig&gt;&lt;reg&gt;</span>secund<span class="element">&lt;/reg&gt;&lt;/choice&gt;</span> <span class="element">&lt;choice&gt;&lt;am&gt;</span>&#42864;<span class="element">&lt;/am&gt;&lt;ex&gt;</span>us<span class="element">&lt;/ex&gt;&lt;/choice&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;/num&gt;</span><br />
@@ -1013,9 +1013,9 @@
 			</ol>
 			<p>1) Anmerkungen werden mit dem Element <span class="element">&lt;note&gt;</span> getaggt, sowohl Anmerkungen der Handschriften wie Anmerkungen zur Transkription oder Edition. Anmerkungen der Handschriften sind in der Regel Glossen oder Nota-Zeichen (zu Textergänzungen &rarr; <a href="#del_add">Kap. 19</a>). Anmerkungen zur Transkription sind Phänomene der Handschrift, die für den Textbestand irrelevant sind, z.B. zeitlich nicht bestimmbare Unterstreichungen oder Markierungen, Wiederholungen besonderer Eigenheiten, Verzierungen außerhalb des Schriftspiegels, Federproben, etc. Editorische Anmerkungen sind typischerweise Erklärungen für Eingriffe oder Ähnliches.</p>
 			<p>2) Wir stellen die <span class="element">&lt;note&gt;</span>-Elemente in der Regel hinter den Abschluss des Verses, also hinter <span class="element">&lt;/l&gt;</span>.</p>
-			<p>3) Das Element <span class="element">&lt;note&gt;</span> enthält das Attribut <span class="attribute">@ana</span>. Dafür sind in heiEditions vielfache Werte vorgesehen. Wir beschränken uns im Prinzip auf folgende:<br/>
-				&nbsp;&nbsp;a. für Anmerkungen, die in der Handschrift stehen, benutzen wir in der Regel <span class="value">"hc:Gloss"</span> (Glosse) oder <span class="value">"hc:NotaBene"</span> (Notazeichen);<br/>
-				&nbsp;&nbsp;b. für Anmerkungen zur Transkription (zur Notierung besonderer Phänomene) kommt in der Regel nur <span class="value">"hc:TranscriptionNote"</span> zum Einsatz;<br/>
+			<p>3) Das Element <span class="element">&lt;note&gt;</span> enthält das Attribut <span class="attribute">@ana</span>. Dafür sind in heiEditions vielfache Werte vorgesehen. Wir beschränken uns im Prinzip auf folgende:<br />
+				&nbsp;&nbsp;a. für Anmerkungen, die in der Handschrift stehen, benutzen wir in der Regel <span class="value">"hc:Gloss"</span> (Glosse) oder <span class="value">"hc:NotaBene"</span> (Notazeichen);<br />
+				&nbsp;&nbsp;b. für Anmerkungen zur Transkription (zur Notierung besonderer Phänomene) kommt in der Regel nur <span class="value">"hc:TranscriptionNote"</span> zum Einsatz;<br />
 				&nbsp;&nbsp;c. für Anmerkungen über editorische Entscheidungen kommt <span class="value">"hc:TextConstitutionNote"</span> (Anmerkung zur Edition) zum Einsatz.</p>
 			<p>4) Das Element <span class="element">&lt;note&gt;</span> enthält zusätzlich das Attribut <span class="attribute">@target</span>, mit dem auf die <span class="attribute">@xml:id</span> des Verses verwiesen wird, auf den sich die Anmerkung bezieht. (&rarr; <a href="#xml:id_target">Kap. 18</a>). Wir beziehen die Anmerkungen im Prinzip <i>nicht</i> auf spezifische Worte, weil dies in der Editionsansicht einen großen Freiraum hinter dem Wort hinterlässt.</p>
 			<p>5) Innerhalb der Anmerkungen werden Zitate aus der Handschrift, aus anderen Handschriften oder aus dem edierten Text mit <span class="element">&lt;quote&gt;</span> getaggt; sie erscheinen kursiv. Für hypothetische Formen oder z.B. Infinitive der zitierten Verben oder Worte in anderen alten Sprachen (v.a. Lateinisch) verwenden wir <span class="element">&lt;mentioned&gt;</span>; sie erscheinen ebenfalls kursiv. Uneigentliche Rede, besondere Bedeutung von Worten, Bedeutungsangaben oder markieren wir mit einfachen Anführungszeichen; Zitate aus Forschungsliteratur stehen zwischen doppelten Anführungszeichen.</p>
@@ -1065,15 +1065,15 @@
 				<span class="element">&lt;w&gt;</span>mi<span class="element">&lt;choice&gt;&lt;sic&gt;</span>m<span class="element">&lt;/sic&gt;&lt;corr&gt;</span>nn<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>e<span class="element">&lt;/w&gt;</span></p>
 			<p>b. Fehlende Buchstaben:<br />
 				<span class="element">&lt;w&gt;</span>wa<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="element">&lt;/w&gt;</span></p>
-			<p>c. Fehlende Wörter: das <span class="element">&lt;w&gt;</span> steht innerhalb des <span class="element">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingefügt wird.<br />
-				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
-			<p>d. Bei der Korrektur ändert sich das Wort: Vch &rarr; Ovch<br />
+			<p>c. Fehlende Wörter: das <span class="element">&lt;w&gt;</span> steht innerhalb des <span class="element">&lt;corr&gt;</span>, weil ja das Wort erst dadurch entsteht, dass es eingefügt wird. Das Spatium danach darf nicht vergessen werden.<br />
+				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
+			<p>d. Bei der Korrektur ändert sich das Wort, was ein neues Token erfordert: Vch &rarr; Ovch<br />
 				<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;sic</span> <span class="attribute">corresp=</span><span class="value">"#w_145_1"</span><span class="element">/&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;corr</span> <span class="attribute">corresp=</span><span class="value">"#w_145_2"</span><span class="element">&gt;</span>O<span class="element">&lt;/corr&gt;</span><br />
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/choice&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;/choice&gt;<br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&lt;hi</span> <span class="attribute">rendition=</span><span class="value">"hc:Versal"</span><span class="element">&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="element">&lt;orig&gt;</span>V<span class="element">&lt;/orig&gt;</span><br />
@@ -1083,24 +1083,31 @@
 				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
-			<p>2. Wiederholte Worte oder Satzteile, die nicht gestrichen sind, unterdrücken wir durch <span class="element">&lt;surplus&gt;</span>:</p>
-			<p>
-			    <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;w&gt;</span>kam<span class="element">&lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;/surplus&gt;&lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
-			</p>
+			<p>2. Worte, die wir aus grammatischen oder semantischen Gründen für überflüssig und fehl am Platz halten, streichen wir auf gleiche Weise. Hier muss auch das entsprechende Spatium gelöscht werden: <br />
+			    <span class="element">&lt;w&gt;</span>vrauwe<span class="element">&lt;/w&gt;<br />
+			    &lt;choice&gt;&lt;sic&gt;&lt;w&gt;</span>vür<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/sic&gt;&lt;corr/&gt;&lt;/choice&gt;<br />
+			    &lt;w&gt;</span>Lunet<span class="element">&lt;/w&gt;</span>
+			    </p>
+		    <p>Hingegen unterdrücken wir <i>wiederholte</i> Worte oder Satzteile, die nicht gestrichen sind, durch <span class="element">&lt;surplus&gt;</span> (immer zusammen mit dem dazugehörigen Spatium):<br />
+		        <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+		            &lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+		        &lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/surplus&gt;<br />
+		            &lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
+		    </p>
 		    <p>3. Entscheidet man editorisch, dass Sätze oder Satzteile, die über die Versgrenze hinausgehen, zu streichen sind, kodieren wir den Beginn der Streichung mit dem Element <span class="element">&lt;milestone&gt;</span>, das die Attribute <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> und <span class="attribute">spanTo=</span><span class="value">"anchor1"</span> führt. Am Ende der Tilgung steht das Element <span class="element">&lt;anchor&gt;</span> mit einer <span class="attribute">@xml:id</span>. Die Kodierung ist parallel der Streichung ganzer Verse durch den Schreiber, vgl. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
-		        <p><i>Beispiel:</i><br/>
-		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
-		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		        <p><i>Beispiel:</i><br />
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br />
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br />
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br />
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br />
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
 		    </p>
 		    <p>4. Parallel dazu funktionieren editorische Einfügungen ganzer Verse oder von Blöcken, die über die Versgrenze hinausgehen (z.B. weil der Schreiber etwas offensichtlich übersprungen hat). Es ändert sich lediglich der Attriburtwert von <span class="attribute">@ana</span> im <span class="element">&lt;milestone&gt;</span>:</p>
-		    <p><i>Beispiel:</i><br/>
-		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br/>
-		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br/>
-		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br/>
+		    <p><i>Beispiel:</i><br />
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br />
+		        <span class="element">&lt;milestone</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialAdditionSpan"</span> <span class="attribute">spanTo=</span><span class="value">"#anchor1"</span><span class="element">/&gt;</span><br />
+		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span><br />
+		        <span class="element">&lt;anchor</span> <span class="attribute">xml:id=</span><span class="value">"anchor1"</span><span class="element">/&gt;</span><br />
 		        <span class="element">&lt;l&gt;</span>. . .<span class="element">&lt;/l&gt;</span>
 		    </p>
 		    <p>Editorisch ergänzte Verse führen weder ein Attribut <span class="attribute">@hei:altN</span> noch enthalten sie ein Element <span class="element">&lt;lb&gt;</span>.</p>
@@ -1156,15 +1163,15 @@
 			</ol>
 		             <p>1) Worte oder Verse, die im Vergleich zu anderen Handschriften in geänderter Reihenfolge stehen, bezeichnen wir als Umstellungen. Den Terminus nutzen wir frei von textkritischer Semantik. Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (&rarr; <a href="#transpose">Kap. 28</a>) behandelt.</p>
 		    <p>2) Wollen wir als Herausgeber Worte umstellen, um Sätze verständlich zu machen, zeigen wir mit einem Element <span class="element">&lt;link&gt;</span> und dem Attribut <span class="attribute">@target</span> die richtige Reihenfolge der Worte an. Das Attribut <span class="attribute">@ana=</span><span class="value">"hc:EditorialTransposition"</span> gibt die Art der Umstellung an. Das gilt auch für Fälle, in denen die Worte, die umgestellt werden sollen, nicht nebeneinander stehen, oder für mehr als zwei Worte.</p>
-		    <p><i>Beispiel (vereinfacht):</i> und <u>ſi ſin</u> in ir muote &rarr; und <u>ſin ſi</u> in ir muote<br/>
-		        <span class="element">&lt;l&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_1"</span><span class="element">&gt;</span>und<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_2"</span><span class="element">&gt;</span>ſi<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_3"</span><span class="element">&gt;</span>ſin<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_4"</span><span class="element">&gt;</span>in<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_5"</span><span class="element">&gt;</span>ir<span class="element">&lt;/w&gt;</span><br/>
-		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_6"</span><span class="element">&gt;</span>muote<span class="element">&lt;/w&gt;</span><br/>
-		        <span class="element">&lt;/l&gt;</span><br/>
+		    <p><i>Beispiel (vereinfacht):</i> und <u>ſi ſin</u> in ir muote &rarr; und <u>ſin ſi</u> in ir muote<br />
+		        <span class="element">&lt;l&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_1"</span><span class="element">&gt;</span>und<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_2"</span><span class="element">&gt;</span>ſi<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_3"</span><span class="element">&gt;</span>ſin<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_4"</span><span class="element">&gt;</span>in<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_5"</span><span class="element">&gt;</span>ir<span class="element">&lt;/w&gt;</span><br />
+		        &nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_2706_6"</span><span class="element">&gt;</span>muote<span class="element">&lt;/w&gt;</span><br />
+		        <span class="element">&lt;/l&gt;</span><br />
 		        <span class="element">&lt;link</span> <span class="attribute">ana=</span><span class="value">"hc:EditorialTransposition"</span> <span class="attribute">target=</span><span class="value">"#w_2706_3 #w_2706_2"</span><span class="element">/&gt;</span></p>
 		    <p>3) Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, aber von den Herausgebern als notwendig betrachtet werden für die Herstellung einer korrekten Syntax und Semantik, werden auf gleiche Weise hergestellt, nur verweist das Attribut <span class="attribute">@target</span> in diesem Fall auf die <span class="attribute">xml:id</span> der betroffenen Verse. Auch hier gilt, dass nur die Verse referenziert werden müssen, die umzustellen sind, alles Andere bleibt unberührt.</p>
 			<p>

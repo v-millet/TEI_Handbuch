@@ -1149,8 +1149,8 @@
 				<span class="element">&lt;w&gt;</span>mi<span class="element">&lt;choice&gt;&lt;sic&gt;</span>m<span class="element">&lt;/sic&gt;&lt;corr&gt;</span>nn<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>e<span class="element">&lt;/w&gt;</span></p>
 			<p>b. Des lettres manquantes:<br />
 				<span class="element">&lt;w&gt;</span>wa<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;</span>z<span class="element">&lt;/corr&gt;&lt;/choice&gt;</span>er<span class="element">&lt;/w&gt;</span></p>
-			<p>c. Des mots manquants: la <span class="element">&lt;w&gt;</span> reste à l'intérieur de <span class="element">&lt;corr&gt;</span>, car le mot n'est créé que lorsqu'il est inséré.<br />
-				<span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
+		    <p>c. Des mots manquants: la <span class="element">&lt;w&gt;</span> reste à l'intérieur de <span class="element">&lt;corr&gt;</span>, car le mot n'est créé que lorsqu'il est inséré. Il ne faut pas oublier le spatium qui suit.<br />
+		        <span class="element">&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;</span>in<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/corr&gt;&lt;/choice&gt;</span></p>
 			<p>d. Le mot change lors de la correction: Vch &rarr; Ovch<br />
 				<span class="element">&lt;choice&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"#w_145_1"</span><span class="element">&gt;</span><br />
@@ -1167,9 +1167,16 @@
 				&nbsp;&nbsp;<span class="element">&lt;/w&gt;</span><br />
 				&nbsp;&nbsp;<span class="element">&lt;w</span> <span class="attribute">xml:id=</span><span class="value">"w_145_2"</span> <span class="attribute">copyOf=</span><span class="value">"#w_145_1"</span><span class="element">&gt;&lt;/w&gt;</span><br />
 				<span class="element">&lt;/choice&gt;</span></p>
-			<p>2. Les mots ou les parties de phrases répétés qui ne sont pas raturés, on les enlève avec <span class="element">&lt;surplus&gt;</span>:</p>
-			<p>
-			    <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;w&gt;</span>kam<span class="element">&lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;/surplus&gt;&lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
+		    <p>2. Nous supprimons de la même manière les mots que nous considérons comme superflus et déplacés pour des raisons grammaticales ou sémantiques. N'oubliés pas le spatium correspondant:<br />
+		        <span class="element">&lt;w&gt;</span>vrauwe<span class="element">&lt;/w&gt;<br />
+		            &lt;choice&gt;&lt;sic&gt;&lt;w&gt;</span>vür<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/sic&gt;&lt;corr/&gt;&lt;/choice&gt;<br />
+		                &lt;w&gt;</span>Lunet<span class="element">&lt;/w&gt;</span>
+		    </p>
+		    <p>En revanche, nous supprimons les mots ou parties de phrases <i>répétés</i> qui ne sont pas supprimés par le copiste avec <span class="element">&lt;surplus&gt;</span> (toujours avec le spatium correspondant):<br />
+		    <span class="element">&lt;w&gt;</span>do<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+		        &lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;<br />
+		            &lt;surplus&gt;&lt;w&gt;</span>kam<span class="element">&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/surplus&gt;<br />
+		                &lt;w&gt;</span>gegangen<span class="element">&lt;/w&gt;</span>
 			</p>
 		    <p>3. Si l'on décide, sur le plan éditorial, de supprimer des phrases ou des parties de phrases qui dépassent la limite du vers, nous encodons le début de la suppression avec l'élément <span class="element">&lt;milestone&gt;</span>, qui porte les attributs <span class="attribute">ana=</span><span class="value">"hc:EditorialDeletionSpan"</span> et <span class="attribute">spanTo=</span><span class="value">"anchor1"</span>. A la fin de l'éradication se trouve l'élément <span class="element">&lt;anchor&gt;</span> avec une <span class="attribute">@xml:id</span>. L'encodage est parallèle à la suppression de vers entiers par le scribe, cf. &rarr; <a href="#del_add">Kap. 19</a>, Nr. 6.</p>
 		    <p><i>Exemple:</i><br/>
