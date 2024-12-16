@@ -645,6 +645,9 @@
 						<span class="attribute">hei:placeRef=</span><span class="value">"hc:Superimposed"</span><span class="element">&gt;&lt;w&gt;</span>corrects<span class="element">&lt;/w&gt;&lt;w&gt;</span>mots<span class="element">&lt;/w&gt;&lt;/add&gt;&lt;/subst&gt;</span></p>
 				</li>
 			</ul>
+		    <p>Dans certains cas, le copiste écrit un mot (ou même seulement le début), le raye, puis continue à écrire correctement. Par example:</p>
+		    <p><span class="element">&lt;subst&gt;&lt;del</span> <span class="attribute">rendition=</span><span class="value">"hc:Strikethrough"</span><span class="element">&gt;&lt;w&gt;</span>fame<span class="element">&lt;/w&gt;&lt;/del&gt;&lt;add</span> <span class="attribute">hei:placeRef=</span><span class="value">"hc:InLine"</span><span class="element">&gt;&lt;w&gt;</span>femme<span class="element">&lt;/w&gt;&lt;/add&gt;&lt;/subst&gt;</span></p>
+		    <p>Dans de tels cas, il peut parfois être douteux (surtout lorsqu'il n'est pas possible de savoir à quel mot le rédacteur a commencé) s'il s'agit vraiment d'une substitution ou si le mot barré ne pourrait pas simplement être tagué avec <span class="element">&lt;del&gt;</span>. La plupart des cas, nous taguons quand même avec <span class="element">&lt;subst&gt;</span>.</p>
 			<p>4) Les marques qui concernent des mots entiers devraient rester à l'extérieur de l'élément <span class="element">&lt;w&gt;</span> si possible, tel que les exemples le montrent.</p>
 			<p>5) Pour des mots entiers, il faut également un espace <span class="element">&lt;c&gt; &lt;/c&gt;</span> dans <span class="element">&lt;del&gt;</span> ou <span class="element">&lt;add</span>&gt;, pour que l'affichage reste correct.</p>
 			<p><span class="element">&lt;subst&gt;</span><br>
