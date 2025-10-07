@@ -1,0 +1,1403 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Hartmann von Aue – digital: TEI-Handbuch</title>
+        <link rel="stylesheet" href="https://heieditions.github.io/docu.css">
+        <link rel="stylesheet" href="https://heieditions.github.io/prism.css">
+    </head>
+    
+    <body>
+        <main>
+            
+            <div id="div_head">
+                <h1>TEI-manual for ›Hartmann von Aue – digital‹</h1>
+                <p>by Victor Millet</p>
+                <p class="align-right"><a href="./Handbuch_de.html">Deutsche Fassung</a></p>
+                <p class="align-right"><a href="./Handbuch_fr.html">Version française</a></p>
+                <p>This TEI manual was the basis for creating the XML-files in all digital editions of ›Hartmann von Aue – digital‹. It is dependent on the guidelines that <em>heiEditions</em> determines via the validation scheme and the corresponding <a href="https://heieditions.github.io/guidelines/toc.html" target="_blank">documentation</a>. All attribute values must comply with the onthology <a href="https://heieditions.github.io/concepts/concepts.html" target="_blank">heiEDITIONS Concepts</a>. The examples have often been simplified a little in the non-relevant aspects so as to focus on what is important in each case. Originally, it [the TEI manual] was a simplified guidance for employees. We have not entirely abandoned the somewhat didactic approach and tone that dates back to the start of the project, since it has proved to be very useful. Das TEI manual is obviously related to our <a href="X?X?X?" target="_blank">editorial principles</a>.</p>
+              
+            </div>
+
+            <div id="div_metadata"><span class="aside">I</span>
+                <h1 id="chI">I Structure and metadata</h1>
+
+                <div id="div_xml_declaration"><span class="aside">1</span>
+                    <h2 id="ch1">1 XMl declaration and TEI-root element.</h2>
+                    <div><span class="aside">1.1</span>
+                        <p>The declarations for XML and scheme are the following for all files:</p>
+                        <p class="tagex">
+                            <span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+                        </p>
+                        <p class="tagex">
+                            <span class="pi">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</span>
+                        </p>
+                        <p class="tagex">
+                            <span class="pi">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span>
+                        </p>
+                    </div>
+                    <div><span class="aside">1.2</span>
+                        <p>The following declaration is required so as to recognize the entities (note the paragraphs):</p>
+                        <p class="tagex"><span class="code">&lt;!DOCTYPE TEI 
+                            SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/ heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span></p>
+                    </div>
+                    <div><span class="aside">1.3</span>
+                        <p>The root element <span class="gi">&lt;TEI&gt;</span> contains the following attributes and values:</p>
+                        <p class="tagex"><span class="gi">&lt;TEI</span> <span class="att">xmlns=</span><span class="val">"http://www.tei-c.org/ns/1.0"</span> <span class="att">xmlns:hei=</span><span class="val">"https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS"</span> <span class="att">ana=</span><span class="val">"hc:IWDDocument"</span><span class="gi">&gt;</span></p>
+                    </div>
+                </div>
+
+                <div><span class="aside">2</span>
+                    <h2 id="ch2">2 The TEI header</h2>
+                    <p>The element <span class="gi">&lt;teiHeader&gt;</span> includes initially just the two child elements <span class="gi">&lt;fileDesc&gt;</span> and <span class="gi">&lt;encodingDesc&gt;</span>. They are filled according the following model (please adjust to the respective text).</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                      &lt;teiHeader&gt;
+                        &lt;fileDesc&gt;
+                          &lt;titleStmt&gt;
+                            &lt;title ana="hc:MainTitle"&gt;This element contains the title of the work, e.g. Iwein&lt;/title&gt;
+                            &lt;title ana="hc:Subtitle"&gt;This element contains e.g.: "digital edition of manuscript B"&lt;/title&gt;
+                            &lt;author&gt;
+                              &lt;persName&gt;Hartmann von Aue&lt;/persName&gt;
+                              &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118546228&lt;/idno&gt;
+                            &lt;/author&gt;
+                            &lt;editor&gt;
+                              &lt;persName&gt;This element contains the name of the editor of this specific text.&lt;/persName&gt;
+                              &lt;idno ana="hc:GNDURI"&gt;This element contains the URL to the GND record of the individual.&lt;/idno&gt;
+                              &lt;idno ana="hc:ORCIDURI"&gt;This element contains the URL to the ORCID of the editor.&lt;/idno&gt;
+                              &lt;affiliation&gt;
+                                &lt;orgName&gt;University of the editor&lt;/orgName&gt;
+                                &lt;idno ana="hc:GNDURI"&gt;This element contains the URL to the GND record of this institution&lt;/idno&gt;
+                              &lt;/affiliation&gt;
+                            &lt;/editor&gt;
+                            &lt;funder&gt;
+                              &lt;orgName&gt;This element contains the name of the sponsoring organization, e.g. DFG&lt;/orgName&gt;
+                              &lt;idno ana="hc:DOI"&gt;This element contains the URL to the GND record of this institution&lt;/idno&gt;
+                            &lt;/funder&gt;
+                          &lt;/titleStmt&gt;
+                          &lt;editionStmt&gt;
+                            &lt;edition&gt;E.g. "Transcription, edition, notes"&lt;/edition&gt;
+                          &lt;/editionStmt&gt;
+                          &lt;publicationStmt&gt;
+                            &lt;publisher&gt;
+                              &lt;orgName&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+                              &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+                              &lt;listRef&gt;
+                                &lt;ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de/"/&gt;
+                              &lt;/listRef&gt;
+                            &lt;/publisher&gt;
+                            &lt;pubPlace&gt;
+                              &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+                              &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4023996-2&lt;/idno&gt;
+                            &lt;/pubPlace&gt;
+                            &lt;date when="2024"&gt;2024&lt;/date&gt;
+                            &lt;availability&gt;
+                              &lt;licence target="https://creativecommons.org/licenses/by-sa/4.0"&gt;
+                                &lt;p&gt;Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)&lt;/p&gt;
+                              &lt;/licence&gt;
+                            &lt;/availability&gt;
+                            &lt;idno ana="hc:DOI"&gt; This element contains the d.o.i. of the reading view.&lt;/idno&gt;
+                            &lt;listBibl&gt;
+                              &lt;bibl ana="hc:RecommendedBibliographicReference"&gt;This element contains the bibliographical reference of the single text edition, e.g. Hartmann von Aue: Iwein. Digital edition of manuscript X. Hrsg. von XXX. In: Hartmann von Aue: Iwein. Textgeschichtlich digitale Edition edition, hg. von Victor Millet, Emilio González Miranda and Lorena Pérez Ben. Heidelberg: Universitätsbibliothek, 2019–2025. DOI: &lt;idno ana="hc:DOI"&gt;https://doi.org/10.11588/edition.iwd&lt;/idno&gt; [date of retrieval]&lt;/bibl&gt;
+                            &lt;/listBibl&gt;
+                          &lt;/publicationStmt&gt;
+                          &lt;notesStmt&gt;
+                            &lt;note&gt;Here you can place acknowledgements, specific mentions of sponsoring institutions, as well as further information. Several notes can be placed consecutively.&lt;/note&gt;
+                          &lt;/notesStmt&gt;
+                          &lt;sourceDesc&gt;
+                            &lt;msDesc&gt;
+                              &lt;msIdentifier&gt;
+                                &lt;settlement&gt;
+                                  &lt;placeName&gt;This element contains the location of the manuscript.&lt;/placeName&gt;
+                                  &lt;idno ana="hc:GNDURI"&gt;This element contains the URL to the GND-record of this place.&lt;/idno&gt;
+                                &lt;/settlement&gt;
+                                &lt;repository&gt;
+                                  &lt;orgName&gt;This element contains the owning institution&lt;/orgName&gt;
+                                  &lt;idno ana="hc:GNDURI"&gt;This element contains the URL to the GND-record of this institution.&lt;/idno&gt;
+                                &lt;/repository&gt;
+                                &lt;idno ana="hc:Shelfmark"&gt;This element contains the signature of the manuscript.&lt;/idno&gt;
+                                &lt;idno ana="hc:EditorialSiglum"&gt;This element contains the siglum of the manuscript.&lt;/idno&gt;
+                              &lt;/msIdentifier&gt;
+                              &lt;additional&gt;
+                                &lt;surrogates&gt;
+                                  &lt;listBibl&gt;
+                                    &lt;bibl ana="hc:BibliographicReferenceForOnlineFacsimile"&gt;This element contains the bibliographical reference of the digital copy: e.g. Hartmann von Aue: Iwein – Universitätsbibliothek Heidelberg, Cod. Pal. germ. 397. Online edition. Heidelberg: Universitätsbibliothek 2009 (Bibliotheca Palatina – digital) (Permalink: &lt;ptr ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/diglit/cpg397"/&gt;; DOI: &lt;idno ana="hc:DOI"&gt;https://doi.org/10.11588/diglit.199&lt;/idno&gt;; IIIF-Manifest [v3.0]: &lt;ptr ana="hc:IIIFManifestURL" target="https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg397/manifest"/&gt;)&lt;/bibl&gt;
+                                  &lt;/listBibl&gt;
+                                &lt;/surrogates&gt;
+                              &lt;/additional&gt;
+                            &lt;/msDesc&gt;
+                          &lt;/sourceDesc&gt;
+                        &lt;/fileDesc&gt;
+                        &lt;encodingDesc&gt;
+                          &lt;listPrefixDef&gt;
+                            &lt;prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"&gt; &lt;/prefixDef&gt;
+                              &lt;prefixDef ident="char" matchPattern="(.+)" replacementPattern="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/chars.xml#$1"&gt; &lt;/prefixDef&gt;
+                            &lt;/listPrefixDef&gt;
+                            &lt;hei:elementsWithTokenizedContent include="l head ab trailer"/&gt;
+                          &lt;/encodingDesc&gt;
+                      &lt;/teiHeader&gt;
+                    </code></pre></div>
+                </div>
+
+                <div id="div_facsimile"><span class="aside">3</span>
+                    <h2 id="ch3">3 The element <span class="gi">&lt;facsimile&gt;</span></h2>
+                    <p>Between the TEI header and the text we place the element <span class="gi">&lt;facsimile&gt;</span>. It allows to the synchronize the text with the digital facsimile. It contains the information on manuscript pages (<span class="gi">&lt;surface&gt;</span>), their digital facsimiles (<span class="gi">&lt;graphic&gt;</span>) and their text zones (<span class="gi">&lt;zone&gt;</span>).</p>
+                    <div><span class="aside">3.1</span>
+                        <p>Every page of the manuscript is encoded as <span class="gi">&lt;surface&gt;</span>. This element contains the attribute <span class="att">@ana</span> (with the value <span class="val">hc:Page</span>), <span class="att">@xml:id</span> (whose value is the siglum of the manuscript and the page number, e.g. <span class="val">b_12v</span>) and <span class="att">@n</span> (with the value of the page number, e.g. <span class="val">12v</span>).</p>
+                    </div>
+                    <div><span class="aside">3.2</span>
+                        <p>The first child element of <span class="gi">&lt;surface&gt;</span> is the element <span class="gi">&lt;graphic&gt;</span> with the attribute <span class="att">@url</span>, whose value is the URL of the digital facsimile of the page. The element is empty.</p>
+                    </div>
+                    <div><span class="aside">3.3</span>
+                        <p>The next child elements of <span class="gi">&lt;surface&gt;</span> is <span class="gi">&lt;zone&gt;</span>. We use as many <span class="gi">&lt;zone&gt;</span>-elements text-zones can ben found on that. The text-zones of the page are columns and, when they appear, marginal areas. A page written in a single column has therefore a single element <span class="gi">&lt;zone&gt;</span>, while a page written in two columns with a quire signature at the bottom will have three <span class="gi">&lt;zone&gt;</span> elements.</p>
+                    </div>
+                    <div><span class="aside">3.4</span>
+                        <p>The system is based on a vertical zone sequence. Thus, if several zones are declared in succession, it will be assumed that they are located one <em>below</em> the other. For this reason, parallel columns must be grouped into a superordinate <span class="gi">&lt;zone&gt;</span> element. It contains the attribute <span class="att">@ana</span> with the value <span class="val">hc:HorizontalLayout</span>.</p>
+                    </div>
+                    <div><span class="aside">3.5</span>
+                        <p> The <span class="gi">&lt;zone&gt;</span> elements for columns contain the attributes <span class="att">@ana</span> (with the value <span class="val">hc:Column</span>), <span class="att">@xml:id</span> (whose value is ›siglum of the manuscript‹_›page number‹-›column‹, e.g. <span class="val">b_12v-a</span>) and <span class="att">@n</span> (with the value of the column letter, e.g. <span class="val">a</span>).</p>
+                    </div>
+                    <div><span class="aside">3.6</span>
+                        <p><span class="gi">&lt;zone&gt;</span> elements for marginal areas contain the attributes <span class="att">@ana</span> (with the value <span class="val">hc:MarginalZone</span>) and <span class="att">@xml:id</span> (whose value is ›signage of the manuscript‹_›page number‹-›one letter more than in the last column‹, e.g. <span class="val">b_12v-b</span>). For areas with special alignment (e.g. in centred or right-aligned layer structures) the attribute <span class="att">@rendition</span> can also be used (with values like <span class="val">hc:SelfAlignmentCentered</span> or <span class="val">hc:SelfAlignmentRight</span>. The element <span class="gi">&lt;zone&gt;</span> is empty.</p>
+                        <p>Example (two-column manuscript with a margin in the bottom):</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;surface ana="hc:Page" xml:id="D_330" n="330"&gt;
+                            &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/bncf_cod_b_r_226/0048/image"/&gt;
+                            &lt;zone ana="hc:MainZone hc:HorizontalLayout"&gt;
+                              &lt;zone ana="hc:Column" xml:id="D_330-a" n="a"/&gt;
+                              &lt;zone ana="hc:Column" xml:id="D_330-b" n="b"/&gt;
+                            &lt;/zone&gt;
+                            &lt;zone ana="hc:MarginalZone" xml:id="D_330-c" hei:placeRef="hc:PageBottom hc:PageMarginRight"/&gt;
+                          &lt;/surface&gt;
+                        </code></pre></div>
+                        <p>On marginal areas like quire signatures or claims see <a class="cross" href="#div_quireSignature">→30. Quire signatures and claims</a>; on <span class="att">@xml:id</span>
+                            <a class="cross" href="#div_xml-id_target">→18. @xml:id and @target</a>.</p>
+                    </div>
+                </div>
+
+                <div id="div_element_text"><span class="aside">4</span>
+                    <h2 id="ch4">4 The element <span class="gi">&lt;text&gt;</span></h2>
+                    <p>The <span class="gi">&lt;facsimile&gt;</span> element is followed now by the text. The element <span class="gi">&lt;text&gt;</span> contains the attribute <span class="att">@ana</span>, whose value consists of two components: on the one hand, <span class="val">hc:CourtlyRomance</span>, on the other hand and depending on the case, <span class="val">hc:CompleteExpression</span> or <span class="val">hc:ExpressionFragmentThroughLoss</span>.</p>
+                    <p>We do not subdivide Hartmann´s narrative texts into sections (<span class="gi">&lt;div&gt;</span>).The sole exception is the <em>Erek</em>, where the so-called ›Mantel-part‹ and the ›Erek-part‹ each form separate sections.</p>
+                </div>
+
+                <div id="div_title_colophon"><span class="aside">5</span>
+                    <h2 id="ch5">5 Title and colophon.</h2>
+                    <p>The element <span class="gi">&lt;text&gt;</span> includes always the element <span class="gi">&lt;body&gt;</span>. It can also include the elements <span class="gi">&lt;front&gt;</span> and/or <span class="gi">&lt;back&gt;</span>. The latter contain scribal titels and colophons.</p>
+                    <p>In <span class="gi">&lt;front&gt;</span> we reproduce the titles which some writers prefix to the text and which do not belong to Hartmann´s text. When such a title appears in the manuscript, a <span class="gi">&lt;front&gt;</span> element is used to encode it. As first child elements it contains <span class="gi">&lt;pb&gt;</span> and <span class="gi">&lt;cb&gt;</span> (<a class="cross" href="#div_page_column">→7. Page, column and physical line</a>). In third place we place an element <span class="gi">&lt;docTitle&gt;</span> with a child element <span class="gi">&lt;titlePart&gt;</span>. In this latter element we copy, tokenized (<a class="cross" href="#div_word">→9. Word and tokenization</a>) and with the specification of the <span class="gi">&lt;lb&gt;</span> (<a class="cross" href="#div_page_column">→7. Page, column and physical line</a>) the title.</p>
+                    <p>Example:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                      &lt;front&gt;
+                        &lt;pb n="5v"/&gt;
+                        &lt;cb n="c"/&gt;
+                        &lt;docTitle&gt;
+                          &lt;titlePart&gt;
+                            &lt;lb n="49"/&gt;
+                            &lt;hi hei:color="Red"&gt;
+                              &lt;w&gt;Von&lt;/w&gt;
+                              &lt;w&gt;künig&lt;/w&gt;
+                              &lt;w&gt;Artus&lt;/w&gt;
+                              &lt;w&gt;hochzeit&lt;/w&gt;
+                            &lt;/hi&gt;
+                          &lt;/titlePart&gt;
+                        &lt;/docTitle&gt;
+                      &lt;/front&gt;
+                    </code></pre></div>
+                    <p>On the other side, in <span class="gi">&lt;back&gt;</span> we typically reproduce scribal colophons. The element <span class="gi">&lt;back&gt;</span> contains a child element <span class="gi">&lt;trailer&gt;</span> with the attribute <span class="att">@ana</span> and with the value <span class="val">hc:Colophon</span>.</p>
+                    <p>Example:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                      &lt;back&gt;
+                        &lt;trailer ana="hc:Colophon"&gt;
+                          &lt;lb n="50"/&gt;
+                          &lt;w&gt;Amen&lt;/w&gt;
+                        &lt;/trailer&gt;
+                      &lt;/back&gt;
+                    </code></pre></div>
+                    <p>Sometimes colophones include decorations, which we tag as <span class="gi">&lt;metamark&gt;</span> (<a class="cross" href="#div_punctuation_ms">→16. Punctuation of the manuscript</a>) with the attribute <span class="att">@ana</span> and the value <span class="val">hc:DecorativeMarker</span></p>
+                    <p>If the writer's title or the colophon are written in verse, we encode these with the element <span class="gi">&lt;l&gt;</span>. We count verses in paratexts only with the attribute <span class="att">@n</span>, whose value beginns in the title with <span class="val">tp</span> and in the colophon with <span class="val">t</span>, e.g.: <span class="gi">&lt;l</span> <span class="att">n=</span><span class="val">"t7"</span><span class="gi">/&gt;</span>. <span class="att">@hei:altN</span> or <span class="att">@xml:id</span> are not used here.</p>
+                    <p>Titles and colophons are tokenized (<a class="cross" href="#div_word">→9. Word and tokenization</a>), but the word elements do not contain any <span class="att">@xml:id</span>.</p>
+                </div>
+
+                <div id="div_main_text"><span class="aside">6</span>
+                    <h2 id="ch6">6 The text</h2>
+                    <p>We use three types of elements in the text: structural, semantic and alternative constructions.</p>
+                    <div><span class="aside">a</span>
+                        <p>Structural elements (e.g. <span class="gi">&lt;pb&gt;</span>, <span class="gi">&lt;cb&gt;</span>, <span class="gi">&lt;lb&gt;</span>, <span class="gi">&lt;gap&gt;</span>, <span class="gi">&lt;milestone&gt;</span> among others) are descriptive and objective: they describe the qualities of the manuscript. They work like landmarks, and they are always empty (<a class="cross" href="#div_page_column">→7. Page, column and physical line</a>, <a class="cross" href="#div_gap_damage">→26. Gaps and damaged text</a>).</p>
+                    </div>
+                    <div><span class="aside">b</span>
+                        <p>The most frequent semantic elements are <span class="gi">&lt;l&gt;</span>, <span class="gi">&lt;w&gt;</span>, <span class="gi">&lt;hi&gt;</span>, <span class="gi">&lt;pc&gt;</span>. They are based on our definitions: we decide whether their content is a word, a verse, a punctuation mark, etc.</p>
+                    </div>
+                    <div><span class="aside">c</span>
+                        <p>Alternative constructions (<span class="gi">&lt;choice&gt;</span>, <span class="gi">&lt;subst&gt;</span>) include always two possible display options; therefore, they must contain two child elements (<a class="cross" href="#div_correction">→34. Editorial interventions and corrections</a>, <a class="cross" href="#div_del_add">→19. Additions, deletions, substitutions</a>). This allows to visualize either one or the other.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_transcritpions"><span class="aside">II</span>
+                <h1 id="chII">II Transcription of the manuscript</h1>
+
+                <div id="div_page_column"><span class="aside">7</span>
+                    <h2 id="ch7">7 Page, column and physical line</h2>
+                    <div><span class="aside">7.1</span>
+                        <p>The start of a new page is tagged with <span class="gi">&lt;pb&gt;</span>. Also, the beginning of the first page is marked; this may already occur in <span class="gi">&lt;front&gt;</span>
+                            <a class="cross" href="#div_title_colophon">→5. Title and colophon.</a>. The element <span class="gi">&lt;pb&gt;</span> is always empty. Like all elements, we always try to place as far "up" as possible within the XML structure: in manuscripts with separate verses, this means after the end of the last <span class="gi">&lt;lg&gt;</span> of the preceding page, or, if there is one verse of a couplet on each page, after the end of the last <span class="gi">&lt;l&gt;</span>. However, in manuscripts with continuous text the element is put in the appropiate place, also within a word.</p>
+                        <p>The element <span class="gi">&lt;pb&gt;</span> contains always the attribute <span class="att">@n</span>; the value of the attribute is the page number, e.g.: <span class="gi">&lt;pb</span> <span class="att">n=</span><span class="val">"2r"</span><span class="gi">/&gt;</span>, or <span class="gi">&lt;pb</span> <span class="att">n=</span><span class="val">"28v"</span><span class="gi">/&gt;</span>.</p>
+                        <p>It contains always the attribute <span class="att">@facs</span>, which contains a reference to the <span class="att">@xml:id</span> that this page received in the element <span class="gi">&lt;facsimile&gt;</span>, e.g.: <span class="gi">&lt;pb</span> <span class="att">n=</span><span class="val">"35r"</span> <span class="att">facs=</span><span class="val">"#A_35r"</span><span class="gi">/&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">7.2</span>
+                        <p>The start of a new column is tagged with <span class="gi">&lt;cb&gt;</span>. This element is always empty as well. In manuscripts written in a single column, it is placed always behind the element <span class="gi">&lt;pb&gt;</span>. In manuscripts written in several columns it also appears after the last verse or couplet of the previous column and before the first line of the new column.</p>
+                        <p>It contains always the attribute <span class="att">@n</span>; the value of the attribute is the letter for the respective column (a, b, c), e.g.: <span class="gi">&lt;cb</span> <span class="att">n=</span><span class="val"></span> <span class="att">"a"=</span><span class="val"></span><span class="gi">/&gt;</span> or <span class="gi">&lt;cb</span> <span class="att">n=</span><span class="val">"b"</span><span class="gi">/&gt;</span></p>
+                        <p>It includes always the attribute <span class="att">@facs</span>, which contains a reference to the <span class="att">@xml:id</span> that this page received in the element <span class="gi">&lt;facsimile&gt;</span>, e.g.: <span class="gi">&lt;cb</span> <span class="att">n=</span><span class="val">"a"</span> <span class="att">facs=</span><span class="val">"#A_35r-a"</span><span class="gi">/&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">7.3</span>
+                        <p>The start of a new physical line is tagged with <span class="gi">&lt;lb&gt;</span>. This element is always empty. It contains always the attribute <span class="att">@n</span>; the value of the attribute is the number of the physical line in the current column, e.g.:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;l&gt;
+                            &lt;lb n="23"/&gt;
+                            &lt;w/&gt;
+                            &lt;w/&gt;
+                            &lt;w/&gt;
+                          &lt;/l&gt;
+                        </code></pre></div>
+                        <p>The position of <span class="gi">&lt;lb&gt;</span> in relation to <span class="gi">&lt;l&gt;</span> (whether inside or outside) is essentially irrelevant; <span class="gi">&lt;lb&gt;</span> can also be in the middle of the word in manuscripts with continuous texts.. For practical reasons, though, we set <span class="gi">&lt;lb&gt;</span> as first child element of <span class="gi">&lt;l&gt;</span> wherever the beginning of the verse coincides with the beginning of the line (see the example above).</p>
+                        <p>For word separation in line breaks <a class="cross" href="#div_word">→9. Word and tokenization</a>; for line overflows <a class="cross" href="#div_lineOverflow">→23. Line overflow</a>.</p>
+                    </div>
+                </div>
+
+                <div id="div_couplet_verse"><span class="aside">8</span>
+                    <h2 id="ch8">8 Couplet and verse</h2>
+                    <div><span class="aside">8.1</span>
+                        <p>Each couplet or verse group is tagged with the element <span class="gi">&lt;lg&gt;</span>. It contains the attribute <span class="att">@ana</span> with the value <span class="val">hc:Couplet</span> (=rhyming couplet, the most common), <span class="val">hc:Tercet</span> or <span class="val">hc:Quatrain</span>. This attribute is omitted only in verses without a rhyming partner; a loose verse should perhaps not be placed in a <span class="gi">&lt;lg&gt;</span>, but we have kept it this way for pragmatic purposes.</p>
+                    </div>
+                    <div><span class="aside">8.2</span>
+                        <p>Each verse is placed inside the element <span class="gi">&lt;l&gt;</span>. This element carries three attributes: <span class="att">@n</span>, <span class="att">@xml:id</span> and <span class="att">@hei:altN</span>: </p>
+                        <p>The attribute <span class="att">@n</span> contains as value the verse number according to the respective standard edition. We use this numbering to identify the verses. Additional verses or verses which are completely different, but replace a ›regular verse‹ (we also call them ›Ersatzverse‹), are given an additional number. Additional numbers always consist of the standard number of the preceding verse and (depending on the text and philological tradition) an appended letter (e.g. 123a / 123b in ›Der Arme Heinrich‹ or in ›Gregorius‹) or an additional number separated by a comma (e.g. 123,1 / 123,2 in ›Iwein‹).</p>
+                        <p>The attribute <span class="att">@xml:id</span> (<a class="cross" href="#div_xml:id_target">→. </a>) contains almost always as value the same number like <span class="att">@n</span>, with an ›l‹ (as ›line‹) and an underscore in front of it. For instance:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="323" xml:id="l_323"/&gt;
+                            &lt;l n="323a" xml:id="l_323a"/&gt;
+                            &lt;l n="323,1" xml:id="l_323.1"/&gt;
+                        </code></pre></div>
+                        <p>As an <span class="att">@xml:id</span> may not have a comma in its value, we replace it by a full stop.</p>
+                        <p>The attribute <span class="att">@hei:altN</span>, which enables alternative numbering of the verse, counts the verses stricly in the order of the manuscript.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="123" xml:id="l_123" hei:altN="121"/&gt;
+                            &lt;l n="123a" xml:id="l_123a" hei:altN="121"/&gt;
+                            &lt;l n="123,1" xml:id="l_123.1" hei:altN="121"/&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">8.3</span>
+                        <p>The attribute <span class="att">@xml:id</span> is used to check the correspondence and synchronization of the respective verses in the different manuscripts. Verses with the same <span class="att">@xml:id</span> in two different files can thus be displayed at the same height in the synoptic visualization. For different verses that have different <span class="att">@xml:id</span>, this results in additional lines; in a parallel view of various testimonies, a blank line is displayed at the corresponding position in manuscripts that do not contain certain erses. For the so-called ›Ersatzverse‹, i.e. completely changed lines whose rhyming partner is the corresponding ›standard verse‹, we mostly do not want to display empty lines in the synopsis. Therefore, in those cases we give the <span class="att">@xml:id</span> the value of the standard verse. The verse thus displays a different number but it is at the same height as the others. Example: </p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="123" xml:id="l_123"&gt; ... &lt;/l&gt;
+                            &lt;l n="123a" xml:id="l_124"&gt; ... &lt;/l&gt;
+                            &lt;l n="125" xml:id="l_125"&gt; ... &lt;/l&gt;
+                        </code></pre></div>
+                        <p>The additional verse 123a takes the position of verse 124; since we want to display it in this position, we attribute it the <span class="att">@xml:id</span> value which the verse 124 has in other files.</p>
+                    </div>
+                    <div><span class="aside">8.4</span>
+                      <p>In the case of verse rearrangements made by the scribe, the transcription initially follows the physical verse arrangement of the manuscript. That means that the numbers of the <span class="gi">&lt;lb&gt;</span> elements always remain consecutive. The numbers of the <span class="gi">&lt;l&gt;</span> elements, on the other hand, are adjusted (for possible editorial handling <a class="cross" href="#div_transposeVerses">→37. Editorial transpositions</a>). For example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="113" xml:id="l_113" hei:altN="109"&gt;
+                              &lt;lb n="24"/&gt; ... &lt;/l&gt;
+                            &lt;l n="112" xml:id="l_112" hei:altN="110"&gt;
+                              &lt;lb n="25"/&gt; ... &lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">8.5</span>
+                        <p>If a verse or group of verses are missing in the manuscript, they are simply not included in the transcription:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="101" xml:id="l_101" hei:altN="101"&gt;
+                              &lt;lb n="24"/&gt; ... &lt;/l&gt;
+                            &lt;l n="114" xml:id="l_114" hei:altN="102"&gt;
+                              &lt;lb n="25"/&gt; ... &lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">8.6</span>
+                        <p>In added verses the necessary <span class="gi">&lt;l&gt;</span> and <span class="gi">&lt;lg&gt;</span> elements are added. For instance:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;lg ana="hc:Couplet"&gt;
+                            &lt;l n="117" xml:id="l_117" hei:altN="117"&gt;
+                              &lt;lb n="11"/&gt; ... &lt;/l&gt;
+                            &lt;l n="118" xml:id="l_118" hei:altN="118"&gt;
+                              &lt;lb n="12"/&gt; ... &lt;/l&gt;
+                          &lt;/lg&gt;
+                          &lt;lg ana="hc:Couplet"&gt;
+                            &lt;l n="118a" xml:id="l_118a" hei:altN="119"&gt;
+                              &lt;lb n="13"/&gt; ... &lt;/l&gt;
+                            &lt;l n="118b" xml:id="l_118b" hei:altN="120"&gt;
+                              &lt;lb n="14"/&gt; ... &lt;/l&gt;
+                          &lt;/lg&gt;
+                          &lt;lg ana="hc:Couplet"&gt;
+                            &lt;l n="119" xml:id="l_119" hei:altN="121"&gt;
+                              &lt;lb n="15"/&gt; ... &lt;/l&gt;
+                            &lt;l n="120" xml:id="l_120" hei:altN="122"&gt;
+                              &lt;lb n="16"/&gt; ... &lt;/l&gt;
+                          &lt;/lg&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">8.7</span>
+                        <p>For verses that were accidentally copied in the wrong order, and that the scribe puts back into the correct order with a transposition mark see <a class="cross" href="#div_transpose">→29. Transpositions</a>.</p>
+                    </div>
+                    <div><span class="aside">8.8</span>
+                        <p>Missing and additional verses, so-called ›Ersatzverse‹, verse rearrangements and rhyme changes are marked in the Concordance document.</p>
+                    </div>
+                </div>
+
+                <div id="div_word"><span class="aside">9</span>
+                    <h2 id="ch9">9 Word and tokenization</h2>
+                    <div><span class="aside">9.1</span>
+                        <p>Every linguistic word is tagged with the element <span class="gi">&lt;w&gt;</span>. We also call this a token. Each word carries an <span class="att">@xml:id</span> (<a class="cross" href="#div_xml:id_target">→. </a>) whose value follows the structure ›element_verse number_position number‹, e.g.: <span class="gi">&lt;xml:id="w_765_1"</span><span class="gi">&gt;</span> (=first element <span class="gi">&lt;w&gt;</span> in verse 765).</p>
+                    </div>
+                    <div><span class="aside">9.2</span>
+                      <p>Since we record words in the element <span class="gi">&lt;w&gt;</span> according to linguictic criteria, the contracted or hyphenated spelling of the manuscript can be reproduced. However, spaces have no longer the function of separating words. <a class="cross" href="#div_space">→10. Space. Conjoined and separate spelling</a>.</p>
+                    </div>
+                    <div><span class="aside">9.3</span>
+                        <p>If a word is separated at the end of a line in the manuscript, it is inserted at the corresponding position within the word <span class="gi">&lt;lb&gt;</span>, with the number of the new line, as well as with the <span class="gi">&lt;break="no"</span><span class="gi">&gt;</span>. If there is a separator in the document, this is entered as <span class="gi">&lt;metamark&gt;</span> (<a class="cross" href="#div_metamark">→17. Metamarks</a>) with the attribute <span class="gi">&lt;ana="hc:Hyphen"</span><span class="gi">&gt;</span>, containing the separator. e.g.:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;lb n="26"/&gt;
+                            &lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;vrüme&lt;metamark ana="hc:Hyphen"&gt;⸗&lt;/metamark&gt;&lt;lb n="27" break="no"/&gt;keit&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">9.4</span>
+                        <p>Rules for the tokenization:</p>
+                        <p>We define what a word is according to linguistic criteria. In case of doubt, we refer to the dictionaries, even though they are not always standardized. Manuscripts from the 15<sup>th</sup> century often contain compounds which were not yet lexicalized in the 13<sup>th</sup> century. We respect that.</p>
+                        <p>Pronominal adverbs and separable verb prefixes are always separated. Examples:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          daran → &lt;w&gt;dar&lt;/w&gt;&lt;w&gt;an&lt;/w&gt;
+                          warumbe → &lt;w&gt;war&lt;/w&gt;&lt;w&gt;umbe&lt;/w&gt;
+                          abebrechen → &lt;w&gt;abe&lt;/w&gt;&lt;w&gt;brechen&lt;/w&gt;
+                        </code></pre></div>
+                        <p>Word limits in contractions (proclisis, enclisis and crasis):</p>
+                        <ul>
+                            <li>If the vowel in the area of the crasis belongs (also) clearly to the second word, then it is separated from it; if it belongs only to the first word, it is separated from it. Examples:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          sageter → &lt;w&gt;saget&lt;/w&gt;&lt;w&gt;er&lt;/w&gt; (= sagete er)
+                          zen → &lt;w&gt;z&lt;/w&gt;&lt;w&gt;en&lt;/w&gt; (= ze den)
+                          zun → &lt;w&gt;zu&lt;/w&gt;&lt;w&gt;n&lt;/w&gt; (= zuo den)
+                        </code></pre></div>
+                        <ul>
+                            <li>If a consonant in the area of the crasis belongs (also) clearly to the first word, it is separated from it; if it belongs only to the second form, it is separated from it. Examples:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          mirz → &lt;w&gt;mir&lt;/w&gt;&lt;w&gt;z&lt;/w&gt;(= mir ez)
+                          alsi → &lt;w&gt;als&lt;/w&gt;&lt;w&gt;i&lt;/w&gt; (= alse si)</code></pre></div>
+                        <ul>
+                            <li>Triple contraction (<em>deiswar</em>, <em>destwar</em> oder <em>deswar</em>) is treated in the same way:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code> 
+                          destwar → &lt;w&gt;de&lt;/w&gt;&lt;w&gt;st&lt;/w&gt;&lt;w&gt;war&lt;/w&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>In contractions with the second person singular pronoun <em>du</em>, we place always the ⟨t⟩ or ⟨d⟩ at the boundary with the personal pronoun.</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          mahtu → &lt;w&gt;mah&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          mustu → &lt;w&gt;muos&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          soltu → &lt;w&gt;sol&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          bistu → &lt;w&gt;bis&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          magstu → &lt;w&gt;mags&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          sagestu → &lt;w&gt;sages&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                          wellestu → &lt;w&gt;welles&lt;/w&gt;&lt;w&gt;tu&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+                <div><span class="aside">9.5</span>
+                    <p>Numbers are tagged with the element <span class="gi">&lt;num&gt;</span>, which carries the attribute <span class="att">@value</span>, e.g.:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;num value="12"&gt;xii&lt;/num&gt;
+                    </code></pre></div>
+                </div>
+
+                <div id="div_space"><span class="aside">10</span>
+                    <h2 id="ch10">10 Space. Conjoined and separate spelling</h2>
+                    <div><span class="aside">10.1</span>
+                        <p>The tokenization of words according to linguistic criteria must be distinguished from their conjoined or separate spelling. There is usually a space between two words. Spaces are tagged with the element <span class="gi">&lt;c&gt;</span>, whose content is a blank space.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;c&gt; &lt;/c&gt;</code></pre></div>
+                      <p>The tagging of blank spaces is a characteristic of this data modelling that helps to control serparate and conjoined spelling both in the transcription and in the edition.</p>
+                    </div>
+                    <div><span class="aside">10.2</span>
+                        <p>If two words are written together in a manuscript, the space is omitted in the transcription, but it can be added in the edition. <a class="cross" href="#div_space_editorial">→35. Editorial treatment of the blank space</a>.</p>
+                    </div>
+                    <div><span class="aside">10.3</span>
+                        <p>. When deleting or adding whole words in the manuscript, a space must be deleted or added in the code, so that the words do not appear written together when displayed. E.g.:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;w&gt;Swer&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                          &lt;w&gt;an&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                          &lt;add&gt;&lt;w&gt;rehte&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/add&gt;
+                          &lt;w&gt;güete&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">10.4</span>
+                        <p>Conjoined and separated spelling is by no means always clear in manuscripts. In case of doubt, the words are recorded as dictionaries provide: if two different words are close to each other but not clearly written together, we transcribe them as separate; if two letters within a word are slightly separated from each other but not a clearl separation, the word is then written together. This decision is at the discretion of the transcriber.</p>
+                    </div>
+                    <div><span class="aside">10.5</span>
+                        <p>In case of clear separate spelling within a grammatical word (e.g.: verb prefixes), the word as such is recorded in a single <span class="gi">&lt;w&gt;</span> element, and the separation is marked with a ›optional‹ blank space, which is deleted for the edition view:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;ge&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;lesen&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">10.6</span>
+                        <p>Conversely, if two words are clearly written together, both are recorded as separate tokens. Their conjoined spelling is characterized in the TEI file by the fact that there is no space <span class="gi">&lt;c&gt;</span> between the two tokens. If we want both words to appear separated in the edition, the space can be added editorially. <a class="cross" href="#div_space_editorial">→35. Editorial treatment of the blank space</a>:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;ze&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w&gt;lesen&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">10.7</span>
+                        <p>A line break <span class="gi">&lt;lb&gt;</span> automatically inserts a space in the visualization. However, in manuscripts with continuous text (i.e. at the end of verses that finish in the middle of a physical line and where <span class="gi">&lt;lb&gt;</span> does not always precede the following verse) we insert a space before the <span class="gi">&lt;lb&gt;</span> so that the last word of the first verse and the first word of the following verse do not touch each other in the view.</p>
+                    </div>
+                </div>
+
+                <div id="div_grapheme"><span class="aside">11</span>
+                    <h2 id="ch11">11 Graphemes and capital letters</h2>
+                    <div><span class="aside">11.1</span>
+                        <p>We translate handwritten texts into a mechanical font. This means that a variable and polymorphic character system is simplified and standardized. Thus, we do not reproduce the various allographs of the manuscripts (different forms of ⟨z⟩, ⟨d⟩, ⟨r⟩, ⟨s⟩, etc.); instead we only write the corresponding graphemes of modern printed script. The only exception is the ›long s‹ ⟨ſ⟩, because this was sometimes confused with ⟨f⟩ in medieval writing. It can be easily normalised to ⟨s⟩ during text processing.</p>
+                    </div>
+                    <div><span class="aside">11.2</span>
+                        <p>To distinguish capital letters from lowercase letters is not a simple task, especially in later manuscripts. A capital letter should have a different stroke as the corresponding lowercase letter (as today in ⟨aA⟩, ⟨bB⟩, ⟨dD⟩, ⟨eE⟩, ⟨fF⟩, ⟨gG⟩). But even so, it is sometimes difficult because graphemes that we normally would transcribe as capital letters suddenly appear inside the word. Since we do not reproduce the medieval graphemes, we transcribe them by sense: only clear capital letters at the beginning of words are recorded as such; everything else are lowercase letters. Exceptions are all <em>litterae notabiliores</em>, i.e. initials, rubricated verse beginnings and other emphasized initial letters, which we always transcribe as capital letters.</p>
+                    </div>
+                </div>
+
+                <div id="div_diacritics"><span class="aside">12</span>
+                    <h2 id="ch12">12 Special characters, diacritics and superscripts.</h2>
+                    <p>Diacritics and superscripts are recorded using the entitites defined by the <a href="https://mufi.info/q.php?p=mufi" target="_blank">Medieval Unicode Font Initiative (MUFI)</a>. We also use entities to reproduce abbreviation marks (<a class="cross" href="#div_abbreviation">→27. Abbreviations</a>) and metamarks (<a class="cross" href="#div_metamark">→17. Metamarks</a>). Here you can see our specific <a href="X?X?X?" target="_blank">special character list</a>.</p>
+                    
+                    <div><span class="aside">12.1</span> </div>
+                    <div><span class="aside">12.2</span>
+                        <p>In Oxygen, our entities can be easily entered in both text and author mode via the sidebar ›Entities‹: Menu → Window → Show view → Entities.</p>
+                    </div>
+                </div>
+
+                <div id="div_initials"><span class="aside">13</span>
+                    <h2 id="ch13">13 Initial letters</h2>
+                    <div><span class="aside">13.1</span>
+                        <p>Initial letters are tagged with the element <span class="gi">&lt;hei:initial&gt;</span>. They carry three attributes:</p>
+                        <ul>
+                            <li><span class="att">@rendition</span>, which denotes the type of the initial letter; its most common value is <span class="val">hc:Lombard</span>, but the scheme also provides other values: <span class="val">hc:FlourishInitial</span>, <span class="val">hc:SilhouetteInitial</span>, <span class="val">hc:ScrollworkInitial</span>, <span class="val">hc:SpaltleistenInitial</span>, <span class="val">hc:FigureInitial</span>, <span class="val">hc:AnthropomorphicInitial</span>, <span class="val">hc:ZoomorphicInitial</span>, <span class="val">hc:HistoriatedInitial</span>.</li>
+                            <li><span class="att">@hei:color</span>, which determines the color, e.g. <span class="val">Red</span>, <span class="val">Blue</span>, <span class="val">Gold</span>.</li>
+                            <li><span class="att">@hei:heightLines</span>, which specifies the height of the initial in lines, and its value is a full number.</li>
+                        </ul>
+                    </div>
+                    <div><span class="aside">13.2</span>
+                        <p>Initial letters for which the scribe has left an instruction (<a class="cross" href="#div_hei_cue">→. </a>), are additionally provided with an <span class="att">@xml:id</span>.</p>
+                    </div>
+                    <div><span class="aside">13.3</span>
+                        <p>Pre-drawn but not fully executed initials that already show the initial in form, format and placement are recorded as normal initial letters, but also receive the attribute <span class="att">@rendition</span> and the value: <span class="val">hc:Sketch</span>. This is compatible with the other attribute values, e.g.: <span class="val">hc: Sketch hc:Lombard</span>.</p>
+                    </div>
+                    <div><span class="aside">13.4</span>
+                        <p>Not executed initial letters, for which either space was left free or which had to be placed at the edge of the column, are encoded with a special <span class="gi">&lt;choice&gt;</span> construction: its child element <span class="gi">&lt;orig&gt;</span> contains an empty element <span class="gi">&lt;space&gt;</span> for the free space (optionally, this <span class="gi">&lt;space&gt;</span> can also contain an element <span class="gi">&lt;desc&gt;</span> for the free description of a phenomenon); instead of a <span class="gi">&lt;reg&gt;</span> we used the element <span class="gi">&lt;supplied&gt;</span>, with the child element <span class="gi">&lt;hei:initial&gt;</span> (<a class="cross" href="#div_initials">→13. Initial letters</a>), without any attributes. Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;w&gt;
+                            &lt;choice&gt;
+                              &lt;orig&gt;
+                                &lt;space rendition="hc:BlankAreaLeftForInitial" unit="character" quantity="1" hei:indents="4"&gt;
+                                  &lt;desc xml:lang="de"&gt;Aussparung für Initiale&lt;/desc&gt;
+                                &lt;/space&gt;
+                              &lt;/orig&gt;
+                              &lt;supplied&gt;&lt;hei:initial&gt;S&lt;/hei:initial&gt;&lt;/supplied&gt;
+                            &lt;/choice&gt;wer&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">13.5</span>
+                        <p>Some manuscripts use a paragraph mark or a pilcrow ⟨¶⟩ instead of initials or in alternation with them. They are tagged as <span class="gi">&lt;label&gt;</span> with the attribute <span class="att">@ana</span> and value <span class="val">="hc:SectionMarker"</span>, and with the attribute <span class="att">@hei:PlaceRef</span>. The paragraph mark must be placed in the element <span class="gi">&lt;c&gt;</span>. We place all of this outside the verse <span class="gi">&lt;l&gt;</span>. In these cases, the element <span class="gi">&lt;lb&gt;</span> must also be placed outside the <span class="gi">&lt;l&gt;</span> and before the element <span class="gi">&lt;label&gt;</span>.</p>
+                        <p>Paragraph marks should be visible in the transcription view, but we do not want them in the edition view; they are therefore suppresed during processing. Instead, we want the first letter of the corresponding verse to appear in bold, like the initial letters. In order to do so, we tag this first letter with <span class="gi">&lt;seg</span> <span class="att">ana=</span><span class="val">"hc:EditorialEmphasis"</span><span class="gi">&gt;</span></p>
+                            <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                              &lt;lb n="7"/&gt;
+                              &lt;label ana="hc:SectionMarker" hei:PlaceRef="hc:PageMarginLeft"&gt;&lt;c&gt;¶&lt;/c&gt;&lt;/label&gt;
+                              &lt;l n="12"&gt;
+                                &lt;w xml:id="w_1234_1"&gt;&lt;seg ana="hc:EditorialEmphasis"&gt;N&lt;/seg&gt;u&lt;/w&gt; ... 
+                              &lt;/l&gt;
+                            </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_hei-cue"><span class="aside">14</span>
+                    <h2 id="ch14">14 Instructions for initial letters</h2>
+                    <div><span class="aside">14.1</span>
+                        <p>The scribal instructions for initial letters are not metamarks, because they are letters. The <span class="gi">&lt;hei:cue&gt;</span> element was created for them. We always place the element immediately before the word that contains the initial letter to which the character refers.</p>
+                    </div>
+                    <div><span class="aside">14.2</span>
+                        <p>We always provide the element <span class="gi">&lt;hei:cue&gt;</span> with an attribute <span class="gi">&lt;ana="hc:CueInitial"</span><span class="gi">&gt;</span> and another attribute <span class="att">@hei:PlaceRef</span>, whose value is usually <span class="val">hc:InSpace</span> or <span class="val">hc:PageMarginLeft</span> or <span class="val">hc:PageMarginRight</span>, but can also be a different value (<a class="cross" href="#div_del_add">→19. Additions, deletions, substitutions</a>).</p>
+                    </div>
+                    <div><span class="aside">14.3</span>
+                        <p>In addition, the <span class="att">@target</span> attribute refers to the <span class="att">@xml:id</span> of the associated initial letter (<a class="cross" href="#div_initials">→13. Initial letters</a>).</p>
+                    </div>
+                    <div><span class="aside">14.4</span>
+                        <p>The letter of the instruction is placed within a child element <span class="gi">&lt;c&gt;</span>. Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;hei:cue ana="hc:CueInitial" hei:placeRef="hc:InSpace" target="#hei:initial_37"&gt;&lt;c&gt;d&lt;/c&gt;&lt;/hei:cue&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_hi_remark"><span class="aside">15</span>
+                    <h2 id="ch15">15 Highlightings</h2>
+                    <div><span class="aside">15.1</span>
+                        <p>Highlightings using coloured ink is tagged with the <span class="gi">&lt;hi&gt;</span> element, with the <span class="att">@hei:color</span> attribute and the values <span class="val">Red</span>, <span class="val">Green</span>, <span class="val">Blue</span> etc. If an entire word is written in colour, the <span class="gi">&lt;hi&gt;</span> element is placed outside the <span class="gi">&lt;w&gt;</span> elements, also in the case of several words.</p>
+                    </div>
+                    <div><span class="aside">15.2</span>
+                        <p>Highlightings at the beginning of verses with red strokes (typical for paper manuscripts) are tagged with <span class="gi">&lt;hi&gt;</span>; in theses cases we use the attribute <span class="att">@rendition</span> with the value <span class="val">hc:RedStroke</span>, in some cases also with the value <span class="val">hc:RedRetrace</span>. Moving initial letters of verses out into the versalia column is also tagged with <span class="gi">&lt;hi&gt;</span> and with the attribute <span class="att">@rendition</span>, but in these cases the attribute value is normally <span class="val">hc:Versal</span>. Highlighted letters at the beginning of the verse are transcribed as upper-case letters.</p>
+                    </div>
+                    <div><span class="aside">15.3</span>
+                        <p>We refer to later underlining or other highlighting made by more modern hands using <span class="gi">&lt;note&gt;</span> (<a class="cross" href="#div_note">→31. Notes</a>).</p>
+                    </div>
+                    <div><span class="aside">15.4</span>
+                        <p>Cadences (or cadels) are letters decorated in normal ink, but they are not initial letters; they do not introduce sections, nor they do occupy a prominent position. They usually appear in the top line of a column and therefore do not always have to be the first letter in a verse. We tag them with the element <span class="gi">&lt;hi&gt;</span> with the attribute <span class="att">@rendition</span> and the value <span class="val">hc:Cadel</span>.</p>
+                    </div>
+                    <div><span class="aside">15.5</span>
+                        <p>In some (rare) manuscripts places may be found in which a later hand has retraced letters or words that were damage or had faded. We tag such cases with <span class="gi">&lt;retrace&gt;</span>, without any attribute. This element may be placed inside a <span class="gi">&lt;w&gt;</span>, but mostly more than one word is affected an we place <span class="gi">&lt;retrace&gt;</span> as parent element of <span class="gi">&lt;w&gt;</span>.</p>
+                    </div>
+                </div>
+
+                <div id="div_punctuation_ms"><span class="aside">16</span>
+                    <h2 id="ch16">16 Punctuation of the manuscript</h2>
+                    <div><span class="aside">16.1</span>
+                        <p>As punctuation marks we tag (with <span class="gi">&lt;pc&gt;</span>) characters that have some form of linguistic or syntactic meaning. Generally, these are virgulae ›/‹/ or above all rhyming dots ›·‹ (dot on centre), sometimes also question marks. We place the punctuation mark before the space between two words:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w/&gt;
+                            &lt;pc&gt;·&lt;/pc&gt;
+                            &lt;c&gt; &lt;/c&gt;
+                            &lt;w/&gt;
+                        </code></pre></div>
+                        <p>At the end of a verse, when the following verse starts with a new <span class="gi">&lt;lb&gt;</span>, no space is necessary after the <span class="gi">&lt;pc&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">16.2</span>
+                        <p>Punctuation marks are recorded individually, so that two consecutive characters should appear in two different tags <span class="gi">&lt;pc&gt;</span>.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;pc&gt;.&lt;/pc&gt;&lt;pc&gt;/&lt;/pc&gt;</code></pre></div>
+                        <p>On the editorial treatment of punctuation marks <a class="cross" href="#div_transposeVerses">→37. Editorial transpositions</a>.</p>
+                    </div>
+                </div>
+
+                <div id="div_metamark"><span class="aside">17</span>
+                    <h2 id="ch17">17 Metamarks</h2>
+                    <div><span class="aside">17.1</span>
+                        <p>Metamarks are neither letters, nor numbers, nor punctuation marks (although occasionally letters also take on the function of metamarks, e.g. in the case of transposition marks). These can be word separators, correction characters, instruction characters or similar. They are tagged as <span class="gi">&lt;metamark&gt;</span> and contain the attribute <span class="att">@ana</span>, whose value, depending on the function of the mark, will be one of the following options: <span class="val">hc:Hyphen</span> (hyphen, <a class="cross" href="#div_word">→9. Word and tokenization</a>), <span class="val">hc:RunOverMark</span> (line terminator), <span class="val">hc:WordDivider</span> (word separator), <span class="val">hc:CorrectionMark</span> (correction mark), <span class="val">hc:InsertionMark</span> (insertion character), <span class="val">hc:TranspositionMark</span> (transposition character), <span class="val">hc:ReferenceMark</span> (reference character), <span class="val">hc:WordMark</span> (word character), <span class="val">hc:NumberMark</span> (number character), <span class="val">hc:DecorativeMark</span> (decorative marker),
+                            <span class="val">hc:LineDelimiter</span> (line delimiter), <span class="val">hc:CueNumeral</span> (instruction for number). A word mark is a character that is sometimes used for words that consist of only one vowel (e.g. ›ê‹), to indicate that this is not a wrong word start, but a full word; e.g. ⟨|ê|⟩ or ⟨ê'⟩. Number marks are usually raised dots that mark digits as numbers in medieval writing, e.g. ⟨·xxii·⟩.</p>
+                    </div>
+                    <div><span class="aside">17.2</span>
+                        <p>Metamarks can also have the attribute <span class="att">@hei:PlaceRef</span>, we use it when their position is somehow noticeable.</p>
+                    </div>
+                    <div><span class="aside">17.3</span>
+                        <p>In contrast to hyphens or other marks that are produced during the writing process, the insertion mark is placed in an <span class="gi">&lt;add&gt;</span> element (<a class="cross" href="#div_del_add">→19. Additions, deletions, substitutions</a>), which carries the attribute <span class="att">@hei:PlaceRef</span> . A word such as <em>hu,<sup>n</sup>d</em>, with an insertion mark and an <em>n</em> added above the line, would therefore be coded as follows:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;hu&lt;add hei:PlaceRef="hc:Below"&gt;&lt;metamark ana="hc:InsertionMark"&gt;,&lt;/metamark&gt;&lt;/add&gt;&lt;add hei:PlaceRef="hc:Above"&gt;n&lt;/add&gt;d&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_xml-id_target"><span class="aside">18</span>
+                    <h2 id="ch18">18 @xml:id and @target</h2>
+                    <p>Elements that are to be marked in order to refer to them elsewhere are provided with an attribute <span class="att">@xml:id</span>. The value of the attribute must be a unique character string in the file, i.e. an <span class="att">@xml:id</span> value must not be repeated. For standardisation, we choose the following structure for <span class="att">@xml:id</span>s: "Element_verse_number_consecutive_number". For example, an <span class="gi">&lt;xml:id="w_765_1"</span><span class="gi">&gt;</span> would be immediately recognisable as element ›word‹, verse 765, first word of the verse. In principle, all words (<span class="gi">&lt;w&gt;</span>) and verses (<span class="gi">&lt;l&gt;</span>) have <span class="att">@xml:id</span>s. In the case of verses, the IDs are used to synchronise lines from different testimonies. In the case of words, they will later be used for linguistic annotation. However, IDs that do not refer to areas of the text have a different structure, <a class="cross" href="#div_facsimile">→3. The element <span class="gi">&lt;facsimile&gt;</span></a>.</p>
+                    <p>An <span class="att">@xml:id</span>s is referenced with the attribute <span class="att">@target</span>, whose value is the <span class="att">@xml:id</span> of the element being referenced, preceded by a hash e.g.: <span class="gi">&lt;target="#w_765_1"</span><span class="gi">&gt;</span>.</p>
+                </div>
+
+                <div id="div_del_add"><span class="aside">19</span>
+                    <h2 id="ch19">19 Additions, deletions, substitutions</h2>
+                    <div><span class="aside">19.1</span>
+                        <p>The element <span class="gi">&lt;del&gt;</span> tags a deletion in the manuscript. The type of deletion is specified by the attribute <span class="att">@rendition</span>, whose value can be: <span class="val">hc:Erased</span>, <span class="val">hc:Strikethrough</span>, <span class="val">hc:RedStrikethrough</span>, <span class="val">hc:Overwritten</span>, <span class="val">hc:Overpainted</span>, <span class="val">hc:Underlined</span>, <span class="val">hc:Underdotted</span>, <span class="val">hc:Overdotted</span>, <span class="val">hc:Adapted</span>. Attribute values can be combined.</p>
+                    </div>
+                    <div><span class="aside">19.2</span>
+                        <p>Additions are tagged as <span class="gi">&lt;add&gt;</span>. The attribute <span class="att">@hei:placeRef</span> specifies where this addition is located: <span class="val">hc:AboveLine</span>, <span class="val">hc:BelowLine</span>, <span class="val">hc:Inline</span>, <span class="val">hc:PageMarginLeft</span>, <span class="val">hc:PageMarginRight</span>, <span class="val">hc:ColumnMarginLeft</span>, <span class="val">hc:ColumnMarginRight</span>. There are further values in heiEDITIONS Concepts.</p>
+                    </div>
+                    <div><span class="aside">19.3</span>
+                        <p>A substitution occurs when a writer deletes something written and replaces it with something else. An element <span class="gi">&lt;subst&gt;</span> necessarily and exclusively contains the elements<span class="gi">&lt;del&gt;</span> and <span class="gi">&lt;add&gt;</span>. The attributes for <span class="gi">&lt;del&gt;</span> and <span class="gi">&lt;add&gt;</span> are as specified above. When letters have not been deleted but adapted by overwriting, both elements carry the attribute <span class="att">@rendition</span> with the value <span class="val">hc:Adapted</span>.</p>
+                        <p>Examples:</p>
+                        <ul>
+                            <li>Letter added to the word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;so&lt;add hei:placeRef="hc:AboveLine"&gt;l&lt;/add&gt;&lt;/w&gt;</code></pre></div>
+                        <ul>
+                            <li>Letter deleted from the word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;leit&lt;del rendition="hc:Underlined"&gt;e&lt;/del&gt;&lt;/w&gt;</code></pre></div>
+                        <ul>
+                            <li>Letter replaced in the word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;w&lt;subst&gt;&lt;del rendition="hc:Underdotted hc:Overdotted"&gt;o&lt;/del&gt;&lt;add hei:placeRef="hc:AboveLine"&gt;a&lt;/add&gt;&lt;/subst&gt;rt&lt;/w&gt;</code></pre></div>
+                        <ul>
+                            <li>Letter replaced in the word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;w&lt;subst&gt;&lt;del rendition="hc:Adapted"&gt;o&lt;/del&gt;&lt;add rendition="hc:Adapted"&gt;a&lt;/add&gt;&lt;/subst&gt;rt&lt;/w&gt;</code></pre></div>
+                        <ul>
+                            <li>Deleted word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;del rendition="hc:Strikethrough"&gt;&lt;w&gt;superfluous&lt;/w&gt;&lt;/del&gt;</code></pre></div>
+                        <ul>
+                            <li>Added word:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;add hei:placeRef="hc:ColumnMarginRight"&gt;&lt;w&gt;new&lt;/w&gt;&lt;/add&gt;</code></pre></div>
+                        <ul>
+                            <li>Replaced word(s):</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;subst&gt;&lt;del rendition="hc:Erased"&gt;&lt;w&gt;wrong&lt;/w&gt;&lt;w&gt;words&lt;/w&gt;&lt;/del&gt;&lt;add hei:placeRef="hc:Superimposed"&gt;&lt;w&gt;right&lt;/w&gt;&lt;w&gt;words&lt;/w&gt;&lt;/add&gt;&lt;/subst&gt;</code></pre></div>
+                        <p>When the scribe writes a the beginning of a word, crosses it out and then continues writing the correct word, we generally consider this a susbtitution. Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;subst&gt;&lt;del rendition="hc:Strikethrough"&gt;&lt;w&gt;l&lt;/w&gt;&lt;/del&gt;&lt;add hei:placeRef="hc:InLine"&gt;&lt;w&gt;weib&lt;/w&gt;&lt;/add&gt;&lt;/subst&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">19.4</span>
+                        <p>In cases of loose letters or of repeated words left undeleted, it's a task of the editor to decide whether something must be deleted. For such cases see <a class="cross" href="#div_space_editorial">→35. Editorial treatment of the blank space</a>.</p>
+                    </div>
+                    <div><span class="aside">19.5</span>
+                        <p>In case of addition or deletion of whole words (but not in <span class="gi">&lt;subst&gt;</span>!), a blank space <span class="gi">&lt;c&gt;</span> needs to be put in <span class="gi">&lt;del&gt;</span> or <span class="gi">&lt;add&gt;</span>, so that the representation remains correct:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;subst&gt;
+                              &lt;del rendition="hc:Erased"&gt;
+                                &lt;w&gt;wrong&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;words&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                              &lt;/del&gt;
+                              &lt;add hei:placeRef="hc:AboveLine"&gt;
+                                &lt;w&gt;right&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;words&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                              &lt;/add&gt;
+                            &lt;/subst&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">19.6</span>
+                        <p>Scribal deletions of entire verses are not tagged with <span class="gi">&lt;del&gt;</span>, but with <span class="gi">&lt;delSpan&gt;</span>; like all ›span‹ elements, it is empty; an <span class="gi">&lt;anchor&gt;</span> element marks the end of the deleted text. The attribute <span class="att">@xml:id</span> in <span class="gi">&lt;ancho&gt;</span> is referred to by the attribute <span class="att">@spanTo</span> in <span class="gi">&lt;delSpan&gt;</span>:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;delSpan rendition="hc:Strikethrough" spanTo="#delSpan_7657_1"/&gt;
+                              &lt;l n="7657"&gt;&lt;w&gt;niuwan&lt;/w&gt;&lt;w&gt;durh&lt;/w&gt;&lt;w&gt;ir&lt;/w&gt;&lt;w&gt;übermuot&lt;/w&gt;&lt;/l&gt;
+                            &lt;anchor xml:id="delSpan_7657_1"/&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">19.7</span>
+                        <p>For additions of whole verses (or more) inside the text area of the page, the same applies as in the previous paragraph, except that <span class="gi">&lt;addSpan&gt;</span> is used here.</p>
+                        <p>However, additions <em>in the margin</em> must be tagged with a new zone start and a zone change at the end in addition to <span class="gi">&lt;addSpan&gt;</span>. This is because the marginalia must be declared as a marginal text zone in the <span class="gi">&lt;facsimile&gt;</span> element. And this means that the zone changes must be specified in the text with <span class="gi">&lt;milestone&gt;</span>. A new line count starting with ›1‹ applies in the new zone. This is done according to the following model:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;addSpan hei:placeRef="hc:ColumnMarginLeft" spanTo="#f_addSpan_646_1"/&gt;
+                            &lt;milestone ana="hc:ZoneBeginning" facs="#f_8r-c"/&gt;
+                            &lt;l n="646" xml:id="l_646" hei:altN="538"/&gt;
+                              &lt;lb n="1"/&gt;
+                              &lt;w&gt;groz&lt;/w&gt;
+                              &lt;w&gt;ungenade&lt;/w&gt;
+                              &lt;w&gt;da&lt;/w&gt;
+                              &lt;w&gt;geschach&lt;/w&gt;
+                          &lt;anchor xml:id="f_addSpan_646_1"/&gt;
+                          &lt;milestone ana="hc:ZoneShift" facs="#f_8r-a"/&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_del_add_token"><span class="aside">20</span>
+                    <h2 id="ch20">20 Additions / deletions and tokenisation</h2>
+                    <div><span class="aside">20.1</span>
+                        <p>Sometimes a scribal correction changes a word into another one, e.g.: <em>s<sup>t</sup>unde</em>. In such cases, we usually only wan to tokenise the result.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;s&lt;add hei:placeRef="hc:AboveLine"&gt;t&lt;/add&gt;unde&lt;/w&gt;
+                        </code></pre></div>
+                        <p>In special cases, however, e.g. because the error is interesting and meaningful or because the correcton obviously took place during a revision, two tokens could also be set within a <span class="gi">&lt;choice&gt;</span> construction; the second remains empty and refers to the first:</p>
+                        <p>Example 1: sunde → stunde</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;
+                              &lt;w xml:id="w_123_1"&gt;s&lt;add hei:placeRef="hc:AboveLine" corresp="#w_123_2"&gt;t&lt;/add&gt;unde&lt;/w&gt;
+                              &lt;w xml:id="w_123_2" copyOf="# w_123_1"/&gt;
+                            &lt;/choice&gt;
+                        </code></pre></div>
+                        <p>Example 2: hundes → bundes</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;
+                              &lt;w xml:id="w_4567_1"&gt;
+                                &lt;subst&gt;
+                                  &lt;del rendition="hc:Strikethrough" corresp="#w_4567_1"&gt;h&lt;/del&gt;
+                                  &lt;add hei:placeRef="hc:AboveLine" corresp="#w_4567_2"&gt;b&lt;/add&gt;
+                                &lt;/subst&gt;undes &lt;/w&gt;
+                              &lt;w xml:id="w_4567_2" copyOf="# w_4567_1"/&gt;
+                            &lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">20.2</span>
+                        <p>Where no <span class="gi">&lt;subst&gt;</span> can be used because the <span class="gi">&lt;del&gt;</span> and <span class="gi">&lt;add&gt;</span> elements are not directly adjacent, <span class="gi">&lt;substJoin&gt;</span> is used; <span class="gi">&lt;del&gt;</span> and <span class="gi">&lt;add&gt;</span> are provided with the attribute <span class="att">@xml:id</span> and the <span class="gi">&lt;substJoin&gt;</span> element relates them to each other:</p>
+                        <p>Example 1: ih<sup>ie</sup> (the h stands between the <span class="gi">&lt;del&gt;</span> and the <span class="gi">&lt;add&gt;</span> elements, wich is not allowed in <span class="gi">&lt;subst&gt;</span>):</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;
+                              &lt;w xml:id="w_5276_5"&gt;
+                                &lt;del xml:id="del_5276_5_1" rendition="hc:Erased" corresp="#w_5276_5"&gt;i&lt;/del&gt;h &lt;add xml:id="add_5276_5_1" hei:placeRef="hc:Inline" corresp="#w_5276_6"&gt;ie&lt;/add&gt;
+                              &lt;/w&gt;
+                              &lt;w xml:id="w_5276_6" copyOf="#w_5276_5"/&gt;
+                            &lt;/choice&gt;
+                            &lt;substJoin target="#del_5276_5_1 #add_5276_5_1"/&gt;
+                        </code></pre></div>
+                        <p>Example 2: ich dir → yrs</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;del rendition="hc:Strikethrough" xml:id="del_162_3"&gt;
+                              &lt;w xml:id="w_162_3"&gt;ich&lt;/w&gt;
+                              &lt;c&gt; &lt;/c&gt;
+                            &lt;/del&gt;
+                            &lt;choice&gt;
+                              &lt;w xml:id="w_162_4"&gt;
+                                &lt;del xml:id="del_162_4_1" rendition="hc:Strikethrough" corresp="#w_162_4"&gt;d&lt;/del&gt;
+                                &lt;del xml:id="del_162_4_2" rendition="hc:Adapted" corresp="#w_162_4"&gt;i&lt;/del&gt;
+                                &lt;add xml:id="add_162_4_1" rendition="hc:Adapted" corresp="#w_162_5"&gt;y&lt;/add&gt;r &lt;/w&gt;
+                              &lt;w xml:id="w_162_5" copyOf="#w_162_4"/&gt;
+                            &lt;/choice&gt;
+                            &lt;add xml:id="add_162_6" hei:placeRef="hc:Inline"&gt;
+                              &lt;w xml:id="w_162_6"&gt;s&lt;/w&gt;
+                            &lt;/add&gt;
+                            &lt;substJoin target="#del_162_3 #del_162_4_1 #del_162_4_2 #add_162_4_1 #add_162_6"/&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_figure"><span class="aside">21</span>
+                    <h2 id="ch21">21 Images</h2>
+                    <div><span class="aside">21.1</span>
+                        <p>Images in the manuscripts are declared as a <span class="gi">&lt;zone&gt;</span> in the <span class="gi">&lt;facsimile&gt;</span> element. The new zone is then initiated at the corresponding point in the file with <span class="gi">&lt;milestone</span> <span class="att">ana=</span><span class="val">"hc:ZoneBeginning"</span><span class="gi">&gt;</span>. In addition, this element receives the attribute <span class="att">@facs</span> with the reference to the <span class="att">@xml:id</span> of te <span class="gi">&lt;zone&gt;</span> element in <span class="gi">&lt;facsimile&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">21.2</span>
+                        <p>We tag the images themselves with the <span class="gi">&lt;figure&gt;</span> element. This element always has the attribute <span class="att">@n</span> with the consecutive number of the image; and optionally the <span class="att">@label</span> attribute whenever it is wanted to give the image a title.</p>
+                    </div>
+                    <div><span class="aside">21.3</span>
+                        <p>The <span class="gi">&lt;figure&gt;</span> element contains the child elements <span class="gi">&lt;figDesc&gt;</span>, which provides a brief description of the image in a few words, and <span class="gi">&lt;note&gt;</span>, which contains an explanation of the image; the <span class="gi">&lt;note&gt;</span> element always carries the attribute <span class="gi">&lt;ana="hc:EditorialContent"</span><span class="gi">&gt;</span>.</p>
+                        <p>Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;milestone ana="hc:ZoneBeginning" facs="#B_44r-b"/&gt;
+                            &lt;figure n="1"&gt;
+                              &lt;figDesc&gt;Drawing of a hawk in red ink&lt;/figDesc&gt;
+                              &lt;note ana="hc:EditorialContent"&gt;[Content of the note]&lt;/note&gt;
+                            &lt;/figure&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+
+                <div id="div_lineBreak"><span class="aside">22</span>
+                    <h2 id="ch22">22 Line break</h2>
+                    <p>In manuscripts writing the verses in continuous lines, line breaks <em>within</em> the verse are marked with an <span class="gi">&lt;lb&gt;</span> element with its attribute <span class="att">@n</span> at the corresponding position.</p>
+                    <p>The same happens when the line break occurs inside the word. In these cases, the <span class="gi">&lt;lb&gt;</span> should include the attribute <span class="att">@break</span>, with the value <span class="val">no</span>.</p>
+                    <p>When a word with a line break inside is hyphenated, we tag the hyphen as a <span class="gi">&lt;metamark&gt;</span> element, (with the attribute <span class="gi">&lt;ana="hc:Hyphen"</span><span class="gi">&gt;</span>), that precedes the <span class="gi">&lt;lb&gt;</span> element (<a class="cross" href="#div_word">→9. Word and tokenization</a> and <a class="cross" href="#div_punctuation_ms">→16. Punctuation of the manuscript</a>).</p>
+                    <p>Examples:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;w&gt;min&lt;lb n="4" break="no"/&gt;ne&lt;/w&gt;
+                        or
+                        &lt;w&gt;vol&lt;metamark ana="hc:Hyphen"&gt;⸗&lt;/metamark&gt;&lt;lb n="4" break="no"/&gt;get&lt;/w&gt;
+                    </code></pre></div>
+                    <p>This is compatible with column or page breaks. The <span class="gi">&lt;lb&gt;</span> element is then preceded by the corresponding <span class="gi">&lt;pb&gt;</span> and <span class="gi">&lt;cb&gt;</span> elements (<a class="cross" href="#div_page_column">→7. Page, column and physical line</a>).</p>
+                </div>
+
+                <div id="div_lineOverflow"><span class="aside">23</span>
+                    <h2 id="ch23">23 Line overflow</h2>
+                    <p>We speak of line overflow when the end of a verse has been completed at the end of the preceding or following line for reasons of space. Line overflows appear primarily in manuscripts with set-off verses; however, they can also be found in manuscripts without set-off verses, e.g. when a new section begins with an initial letter in the following line.</p>
+                    <p>When this overflow ends up in a line containing other regular text, this creates line segments. The overflow is then a part of a verse which is in a segment of another line, where there's usually another verse. We encode this overflow within the verse (<span class="gi">&lt;l&gt;</span>) to which it belongs, but indicate that it belongs to another line <span class="gi">&lt;lb&gt;</span>.</p>
+                    <p>The beginning of the first line segment in a line does not need to be marked (if it is a regular text that does not require any further information). We mark the beginning of a new line segment (e.g. the segment with the overflow) with a <span class="gi">&lt;milestone&gt;</span> element, placed in the verse (<span class="gi">&lt;l&gt;</span>) to which the text belongs. The <span class="gi">&lt;milestone&gt;</span> element contains an attribute <span class="att">@ana</span> with 2 values: <span class="val">hc:LineSegmentBeginning</span> and <span class="val">hc:RunOverAbove</span> or <span class="val">hc:RunOverBelow</span>. Besides, it includes the attribute <span class="gi">&lt;n="2"</span><span class="gi">&gt;</span> with the number of the segment. In addition, an attribute <span class="att">@hei:belongsToLine</span> is required here, which specifies the line (physical line, i.e. <span class="gi">&lt;lb&gt;</span>, not <span class="gi">&lt;l&gt;</span>!) in which the overflow is located. This allows to encode properly even overflows that are not located in the lines immediately before or after the base line of the verse.</p>
+                    <p>The overflow line is often separated from the rest of the line by dashes or connected to the ›base line‹. These signs are tagged as <span class="gi">&lt;metamark&gt;</span>; they carry an attribute <span class="att">@ana</span> with the value <span class="val">hc:RunOverMark</span> (<a class="cross" href="#div_metamark">→17. Metamarks</a>).</p>
+                    <p>All this is compatible with word separation (<a class="cross" href="#div_word">→9. Word and tokenization</a>).</p>
+                    <p>When the line overflow comprises an entire word, then the first <span class="gi">&lt;milestone&gt;</span> must be preceded by a blank space <span class="gi">&lt;c&gt;</span>.</p>
+                    <p>Examples:</p>
+                    <ul>
+                        <li>Normal line overflow below:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;l n="419"&gt;
+                          &lt;lb n="26"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;c&gt; &lt;/c&gt;
+                          &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverBelow" n="2" hei:belongsToLine="27"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                        &lt;/l&gt;
+                    </code></pre></div>
+                    <ul>
+                        <li>Double line overflow to the top:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;l n="419"&gt;
+                          &lt;lb n="26"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;c&gt; &lt;/c&gt;
+                          &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="25"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="24"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;
+                        &lt;/l&gt;
+                    </code></pre></div>
+                    <ul>
+                        <li>Line overflow to the top with word separation (<a class="cross" href="#div_word">→9. Word and tokenization</a>) and line overflow marker:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;l n="419"&gt;
+                          &lt;lb n="26"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;w&gt;vrüme&lt;metamark ana="hc:Hyphen"&gt;⸗&lt;/metamark&gt;
+                            &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="25" break="no"/&gt;
+                            &lt;metamark ana="hc:RunOverMark"&gt;|&lt;/metamark&gt;keit&lt;/w&gt;
+                        &lt;/l&gt;
+                    </code></pre></div>
+                    <ul>
+                        <li>When the end of a verse is in the following line, regularly aligned and without further marking, we cannot speak of a line overflow; we simply tag it with <span class="gi">&lt;lb&gt;</span> within the <span class="gi">&lt;l&gt;</span>. However, if the excess text in this following line is aligned to the right or otherwise marked as an overflow, then the line is tagged with <span class="gi">&lt;lb&gt;</span>, but the <span class="gi">&lt;lb&gt;</span> also receives the attribute <span class="gi">&lt;ana="hc:RunOverBelow"</span><span class="gi">&gt;</span>, as well as the attribute <span class="gi">&lt;rendition="hc:FlushRight"</span><span class="gi">&gt;</span> (other alignment values are possible <span class="val">hc:Centered</span>, <span class="val">hc:RightIndent</span> and others):</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;l n="419"&gt;
+                          &lt;lb n="26"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;lb n="27" ana="hc:RunOverBelow" rendition="hc:FlushRight"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                        &lt;/l&gt;
+                    </code></pre></div>
+                    <ul>
+                        <li>Overflows added <em>between</em> the lines are also tagged with <span class="gi">&lt;lb&gt;</span>, but in these cases the line number in <span class="att">@n</span> is given the value <span class="val">x.1</span>, where x is the number of the base line. In these cases, the attribute <span class="att">@ana</span> will have the values <span class="val">hc:InterlinearLine</span> and <span class="val">hc:RunOverAbove</span> (usually the interlininear lines are above the regular line, but this is not mandatory), and optionally the attribute <span class="att">@rendition</span> e.g. with the value <span class="val">hc:FlushRight</span>:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;l n="419"&gt;
+                          &lt;lb n="26"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                          &lt;lb n="26.1" ana="hc:InterlinearLine hc:RunOverAbove" rendition="hc:FlushRight"/&gt;
+                          &lt;w&gt;...&lt;/w&gt;&lt;w&gt;...&lt;/w&gt;
+                        &lt;/l&gt;
+                    </code></pre></div>
+                    <ul>
+                        <li>Overflow lines <em>above</em> the first regular text are given the number <span class="gi">&lt;n="0"</span><span class="gi">&gt;</span>; any further overflow lines ›upwards‹ would be given negative numbers. Overflow lines <em>below</em> the last regular text are treated as normal lines (<span class="gi">&lt;lb&gt;</span>) and receive the corresponding number.</li>
+                    </ul>
+                </div>
+
+                <div id="div_not_executed"><span class="aside">24</span>
+                    <h2 id="ch24">24 Unwritten words or lines</h2>
+                    <div><span class="aside">24.1</span>
+                        <p>Sometimes the writer leaves a blank line but does not write in the verse. That there should have been a verse here (but that it was lost or could not be read by the scribe) can usually be recognised by the fact that a rhyming partner is missing; however, it also happens that the scribe <em>believes</em> that a rhyming partner is missing due to changes to the rhymes somewhere in the context. In these cases, we do not tag <span class="gi">&lt;l&gt;</span>, instead we simply enter the element <span class="gi">&lt;lb&gt;</span> and then an element <span class="gi">&lt;space&gt;</span>.</p>
+                        <p>Example</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;lb n="23"/&gt;
+                            &lt;space xml:id="space_1234"&gt;
+                                &lt;desc xml:lang="de"&gt;Space probably left out for verse 1234.&lt;/desc&gt;
+                            &lt;/space&gt;
+                        </code></pre></div>
+                        <p>This encoding should be within the element <span class="gi">&lt;lg&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">24.2</span>
+                        <p>Particularly in the case of individual omitted words for which the scribe has left a blank space, the word (or verse) can be filled from another manuscript with the element <span class="gi">&lt;supplied&gt;</span> (cf. the use of this element <a class="cross" href="#div_initials">→13. Initial letters</a>). This is, nonetheless, already an editorial decision.</p>
+                        <p>Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="5638"&gt;
+                              &lt;lb n="23"/&gt;&lt;w&gt;daz&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                              &lt;choice&gt;
+                                &lt;orig&gt;
+                                  &lt;space xml:id="space_23"&gt;
+                                    &lt;desc xml:lang="de"&gt;Space left for a missing word. The other manuscripts have the word &lt;quote&gt;dienen&lt;/quote&gt;at this place.&lt;/desc&gt;
+                                  &lt;/space&gt;
+                                &lt;/orig&gt;
+                                &lt;supplied&gt;
+                                  &lt;w&gt;dienen&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                                &lt;/supplied&gt;
+                              &lt;/choice&gt;
+                              &lt;w&gt;solt&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;in&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;beiden&lt;/w&gt;
+                            &lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">24.3</span>
+                        <p>For missing words or lines <em>without</em> a blank space in the manuscript see <a class="cross" href="#div_correction">→34. Editorial interventions and corrections</a>.</p>
+                    </div>
+                </div>
+
+                <div id="div_repeated_verse"><span class="aside">25</span>
+                    <h2 id="ch25">25 Repeated and similar verses.</h2>
+                    <div><span class="aside">25.1</span>
+                        <p>In case of similar verses that probably or possibly relate to each other intentionally, we tag this affiliation with the attribute <span class="att">@corresp</span> in the element <span class="gi">&lt;l&gt;</span> of the two corresponding verses. The attribute value is a pointer and refers to the <span class="att">@xml:id</span> at <span class="gi">&lt;l&gt;</span> of the other verse with a hash. E.g.:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="23" xml:id="l_23" corresp="#l_897"&gt;...&lt;/l&gt;
+                            [...]
+                            &lt;l n="897" xml:id="l_897" corresp="#l_23"&gt;...&lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">25.2</span>
+                        <p>Repeated verses differ from similar verses in that we as editors consider the repetition to be incorrect in some way. This can be the case, for example, when a couplet is repeated after a page turn, or with a verse repetition that breaks the rhyming couplet structure (and often it also breaks the syntax). Such repetitions are labelled with the attribute <span class="att">@hei:Replicates</span> in the <span class="gi">&lt;l&gt;</span> element of the repeated verse. The attribute value is a pointer and refers with a hash to the attribute <span class="att">@xml:id</span> at the element <span class="gi">&lt;l&gt;</span> of the ›original‹ verse:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="24" xml:id="l_24"&gt;...&lt;/l&gt; [...]
+                            &lt;l n="45,1" hei:Replicates="#l_24"&gt;...&lt;/l&gt;
+                        </code></pre></div>
+                        <p>Since we do not only count verses continuously (with <span class="att">@hei:altN</span>), but above all we also indentify them (via the attribute <span class="att">@n</span>), we must first determine which verse is the ›repeated‹ one and which is the ›original‹. Once this has been clarified, the attribute <span class="att">@hei:Replicates</span> can only be placed in the ›repeated‹ verse, which is then usually given a ›supplementary number‹. If this is not clear, the attribute should be placed in both verses.</p>
+                    </div>
+                    <div><span class="aside">25.3</span>
+                        <p>There are cases in which a part of a line repeats the corresponding part of another line (usually because the writer jumped to the wrong line in the middle of the verse). In these cases, the corresponding parts of the verse are tagged with the element <span class="gi">&lt;seg&gt;</span> (segment) and related to each other through an <span class="att">@xml:id</span> in the first segment and the pointer-attribute <span class="att">@hei:Replicates</span> in the second.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="6936"&gt;&lt;w&gt;Das&lt;/w&gt;&lt;w&gt;er&lt;/w&gt;&lt;w&gt;den&lt;/w&gt;&lt;seg xml:id="seg_6936_1"&gt;&lt;w&gt;tot&lt;/w&gt; &lt;w&gt;ſehen&lt;/w&gt;&lt;w&gt;ſol&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;
+                            &lt;l n="6936,1"&gt;&lt;w&gt;Das&lt;/w&gt;&lt;w&gt;doch&lt;/w&gt;&lt;w&gt;dem&lt;/w&gt;&lt;w&gt;andern&lt;/w&gt;&lt;seg hei:Replicates="#seg_6936_1"&gt;&lt;w&gt;dot&lt;/w&gt;&lt;w&gt;ſehin&lt;/w&gt;&lt;w&gt;ſol&lt;/w&gt;&lt;/seg&gt;&lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_gap_damage"><span class="aside">26</span>
+                    <h2 id="ch26">26 Gaps and damaged text</h2>
+                    <div><span class="aside">a</span>
+                        <p>We tag damaged text with the element <span class="gi">&lt;damage&gt;</span>. It carries the attribute <span class="att">@rendition</span>; the most common values of this attribute (among the many provided in the schema) are: <span class="val">hc:CutOff</span> – <span class="val">hc:Erased</span> – <span class="val">hc:Faded</span> – <span class="val">hc:Lost</span> – <span class="val">hc:Mould</span> – <span class="val">hc:Perforated</span> – <span class="val">hc:RubbedOff</span> – <span class="val">hc:Stained</span> – <span class="val">hc:TornOff</span>.</p>
+                        <p>It is often a matter of judgement when a text is marked as ›beschädigt‹. In a well-preserved manuscript, we tend to tag even minor damages. In a heavily damaged manuscript, we tend to only set an element <span class="gi">&lt;damage&gt;</span>, when legibility is affected.</p>
+                        <p>If, in the case of <span class="gi">&lt;damage&gt;</span>, a reading is possible but uncertain, the text is also tagged with the child element <span class="gi">&lt;unclear&gt;</span>. This element has no attributes; these can only be placed in the parent element <span class="gi">&lt;damage&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">b</span>
+                        <p>A ›gap‹ is a loss of text due to material damage to the support. They are tagged with <span class="gi">&lt;gap&gt;</span>. This element is always empty. A <span class="gi">&lt;gap&gt;</span> carries the attribute <span class="att">@rendition</span>; the most common values of this attribute (among the many provided in the schema) are: <span class="val">hc:CutOff</span> – <span class="val">hc:Erased</span> – <span class="val">hc:Faded</span> – <span class="val">hc:Illegible</span> – <span class="val">hc:Lost</span> – <span class="val">hc:Mould</span> – <span class="val">hc:Perforated</span> – <span class="val">hc:RubbedOff</span> – <span class="val">hc:Stained</span> – <span class="val">hc:TornOff</span>.</p>
+                        <p>In addition, <span class="gi">&lt;gap&gt;</span> carries the attributes <span class="att">@unit</span>, and <span class="att">@extent</span> or <span class="att">@quantity</span>. The attribute <span class="att">@unit</span> specifies what is lost (<span class="val">character</span>=letter[s] [only inside <span class="gi">&lt;l&gt;</span>]; <span class="val">line</span>line[s]; <span class="val">page</span>=page[s]). When it is possible to count how many of these units are lost, this can be indicated with the attribute <span class="att">@quantity</span> (e.g. <span class="gi">&lt;unit="line"</span><span class="gi">&gt;</span> <span class="gi">&lt;quantity="4"</span><span class="gi">&gt;</span>). When is not possible to know how much is lost, instead of the attribute <span class="att">@quantity</span> we use <span class="att">@extent</span> with the value <span class="val">unknown</span>.</p>
+                        <p>If a part of a word is lost as well as the following (or previous) words, an element <span class="gi">&lt;gap&gt;</span> must be placed both inside the element <span class="gi">&lt;w&gt;</span> and outside it.</p>
+                        <p>When a <span class="gi">&lt;gap&gt;</span> is preceded or followed by a full word, we place a blank space <span class="gi">&lt;c&gt;</span> between those elements; when the loss affects only part of a word, we place an ›editorial space‹ between the two words:</p>
+                            <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                                &lt;w&gt;beschä&lt;gap/&gt;&lt;/w&gt;
+                                &lt;choice&gt;
+                                  &lt;orig/&gt;
+                                  &lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;
+                                &lt;/choice&gt;
+                                &lt;w/&gt;&lt;w/&gt;
+                            </code></pre></div>
+                            <p>When several words are missing, we tag this with only one <span class="gi">&lt;gap&gt;</span>.</p>
+                        <p>For gaps which are larger than a verse, we only use the element <span class="gi">&lt;gap&gt;</span>, outside the elements <span class="gi">&lt;l&gt;</span> and <span class="gi">&lt;lg&gt;</span>.</p>
+                        <p>In manuscript fragments it happens repeatedly that a verse has been lost, but the rhyming partner before or after it has been preserved. In such cases, we tag the missing verse as a gap because we assume that it was originally present:</p>
+                            <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                                &lt;l&gt;&lt;gap/&gt;&lt;/l&gt;</code></pre></div>
+                        <p>Through this encoding we express that the lost text corresponded to a verse. However, we do not go beyond the limits of a couplet. The numbering of such verses that no longer exist or that are no longer legible poses a problem: if we can guess from the rhyming word and the context that the lost verse was probably the same verse that survives at this position in the other manuscripts, then we put an <span class="gi">&lt;l&gt;</span> as parent element of <span class="gi">&lt;gap&gt;</span>and we assign it the expected standard verse number. If we cannot we so sure about this assumption, e.g. because the rhyme partner is missing or because the context has changed, then we do not number this verse.</p>
+                        <p>In manuscripts with verses that are not set off and in wich there is a gap at the end of a verse in the middle of the line, we place a space after the element <span class="gi">&lt;gap&gt;</span>, so that the the words of different verses do not touch the gap in the transcription view:</p>
+                            <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                                &lt;lb n="1"/&gt;
+                                &lt;l&gt;
+                                  &lt;gap rendition="hc:CutOff" unit="character" extent="unknown"/&gt;
+                                  &lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;
+                                &lt;/l&gt;
+                                &lt;l n="1234"&gt;
+                                  &lt;w/&gt;&lt;w/&gt;
+                                &lt;/l&gt;
+                            </code></pre></div>
+                        <p>On the possibility of adding a missing part of a word, see <a class="cross" href="#div_gap_editorial">→38. Editorial treatment of missing word parts for <span class="gi">&lt;gap&gt;</span></a>).</p>
+                    </div>
+                </div>
+
+                <div id="div_abbreviation"><span class="aside">27</span>
+                    <h2 id="ch27">27 Abbreviations</h2>
+                    <div><span class="aside">27.1</span>
+                        <p>We tag abbreviations inside <span class="gi">&lt;w&gt;</span> with a <span class="gi">&lt;choice&gt;</span>-construction which contains the abbreviation marker in <span class="gi">&lt;am&gt;</span> and its expansion in <span class="gi">&lt;ex&gt;</span>. As a general rule, the letter carrying the abbreviation marker remains outside.</p>
+                    </div>
+                    <div><span class="aside">27.2</span>
+                        <p>The abbreviation mark in <span class="gi">&lt;am&gt;</span> is generally entered as entity. We use the entities defined by the <a href="https://mufi.info" target="_blank">MUFI-project</a>. The list of entities for abbreviations of the Hartmann-projects can be found in <a href="https://v-millet.github.io/TEI_Handbuch/Handbuch_de.html#" target="_blank">here</a>. Unless you know them by heart, you may easily enter entities via the sidebar ›Entities‹ in both Oxygen text and author mode: menu → window → show view → entities.</p>
+                    </div>
+                    <div><span class="aside">27.3</span>
+                        <p>The expansion of an abbreviation is tagged with <span class="gi">&lt;ex&gt;</span>. This element directly follows <span class="gi">&lt;am&gt;</span> within the parent <span class="gi">&lt;choice&gt;</span> element. The resolution is not always mechanical and follows grammatical rules, so, for example, <em>eine̅</em> can be resolved as both <em>einem</em> or <em>einen</em>; er-abbreviations must in some cases be resoved as <em>re</em>, etc. Marking and resolving abbreviations is therefore already part of editorial work and requires appropiate judgement.</p>
+                        <p>Examples:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            un&lt;g ref="char:bar"&gt;̄&lt;/g&gt; → und: &lt;w&gt;un&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;d&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                            v&lt;g ref="char:er"&gt;͛&lt;/g&gt;ſehe&lt;g ref="char:bar"&gt;̄&lt;/g&gt; → verſehen: &lt;w&gt;v&lt;choice&gt;&lt;am&gt;&lt;g ref="char:er"&gt;͛&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;er&lt;/ex&gt;&lt;/choice&gt;ſehe&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;n&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">27.4</span>
+                        <p>Special cases:</p>
+                        <ul>
+                            <li>The <em>Iwein</em>-manuscript A (Heidelberg) often uses the form <em>u<sup>n</sup></em> as an abbreviation for the conjunction "und" (= "and"). We encode this by simply using a superscript <em>n</em> inside <span class="gi">&lt;seg&gt;</span> instead of an abbreviation character:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;u&lt;choice&gt;&lt;am&gt;&lt;seg rendition="hc:Superscript"&gt;n&lt;/seg&gt;&lt;/am&gt;&lt;ex&gt;nd&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>One abbreviation has no entity: <em>dc</em> → <em>daz</em>. Here the <em>c</em> serves as an abbreviation character in the element <span class="gi">&lt;am&gt;</span>. Parallel to this we also find <em>wc</em> → <em>waz</em>:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                          &lt;w&gt;w&lt;choice&gt;&lt;am&gt;c&lt;/am&gt;&lt;ex&gt;az&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>Some manuscripts write the same with ⟨z⟩: <em>dz</em> → <em>daz</em>; here we proceed in a slightly different way, because we leave the ⟨z⟩ out of the construction:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;d&lt;choice&gt;&lt;am/&gt;&lt;ex&gt;a&lt;/ex&gt;&lt;/choice&gt;z&lt;/w&gt;</code></pre></div>
+                    </div>
+                    <div><span class="aside">27.5</span>
+                        <p>Abbreviation in versals or highlighted letters:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;&lt;hi rendition="hc:Versal"&gt;H&lt;/hi&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:er"&gt;͛&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;er&lt;/ex&gt;&lt;/choice&gt;re&lt;/w&gt;
+                            &lt;w&gt;&lt;hi rendition="hc:RedStroke"&gt;D&lt;/hi&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:er"&gt;͛&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;er&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">27.6</span>
+                        <p>Expansion of the abbreviation and reversal of letters: some abbreviations are expanded ›backwards‹, i.e. the letters added in the expansion are placed <em>before</em> the letter to which the abbreviation mark is attached: <em>welln̄</em> → wellen (as opposed to: <em>wellē</em> → wellen); <em>gegn̄</em> → gegen; <em>ſatꝉ</em> → satel; <em>tiefꝉ</em> → tiefel; <em>hr͛</em> → her; <em>hc͛z</em> → hercz. In the latter case we could associate the er-hook with the preceding letter. But this is not possible with the other abbreviation marks: since we always place the abbreviation mark <em>after</em> the letter, the order of the characters must be changed when expanding the abbreviation character. We do this with an additional <span class="gi">&lt;seg&gt;</span> element in which we place both the character and the abbreviation mark; in the second <span class="gi">&lt;seg&gt;</span> we invert the order of expansion and
+                            base letter:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;well&lt;choice&gt;
+                                &lt;seg ana="hc:AbbreviatedTokenSegment"&gt;n&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;/seg&gt;
+                                &lt;seg ana="hc:ExpandedTokenSegment"&gt;&lt;ex&gt;e&lt;/ex&gt;n&lt;/seg&gt;
+                              &lt;/choice&gt;
+                            &lt;/w&gt;
+                            &lt;w&gt;tief&lt;choice&gt;
+                                &lt;seg ana="hc:AbbreviatedTokenSegment"&gt;l&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;/seg&gt;
+                                &lt;seg ana="hc:ExpandedTokenSegment"&gt;&lt;ex&gt;e&lt;/ex&gt;l&lt;/seg&gt;
+                              &lt;/choice&gt;
+                            &lt;/w&gt;
+                            &lt;w&gt;h&lt;choice&gt;
+                                &lt;seg ana="hc:AbbreviatedTokenSegment"&gt;r&lt;am&gt;&lt;g ref="char:er"&gt;͛&lt;/g&gt;&lt;/am&gt;&lt;/seg&gt;
+                                &lt;seg ana="hc:ExpandedTokenSegment"&gt;&lt;ex&gt;er&lt;/ex&gt;r&lt;/seg&gt;
+                              &lt;/choice&gt;
+                            &lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">27.7</span>
+                        <p>Tokenisation and abbreviation 1: in special cases, abbreviations contain clitically attached pronouns or negation particles, so that correct tokenisation can exclusively take place after the abbreviation has been expanded. We solve such cases by placing the <span class="gi">&lt;choice&gt;</span>-construction with the abbreviation in a separate <span class="gi">&lt;w&gt;</span> element:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            moht&lt;g ref="char:er"&gt;͛&lt;/g&gt; → moht er
+                            &lt;w&gt;moht&lt;/w&gt;&lt;w&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:er"&gt;͛&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;er&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">27.8</span>
+                        <p>Tokenisation and abbreviation 2: More complex cases are those in which the expansion of the abbreviation results in two tokens, but the resolution is distributed over both tokens. We solve this by placing a <span class="gi">&lt;choice&gt;</span> construction outside the word, which contains the child elements <span class="gi">&lt;abbr&gt;</span> and <span class="gi">&lt;expan&gt;</span>. The first contains the abbreviated form, untokenized, while the second contains the two tokens with the resolution:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            wan&lt;g ref="char:de"&gt;&lt;/g&gt;r → wand er
+                            &lt;choice&gt;
+                              &lt;abbr&gt;wan&lt;am&gt;&lt;g ref="char:de"&gt;&lt;/g&gt;&lt;/am&gt;r&lt;/abbr&gt;
+                              &lt;expan&gt;
+                                &lt;w xml:id="w_4690_1"&gt;wan&lt;ex&gt;d&lt;/ex&gt;&lt;/w&gt;
+                                &lt;c&gt; &lt;/c&gt;
+                                &lt;w xml:id="w_4690_2"&gt;&lt;ex&gt;e&lt;/ex&gt;r&lt;/w&gt;
+                              &lt;/expan&gt;
+                            &lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_label"><span class="aside">28</span>
+                    <h2 id="ch28">28 Section summaries</h2>
+                    <p>Hartmann's texts do not contain sections, but some manuscripts include section summaries of the type ›Hier kommt Herr Iwein an den Brunnen‹. We tag these pieces with the element <span class="gi">&lt;label&gt;</span> and with the attribute <span class="gi">&lt;ana="hc:SummaryLabel"</span><span class="gi">&gt;</span>. They are tokenised, but the words are not given any <span class="att">@xml:id</span>s</p>
+                    <p>Where section summaries end up in the margins of the text lines, line overflow rules apply (<a class="cross" href="#div_div_lineOverflow">→. </a>).</p>
+                </div>
+
+                <div id="div_transpose"><span class="aside">29</span>
+                    <h2 id="ch29">29 Transpositions</h2>
+                    <div><span class="aside">29.1</span>
+                        <p>In order to encode the transposition of words and word groups, the text is first transcribed as it appears in the manuscript. The change is then documented at the end with the element <span class="gi">&lt;listTranspose&gt;</span>. The child element <span class="gi">&lt;transpose&gt;</span> contains a sequence of <span class="gi">&lt;ptr&gt;</span> elements, which list the words to be changed in the correct order (i.e. in the order <em>after</em> the change).</p>
+                    </div>
+                    <div><span class="aside">29.2</span>
+                        <p>We tag transposition marks in the transcription with <span class="gi">&lt;metamark</span> <span class="att">ana=</span><span class="val">"hc:TranspositionMark"</span><span class="gi">&gt;</span>. Its attribute <span class="att">@target</span> (<a class="cross" href="#div_xml:id_target">→. </a>) refers to the word or words to which the transposition mark refers.</p>
+                        <p>Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            ms.: Der "auch "ſey ſelb → Der ſey auch ſelb
+                            &lt;w xml:id="w_13_1"&gt;Der&lt;/w&gt;
+                            &lt;c&gt; &lt;/c&gt;
+                            &lt;metamark ana="hc:TranspositionMark" hei:placeRef="hc:AboveLine" target="#w_13_2"&gt;"&lt;/metamark&gt;
+                            &lt;w xml:id="w_13_2"&gt;auch&lt;/w&gt;
+                            &lt;c&gt; &lt;/c&gt;
+                            &lt;metamark ana="hc:TranspositionMark" hei:placeRef="hc:AboveLine" target="#w_13_3"&gt;"&lt;/metamark&gt;
+                            &lt;w xml:id="w_13_3"&gt;sey&lt;/w&gt;
+                            &lt;c&gt; &lt;/c&gt;
+                            &lt;w&gt;ſelb&lt;/w&gt;
+                            &lt;listTranspose&gt;
+                              &lt;transpose&gt;
+                                &lt;ptr target="#w_13_3"/&gt;
+                                &lt;ptr target="#w_13_2"/&gt;
+                              &lt;/transpose&gt;
+                            &lt;/listTranspose&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">29.3</span>
+                        <p>The same applies to changes at verse level, regardless of whether the verses are set off or not.</p>
+                        <p>Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l n="3400" xml:id="l_3400" hei:altN="3399"&gt;
+                              &lt;lb n="16"/&gt;
+                              &lt;metamark ana="hc:TranspositionMark" hei:placeRef="hc:ColumnMarginLeft"&gt;b&lt;/metamark&gt;
+                              &lt;w&gt;Von&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;bezzern&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;zvhten&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;wart&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;geborn&lt;/w&gt;
+                            &lt;/l&gt;
+                            &lt;l n="3399" xml:id="l_3399" hei:altN="3400"&gt;
+                              &lt;lb n="17"/&gt;
+                              &lt;metamark ana="hc:TranspositionMark" hei:placeRef="hc:ColumnMarginLeft"&gt;a&lt;/metamark&gt;
+                              &lt;w&gt;Daz&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;er&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;den&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;ſın&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;hat&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;w&gt;verlorn&lt;/w&gt;
+                            &lt;/l&gt;
+                            &lt;listTranspose&gt;
+                              &lt;transpose&gt;
+                                &lt;ptr target="#l_3399"/&gt;
+                                &lt;ptr target="#l_3400"/&gt;
+                              &lt;/transpose&gt;
+                            &lt;/listTranspose&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_quireSignature"><span class="aside">30</span>
+                    <h2 id="ch30">30 Quire signatures and claims</h2>
+                    <div><span class="aside">30.1</span>
+                        <p>Quire signatures and claims (and possibly other phenomena outside the text box) form separate zones, which are declared as such in <span class="gi">&lt;facsimile&gt;</span> (<a class="cross" href="#div_facsimile">→3. The element <span class="gi">&lt;facsimile&gt;</span></a>). Therefore, the encoding of quire signatures and claims must be placed in a new zone marked by e.g. <span class="gi">&lt;milestone</span> <span class="att">ana=</span><span class="val">"hc:ZoneBeginning"</span> <span class="att">n=</span><span class="val">"b"</span> <span class="att">facs=</span><span class="val">"#b_12v-b"</span><span class="gi">&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">30.2</span>
+                        <p>As with all new zones, signatures must begin with a <span class="gi">&lt;lb</span> <span class="att">n=</span><span class="val">"1"</span><span class="gi">&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">30.3</span>
+                        <p>We encode quire signatures and claims with the element <span class="gi">&lt;fw&gt;</span>; it carries the attribute <span class="att">@ana</span>, which can have the following values: <span class="val">hc:Catchword</span>, <span class="val">hc:QuireSignature</span>, <span class="val">hc:PageHeader</span>, <span class="val">hc:ColumnHeader</span>, <span class="val">hc:PageFooter</span>, <span class="val">hc:ColumnFooter</span>, <span class="val">hc:PageNumeral</span>, <span class="val">hc:ColumnNumeral</span>.</p>
+                    </div>
+                    <div><span class="aside">30.4</span>
+                        <p>We place the element <span class="gi">&lt;fw&gt;</span> at the end of the page to which they belong, i.e before the element <span class="gi">&lt;pb&gt;</span> of the following page.</p>
+                        <p>Example (adaped from the instance above <a class="cross" href="#div_facsimile">→3. The element <span class="gi">&lt;facsimile&gt;</span></a>):</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;milestone ana="hc:ZoneBeginning" facs="#b_12v-b"/&gt;
+                            &lt;lb n="1"/&gt;
+                            &lt;fw ana="hc:QuireSignature"&gt;
+                              &lt;num value="2"&gt;
+                                &lt;w&gt;
+                                  &lt;choice&gt;&lt;orig&gt;ıı&lt;/orig&gt;&lt;reg&gt;secund&lt;/reg&gt;&lt;/choice&gt;
+                                  &lt;choice&gt;&lt;am&gt;ꝰ&lt;/am&gt;&lt;ex&gt;us&lt;/ex&gt;&lt;/choice&gt;
+                                &lt;/w&gt;
+                              &lt;/num&gt;
+                            &lt;/fw&gt;
+                        </code></pre></div>
+                        <p>Word elements <span class="gi">&lt;w&gt;</span> in claims do not have an <span class="att">@xml:id</span>.</p>
+                    </div>
+                    <div><span class="aside">30.5</span>
+                        <p>The zone-declaration of marginal zones in the element <span class="gi">&lt;facsimile&gt;</span> follow this model:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;surface xml:id="Bb_263v" ana="hc:Page" n="263v"&gt;
+                              &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/fmb_cb72_fol256-265/0016" mimeType="image"/&gt;
+                              &lt;zone ana="hc:HorizontalLayout"&gt;
+                                &lt;zone xml:id="Bb_263v-a" ana="hc:MainColumn hc:TextZone" n="a"/&gt;
+                                &lt;zone xml:id="Bb_263v-b" ana="hc:MainColumn hc:TextZone" n="b"/&gt;
+                              &lt;/zone&gt;
+                              &lt;zone xml:id="Bb_263v-c" ana="hc:MarginalZone hc:TextZone" rendition="hc:SelfAlignmentCentered" hei:placeRef="hc:PageBottom"/&gt;
+                            &lt;/surface&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_note"><span class="aside">31</span>
+                    <h2 id="ch31">31 Notes</h2>
+                    <div><span class="aside">31.1</span>
+                        <p>Notes are tagged with the element <span class="gi">&lt;note&gt;</span>, both manuscript and transcription or edition notes. Manuscript notes are usually glosses or nota characters (for text additions <a class="cross" href="#div_del_add">→19. Additions, deletions, substitutions</a>). Transcription notes describe phenomena in the manuscript that are irrelevant to the text, e.g. underlining or markings that cannot be determined in terms of time, repetitions of special features, decorations outside the text box, pen tests, etc. Editorial notes are typically explanations for interventions or the like.</p>
+                    </div>
+                    <div><span class="aside">31.2</span>
+                        <p>We usually place the <span class="gi">&lt;note&gt;</span> element after the end of the verse, i.e. after the closing of the element <span class="gi">&lt;l&gt;</span>.</p>
+                    </div>
+                    <div><span class="aside">31.3</span>
+                        <p>The element <span class="gi">&lt;note&gt;</span>contains the attribute <span class="att">@ana</span>. Multiple values are provided for this in HeiEditions. In principle, we limit ourselves to the following: for annotations in the manuscript we generally use the values <span class="val">hc:Gloss</span> or <span class="val">hc:NotaBene</span>; for transcription notes we generally use the value <span class="val">hc:TranscriptionNote</span>; for notes on editorial decisions, we use the value <span class="val">hc:TextConstitutionNote</span>.</p>
+                    </div>
+                    <div><span class="aside">31.4</span>
+                        <p>The element <span class="gi">&lt;note&gt;</span> also contains the attribute <span class="att">@target</span>, which refers to the attribute <span class="att">@xml:id</span> of the verse to which the note refers. (<a class="cross" href="#div_xml:id_target">→. </a>). We generally do not refer notes to specific words because this leaves a larger space behind the word in the edition view.</p>
+                    </div>
+                    <div><span class="aside">31.5</span>
+                        <p>Within the notes, quotations from the manuscript, from other manuscripts, or from the edited text are tagged with the element <span class="gi">&lt;quote&gt;</span>; they appear in intalics in the edition. For hypothetical forms or, for example, infinitives of the quoted verbs, or words in other ancient languages (especially Latin) we use the element <span class="gi">&lt;mentioned&gt;</span>; they also appear in italics. We use single inverted commas to indicate indirect speech, special meanings of words, indications of meaning...; quotations from research literature are placed between double-inverted commas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_editions"><span class="aside">III</span>
+                <h1 id="chIII">III Editorial processing</h1>
+
+                <div id="div_regularisation"><span class="aside">32</span>
+                    <h2 id="ch32">32 Regularisation</h2>
+                    <p>As we are not converting our texts into a standard Middle HighGerman, we speak of ›regularisation‹ rather than of ›normalisation‹. The editorial decisions regarding what is regularised and what is not can be found in the document Editorial Guidelines of the Hartmann von Aue project site.</p>
+                  
+                    <p>Similar to abbreviations, regularisations are recorded with a <span class="gi">&lt;choice&gt;</span> construction. The spelling of the manuscript is given in the element <span class="gi">&lt;orig&gt;</span>. The regularisation is recorded in the element <span class="gi">&lt;reg&gt;</span>. As with abbreviation marks, regularisations only affect the specific letters to be regularised.</p>
+                    <p>Examples:</p>
+                    <ul>
+                        <li>vnd → und</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;nd&lt;/w&gt;</code></pre></div>
+                    <ul>
+                        <li>vn̄ → und</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;n&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;d&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt;</code></pre></div>
+                    <ul>
+                        <li>ivncfrowe → juncfrowe</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;i&lt;/orig&gt;&lt;reg&gt;j&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ncfrowe&lt;/w&gt;</code></pre></div>
+                    <ul>
+                        <li>wrden → wurden</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;w&lt;/orig&gt;&lt;reg&gt;wu&lt;/reg&gt;&lt;/choice&gt;rden&lt;/w&gt;</code></pre></div>
+                    <ul>
+                        <li>Regularization of an initial letter:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;hei:initial&gt;&lt;choice&gt;&lt;orig&gt;U&lt;/orig&gt;&lt;reg&gt;V&lt;/reg&gt;&lt;/choice&gt;&lt;/hei:initial&gt;il&lt;/w&gt;</code></pre></div>
+                    <ul>
+                      <li>Regularization of a superscript:</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;bo&lt;choice&gt;&lt;orig&gt;ͮ&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;</code></pre></div>
+                    <p>Superscripts that, when resolved result in a new graphemein combination with the vowel on which they stand, (e.g. ë → ä), and superscripts that must stand <em>before</em> the vowel after regularisation (e.g. vͦ → ou) are encoded together with the corresponding vowel in the elements <span class="gi">&lt;orig&gt;</span> and <span class="gi">&lt;reg&gt;</span>:</p>
+                    <ul>
+                        <li>waͤre → wære</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;w&lt;choice&gt;&lt;orig&gt;aͤ&lt;/orig&gt;&lt;reg&gt;æ&lt;/reg&gt;&lt;/choice&gt;re&lt;/w&gt;</code></pre></div>
+                    <ul>
+                        <li>moͮste → muoste</li>
+                    </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;m&lt;choice&gt;&lt;orig&gt;oͮ&lt;/orig&gt;&lt;reg&gt;uo&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;</code></pre></div>
+                    <p>Abbreviation with normalisation: due to the separation of letters and abreviation characters, the regularisation of the first and the expansion of the second run in separate <span class="gi">&lt;choice&gt;</span> constructions:</p>
+                  <ul>
+                    <li> v̅ → und</li>
+                  </ul>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;nd&lt;/ex&gt;&lt;/choice&gt;</code></pre></div>
+                </div>
+
+                <div id="div_numbers"><span class="aside">33</span>
+                  <h2 id="ch33">33 Numbers</h2>
+                    <p>Numbers in the text that need to be resolved into words in the editorial process are tokenized; the element <span class="gi">&lt;num&gt;</span> then is resolved through a construction with <span class="gi">&lt;choice&gt;</span>, <span class="gi">&lt;orig&gt;</span> and <span class="gi">&lt;reg&gt;</span>:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;w xml:id="w_6340_4"&gt;&lt;choice&gt;&lt;orig&gt;&lt;num value="14"&gt;xiiij&lt;/num&gt;&lt;/orig&gt;&lt;reg&gt;viertzehen&lt;/reg&gt;&lt;/choice&gt;&lt;/w&gt;
+                    </code></pre></div>
+                    <p>As a general rule, numbers in marginal zones (typically folio numbers, quire numbers, years in colophones, etc.) stay as numbers.</p>
+                </div>
+                
+                <div id="div_correction"><span class="aside">34</span>
+                    <h2 id="ch34">34 Editorial interventions and corrections</h2>
+                    <div><span class="aside">34.1</span>
+                        <p>Similar to abbreviations and normalisations, editorial interventions are recorded with a <span class="gi">&lt;choice&gt;</span> construction. The spelling of the manuscript is encoded in the element <span class="gi">&lt;sic&gt;</span>. Editorial corrections are encoded in the element <span class="gi">&lt;corr&gt;</span>.</p>
+                        <p>Examples:</p>
+                        <ul>
+                            <li>Correction of letters:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;mi&lt;choice&gt;&lt;sic&gt;m&lt;/sic&gt;&lt;corr&gt;nn&lt;/corr&gt;&lt;/choice&gt;e&lt;/w&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>Missing letters:</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;wa&lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;z&lt;/corr&gt;&lt;/choice&gt;er&lt;/w&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>Missing words: the element <span class="gi">&lt;w&gt;</span> stands inside the element <span class="gi">&lt;corr&gt;</span>, because the word is only created when it is inserted. The space after it must not be forgotten.</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;&lt;sic/&gt;&lt;corr&gt;&lt;w&gt;in&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/corr&gt;&lt;/choice&gt;
+                        </code></pre></div>
+                        <ul>
+                            <li>When correcting, the word changes, which requires a new token: vch → ovch</li>
+                        </ul>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;
+                              &lt;w xml:id="w_145_1"&gt;
+                                &lt;choice&gt;
+                                  &lt;sic corresp="#w_145_1"/&gt;
+                                  &lt;corr corresp="#w_145_2"&gt;o&lt;/corr&gt;
+                                &lt;/choice&gt;vch&lt;/w&gt;
+                                &lt;w xml:id="w_145_2" copyOf="#w_145_1"/&gt;
+                            &lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">34.2</span>
+                        <p>Words that we consider superfluous and out of place for grammatical or semantic reasons are deleted in the same way. Here, the corresponding space must also be deleted:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;vrauwe&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                            &lt;choice&gt;&lt;sic&gt;&lt;w&gt;vür&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/sic&gt;&lt;corr/&gt;&lt;/choice&gt;
+                            &lt;w&gt;Lunet&lt;/w&gt;
+                        </code></pre></div>
+                        <p>On the other hand, we suppress <em>repeated</em> words or parts of sentences that are not deleted in the manuscript by the element <span class="gi">&lt;surplus&gt;</span> (always together with their corresponding spaces):</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;do&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                            &lt;w&gt;kam&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
+                            &lt;surplus&gt;&lt;w&gt;kam&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/surplus&gt;
+                            &lt;w&gt;gegangen&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">34.3</span>
+                        <p>If it is decided editorially that sentences or part of sentences that go beyond the verse boundary are to be deleted, we encode the beginning of the deletion with the element <span class="gi">&lt;milestone&gt;</span>, which carries the attributes <span class="gi">&lt;ana="hc:EditorialDeletionSpan"</span><span class="gi">&gt;</span> and <span class="gi">&lt;spanTo="anchor_1"</span><span class="gi">&gt;</span>. At the end of the deletion is the element <span class="gi">&lt;anchor&gt;</span> with an attribute <span class="att">@xml:id</span>. The coding is parallel to the deletion of whole verses by the writer, see <a class="cross" href="#div_del_add">→19. Additions, deletions, substitutions</a>, no. 6.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l&gt;. . .&lt;/l&gt;
+                            &lt;milestone ana="hc:EditorialDeletionSpan" spanTo="#anchor_1"/&gt;
+                            &lt;l&gt;. . .&lt;/l&gt;
+                            &lt;anchor xml:id="anchor_1"/&gt;
+                            &lt;l&gt;. . .&lt;/l&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">34.4</span>
+                        <p>Editorial insertions of entire verses or blocks that go beyond the verse boundary (e.g. because the writer has obvously skipped something) are encoded in the same way. Only the attribute value of <span class="att">@ana</span> in the element <span class="gi">&lt;milestone&gt;</span> changes:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;l&gt;. . .&lt;/l&gt;
+                            &lt;milestone ana="hc:EditorialAdditionSpan" spanTo="#anchor_2"/&gt;
+                            &lt;l&gt;. . .&lt;/l&gt;
+                            &lt;anchor xml:id="anchor_2"/&gt;
+                            &lt;l&gt;. . .&lt;/l&gt;
+                        </code></pre></div>
+                        <p>Editorially added verses neither have an attribute <span class="att">@hei:altN</span> nor do they contain an element <span class="gi">&lt;lb&gt;</span>.</p>
+                    </div>
+                </div>
+
+                <div id="div_space_editorial"><span class="aside">35</span>
+                    <h2 id="ch35">35 Editorial treatment of the blank space</h2>
+                    <div><span class="aside">35.1</span>
+                        <p>Separately tokenised words that are written together in the manuscript do not necessarily appear separately in the edition. Words like <em>irs</em>, <em>hastu</em> or <em>ensprach</em> can remain together if they appear so in the manuscript. There is nothing to be done editorially: since a space is missing, the two words will also show themselves together in the edition text.</p>
+                    </div>
+                    <div><span class="aside">35.2</span>
+                        <p>When parts of words are written apart but are nonetheless linguistically a single word and have been tokenised as such (<em>ver lazen</em>, <em>uber wunden</em>, <em>ougen weide</em>), the space is recorded in the transcription and deleted editorially with <span class="gi">&lt;orig&gt;</span> + <span class="gi">&lt;reg&gt;</span> in a <span class="gi">&lt;choice&gt;</span> construction (the element <span class="gi">&lt;reg&gt;</span> remains empty); (<a class="cross" href="#div_space">→10. Space. Conjoined and separate spelling</a>).</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;ougen&lt;/w&gt;&lt;choice&gt;&lt;orig&gt;&lt;c&gt; &lt;/c&gt;&lt;/orig&gt;&lt;reg/&gt;&lt;/choice&gt;weide</code></pre></div>
+                    </div>
+                    <div><span class="aside">35.3</span>
+                        <p>Those cases in which words are written together in the manuscript (i.e. where there is no space in the transcription), but which we want to keep apart in the edition must be edited. This is done with a <span class="gi">&lt;choice&gt;</span> construction in which the element <span class="gi">&lt;orig&gt;</span> is empty and the element <span class="gi">&lt;reg&gt;</span> contains a space:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;ze&lt;/w&gt;&lt;choice&gt;&lt;orig/&gt;&lt;reg&gt;&lt;c&gt; &lt;/c&gt;&lt;/reg&gt;&lt;/choice&gt;&lt;w&gt;swert&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">35.4</span>
+                        <p>In some (especially later) manuscripts with non-set-off verses, the scribe sometimes places a hyphen at the end of the line to join words that we tokenise separately. In these cases we place the hyphen outside the word:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;her&lt;/w&gt;&lt;metamark ana="hc:Hyphen"&gt;=&lt;/metamark&gt;&lt;lb n="15"/&gt;&lt;w&gt;ab&lt;/w&gt;
+                        </code></pre></div>
+                        <p>In such cases, the visualisation would insert a space between the two tokens because of the element <span class="gi">&lt;lb&gt;</span>. However, if we want to write both words together in the edition, it is sufficient in such cases to set an attribute <span class="gi">&lt;break="no"</span><span class="gi">&gt;</span> in the element <span class="gi">&lt;lb&gt;</span>. Although the attribute then contradicts the explicit tokenisation, it is in line with the hyphen.</p>
+                    </div>
+                </div>
+
+                <div id="div_punctuation_editorial"><span class="aside">36</span>
+                    <h2 id="ch36">36 Editorial treatment of the punctuation</h2>
+                    <p>Editorial punctuation is inserted with <span class="gi">&lt;choice&gt;</span> constructions. The element <span class="gi">&lt;reg&gt;</span> carries always the attribute <span class="gi">&lt;ana="hc:PunctuationRegularization"</span><span class="gi">&gt;</span>.</p>
+                    <div><span class="aside">36.1</span>
+                        <p>When the manuscript has no punctuation, the element <span class="gi">&lt;orig&gt;</span> remains empty:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;,&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">36.2</span>
+                        <p>When the manuscript has a punctuation mark or a rhyming point (<a class="cross" href="#div_punctuation_ms">→16. Punctuation of the manuscript</a>) at the corresponding position, we place it in the element <span class="gi">&lt;orig&gt;</span> and replace or suppress in the element <span class="gi">&lt;reg&gt;</span>:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;&lt;orig&gt;&lt;pc&gt;·&lt;/pc&gt;&lt;/orig&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;,&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">36.3</span>
+                        <p>In direct speech, a colon is placed after the preceding word, but the guillemets are placed before the first word of the speech. The space must be kept in between:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;w&gt;...&lt;/w&gt;
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;:&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                            &lt;c&gt; &lt;/c&gt;
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;›&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                            &lt;w&gt;...&lt;/w&gt;
+                        </code></pre></div>
+                    </div>
+                    <div><span class="aside">36.4</span>
+                        <p>At the end of direct speech, the two punctuation marks (full stop / comma / etc. and guillemets) are tagged in separate <span class="gi">&lt;pc&gt;</span> elements.</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;?&lt;/pc&gt;&lt;pc&gt;‹&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;‹&lt;/pc&gt;&lt;pc&gt;,&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                        </code></pre></div>
+                    </div>
+                </div>
+
+                <div id="div_transposeVerses"><span class="aside">37</span>
+                    <h2 id="ch37">37 Editorial transpositions</h2>
+                    <div><span class="aside">37.1</span>
+                        <p>We refer as transpositions to those words or verses that are in a different order compared to other manuscripts. We use the term without any critical implications. Transpositions of words or verses that have been labelled by the scribe have already been dealt with above (<a class="cross" href="#div_transpose">→29. Transpositions</a>).</p>
+                    </div>
+                    <div><span class="aside">37.2</span>
+                        <p>When we want to editorially transpose words in order to make sentences comprehensible, we use an element <span class="gi">&lt;link&gt;</span> and the attribute <span class="att">@target</span> to indicate the correct order of words. The attribute <span class="gi">&lt;ana="hc:EditorialTransposition"</span><span class="gi">&gt;</span> informs about the type of transposition. We use the same method even when the words to be transposed are more than two or when there are other words in between.</p>
+                        <p>Example:</p>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            und ſi ſin in ir muote → und ſin ſi in ir muote
+                            &lt;l&gt;
+                              &lt;w xml:id="w_2706_1"&gt;und&lt;/w&gt;
+                              &lt;w xml:id="w_2706_2"&gt;ſi&lt;/w&gt;
+                              &lt;w xml:id="w_2706_3"&gt;ſin&lt;/w&gt;
+                              &lt;w xml:id="w_2706_4"&gt;in&lt;/w&gt;
+                              &lt;w xml:id="w_2706_5"&gt;ir&lt;/w&gt;
+                              &lt;w xml:id="w_2706_6"&gt;muote&lt;/w&gt;
+                            &lt;/l&gt;
+                            &lt;link ana="hc:EditorialTransposition" target="#w_2706_3 #w_2706_2"/&gt;
+                        </code></pre></div>
+                        <p>You may transpose groups of words by indicating the range of words to be transposed in the Attribute <span class="att">@target</span>, e.g.: <span class="att">@target</span><span class="val">="#range(w_2706_4,w_2706_6) #range(w_2706_2,w_2706_3)"</span>. This would result in: <em>und in ir muote ſi ſin</em>. You may also exchange a single word and a range of words.</p>
+                    </div>
+                    <div><span class="aside">37.3</span>
+                        <p>Verse transpositions that are not labelled by the author but are considered necessary by the editors for the creation of correct syntax and semantics are created in the same way, only in this case the attribute <span class="att">@target</span> refers to the attribute <span class="att">@xml:id</span> of the affected verses. Here too, only the verses which need to be transposed have to be referenced, everything else remains unaffected.</p>
+                    </div>
+                </div>
+
+                <div id="div_gap_editorial"><span class="aside">38</span>
+                    <h2 id="ch38">38 Editorial treatment of missing word parts for <span class="gi">&lt;gap&gt;</span></h2>
+                    <p>If a part of a word is missing due to material loss and the word can still be recognised with some certainty thanks to the surviving letters, then it can be completed editorially:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;w&gt;Iwe&lt;gap rendition="hc:Stained" unit="character" quantity="2"/&gt;&lt;/w&gt;
+                    </code></pre></div>
+                    <p>can be editorially completed with the elements <span class="gi">&lt;choice&gt;</span>, <span class="gi">&lt;orig&gt;</span> and <span class="gi">&lt;supplied&gt;</span>:</p>
+                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                        &lt;w&gt;Iwe&lt;choice&gt;&lt;orig&gt;&lt;gap rendition="hc:Stained" unit="character" quantity="2"/&gt;&lt;/orig&gt;&lt;supplied&gt;in&lt;/supplied&gt;&lt;/choice&gt;&lt;/w&gt;
+                    </code></pre></div>
+                </div>
+            </div>
+            
+        <br><br>
+            <hr><div class="endnotes">
+                <h3>Notes</h3>
+                <div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>Last actualization: October 2025.</div>
+                <div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>The transposition of this manual into TEI was assisted by Xabier Atanes Gómez (Santiago de Compostela); the translation into English was assisted by Antía Rodríguez Barreiro (Santiago de Compostela).</div>
+            </div>
+            <br/><br/>
+        </main>
+        <script src="https://heieditions.github.io/prism.js"></script>
+    </body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hartmann von Aue – digital: TEI-Handbuch</title>
         <link rel="stylesheet" href="https://heieditions.github.io/docu.css">
         <link rel="stylesheet" href="https://heieditions.github.io/prism.css">
@@ -8,11 +9,12 @@
     
     <body>
         <main>
+            
             <div id="div_head">
                 <h1>TEI-Handbuch zu ›Hartmann von Aue – digital‹</h1>
                 <p>von Victor Millet</p>
+                <p class="align-right"><a href="./Handbuch_en.html">English version</a></p>
                 <p class="align-right"><a href="./Handbuch_fr.html">Version française</a></p>
-                <p class="align-right"><a href="index.html">Home</a></p>
                 <p>Dieses TEI-Handbuch ist die Grundlage für die Erstellung der XML-Dateien in allen digitalen Editionen von ›Hartmann von Aue – digital‹. Es ist abhängig von den Richtlinien, die <em>heiEditions</em> über das Validierungsschema und die dazugehörige <a href="https://heieditions.github.io/guidelines/toc.html" target="_blank">Dokumentation</a> festlegt. Alle Attributwerte müssen der Ontologie <a href="https://heieditions.github.io/concepts/concepts.html" target="_blank">heiEDITIONS Concepts</a> folgen. Die Beispiele wurden oft in den nicht relevanten Aspekte ein wenig vereinfacht, um auf das jeweils Wichtige zu fokussieren. Ursprünglich war es eine vereinfachte Anleitung für Mitarbeiterinnen und Mitarbeiter. Den manchmal etwas didaktischen Ansatz und Ton, der noch aus jener Zeit des Projektbeginns stammt, haben wir nicht gänzlich aufgegeben, weil er sich als sehr nützlich erwiesen hat. Das TEI-Handbuch hängt selbstverständlich zusammen mit den <a href="X?X?X?X?" target="_blank">Prinzipien der Textgestaltung</a>.</p>
               
             </div>
@@ -346,7 +348,7 @@
                       <p>Da wir Worte im Element <span class="gi">&lt;w&gt;</span> nach linguistischen Kriterien erfassen, kann die Zusammen- oder Getrenntschreibung der Handschrift wiedergegeben werden. Spatien aber haben nicht mehr unbedingt die Funktion der Worttrennung; <a class="cross" href="#div_space">→10. Spatium. Zusammen- und Getrenntschreibung</a>.</p>
                     </div>
                     <div><span class="aside">9.3</span>
-                        <p>Bei Worttrennung am Zeilenende in der Handschrift wird an der entsprechenden Stelle innerhalb des Wortes das <span class="gi">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingefügt, sowie mit dem Attribut <span class="att">@break</span><span class="val">="no"</span>. Steht ein Trennungszeichen im Dokument, wird dieses als <span class="gi">&lt;metamark&gt;</span> (<a class="cross" href="#div_metamark">→17. Metazeichen</a>) erfasst, mit dem Attribut <span class="att">@ana</span><span class="val">="hc:Hyphen"</span>, darin das Trennungszeichen. Z.B.:</p>
+                        <p>Bei Worttrennung am Zeilenende in der Handschrift wird an der entsprechenden Stelle innerhalb des Wortes das <span class="gi">&lt;lb&gt;</span> mit der Nummer der neuen Zeile eingefügt, sowie mit dem Attribut <span class="gi">&lt;break="no"</span><span class="gi">&gt;</span>. Steht ein Trennungszeichen im Dokument, wird dieses als <span class="gi">&lt;metamark&gt;</span> (<a class="cross" href="#div_metamark">→17. Metazeichen</a>) erfasst, mit dem Attribut <span class="gi">&lt;ana="hc:Hyphen"</span><span class="gi">&gt;</span>, darin das Trennungszeichen. Z.B.:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;lb n="26"/&gt;
                             &lt;w/&gt;&lt;w/&gt;&lt;w/&gt;&lt;w&gt;vrüme&lt;metamark ana="hc:Hyphen"&gt;⸗&lt;/metamark&gt;&lt;lb n="27" break="no"/&gt;keit&lt;/w&gt;
@@ -494,7 +496,7 @@
                         </code></pre></div>
                     </div>
                     <div><span class="aside">13.5</span>
-                        <p>Manche Handschriften setzen anstatt Initialen oder in Abwechslung mit ihnen ein Paragraphenzeichen oder Pilcrow ⟨¶⟩. Sie werden getaggt als <span class="gi">&lt;label&gt;</span> mit dem Attribut <span class="att">@ana</span><span class="val">="hc:SectionMarker"</span> und dem Attribut <span class="att">@hei:PlaceRef</span>. Das Paragraphenzeichen muss im Element <span class="gi">&lt;c&gt;</span> stehen. Dies alles stellen wir außerhalb des Verses <span class="gi">&lt;l&gt;</span>. Außerdem muss in diesen Fällen das Element <span class="gi">&lt;lb&gt;</span> vor dem <span class="gi">&lt;label&gt;</span> stehen.</p>
+                        <p>Manche Handschriften setzen anstatt Initialen oder in Abwechslung mit ihnen ein Paragraphenzeichen oder Pilcrow ⟨¶⟩. Sie werden getaggt als <span class="gi">&lt;label&gt;</span> mit dem Attribut <span class="gi">&lt;ana="hc:SectionMarker"</span><span class="gi">&gt;</span> und dem Attribut <span class="att">@hei:PlaceRef</span>. Das Paragraphenzeichen muss im Element <span class="gi">&lt;c&gt;</span> stehen. Dies alles stellen wir außerhalb des Verses <span class="gi">&lt;l&gt;</span>. Außerdem muss in diesen Fällen das Element <span class="gi">&lt;lb&gt;</span> vor dem <span class="gi">&lt;label&gt;</span> stehen.</p>
                         <p>In der Transkriptionsansicht sollen die Paragraphenzeichen sichtbar sein. Aber in der Editionsansicht wollen wir sie nicht; sie werden bei der Verarbeitung daher unterdrückt. Stattdessen wollen wir, dass in der Editionsansicht der erste Buchstabe des ersten Verses wie die Initialen fett gedruckt erscheint. Dazu taggen wir diesen ersten Buchstaben mit <span class="gi">&lt;seg</span> <span class="att">ana=</span><span class="val">"hc:EditorialEmphasis"</span><span class="gi">&gt;</span></p>
                             <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                               &lt;lb n="7"/&gt;
@@ -512,7 +514,7 @@
                         <p>Die Anweisungen für Initialen sind keine Metamarks, weil sie ja Buchstaben sind. Für sie wurde das Elemene <span class="gi">&lt;hei:cue&gt;</span> geschaffen. Wir setzen das Element immer unmittelbar vor das Wort, das die Initiale enthält, auf die das Zeichen verweist.</p>
                     </div>
                     <div><span class="aside">14.2</span>
-                        <p>Wir versehen das Element <span class="gi">&lt;hei:cue&gt;</span> immer mit einem Attribut <span class="att">@ana</span><span class="val">="hc:CueInitial"</span> und einem Attribut <span class="att">@hei:PlaceRef</span>, dessen Wert meist <span class="val">hc:InSpace</span> oder <span class="val">hc:PageMarginLeft</span> bzw. <span class="val">hc:PageMarginRight</span> sein wird, der aber auch ein anderer sein kann (<a class="cross" href="#div_del_add">→19. Hinzufügungen, Streichungen, Substitutionen</a>).</p>
+                        <p>Wir versehen das Element <span class="gi">&lt;hei:cue&gt;</span> immer mit einem Attribut <span class="gi">&lt;ana="hc:CueInitial"</span><span class="gi">&gt;</span> und einem Attribut <span class="att">@hei:PlaceRef</span>, dessen Wert meist <span class="val">hc:InSpace</span> oder <span class="val">hc:PageMarginLeft</span> bzw. <span class="val">hc:PageMarginRight</span> sein wird, der aber auch ein anderer sein kann (<a class="cross" href="#div_del_add">→19. Hinzufügungen, Streichungen, Substitutionen</a>).</p>
                     </div>
                     <div><span class="aside">14.3</span>
                         <p>Außerdem verweist das Attribut <span class="att">@target</span> auf die <span class="att">@xml:id</span> der zugehörigen Initiale (<a class="cross" href="#div_initials">→13. Initialen</a>).</p>
@@ -582,8 +584,8 @@
 
                 <div id="div_xml-id_target"><span class="aside">18</span>
                     <h2 id="ch18">18 @xml:id und @target</h2>
-                    <p>Elemente, die markiert werden sollen, um an anderer Stelle auf sie zu verweisen, werden mit einer <span class="att">@xml:id</span> versehen. Der Wert des Attributs muss eine in der Datei einzigartige Zeichenkette sein, <span class="att">@xml:id</span>s dürfen sich also nicht wiederholen. Zur Einheitlichkeit wählen wir folgenden Aufbau von <span class="att">@xml:id</span>s: "Element_Versnummer_laufendeNummer". So wäre z.B. eine <span class="att">@xml:id</span><span class="val">="w_765_1"</span> sofort erkennbar als Element ›Wort‹, Vers 765, erstes Wort des Verses. Prinzipiell tragen alle Wörter (<span class="gi">&lt;w&gt;</span>) und Verse (<span class="gi">&lt;l&gt;</span>) <span class="att">@xml:id</span>s. Bei den Versen dienen die IDs der Synchronisierung zwischen Zeilen aus unterschiedlichen Zeugnissen. Bei den Wörtern sollen sie später der linguistischen Annotation dienen. IDs, die sich nicht auf Bereiche des Textes beziehen, haben allerdings eine andere Struktur, <a class="cross" href="#div_facsimile">→3. Das Element <span class="gi">&lt;facsimile&gt;</span></a>.</p>
-                    <p>Auf <span class="att">@xml:id</span>s wird verwiesen mit dem Attribut <span class="att">@target</span>, dessen Wert die <span class="att">@xml:id</span> des Elements ist, auf das verwiesen wird, mit einer Raute davor, z.B.: <span class="att">@target</span><span class="val">="#w_765_1"</span>.</p>
+                    <p>Elemente, die markiert werden sollen, um an anderer Stelle auf sie zu verweisen, werden mit einer <span class="att">@xml:id</span> versehen. Der Wert des Attributs muss eine in der Datei einzigartige Zeichenkette sein, <span class="att">@xml:id</span>s dürfen sich also nicht wiederholen. Zur Einheitlichkeit wählen wir folgenden Aufbau von <span class="att">@xml:id</span>s: "Element_Versnummer_laufendeNummer". So wäre z.B. eine <span class="gi">&lt;xml:id="w_765_1"</span><span class="gi">&gt;</span> sofort erkennbar als Element ›Wort‹, Vers 765, erstes Wort des Verses. Prinzipiell tragen alle Wörter (<span class="gi">&lt;w&gt;</span>) und Verse (<span class="gi">&lt;l&gt;</span>) <span class="att">@xml:id</span>s. Bei den Versen dienen die IDs der Synchronisierung zwischen Zeilen aus unterschiedlichen Zeugnissen. Bei den Wörtern sollen sie später der linguistischen Annotation dienen. IDs, die sich nicht auf Bereiche des Textes beziehen, haben allerdings eine andere Struktur, <a class="cross" href="#div_facsimile">→3. Das Element <span class="gi">&lt;facsimile&gt;</span></a>.</p>
+                    <p>Auf <span class="att">@xml:id</span>s wird verwiesen mit dem Attribut <span class="att">@target</span>, dessen Wert die <span class="att">@xml:id</span> des Elements ist, auf das verwiesen wird, mit einer Raute davor, z.B.: <span class="gi">&lt;target="#w_765_1"</span><span class="gi">&gt;</span>.</p>
                 </div>
 
                 <div id="div_del_add"><span class="aside">19</span>
@@ -741,7 +743,7 @@
                         <p>Die Abbildungen selbst taggen wir mit dem Element <span class="gi">&lt;figure&gt;</span> Dieses Element führt immer das Attribut <span class="att">@n</span> mit der laufenden Nummer der Abbildung; und optional das Attribut <span class="att">@label</span>, wenn man der Abbildung einen Titel geben will.</p>
                     </div>
                     <div><span class="aside">21.3</span>
-                        <p>Das Element <span class="gi">&lt;figure&gt;</span> enthält die Kindelemente <span class="gi">&lt;figDesc&gt;</span>, das eine kurze Beschreibung der Abbildung in wenigen Worten bietet, und <span class="gi">&lt;note&gt;</span>, das eine Erklärung der Abbildung enthält; <span class="gi">&lt;note&gt;</span> führt immer das Attribut <span class="att">@ana</span><span class="val">="hc:EditorialContent"</span>.</p>
+                        <p>Das Element <span class="gi">&lt;figure&gt;</span> enthält die Kindelemente <span class="gi">&lt;figDesc&gt;</span>, das eine kurze Beschreibung der Abbildung in wenigen Worten bietet, und <span class="gi">&lt;note&gt;</span>, das eine Erklärung der Abbildung enthält; <span class="gi">&lt;note&gt;</span> führt immer das Attribut <span class="gi">&lt;ana="hc:EditorialContent"</span><span class="gi">&gt;</span>.</p>
                         <p>Beispiel:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;milestone ana="hc:ZoneBeginning" facs="#B_44r-b"/&gt;
@@ -757,7 +759,7 @@
                     <h2 id="ch22">22 Zeilensprung </h2>
                     <p>Bei Handschriften, die die Verse nicht absetzen, werden Zeilensprünge im Versinnern normal mit einem <span class="gi">&lt;lb&gt;</span>-Element mit seinem Attribut <span class="att">@n</span> an der entsprechenden Position markiert.</p>
                     <p>Dasselbe geschieht, wenn der Zeilensprung im Wortinneren stattfindet. In diesen Fällen sollte am <span class="gi">&lt;lb&gt;</span> noch das Attribut <span class="att">@break</span> stehen, mit dem Wert <span class="val">no</span>.</p>
-                    <p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="gi">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="att">@ana</span><span class="val">="hc:Hyphen"</span>), das vor dem <span class="gi">&lt;lb&gt;</span> steht; (<a class="cross" href="#div_word">→9. Wort und Tokenisierung</a> und <a class="cross" href="#div_punctuation_ms">→16. Zeichensetzung der Handschrift</a>)</p>
+                    <p>Wird das Wort mit einem Trennungszeichen getrennt, wird dieses mit einem <span class="gi">&lt;metamark&gt;</span> getaggt (mit Attribut <span class="gi">&lt;ana="hc:Hyphen"</span><span class="gi">&gt;</span>), das vor dem <span class="gi">&lt;lb&gt;</span> steht; (<a class="cross" href="#div_word">→9. Wort und Tokenisierung</a> und <a class="cross" href="#div_punctuation_ms">→16. Zeichensetzung der Handschrift</a>)</p>
                     <p>Beispiele:</p>
                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                         &lt;w&gt;min&lt;lb n="4" break="no"/&gt;ne&lt;/w&gt;
@@ -771,7 +773,7 @@
                     <h2 id="ch23">23 Zeilenüberlauf</h2>
                     <p>Wir sprechen von Zeilenüberlauf, wenn Teile des Versendes aus Platzgründen am Ende der vorangehenden oder folgenden Zeile vervollständigt wurden. Zeilenüberläufe erscheinen v.a. in Handschriften mit abgesetzten Versen; aber sie finden sich auch in Handschriften ohne abgesetzte Verse, z.B. wenn in der Folgezeile ein neuer Abschnitt mit einer Initiale beginnt.</p>
                     <p>Gelangt dieser Überlauf in eine Zeile, in der anderer, regulärer Text steht, bilden sich dadurch Zeilensegmente. Der Überlauf ist also ein Teil des Verses, das in einem Segment einer anderen Zeile steht. Wir kodieren diesen Überlauf innerhalb des Verses (<span class="gi">&lt;l&gt;</span>), zu dem er gehört, zeigen aber die Zugehörigkeit zu einer anderen Zeile <span class="gi">&lt;lb&gt;</span> an.</p>
-                    <p>Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem Überlauf) markieren wir als Punkt (wie <span class="gi">&lt;lb&gt;</span> oder <span class="gi">&lt;pb&gt;</span>) mit <span class="gi">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="gi">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="att">@ana</span> mit 2 Werten: <span class="val">hc:LineSegmentBeginning</span> und <span class="val">hc:RunOverAbove</span> bzw. <span class="val">hc:RunOverBelow</span>. Außerdem ein Attribut <span class="att">@n</span><span class="val">="2"</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="att">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="gi">&lt;lb&gt;</span>, nicht <span class="gi">&lt;l&gt;</span>!) der Überlauf steht. Dadurch können auch Überläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
+                    <p>Der Beginn des ersten Zeilensegments in einer Zeile braucht (wenn es sich um regulären Text handelt, der keine weitere Information benötigt) nicht markiert zu werden. Den Beginn eines neuen Zeilensegments (z.B. das Segment mit dem Überlauf) markieren wir als Punkt (wie <span class="gi">&lt;lb&gt;</span> oder <span class="gi">&lt;pb&gt;</span>) mit <span class="gi">&lt;milestone&gt;</span>. Dieser Punkt steht allerdings im Vers (<span class="gi">&lt;l&gt;</span>) zu dem der Text gehört. Hierzu gehört ein Attribut <span class="att">@ana</span> mit 2 Werten: <span class="val">hc:LineSegmentBeginning</span> und <span class="val">hc:RunOverAbove</span> bzw. <span class="val">hc:RunOverBelow</span>. Außerdem ein Attribut <span class="gi">&lt;n="2"</span><span class="gi">&gt;</span> mit der Nummer des Segments. Zusätzlich ist hier ein Attribut <span class="att">@hei:belongsToLine</span> erforderlich, mit dem angegeben wird, in welcher Zeile (physische Zeile, also <span class="gi">&lt;lb&gt;</span>, nicht <span class="gi">&lt;l&gt;</span>!) der Überlauf steht. Dadurch können auch Überläufe erfasst werden, die nicht in der Zeile unmittelbar davor oder danach stehen.</p>
                     <p>Oft wird die Überhangzeile durch Striche vom Rest der Zeile getrennt oder mit der ›Mutterzeile‹ verbunden. Diese Zeichen werden als <span class="gi">&lt;metamark&gt;</span> getaggt; sie führen ein Attribut <span class="att">@ana</span> mit dem Wert <span class="val">hc:RunOverMark</span> (<a class="cross" href="#div_metamark">→17. Metazeichen</a>)</p>
                     <p>Das ist alles kompatibel mit Worttrennung (<a class="cross" href="#div_word">→9. Wort und Tokenisierung</a>.</p>
                     <p>Wenn der Zeilenüberlauf ein ganzes Wort umfasst, dann muss vor dem ersten <span class="gi">&lt;milestone&gt;</span> ein Spatium <span class="gi">&lt;c&gt;</span> stehen.</p>
@@ -815,7 +817,7 @@
                         &lt;/l&gt;
                     </code></pre></div>
                     <ul>
-                        <li>Steht der Zeilenüberlauf in der nachfolgenden Zeile, regulär ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilenüberlauf gesprochen werden; wir taggen einfach mit <span class="gi">&lt;lb&gt;</span> innerhalb von <span class="gi">&lt;l&gt;</span> Wird der überschüssige Text aber in dieser nachfolgenden Zeile nach rechts gerückt oder sonst als Überlauf markiert, dann wird die Zeile mit <span class="gi">&lt;lb&gt;</span> getaggt, zusätzlich aber erhält das <span class="gi">&lt;lb&gt;</span> das Attribut <span class="gi">&lt;rendition="hc:FlushRight"</span><span class="gi">&gt;</span>, sowie das Attribut <span class="att">@rendition</span><span class="val">="hc:FlushRight"</span> (andere Ausrichtungsfunktionen sind möglich <span class="val">hc:Centered</span>, <span class="val">hc:RightIndent</span> u.a.):</li>
+                        <li>Steht der Zeilenüberlauf in der nachfolgenden Zeile, regulär ausgerichtet und ohne weitere Markierung, kann nicht von einem Zeilenüberlauf gesprochen werden; wir taggen einfach mit <span class="gi">&lt;lb&gt;</span> innerhalb von <span class="gi">&lt;l&gt;</span> Wird der überschüssige Text aber in dieser nachfolgenden Zeile nach rechts gerückt oder sonst als Überlauf markiert, dann wird die Zeile mit <span class="gi">&lt;lb&gt;</span> getaggt, zusätzlich aber erhält das <span class="gi">&lt;lb&gt;</span> das Attribut <span class="gi">&lt;rendition="hc:FlushRight"</span><span class="gi">&gt;</span>, sowie das Attribut <span class="gi">&lt;rendition="hc:FlushRight"</span><span class="gi">&gt;</span> (andere Ausrichtungsfunktionen sind möglich <span class="val">hc:Centered</span>, <span class="val">hc:RightIndent</span> u.a.):</li>
                     </ul>
                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                         &lt;l n="419"&gt;
@@ -838,7 +840,7 @@
                         &lt;/l&gt;
                     </code></pre></div>
                     <ul>
-                        <li>Überlaufzeilen, die <em>über</em> der ersten regulären Textzeile stehen, erhalten die Nummer <span class="att">@n</span><span class="val">="0"</span>; evtl. weitere Überlaufzeilen ›nach oben‹ würden negative Nummern erhalten. Überlaufzeilen <em>unter</em> der letzten regulären Textzeile werden als normale Zeilen (<span class="gi">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer.</li>
+                        <li>Überlaufzeilen, die <em>über</em> der ersten regulären Textzeile stehen, erhalten die Nummer <span class="gi">&lt;n="0"</span><span class="gi">&gt;</span>; evtl. weitere Überlaufzeilen ›nach oben‹ würden negative Nummern erhalten. Überlaufzeilen <em>unter</em> der letzten regulären Textzeile werden als normale Zeilen (<span class="gi">&lt;lb&gt;</span>) behandelt und erhalten die entsprechende Nummer.</li>
                     </ul>
                 </div>
 
@@ -916,7 +918,7 @@
                     </div>
                     <div><span class="aside">b</span>
                         <p>Als ›Lücken‹ bezeichnen wir Textverlust durch materielle Beschädigung des Textträgers. Sie werden getaggt mit <span class="gi">&lt;gap&gt;</span>. Dieses Element ist immer leer. Ein <span class="gi">&lt;gap&gt;</span> führt das Attribut <span class="att">@rendition</span>; die häufigsten Werte dieses Attributs (unter den vielen im Schema vorgesehenen) sind: <span class="val">hc:CutOff</span> – <span class="val">hc:Erased</span> – <span class="val">hc:Faded</span> – <span class="val">hc:Illegible</span> – <span class="val">hc:Lost</span> – <span class="val">hc:Mould</span> – <span class="val">hc:Perforated</span> – <span class="val">hc:RubbedOff</span> – <span class="val">hc:Stained</span> – <span class="val">hc:TornOff</span>.</p>
-                        <p>Außerdem führt <span class="gi">&lt;gap&gt;</span> die Attribute <span class="att">@unit</span> und <span class="att">@extent</span> bzw. <span class="att">@quantity</span>. <span class="att">@unit</span> gibt an, was verloren ist (<span class="val">character</span>=Buchstabe[n] [nur innerhalb von <span class="gi">&lt;l&gt;</span>]; <span class="val">line</span>Zeile[n]; <span class="val">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviele von diesen Einheiten verloren sind, steht dies im Attribut <span class="att">@quantity</span> (z.B. <span class="att">@unit</span><span class="val">="line"</span> <span class="att">@quantity</span><span class="val">="4"</span>). Kann man nicht wissen, wieviel verloren ist, dann kommt statt <span class="att">@quantity</span> das Attribut <span class="att">@extent</span> mit dem Wert <span class="val">unknown</span> zum Einsatz.</p>
+                        <p>Außerdem führt <span class="gi">&lt;gap&gt;</span> die Attribute <span class="att">@unit</span> und <span class="att">@extent</span> bzw. <span class="att">@quantity</span>. <span class="att">@unit</span> gibt an, was verloren ist (<span class="val">character</span>=Buchstabe[n] [nur innerhalb von <span class="gi">&lt;l&gt;</span>]; <span class="val">line</span>Zeile[n]; <span class="val">page</span>=Seiten[n]). Wenn berechnet werden kann, wieviele von diesen Einheiten verloren sind, steht dies im Attribut <span class="att">@quantity</span> (z.B. <span class="gi">&lt;unit="line"</span><span class="gi">&gt;</span> <span class="gi">&lt;quantity="4"</span><span class="gi">&gt;</span>). Kann man nicht wissen, wieviel verloren ist, dann kommt statt <span class="att">@quantity</span> das Attribut <span class="att">@extent</span> mit dem Wert <span class="val">unknown</span> zum Einsatz.</p>
                         <p>Ist ein Teil eines Wortes ebenso wie folgende (oder vorherige) Worte verloren, muss ein <span class="gi">&lt;gap&gt;</span> sowohl innerhalb des <span class="gi">&lt;w&gt;</span> stehen, wie außerhalb.</p>
                         <p>Steht vor oder hinter einem <span class="gi">&lt;gap&gt;</span> ein vollständiges Wort, fügen wir zwischen beiden Elementen ein Spatium <span class="gi">&lt;c&gt;</span> ein; betrifft die Lücke ein Teil des Wortes, dann fügen wir stattdessen ein ›editorisches Spatium‹ ein:</p>
                             <div class="egxml" data-example-id=""><pre class="language-xml"><code>
@@ -1034,7 +1036,7 @@
 
                 <div id="div_label"><span class="aside">28</span>
                     <h2 id="ch28">28 Abschnittszusammenfassungen</h2>
-                    <p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art ›Hier kommt Herr Iwein an den Brunnen‹. Diese Stücke taggen wir mit dem Element <span class="gi">&lt;label&gt;</span> und dem Attribut <span class="att">@ana</span><span class="val">="hc:SummaryLabel"</span>. Sie werden tokenisiert, aber die Worte erhalten keine <span class="att">@xml:id</span>s</p>
+                    <p>Hartmanns Texte enthalten keine Abschnitte, doch einige Handschriften enthalten Abschnittszusammenfassungen der Art ›Hier kommt Herr Iwein an den Brunnen‹. Diese Stücke taggen wir mit dem Element <span class="gi">&lt;label&gt;</span> und dem Attribut <span class="gi">&lt;ana="hc:SummaryLabel"</span><span class="gi">&gt;</span>. Sie werden tokenisiert, aber die Worte erhalten keine <span class="att">@xml:id</span>s</p>
                     <p>Wo Abschnittszusammenfassungen in Randbereiche der Textzeilen geraten, kommt die Zeilensegmentierung zum Wirken, die bei Zeilenüberläufen beschrieben wurde (<a class="cross" href="#div_div_lineOverflow">→. </a>).</p>
                 </div>
 
@@ -1157,21 +1159,48 @@
 
                 <div id="div_regularization"><span class="aside">32</span>
                     <h2 id="ch32">32 Regularisierung</h2>
-                    <p>Da wir die Texte nicht in ein Normalmittelhochdeutsch überführen, sprechen wir eher von ›Regularisierung‹ als von ›Normalisierung‹.</p>
-                    <p>Die editorischen Entscheidungen bezüglich was regularisiert wird und was nicht finden ist im Abschnitt Textgestaltung der jeweiligen Projektseite. Ähnlich wie bei Abkürzungen werden Regularisierungen mit einem <span class="gi">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="gi">&lt;orig&gt;</span>. Die Regularisierung wird erfasst im Element <span class="gi">&lt;reg&gt;</span>.</p>
-                    <p>Beispiele</p>
-                    <div class="egxml" data-example-id=""><pre class="language-xml"><code> vnd → und &lt;w&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;nd&lt;/w&gt; vn̄ → und &lt;w&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;n&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;d&lt;/ex&gt;&lt;/choice&gt;&lt;/w&gt; ivncfrowe → juncfrowe &lt;w&gt;&lt;choice&gt;&lt;orig&gt;i&lt;/orig&gt;&lt;reg&gt;j&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ncfrowe&lt;/w&gt; wrden → wurden &lt;w&gt;&lt;choice&gt;&lt;orig&gt;w&lt;/orig&gt;&lt;reg&gt;wu&lt;/reg&gt;&lt;/choice&gt;rden&lt;/w&gt; Normalisierung einer Initiale &lt;w&gt;&lt;hei:initial&gt;&lt;choice&gt;&lt;orig&gt;U&lt;/orig&gt;&lt;reg&gt;V&lt;/reg&gt;&lt;/choice&gt;&lt;/hei:initial&gt;il&lt;/w&gt; Normalisierung eines Supraskripts &lt;w&gt;bo&lt;choice&gt;&lt;orig&gt;ͮ&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;
-                    </code></pre></div>
+                  <p>Da wir die Texte nicht in ein Normalmittelhochdeutsch überführen, sprechen wir eher von ›Regularisierung‹ als von ›Normalisierung‹. Die editorischen Entscheidungen bezüglich was regularisiert wird und was nicht, stehen auf der Seite Textgestaltung des Hartmann-Portals.</p>
+                  
+                    <p>Ähnlich wie bei Abkürzungen werden Regularisierungen mit einem <span class="gi">&lt;choice&gt;</span>-Konstrukt erfasst. Die Schreibung der Handschrift wird wiedergegeben im Element <span class="gi">&lt;orig&gt;</span>. Die Regularisierung wird erfasst im Element <span class="gi">&lt;reg&gt;</span>.</p>
+                    <p>Beispiele:</p>
+                  <ul>
+                    <li>vnd → und</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;nd&lt;/w&gt;</code></pre></div>
+                  <ul>
+                    <li>ivncfrowe → juncfrowe</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;i&lt;/orig&gt;&lt;reg&gt;j&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ncfrowe&lt;/w&gt;</code></pre></div>
+                  <ul>
+                    <li>wrden → wurden</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;choice&gt;&lt;orig&gt;w&lt;/orig&gt;&lt;reg&gt;wu&lt;/reg&gt;&lt;/choice&gt;rden&lt;/w&gt;</code></pre></div>
+                  <ul>
+                    <li>Regularisierung einer Initiale:</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;&lt;hei:initial&gt;&lt;choice&gt;&lt;orig&gt;U&lt;/orig&gt;&lt;reg&gt;V&lt;/reg&gt;&lt;/choice&gt;&lt;/hei:initial&gt;il&lt;/w&gt;</code></pre></div>
+                  <ul>
+                    <li>Regularisierung eines Supraskripts:</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;bo&lt;choice&gt;&lt;orig&gt;ͮ&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;</code></pre></div>
                     <p>Supraskripte, die bei der Auflösung mit dem Vokal, auf dem sie stehen, ein neues Graphem ergeben (z.B. aͤ → æ), und Supraskripte, die bei der Normalisierung vor dem Vokal stehen müssen, werden mit dem entsprechenden Vokal im <span class="gi">&lt;orig&gt;</span> und im <span class="gi">&lt;reg&gt;</span> erfasst:</p>
-                    <div class="egxml" data-example-id=""><pre class="language-xml"><code> waͤre → wære: &lt;w&gt;w&lt;choice&gt;&lt;orig&gt;aͤ&lt;/orig&gt;&lt;reg&gt;æ&lt;/reg&gt;&lt;/choice&gt;re&lt;/w&gt; moͮste → muoste &lt;w&gt;m&lt;choice&gt;&lt;orig&gt;oͮ&lt;/orig&gt;&lt;reg&gt;uo&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;
-                    </code></pre></div>
-                    <p>Abkürzung mit Normalisierung: Durch die Trennung von Buchstaben und Abkürzungszeichen verlaufen die Normalisierung des ersten und die Auflösung des zweiten in parallelen <span class="gi">&lt;choice&gt;</span>-Konstruktionen. Z.B. v̅ → und:</p>
-                    <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-                        &lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;nd&lt;/ex&gt;&lt;/choice&gt;
-                    </code></pre></div>
+                  <ul>
+                    <li>waͤre → wære</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;w&lt;choice&gt;&lt;orig&gt;aͤ&lt;/orig&gt;&lt;reg&gt;æ&lt;/reg&gt;&lt;/choice&gt;re&lt;/w&gt;</code></pre></div>
+                  <ul>
+                    <li>moͮste → muoste</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;w&gt;m&lt;choice&gt;&lt;orig&gt;oͮ&lt;/orig&gt;&lt;reg&gt;uo&lt;/reg&gt;&lt;/choice&gt;ste&lt;/w&gt;</code></pre></div>
+                    <p>Abkürzung mit Regularisierung: Durch die Trennung von Buchstaben und Abkürzungszeichen verlaufen die Regularisierung des ersten und die Auflösung des zweiten in parallelen <span class="gi">&lt;choice&gt;</span>-Konstruktionen.</p>
+                  <ul>
+                    <li> v̅ → und</li>
+                  </ul>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>&lt;choice&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;/choice&gt;&lt;choice&gt;&lt;am&gt;&lt;g ref="char:bar"&gt;̄&lt;/g&gt;&lt;/am&gt;&lt;ex&gt;nd&lt;/ex&gt;&lt;/choice&gt;</code></pre></div>
                 </div>
                 
                 <div id="div_numbers"><span class="aside">33</span>
+                  <h2 id="ch33">33 Zahlen</h2>
                     <p>Zahlen im Text, die bei einer editorischen Bearbeitung aufgelöst werden müssen, werden tokenisiert und das Element <span class="gi">&lt;num&gt;</span> über eine Konstruktion mit <span class="gi">&lt;choice&gt;</span>, <span class="gi">&lt;orig&gt;</span> und <span class="gi">&lt;reg&gt;</span> aufgelöst:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;w xml:id="w_6340_4"&gt;&lt;choice&gt;&lt;orig&gt;&lt;num value="14"&gt;xiiij&lt;/num&gt;&lt;/orig&gt;&lt;reg&gt;viertzehen&lt;/reg&gt;&lt;/choice&gt;&lt;/w&gt;
@@ -1207,25 +1236,19 @@
                         </ul>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;choice&gt;
-                                &lt;w xml:id="w_145_1"&gt;
-                                    &lt;choice&gt;
-                                        &lt;sic corresp="#w_145_1"/&gt;
-                                        &lt;corr corresp="#w_145_2"&gt;O&lt;/corr&gt;
-                                    &lt;/choice&gt;
-                                    &lt;hi rendition="hc:Versal"&gt;
-                                        &lt;choice&gt;
-                                            &lt;orig&gt;V&lt;/orig&gt;
-                                            &lt;reg&gt;u&lt;/reg&gt;
-                                        &lt;/choice&gt;
-                                    &lt;/hi&gt;ch &lt;/w&gt;
-                                &lt;w xml:id="w_145_2" copyOf="#w_145_1"/&gt;
+                              &lt;w xml:id="w_145_1"&gt;
+                                &lt;choice&gt;
+                                  &lt;sic corresp="#w_145_1"/&gt;
+                                  &lt;corr corresp="#w_145_2"&gt;o&lt;/corr&gt;
+                                &lt;/choice&gt;vch&lt;/w&gt;
+                              &lt;w xml:id="w_145_2" copyOf="#w_145_1"/&gt;
                             &lt;/choice&gt;
                         </code></pre></div>
                     </div>
                     <div><span class="aside">34.2</span>
                         <p>Worte, die wir aus grammatischen oder semantischen Gründen für überflüssig und fehl am Platz halten, streichen wir auf gleiche Weise. Hier muss auch das entsprechende Spatium gelöscht werden:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-                            &lt;w&gt;vrauwe&lt;/w&gt;
+                            &lt;w&gt;vrauwe&lt;/w&gt;&lt;c&gt; &lt;/c&gt;
                             &lt;choice&gt;&lt;sic&gt;&lt;w&gt;vür&lt;/w&gt;&lt;c&gt; &lt;/c&gt;&lt;/sic&gt;&lt;corr/&gt;&lt;/choice&gt;
                             &lt;w&gt;Lunet&lt;/w&gt;
                         </code></pre></div>
@@ -1238,24 +1261,22 @@
                         </code></pre></div>
                     </div>
                     <div><span class="aside">34.3</span>
-                        <p>Entscheidet man editorisch, dass Sätze oder Satzteile, die über die Versgrenze hinausgehen, zu streichen sind, kodieren wir den Beginn der Streichung mit dem Element <span class="gi">&lt;milestone&gt;</span>, das die Attribute <span class="att">@ana</span><span class="val">="hc:EditorialDeletionSpan"</span> und <span class="att">@spanTo</span><span class="val">="anchor1"</span> führt. Am Ende der Tilgung steht das Element <span class="gi">&lt;anchor&gt;</span> mit einer <span class="att">@xml:id</span>. Die Kodierung ist parallel der Streichung ganzer Verse durch den Schreiber, vgl. <a class="cross" href="#div_del_add">→19. Hinzufügungen, Streichungen, Substitutionen</a>, Nr. 6.</p>
-                        <p>Beispiel</p>
+                        <p>Entscheidet man editorisch, dass Sätze oder Satzteile, die über die Versgrenze hinausgehen, zu streichen sind, kodieren wir den Beginn der Streichung mit dem Element <span class="gi">&lt;milestone&gt;</span>, das die Attribute <span class="gi">&lt;ana="hc:EditorialDeletionSpan"</span><span class="gi">&gt;</span> und <span class="gi">&lt;spanTo="anchor_1"</span><span class="gi">&gt;</span> führt. Am Ende der Tilgung steht das Element <span class="gi">&lt;anchor&gt;</span> mit einer <span class="att">@xml:id</span>. Die Kodierung ist parallel der Streichung ganzer Verse durch den Schreiber, vgl. <a class="cross" href="#div_del_add">→19. Hinzufügungen, Streichungen, Substitutionen</a>, Nr. 6.</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;l&gt;. . .&lt;/l&gt;
-                            &lt;milestone ana="hc:EditorialDeletionSpan" spanTo="#anchor1"/&gt;
+                            &lt;milestone ana="hc:EditorialDeletionSpan" spanTo="#anchor_1"/&gt;
                             &lt;l&gt;. . .&lt;/l&gt;
-                            &lt;anchor xml:id="anchor1"/&gt;
+                            &lt;anchor xml:id="anchor_1"/&gt;
                             &lt;l&gt;. . .&lt;/l&gt;
                         </code></pre></div>
                     </div>
                     <div><span class="aside">34.4</span>
                         <p>Parallel dazu funktionieren editorische Einfügungen ganzer Verse oder von Blöcken, die über die Versgrenze hinausgehen (z.B. weil der Schreiber etwas offensichtlich übersprungen hat). Es ändert sich lediglich der Attriburtwert von <span class="att">@ana</span> im <span class="gi">&lt;milestone&gt;</span>:</p>
-                        <p>Beispiel:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;l&gt;. . .&lt;/l&gt;
-                            &lt;milestone ana="hc:EditorialAdditionSpan" spanTo="#anchor2"/&gt;
+                            &lt;milestone ana="hc:EditorialAdditionSpan" spanTo="#anchor_2"/&gt;
                             &lt;l&gt;. . .&lt;/l&gt;
-                            &lt;anchor xml:id="anchor2"/&gt;
+                            &lt;anchor xml:id="anchor_2"/&gt;
                             &lt;l&gt;. . .&lt;/l&gt;
                         </code></pre></div>
                         <p>Editorisch ergänzte Verse führen weder ein Attribut <span class="att">@hei:altN</span> noch enthalten sie ein Element <span class="gi">&lt;lb&gt;</span>.</p>
@@ -1282,13 +1303,13 @@
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
                             &lt;w&gt;her&lt;/w&gt;&lt;metamark ana="hc:Hyphen"&gt;=&lt;/metamark&gt;&lt;lb n="15"/&gt;&lt;w&gt;ab&lt;/w&gt;
                         </code></pre></div>
-                        <p>In solchen Fällen würde die Visualisierung wegen des <span class="gi">&lt;lb&gt;</span>-Elements ein Spatium zwischen beide Tokens einfügen. Wollen wir in der Edition aber die Worte zusammen schreiben, dann genügt es, auch in solchen Fällen ein Attribut <span class="att">@break</span><span class="val">="no"</span> in das <span class="gi">&lt;lb&gt;</span>-Element zu setzen. Das Attribut widerspricht dann zwar der expliziten Tokenisierung, ist aber im Einklang mit dem Trennstrich.</p>
+                        <p>In solchen Fällen würde die Visualisierung wegen des <span class="gi">&lt;lb&gt;</span>-Elements ein Spatium zwischen beide Tokens einfügen. Wollen wir in der Edition aber die Worte zusammen schreiben, dann genügt es, auch in solchen Fällen ein Attribut <span class="gi">&lt;break="no"</span><span class="gi">&gt;</span> in das <span class="gi">&lt;lb&gt;</span>-Element zu setzen. Das Attribut widerspricht dann zwar der expliziten Tokenisierung, ist aber im Einklang mit dem Trennstrich.</p>
                     </div>
                 </div>
 
                 <div id="div_punctuation_editorial"><span class="aside">36</span>
                     <h2 id="ch36">36 Editorische Behandlung der Zeichensetzung</h2>
-                    <p>Editorische Zeichensetzung wird eingefügt mit <span class="gi">&lt;choice&gt;</span>-Konstruktionen. Dabei führt das <span class="gi">&lt;reg&gt;</span>-Element immer das Attribut <span class="att">@ana</span><span class="val">="hc:PunctuationRegularization"</span>.</p>
+                    <p>Editorische Zeichensetzung wird eingefügt mit <span class="gi">&lt;choice&gt;</span>-Konstruktionen. Dabei führt das <span class="gi">&lt;reg&gt;</span>-Element immer das Attribut <span class="gi">&lt;ana="hc:PunctuationRegularization"</span><span class="gi">&gt;</span>.</p>
                     <div><span class="aside">36.1</span>
                         <p>Wenn die Handschrift keine Zeichensetzung hat, bleibt das <span class="gi">&lt;orig&gt;</span> leer:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
@@ -1304,17 +1325,17 @@
                     <div><span class="aside">36.3</span>
                         <p>Bei direkter Rede steht evtl. ein Doppelpunkt (oder ein Komma) am vorangehenden Wort, das Anführungszeichen aber am ersten Redewort. Dazwischen muss das Spatium stehen:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-                            &lt;w/&gt;
+                            &lt;w&gt;...&lt;/w&gt;
                             &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;:&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
                             &lt;c&gt; &lt;/c&gt;
                             &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;›&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
-                            &lt;w/&gt;
+                            &lt;w&gt;...&lt;/w&gt;
                         </code></pre></div>
                     </div>
                     <div><span class="aside">36.4</span>
-                        <p>Am Ende von direkter Rede werden die beiden Satzzeichen (Punkt oder Komma und Anführungszeichen) in getrennten <span class="gi">&lt;pc&gt;</span>-Elementen erfasst.</p>
+                        <p>Am Ende von direkter Rede werden die beiden Satzzeichen (Punkt / Komma / usw. und Anführungszeichen) in getrennten <span class="gi">&lt;pc&gt;</span>-Elementen erfasst.</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;.&lt;/pc&gt;&lt;pc&gt;‹&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
+                            &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;?&lt;/pc&gt;&lt;pc&gt;‹&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
                             &lt;choice&gt;&lt;orig/&gt;&lt;reg ana="hc:PunctuationRegularization"&gt;&lt;pc&gt;‹&lt;/pc&gt;&lt;pc&gt;,&lt;/pc&gt;&lt;/reg&gt;&lt;/choice&gt;
                         </code></pre></div>
                     </div>
@@ -1326,20 +1347,21 @@
                         <p>Worte oder Verse, die im Vergleich zu anderen Handschriften in geänderter Reihenfolge stehen, bezeichnen wir als Umstellungen. Den Terminus nutzen wir frei von textkritischer Semantik. Wort- oder Versumstellungen, die vom Schreiber gekennzeichnet sind, wurden bereits oben (<a class="cross" href="#div_transpose">→29. Umstellungen</a>) behandelt.</p>
                     </div>
                     <div><span class="aside">37.2</span>
-                        <p>Wollen wir als Herausgeber Worte umstellen, um Sätze verständlich zu machen, zeigen wir mit einem Element <span class="gi">&lt;link&gt;</span> und dem Attribut <span class="att">@target</span> die richtige Reihenfolge der Worte an. Das Attribut <span class="att">@ana</span><span class="val">="hc:EditorialTransposition"</span> gibt die Art der Umstellung an. Das gilt auch für Fälle, in denen die Worte, die umgestellt werden sollen, nicht nebeneinander stehen, oder für mehr als zwei Worte.</p>
-                        <p>Beispiel (vereinfacht): und ſi ſin in ir muote → und ſin ſi in ir muote</p>
+                        <p>Wollen wir als Herausgeber Worte umstellen, um Sätze verständlich zu machen, zeigen wir mit einem Element <span class="gi">&lt;link&gt;</span> und dem Attribut <span class="att">@target</span> die richtige Reihenfolge der Worte an. Das Attribut <span class="gi">&lt;ana="hc:EditorialTransposition"</span><span class="gi">&gt;</span> gibt die Art der Umstellung an. Das gilt auch für Fälle, in denen die Worte, die umgestellt werden sollen, nicht nebeneinander stehen, oder für mehr als zwei Worte.</p>
+                        <p>Beispiel:</p>
                         <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                            und ſi ſin in ir muote → und ſin ſi in ir muote
                             &lt;l&gt;
-                                &lt;w xml:id="w_2706_1"&gt;und&lt;/w&gt;
-                                &lt;w xml:id="w_2706_2"&gt;ſi&lt;/w&gt;
-                                &lt;w xml:id="w_2706_3"&gt;ſin&lt;/w&gt;
-                                &lt;w xml:id="w_2706_4"&gt;in&lt;/w&gt;
-                                &lt;w xml:id="w_2706_5"&gt;ir&lt;/w&gt;
-                                &lt;w xml:id="w_2706_6"&gt;muote&lt;/w&gt;
+                              &lt;w xml:id="w_2706_1"&gt;und&lt;/w&gt;
+                              &lt;w xml:id="w_2706_2"&gt;ſi&lt;/w&gt;
+                              &lt;w xml:id="w_2706_3"&gt;ſin&lt;/w&gt;
+                              &lt;w xml:id="w_2706_4"&gt;in&lt;/w&gt;
+                              &lt;w xml:id="w_2706_5"&gt;ir&lt;/w&gt;
+                              &lt;w xml:id="w_2706_6"&gt;muote&lt;/w&gt;
                             &lt;/l&gt;
                             &lt;link ana="hc:EditorialTransposition" target="#w_2706_3 #w_2706_2"/&gt;
                         </code></pre></div>
-                        <p>Die Umstellung einer Wortgruppe geschieht, indem man im Attribut <span class="att">@target</span> die Wortspanne angibt: <span class="gi">&lt;target="#range(w_2706_4,w_2706_6)</span> <span class="att">#range(w_2706_2,w_2706_3)"=</span><span class="val"></span><span class="gi">&gt;</span>. Das würde ergeben: "und in ir muote ſi ſin". Man kann auch ein einzelnes Wort und eine Wortspanne gegenseitig austauschen.</p>
+                        <p>Die Umstellung einer Wortgruppe geschieht, indem man im Attribut <span class="att">@target</span> die Wortspanne angibt: <span class="att">@target</span><span class="val">="#range(w_2706_4,w_2706_6) #range(w_2706_2,w_2706_3)"</span>. Das würde ergeben: <em>und in ir muote ſi ſin</em>. Man kann auch ein einzelnes Wort und eine Wortspanne gegenseitig austauschen.</p>
                     </div>
                     <div><span class="aside">37.3</span>
                         <p>Versumstellungen, die vom Schreiber nicht gekennzeichnet sind, aber von den Herausgebern als notwendig betrachtet werden für die Herstellung einer korrekten Syntax und Semantik, werden auf gleiche Weise hergestellt, nur verweist das Attribut <span class="att">@target</span> in diesem Fall auf die <span class="att">@xml:id</span> der betroffenen Verse. Auch hier gilt, dass nur die Verse referenziert werden müssen, die umzustellen sind, alles Andere bleibt unberührt.</p>
@@ -1358,12 +1380,14 @@
                     </code></pre></div>
                 </div>
             </div>
+            
         <br><br><hr>
             <div class="endnotes">
                 <h3>Anmerkungen</h3>
                 <div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>Letzte Aktualisierung: Oktober 2025.</div>
-                <div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>Bei der Erfassung dieses Handbuchs in TEI hat Xabier Atanes Gómez (Santiago de Compostela) mitgeholfen.</div>
+                <div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>Bei der Erfassung dieses Handbuchs in TEI hat Xabier Atanes Gómez (Santiago de Compostela) mitgeholfen; bei der Übersetzung ins Englische half Antía Rodríguez Barreiro (Santiago de Compostela).</div>
             </div>
+            <br/><br/>
         </main>
         <script src="https://heieditions.github.io/prism.js"></script>
     </body>
